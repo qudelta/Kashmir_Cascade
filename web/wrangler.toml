@@ -1,12 +1,9 @@
 #:schema node_modules/wrangler/config-schema.json
 
 name = "kashmiri-tours"
-compatibility_date = "2024-12-30"
-compatibility_flags = ["nodejs_compat_v2"]
+compatibility_date = "2024-12-01"
+compatibility_flags = ["nodejs_compat"]
 main = ".open-next/worker.js"
-
-# Use the nodejs_als runtime for better Next.js compatibility
-nodejs_compat_v2 = true
 
 [assets]
 directory = ".open-next/assets"
