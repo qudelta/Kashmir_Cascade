@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Users, Headphones, BadgeCheck, Quote, Star } from "lucide-react";
+import { useMobile } from "@/lib/useMobile";
 
 const testimonials = [
     {
@@ -64,34 +65,40 @@ const itemVariants = {
 };
 
 export function WhyChooseUs() {
+    const isMobile = useMobile();
+
     return (
         <section>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 {/* Why Us */}
                 <motion.div
-                    initial={{ opacity: 0, x: -30 }}
+                    initial={{ opacity: 0, x: isMobile ? 0 : -30 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.6 }}
+                    transition={{ duration: isMobile ? 0.4 : 0.6 }}
                     className="bg-card-dark rounded-3xl p-8 md:p-12 border border-white/5 relative overflow-hidden"
                 >
-                    {/* Animated background orbs */}
-                    <motion.div
-                        animate={{
-                            scale: [1, 1.2, 1],
-                            opacity: [0.05, 0.1, 0.05]
-                        }}
-                        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                        className="absolute top-0 right-0 w-64 h-64 bg-primary rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"
-                    />
-                    <motion.div
-                        animate={{
-                            scale: [1, 1.3, 1],
-                            opacity: [0.05, 0.08, 0.05]
-                        }}
-                        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                        className="absolute bottom-0 left-0 w-64 h-64 bg-blue-500 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"
-                    />
+                    {/* Animated background orbs - only on desktop */}
+                    {!isMobile && (
+                        <>
+                            <motion.div
+                                animate={{
+                                    scale: [1, 1.2, 1],
+                                    opacity: [0.05, 0.1, 0.05]
+                                }}
+                                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                                className="absolute top-0 right-0 w-64 h-64 bg-primary rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"
+                            />
+                            <motion.div
+                                animate={{
+                                    scale: [1, 1.3, 1],
+                                    opacity: [0.05, 0.08, 0.05]
+                                }}
+                                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                                className="absolute bottom-0 left-0 w-64 h-64 bg-blue-500 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"
+                            />
+                        </>
+                    )}
 
                     <div className="relative z-10 text-center mb-12">
                         <motion.h2

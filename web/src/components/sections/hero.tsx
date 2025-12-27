@@ -3,21 +3,29 @@
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
+import { useMobile } from "@/lib/useMobile";
 
 export function Hero() {
+    const isMobile = useMobile();
+
     return (
         <section className="relative h-screen w-full flex items-center overflow-hidden">
             {/* Image Background with Parallax Effect */}
             <motion.div
-                initial={{ scale: 1.1 }}
+                initial={{ scale: isMobile ? 1 : 1.1 }}
                 animate={{ scale: 1 }}
-                transition={{ duration: 1.5, ease: "easeOut" }}
+                transition={{ duration: isMobile ? 0.8 : 1.5, ease: "easeOut" }}
                 className="absolute inset-0"
             >
-                <img
+                <Image
                     src="/kashmir-dal-lake.jpg"
                     alt="Kashmir Dal Lake"
-                    className="w-full h-full object-cover object-center"
+                    fill
+                    priority
+                    className="object-cover object-center"
+                    sizes="100vw"
+                    quality={isMobile ? 75 : 90}
                 />
             </motion.div>
 
@@ -130,19 +138,21 @@ export function Hero() {
                 </div>
             </div>
 
-            {/* Scroll Indicator */}
-            <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1, y: [0, 10, 0] }}
-                transition={{
-                    opacity: { duration: 0.6, delay: 1.5 },
-                    y: { duration: 1.5, repeat: Infinity, ease: "easeInOut" }
-                }}
-                className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/60 flex flex-col items-center gap-2"
-            >
-                <span className="text-xs uppercase tracking-widest">Scroll to Explore</span>
-                <ChevronDown className="w-5 h-5" />
-            </motion.div>
+            {/* Scroll Indicator - hidden on mobile for cleaner UX */}
+            {!isMobile && (
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1, y: [0, 10, 0] }}
+                    transition={{
+                        opacity: { duration: 0.6, delay: 1.5 },
+                        y: { duration: 1.5, repeat: Infinity, ease: "easeInOut" }
+                    }}
+                    className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/60 flex flex-col items-center gap-2"
+                >
+                    <span className="text-xs uppercase tracking-widest">Scroll to Explore</span>
+                    <ChevronDown className="w-5 h-5" />
+                </motion.div>
+            )}
         </section>
     );
 }
