@@ -1,6 +1,7 @@
-/** @type {import('@opennextjs/cloudflare').OpenNextConfig} */
-const config = {
-    // Default configuration
+import type { OpenNextConfig } from "@opennextjs/cloudflare";
+
+const config: OpenNextConfig = {
+    default: {},
 };
 
 export default config;
