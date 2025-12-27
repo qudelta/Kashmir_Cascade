@@ -1,9 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // Image settings for Cloudflare (no built-in optimization)
+  // Image optimization
   images: {
-    unoptimized: true,
     remotePatterns: [
       {
         protocol: "https",
