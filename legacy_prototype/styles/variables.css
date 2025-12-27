@@ -1,0 +1,35 @@
+/* styles/variables.css */
+:root {
+  /* Premium Kashmir Palette */
+  --color-forest-green-900: #0D2B1D; /* Deepest Green */
+  --color-forest-green-800: #1A402D;
+  --color-forest-green-500: #2E6F4A; /* Primary Brand Color */
+  
+  --color-snow-white: #F8FBF8;
+  --color-mist-gray: #E5E9E6;
+  
+  --color-saffron-gold: #D4AF37; /* Accent for luxury */
+  --color-chinar-red: #A93226; /* Accent for warmth/action */
+  
+  --color-text-main: #0D2B1D;
+  --color-text-muted: #5C6B61;
+  --color-text-light: #F8FBF8;
+
+  /* Fonts */
+  --font-display: 'Outfit', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 4rem;
+  --spacing-xl: 8rem;
+
+  /* Effects */
+  --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --glass-bg: rgba(255, 255, 255, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --backdrop-blur: 12px;
+}

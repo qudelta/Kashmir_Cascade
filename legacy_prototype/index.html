@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kashmir Travels - Experience Paradise on Earth</title>
+    <meta name="description"
+        content="Official tours and travel agency for Kashmir. Luxury packages, houseboats, and trekking in Srinagar, Gulmarg, and Ladakh.">
+    <link rel="stylesheet" href="styles/variables.css">
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container header-inner">
+            <div class="logo">
+                <i class="fa-solid fa-mountain-sun" style="color: var(--color-saffron-gold);"></i>
+                Kashmir Travels
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="destinations.html">Destinations</a></li>
+                    <li><a href="packages.html">Packages</a></li>
+                    <li><a href="experiences.html">Experiences</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+            </nav>
+            <a href="contact.html" class="btn btn-primary">Plan My Trip</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <video class="hero-video" autoplay muted loop playsinline poster="assets/hero-poster.jpg">
+            <source
+                src="https://assets.mixkit.co/videos/preview/mixkit-mountain-landscape-with-forest-and-lake-at-sunset-41589-large.mp4"
+                type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content reveal active">
+            <h1 class="hero-title">
+                Experience Paradise on Earth<br>
+                <span
+                    style="color: var(--color-saffron-gold); display: block; font-size: 0.5em; margin-top: 1rem; letter-spacing: 2px; text-transform: uppercase;">Beyond
+                    the Ordinary</span>
+            </h1>
+            <p class="hero-subtitle">Curated journeys to the heart of the Himalayas. Discover the unseen beauty of
+                Kashmir with local experts.</p>
+
+            <div class="glass-panel search-widget">
+                <div style="flex: 1; min-width: 150px; position: relative;">
+                    <i class="fa-solid fa-location-dot"
+                        style="position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: var(--color-forest-green-500);"></i>
+                    <select class="search-select" style="padding-left: 2.5rem;">
+                        <option>Where to?</option>
+                        <option>Srinagar</option>
+                        <option>Gulmarg</option>
+                        <option>Pahalgam</option>
+                        <option>Ladakh</option>
+                    </select>
+                </div>
+
+                <div style="flex: 1; min-width: 150px; position: relative;">
+                    <i class="fa-regular fa-clock"
+                        style="position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: var(--color-forest-green-500);"></i>
+                    <select class="search-select" style="padding-left: 2.5rem;">
+                        <option>Duration</option>
+                        <option>3-5 Days</option>
+                        <option>6-9 Days</option>
+                        <option>10+ Days</option>
+                    </select>
+                </div>
+
+                <div style="flex: 1; min-width: 150px; position: relative;">
+                    <i class="fa-regular fa-calendar"
+                        style="position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: var(--color-forest-green-500);"></i>
+                    <select class="search-select" style="padding-left: 2.5rem;">
+                        <option>Month</option>
+                        <option>Spring (Mar-May)</option>
+                        <option>Summer (Jun-Aug)</option>
+                        <option>Autumn (Sep-Nov)</option>
+                        <option>Winter (Dec-Feb)</option>
+                    </select>
+                </div>
+
+                <button class="btn btn-primary" style="padding: 0 3rem;">
+                    <i class="fa-solid fa-magnifying-glass" style="margin-right: 0.5rem;"></i> Search
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Featured Destinations -->
+        <section class="container">
+            <div class="section-header">
+                <div>
+                    <span class="section-subtitle">Explore</span>
+                    <h2 class="section-title">Featured Destinations</h2>
+                </div>
+                <a href="destinations.html"
+                    style="display: flex; align-items: center; gap: 0.5rem; color: var(--color-forest-green-500); font-weight: 600;">
+                    See All <i class="fa-solid fa-arrow-right-long"></i>
+                </a>
+            </div>
+
+            <div class="grid-3">
+                <!-- Card 1 -->
+                <article class="card reveal">
+                    <div class="card-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1598091383021-15ddea10925d?q=80&w=800&auto=format&fit=crop"
+                            alt="Kashmir Valley" class="card-image">
+                        <div class="card-overlay">
+                            <h3 style="font-size: 1.5rem;">Kashmir Valley</h3>
+                            <p style="font-size: 0.9rem; opacity: 0.9;">The Jewel of the North</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 2 -->
+                <article class="card reveal" style="transition-delay: 0.1s;">
+                    <div class="card-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?q=80&w=800&auto=format&fit=crop"
+                            alt="Mystic Ladakh" class="card-image">
+                        <div class="card-overlay">
+                            <h3 style="font-size: 1.5rem;">Mystic Ladakh</h3>
+                            <p style="font-size: 0.9rem; opacity: 0.9;">Land of High Passes</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 3 -->
+                <article class="card reveal" style="transition-delay: 0.2s;">
+                    <div class="card-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1566837945700-30057527ade0?q=80&w=800&auto=format&fit=crop"
+                            alt="Unexplored Gurez" class="card-image">
+                        <div class="card-overlay">
+                            <h3 style="font-size: 1.5rem;">Unexplored Gurez</h3>
+                            <p style="font-size: 0.9rem; opacity: 0.9;">The Hidden Gem</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Packages Section Placeholder -->
+        <section style="background-color: var(--color-mist-gray); padding: var(--spacing-lg) 0;">
+            <div class="container">
+                <div class="section-header">
+                    <div>
+                        <span class="section-subtitle">Packages</span>
+                        <h2 class="section-title">Best Selling Tours</h2>
+                    </div>
+                    <a href="packages.html"
+                        style="display: flex; align-items: center; gap: 0.5rem; color: var(--color-forest-green-500); font-weight: 600;">
+                        View All Packages <i class="fa-solid fa-plus"></i>
+                    </a>
+                </div>
+                <!-- Package cards will go here -->
+            </div>
+        </section>
+
+    </main>
+
+    <script src="scripts/main.js"></script>
+</body>
+
+</html>
