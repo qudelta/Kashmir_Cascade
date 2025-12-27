@@ -24,7 +24,7 @@ const cardVariants = {
         opacity: 1,
         y: 0,
         scale: 1,
-        transition: { duration: 0.5, ease: "easeOut" }
+        transition: { duration: 0.5, ease: "easeOut" as const }
     }
 };
 
@@ -64,8 +64,8 @@ export default function PackagesPage() {
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                             className={`px-6 py-2.5 rounded-full font-medium transition-all duration-300 ${filter === activeFilter
-                                    ? "bg-primary text-background-dark shadow-lg shadow-primary/30"
-                                    : "bg-white/5 text-white/70 hover:bg-white/10 hover:text-white border border-white/10"
+                                ? "bg-primary text-background-dark shadow-lg shadow-primary/30"
+                                : "bg-white/5 text-white/70 hover:bg-white/10 hover:text-white border border-white/10"
                                 }`}
                             onClick={() => setActiveFilter(filter)}
                         >
