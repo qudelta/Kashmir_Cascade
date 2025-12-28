@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { packages } from "@/lib/data";
 import { Star, Clock, ArrowRight, IndianRupee } from "lucide-react";
@@ -24,8 +25,11 @@ const cardVariants = {
 };
 
 export function BestSellingPackages() {
-    // Get top 3 best-rated packages
-    const topPackages = [...packages].sort((a, b) => b.rating - a.rating).slice(0, 3);
+    // Get top 3 best-rated packages, excluding Ladakh
+    const topPackages = [...packages]
+        .filter(pkg => !pkg.id.toLowerCase().includes('ladakh'))
+        .sort((a, b) => b.rating - a.rating)
+        .slice(0, 3);
 
     return (
         <section>
@@ -93,16 +97,13 @@ export function BestSellingPackages() {
                                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
                                 className="bg-card-dark rounded-xl overflow-hidden border border-white/5 group"
                             >
-                                <div
-                                    className="h-56 bg-cover bg-center relative overflow-hidden"
-                                    style={{ backgroundImage: `url('${pkg.image}')` }}
-                                >
-                                    {/* Image zoom on hover */}
-                                    <motion.div
-                                        whileHover={{ scale: 1.1 }}
-                                        transition={{ duration: 0.6 }}
-                                        className="absolute inset-0 bg-cover bg-center"
-                                        style={{ backgroundImage: `url('${pkg.image}')` }}
+                                <div className="h-56 relative overflow-hidden">
+                                    <Image
+                                        src={pkg.image}
+                                        alt={pkg.title}
+                                        fill
+                                        className="object-cover transition-transform duration-700 group-hover:scale-110"
+                                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                     />
 
                                     {/* Gradient Overlay */}
@@ -180,7 +181,7 @@ export function BestSellingPackages() {
                                         </div>
                                         <motion.span
                                             whileHover={{ x: 5 }}
-                                            className="px-4 py-2 rounded-lg bg-white/5 group-hover:bg-primary group-hover:text-background-dark text-white text-sm font-medium transition-colors flex items-center gap-1"
+                                            className="px-4 py-2 rounded-lg bg-white/5 group-hover:bg-primary group-hover:text-background-dark text-white text-sm font-medium transition-colors flex items-center gap-1 "
                                         >
                                             View Details <ArrowRight className="w-4 h-4" />
                                         </motion.span>

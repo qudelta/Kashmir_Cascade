@@ -19,13 +19,13 @@ export function Hero() {
                 className="absolute inset-0"
             >
                 <Image
-                    src="/kashmir-dal-lake.jpg"
+                    src="/images/Kashmir Dal Lake Background.jpg"
                     alt="Kashmir Dal Lake"
                     fill
                     priority
                     className="object-cover object-center"
                     sizes="100vw"
-                    quality={isMobile ? 75 : 90}
+                    quality={isMobile ? 85 : 90}
                 />
             </motion.div>
 
@@ -89,9 +89,9 @@ export function Hero() {
                         className="flex flex-wrap gap-4"
                     >
                         <motion.button
-                            whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(201, 162, 39, 0.3)" }}
+                            whileHover={{ scale: 1.02 }}
                             whileTap={{ scale: 0.98 }}
-                            className="px-8 py-4 bg-primary text-background-dark font-bold rounded-xl hover:bg-primary/90 transition-colors"
+                            className="px-8 py-4 bg-primary text-background-dark font-bold rounded-xl hover:bg-primary/90 transition-colors "
                             onClick={() => {
                                 const modal = document.getElementById("planTripModal");
                                 if (modal) modal.classList.add("open");
@@ -147,7 +147,7 @@ export function Hero() {
                         opacity: { duration: 0.6, delay: 1.5 },
                         y: { duration: 1.5, repeat: Infinity, ease: "easeInOut" }
                     }}
-                    className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/60 flex flex-col items-center gap-2"
+                    className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/60 flex flex-col items-center gap-2"
                 >
                     <span className="text-xs uppercase tracking-widest">Scroll to Explore</span>
                     <ChevronDown className="w-5 h-5" />

@@ -1,29 +1,37 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Users, Headphones, BadgeCheck, Quote, Star } from "lucide-react";
+import { Users, Headphones, BadgeCheck, Quote, Star, Shield, Wallet } from "lucide-react";
 import { useMobile } from "@/lib/useMobile";
+import Image from "next/image";
 
 const testimonials = [
     {
-        text: "The trip to Ladakh was magical. The team handled our permits and accommodation flawlessly. Highly recommended for anyone looking for a hassle-free adventure.",
-        name: "Sarah Johnson",
-        location: "USA",
-        image: "https://randomuser.me/api/portraits/women/44.jpg",
+        text: "Kashmir trip with my family was absolutely magical! The team arranged everything perfectly - from the houseboat stay to the Gulmarg excursion. My kids still talk about the Shikara ride!",
+        name: "Priya Sharma",
+        location: "Delhi, India",
+        image: "/images/indian woman.jpg",
         rating: 5
     },
     {
-        text: "Kashmir is truly paradise. The houseboat stay arranged by Kashmir Travels was the highlight of our honeymoon. The food was amazing!",
-        name: "Rahul Mehta",
+        text: "As a solo female traveler, I was initially worried. But Kashmir Travels ensured I felt safe throughout. The local guides were respectful and knowledgeable. Best trip of my life!",
+        name: "Anjali Desai",
+        location: "Bangalore, India",
+        image: "/images/indian 3.jpg",
+        rating: 5
+    },
+    {
+        text: "The honeymoon package was worth every rupee. The candlelight dinner on the houseboat and the surprise flower decoration made our trip extra special. Thank you team!",
+        name: "Vikram & Pooja Reddy",
+        location: "Hyderabad, India",
+        image: "/images/indian couple reddy.jpg",
+        rating: 5
+    },
+    {
+        text: "Did the Ladakh expedition with my college friends. The bikes were in perfect condition and the support team handled the altitude sickness situation very professionally.",
+        name: "Arjun Patel",
         location: "Mumbai, India",
-        image: "https://randomuser.me/api/portraits/men/32.jpg",
-        rating: 5
-    },
-    {
-        text: "Safe, reliable, and friendly. We did the Gurez valley trek and the local guide was incredibly knowledgeable. Will definitely come back.",
-        name: "Elena Rodriguez",
-        location: "Spain",
-        image: "https://randomuser.me/api/portraits/women/68.jpg",
+        image: "/images/indian person.jpg",
         rating: 5
     }
 ];
@@ -43,6 +51,21 @@ const features = [
         icon: BadgeCheck,
         title: "No Hidden Costs",
         description: "Transparent pricing is our core value. What you see is exactly what you pay."
+    },
+    {
+        icon: Star,
+        title: "Customizable Packages",
+        description: "Every traveler is unique. We tailor our packages to match your interests, budget, and travel style."
+    },
+    {
+        icon: Shield,
+        title: "Safety First",
+        description: "Your safety is our priority. Verified vehicles, vetted hotels, and experienced guides on every trip."
+    },
+    {
+        icon: Wallet,
+        title: "Best Price Guarantee",
+        description: "Find a lower price elsewhere? We'll match it. Quality service at the most competitive rates."
     }
 ];
 
@@ -126,17 +149,16 @@ export function WhyChooseUs() {
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true }}
-                        className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-6"
+                        className="relative z-10 grid grid-cols-1 sm:grid-cols-2 gap-6"
                     >
-                        {features.map((feature, index) => {
+                        {features.map((feature) => {
                             const Icon = feature.icon;
-                            const isLast = index === features.length - 1;
                             return (
                                 <motion.div
                                     key={feature.title}
                                     variants={itemVariants}
                                     whileHover={{ scale: 1.02, backgroundColor: "rgba(255,255,255,0.05)" }}
-                                    className={`flex flex-col items-center text-center p-6 rounded-2xl transition-colors cursor-pointer ${isLast ? "md:col-span-2" : ""}`}
+                                    className="flex flex-col items-center text-center p-6 rounded-2xl bg-white/[0.02] border border-white/5 transition-colors cursor-pointer"
                                 >
                                     <motion.div
                                         whileHover={{ rotate: 360, scale: 1.1 }}
@@ -224,9 +246,16 @@ export function WhyChooseUs() {
                                 <div className="flex items-center gap-3">
                                     <motion.div
                                         whileHover={{ scale: 1.1 }}
-                                        className="size-10 rounded-full bg-cover bg-center border-2 border-primary/50 group-hover:border-primary transition-colors"
-                                        style={{ backgroundImage: `url('${t.image}')` }}
-                                    />
+                                        className="size-10 rounded-full border-2 border-primary/50 group-hover:border-primary transition-colors relative overflow-hidden"
+                                    >
+                                        <Image
+                                            src={t.image}
+                                            alt={t.name}
+                                            fill
+                                            className="object-cover"
+                                            sizes="40px"
+                                        />
+                                    </motion.div>
                                     <div>
                                         <h4 className="text-white font-bold text-sm">{t.name}</h4>
                                         <p className="text-white/40 text-xs">{t.location}</p>

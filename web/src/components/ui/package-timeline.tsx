@@ -16,8 +16,10 @@ import {
     TreePine,
     Waves,
     ShoppingBag,
-    Heart
+    Heart,
+    Snowflake
 } from 'lucide-react';
+import Image from 'next/image';
 import type { ItineraryItem } from '@/lib/data';
 
 interface PackageTimelineProps {
@@ -27,6 +29,42 @@ interface PackageTimelineProps {
 export function PackageTimeline({ items }: PackageTimelineProps) {
     // Smart icon selection based on day content
     const getIconAndColor = (item: ItineraryItem, index: number, total: number) => {
+        // 0. Image from Data (Highest Priority)
+        if (item.timelineImage) {
+            return {
+                icon: (
+                    <div className="w-full h-full rounded-full overflow-hidden relative shadow-md">
+                        <Image
+                            src={item.timelineImage}
+                            alt={item.title}
+                            fill
+                            className={`object-cover ${item.imagePosition ? `object-${item.imagePosition}` : 'object-center'}`}
+                            sizes="(max-width: 768px) 100vw, 150px"
+                            priority={index < 2}
+                        />
+                    </div>
+                ),
+                bg: '#ffffff',
+                border: 'transparent',
+                isImage: true
+            };
+        }
+
+        // 1. Explicit Icon from Data
+        if (item.icon) {
+            switch (item.icon) {
+                case 'plane': return { icon: <Plane className="w-5 h-5" />, bg: '#10b981', border: '#34d399' };
+                case 'car': return { icon: <Car className="w-5 h-5" />, bg: '#6366f1', border: '#818cf8' };
+                case 'mountain': return { icon: <Mountain className="w-5 h-5" />, bg: '#8b5cf6', border: '#a78bfa' };
+                case 'lake': return { icon: <Waves className="w-5 h-5" />, bg: '#0ea5e9', border: '#38bdf8' };
+                case 'camera': return { icon: <Camera className="w-5 h-5" />, bg: '#ec4899', border: '#f472b6' };
+                case 'shopping': return { icon: <ShoppingBag className="w-5 h-5" />, bg: '#f97316', border: '#fb923c' };
+                case 'temple': return { icon: <Sunrise className="w-5 h-5" />, bg: '#eab308', border: '#facc15' };
+                case 'ski': return { icon: <Snowflake className="w-5 h-5" />, bg: '#3b82f6', border: '#60a5fa' };
+                case 'food': return { icon: <Utensils className="w-5 h-5" />, bg: '#f43f5e', border: '#fb7185' };
+            }
+        }
+
         const title = item.title.toLowerCase();
         const desc = item.desc.toLowerCase();
 
@@ -49,7 +87,7 @@ export function PackageTimeline({ items }: PackageTimelineProps) {
         }
 
         // Adventure/Trek related
-        if (title.includes('trek') || title.includes('adventure') || title.includes('expedition') || title.includes('hike')) {
+        if (title.includes('trek') || title.includes('adventure') || title.includes('expedition') || title.includes('hike') || title.includes('ski')) {
             return {
                 icon: <Mountain className="w-5 h-5" />,
                 bg: '#8b5cf6', // Purple
@@ -76,7 +114,7 @@ export function PackageTimeline({ items }: PackageTimelineProps) {
         }
 
         // Sightseeing
-        if (title.includes('sightseeing') || title.includes('exploration') || title.includes('tour') || title.includes('visit')) {
+        if (title.includes('sightseeing') || title.includes('exploration') || title.includes('tour') || title.includes('visit') || title.includes('sunrise') || title.includes('sunset')) {
             return {
                 icon: <Camera className="w-5 h-5" />,
                 bg: '#ec4899', // Pink
@@ -85,7 +123,7 @@ export function PackageTimeline({ items }: PackageTimelineProps) {
         }
 
         // Shopping/Leisure
-        if (title.includes('shopping') || title.includes('leisure') || title.includes('rest')) {
+        if (title.includes('shopping') || title.includes('leisure') || title.includes('rest') || title.includes('market')) {
             return {
                 icon: <ShoppingBag className="w-5 h-5" />,
                 bg: '#f97316', // Orange
@@ -94,7 +132,7 @@ export function PackageTimeline({ items }: PackageTimelineProps) {
         }
 
         // Romantic/Honeymoon
-        if (title.includes('romantic') || title.includes('honeymoon') || title.includes('candlelight')) {
+        if (title.includes('romantic') || title.includes('honeymoon') || title.includes('candlelight') || desc.includes('romantic')) {
             return {
                 icon: <Heart className="w-5 h-5" />,
                 bg: '#ef4444', // Red
@@ -103,7 +141,7 @@ export function PackageTimeline({ items }: PackageTimelineProps) {
         }
 
         // Spiritual/Temple
-        if (title.includes('temple') || title.includes('shrine') || title.includes('spiritual') || title.includes('monastery')) {
+        if (title.includes('temple') || title.includes('shrine') || title.includes('spiritual') || title.includes('monastery') || title.includes('prayers')) {
             return {
                 icon: <Sunrise className="w-5 h-5" />,
                 bg: '#eab308', // Yellow
@@ -112,7 +150,7 @@ export function PackageTimeline({ items }: PackageTimelineProps) {
         }
 
         // Transfer/Drive
-        if (title.includes('drive') || title.includes('transfer') || desc.includes('drive to')) {
+        if (title.includes('drive') || title.includes('transfer') || desc.includes('drive to') || title.includes('journey')) {
             return {
                 icon: <Car className="w-5 h-5" />,
                 bg: '#6366f1', // Indigo
@@ -134,7 +172,7 @@ export function PackageTimeline({ items }: PackageTimelineProps) {
     return (
         <div className="timeline-wrapper">
             <VerticalTimeline
-                lineColor="rgba(201, 162, 39, 0.4)"
+                lineColor="rgba(117, 194, 1, 0.5)"
                 animate={true}
             >
                 {items.map((item, index) => {
@@ -191,7 +229,7 @@ export function PackageTimeline({ items }: PackageTimelineProps) {
 
                                 {/* Info Grid */}
                                 {(item.meals || item.accommodation || item.distance) && (
-                                    <div className="flex flex-wrap gap-4 mt-4 pt-4 border-t border-white/10">
+                                    <div className="flex flex-wrap gap-2 mt-4 pt-4 border-t border-white/10">
                                         {item.meals && (
                                             <div className="flex items-center gap-2 text-xs bg-orange-500/10 text-orange-300 px-3 py-1.5 rounded-full">
                                                 <Utensils className="w-3.5 h-3.5" />
@@ -201,7 +239,7 @@ export function PackageTimeline({ items }: PackageTimelineProps) {
                                         {item.accommodation && (
                                             <div className="flex items-center gap-2 text-xs bg-blue-500/10 text-blue-300 px-3 py-1.5 rounded-full">
                                                 <Hotel className="w-3.5 h-3.5" />
-                                                <span className="truncate max-w-[150px]" title={item.accommodation}>
+                                                <span className="truncate max-w-[120px] md:max-w-[150px]" title={item.accommodation}>
                                                     {item.accommodation}
                                                 </span>
                                             </div>
@@ -222,36 +260,91 @@ export function PackageTimeline({ items }: PackageTimelineProps) {
                 {/* Final Element - Trip Complete */}
                 <VerticalTimelineElement
                     iconStyle={{
-                        background: 'linear-gradient(135deg, #c9a227, #e2b33f)',
-                        color: '#1a1a2e',
-                        boxShadow: '0 0 0 4px #c9a227, 0 0 20px rgba(201, 162, 39, 0.4), 0 3px 15px rgba(0,0,0,0.4)',
+                        background: '#75c201',
+                        color: '#0f1a0f',
+                        boxShadow: '0 0 0 4px #75c201, 0 0 20px rgba(117, 194, 1, 0.4), 0 3px 15px rgba(0,0,0,0.4)',
                     }}
-                    icon={<Sparkles className="w-5 h-5" />}
+                    icon={
+                        <div className="w-full h-full rounded-full overflow-hidden relative">
+                            <Image
+                                src="/images/kashmir_pointer.png"
+                                alt="Trip Complete"
+                                fill
+                                className="object-cover"
+                            />
+                        </div>
+                    }
                 />
             </VerticalTimeline>
 
             <style jsx global>{`
                 .timeline-wrapper .vertical-timeline::before {
-                    background: linear-gradient(to bottom, rgba(201, 162, 39, 0.6), rgba(201, 162, 39, 0.1));
+                    background: linear-gradient(to bottom, rgba(117, 194, 1, 0.6), rgba(117, 194, 1, 0.15));
                     width: 3px;
                 }
 
                 .timeline-wrapper .timeline-date {
-                    font-weight: 700 !important;
-                    font-size: 0.8rem !important;
-                    color: #1a1a2e !important;
-                    background: linear-gradient(135deg, #c9a227 0%, #e2b33f 100%) !important;
-                    padding: 6px 14px !important;
-                    border-radius: 50px !important;
+                    font-weight: 600 !important;
+                    font-size: 0.85rem !important;
+                    color: #ffffff !important;
+                    background: rgba(117, 194, 1, 0.15) !important;
+                    border: 1px solid rgba(117, 194, 1, 0.3) !important;
+                    padding: 4px 16px !important;
+                    border-radius: 100px !important;
                     display: inline-block !important;
-                    box-shadow: 0 2px 10px rgba(201, 162, 39, 0.3) !important;
+                    backdrop-filter: blur(8px) !important;
+                    box-shadow: none !important;
+                    width: auto !important;
+                    min-width: unset !important;
+                    white-space: nowrap !important;
+                }
+
+                @media (min-width: 1170px) {
+                    .timeline-wrapper .vertical-timeline-element-icon {
+                        width: 60px !important;
+                        height: 60px !important;
+                        margin-left: -30px !important;
+                    }
+
+                    .timeline-wrapper .vertical-timeline-element-icon svg {
+                        width: 30px !important;
+                        height: 30px !important;
+                    }
+
+                    .timeline-wrapper .timeline-date {
+                        float: left !important;
+                        padding: 8px 16px !important;
+                    }
                 }
 
                 @media (max-width: 1169px) {
-                    .timeline-wrapper .timeline-date {
-                        display: block !important;
-                        margin-bottom: 12px !important;
-                        width: fit-content !important;
+                    .timeline-wrapper .vertical-timeline-element {
+                        margin: 2em 0 !important;
+                    }
+
+                    .timeline-wrapper .vertical-timeline-element-content {
+                        margin-left: 45px !important;
+                        padding: 16px !important;
+                    }
+
+                    .timeline-wrapper .vertical-timeline-element-content .timeline-date {
+                        display: inline-block !important;
+                        margin-bottom: 10px !important;
+                    }
+
+                    .timeline-wrapper .vertical-timeline-element-icon {
+                        width: 30px !important;
+                        height: 30px !important;
+                        left: 0 !important;
+                        margin-left: 0 !important;
+                    }
+
+                    .timeline-wrapper .vertical-timeline::before {
+                        left: 14px !important;
+                    }
+
+                    .timeline-wrapper .vertical-timeline-element-content-arrow {
+                        display: none !important;
                     }
                 }
 
@@ -262,7 +355,7 @@ export function PackageTimeline({ items }: PackageTimelineProps) {
                 .timeline-wrapper .vertical-timeline-element-content:hover {
                     transform: translateY(-4px);
                     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4) !important;
-                    border-color: rgba(201, 162, 39, 0.3) !important;
+                    border-color: rgba(117, 194, 1, 0.3) !important;
                 }
 
                 .timeline-wrapper .vertical-timeline-element-icon {
@@ -275,7 +368,15 @@ export function PackageTimeline({ items }: PackageTimelineProps) {
                     width: 20px !important;
                     height: 20px !important;
                 }
+
+                @media (max-width: 1169px) {
+                    .timeline-wrapper .vertical-timeline-element-icon svg {
+                        width: 14px !important;
+                        height: 14px !important;
+                    }
+                }
             `}</style>
         </div>
     );
 }
+

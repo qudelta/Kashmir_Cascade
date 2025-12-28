@@ -29,6 +29,7 @@ export default async function DestinationDetail({ params }: { params: Params }) 
                 subtitle={destination.subtitle}
                 image={destination.image}
                 className="h-[60vh]"
+                imageClassName={destination.imagePosition ? `object-${destination.imagePosition}` : "object-center"}
             />
 
             <div className="max-w-[1280px] mx-auto px-6 py-16 grid grid-cols-1 lg:grid-cols-3 gap-12">

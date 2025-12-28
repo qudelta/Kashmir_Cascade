@@ -4,11 +4,15 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Mountain } from "lucide-react";
+import { Menu, X, Mountain, Search } from "lucide-react";
+import { WeatherWidget } from "@/components/ui/weather-widget";
+import { SearchOverlay } from "@/components/ui/search-overlay";
 
 const navLinks = [
     { href: "/destinations", label: "Destinations" },
     { href: "/packages", label: "Packages" },
+    { href: "/blog", label: "Blog" },
+    { href: "/faq", label: "FAQ" },
     { href: "/about", label: "About Us" },
     { href: "/contact", label: "Contact" },
 ];
@@ -16,6 +20,7 @@ const navLinks = [
 export function Navbar() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
+    const [isSearchOpen, setIsSearchOpen] = useState(false);
     const pathname = usePathname();
 
     // Handle scroll effect
@@ -32,32 +37,52 @@ export function Navbar() {
         setIsMobileMenuOpen(false);
     }, [pathname]);
 
+    // Lock body scroll when mobile menu is open
+    useEffect(() => {
+        if (isMobileMenuOpen) {
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "";
+        }
+        return () => {
+            document.body.style.overflow = "";
+        };
+    }, [isMobileMenuOpen]);
+
     return (
         <motion.header
             initial={{ y: -100 }}
             animate={{ y: 0 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-                    ? "bg-background-dark/95 backdrop-blur-lg border-b border-white/10 shadow-lg"
-                    : "bg-transparent"
+            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${isScrolled || isMobileMenuOpen
+                ? "bg-background-dark md:bg-background-dark/95 md:backdrop-blur-lg border-white/10 shadow-lg"
+                : "bg-transparent border-transparent"
                 }`}
         >
             <div className="max-w-[1280px] mx-auto px-6 h-20 flex items-center justify-between">
-                {/* Logo */}
-                <Link href="/" className="flex items-center gap-3 text-white cursor-pointer group">
-                    <motion.div
-                        whileHover={{ rotate: 360 }}
-                        transition={{ duration: 0.5 }}
+                {/* Logo - scrolls to top on home, navigates to home on other pages */}
+                {pathname === "/" ? (
+                    <button
+                        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                        className="flex items-center gap-3 text-white cursor-pointer group"
                     >
                         <Mountain className="w-8 h-8 text-primary" />
-                    </motion.div>
-                    <h2 className="text-xl font-bold tracking-tight font-display group-hover:text-primary transition-colors">
-                        Kashmir Travels
-                    </h2>
-                </Link>
+                        <h2 className="text-xl font-bold tracking-tight font-display group-hover:text-primary transition-colors">
+                            Kashmir Travels
+                        </h2>
+                    </button>
+                ) : (
+                    <Link href="/" className="flex items-center gap-3 text-white cursor-pointer group">
+                        <Mountain className="w-8 h-8 text-primary" />
+                        <h2 className="text-xl font-bold tracking-tight font-display group-hover:text-primary transition-colors">
+                            Kashmir Travels
+                        </h2>
+                    </Link>
+                )}
 
                 {/* Desktop Nav */}
                 <nav className="hidden md:flex items-center gap-8">
+                    <WeatherWidget />
                     {navLinks.map((link) => {
                         const isActive = pathname === link.href || pathname.startsWith(link.href + "/");
                         return (
@@ -77,10 +102,19 @@ export function Navbar() {
                             </Link>
                         );
                     })}
+
+                    <button
+                        onClick={() => setIsSearchOpen(true)}
+                        className="p-2 rounded-full hover:bg-white/10 transition-colors text-white/80 hover:text-white"
+                        aria-label="Search"
+                    >
+                        <Search className="w-5 h-5" />
+                    </button>
+
                     <motion.button
-                        whileHover={{ scale: 1.05, boxShadow: "0 10px 30px rgba(201, 162, 39, 0.3)" }}
+                        whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
-                        className="flex items-center justify-center rounded-xl h-11 px-6 bg-primary hover:bg-primary/90 text-background-dark text-sm font-bold transition-all"
+                        className="flex items-center justify-center rounded-xl h-11 px-6 bg-primary hover:bg-primary/90 text-background-dark text-sm font-bold transition-all "
                         onClick={() => {
                             const modal = document.getElementById("planTripModal");
                             if (modal) modal.classList.add("open");
@@ -131,7 +165,7 @@ export function Navbar() {
                         animate={{ opacity: 1, height: "auto" }}
                         exit={{ opacity: 0, height: 0 }}
                         transition={{ duration: 0.3, ease: "easeInOut" }}
-                        className="md:hidden bg-background-dark/95 backdrop-blur-lg border-t border-white/10 overflow-hidden"
+                        className="md:hidden bg-background-dark border-t border-white/10 overflow-hidden"
                     >
                         <motion.div
                             initial={{ opacity: 0 }}
@@ -151,8 +185,8 @@ export function Navbar() {
                                         <Link
                                             href={link.href}
                                             className={`block py-3 px-4 rounded-xl text-lg font-medium transition-colors ${isActive
-                                                    ? "bg-primary/10 text-primary"
-                                                    : "text-white/90 hover:bg-white/5 hover:text-primary"
+                                                ? "bg-primary/10 text-primary"
+                                                : "text-white/90 hover:bg-white/5 hover:text-primary"
                                                 }`}
                                         >
                                             {link.label}
@@ -160,11 +194,8 @@ export function Navbar() {
                                     </motion.div>
                                 );
                             })}
-                            <motion.button
-                                initial={{ opacity: 0, y: 10 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: 0.3 }}
-                                className="w-full h-14 bg-primary text-background-dark font-bold rounded-xl mt-4"
+                            <button
+                                className="w-full h-14 bg-primary text-background-dark font-bold rounded-xl mt-4 "
                                 onClick={() => {
                                     setIsMobileMenuOpen(false);
                                     const modal = document.getElementById("planTripModal");
@@ -173,11 +204,13 @@ export function Navbar() {
                                 }}
                             >
                                 Plan Your Trip
-                            </motion.button>
+                            </button>
                         </motion.div>
                     </motion.div>
                 )}
             </AnimatePresence>
+
+            <SearchOverlay isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
         </motion.header>
     );
 }

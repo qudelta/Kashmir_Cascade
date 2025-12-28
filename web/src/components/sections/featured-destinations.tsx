@@ -2,31 +2,56 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 
 const destinations = [
     {
-        id: "srinagar",
+        id: "srinagar-city",
         title: "Kashmir Valley",
         subtitle: "The Jewel of the North",
         description: "Famous for its houseboats, lakes, and Mughal gardens. Experience tranquility like never before. Explore serene Dal Lake, vibrant Mughal Gardens, and picturesque Pahalgam.",
-        image: "https://images.unsplash.com/photo-1598091383021-15ddea10925d?q=80&w=1200",
+        image: "/images/Kashmir Dal Lake Background.jpg",
         size: "large"
     },
     {
-        id: "gulmarg",
+        id: "mystic-ladakh",
         title: "Mystic Ladakh",
         subtitle: "Land of High Passes",
         description: "A high-altitude desert known for its stunning landscapes, monasteries, and adventure. Trekking, biking, and spiritual retreats await.",
-        image: "/images/gulmarg-featured.jpg",
+        image: "/images/Leh Ladakh.jpg",
+        size: "small"
+    },
+    {
+        id: "gurez",
+        title: "Unexplored Gurez",
+        subtitle: "The Hidden Gem",
+        description: "Off the beaten path, Gurez offers pristine nature, traditional culture, and ultimate peace. A true escape into untouched wilderness.",
+        image: "/images/Gurez Habba Khatoon.jpg",
+        size: "small"
+    },
+    {
+        id: "sonamarg",
+        title: "Sonamarg",
+        subtitle: "Meadow of Gold",
+        description: "Gateway to Ladakh and a paradise for nature lovers. Home to the Thajiwas Glacier and golden alpine meadows.",
+        image: "/images/Sonmarg.jpg",
         size: "small"
     },
     {
         id: "pahalgam",
-        title: "Unexplored Gurez",
-        subtitle: "The Hidden Gem",
-        description: "Off the beaten path, Gurez offers pristine nature, traditional culture, and ultimate peace. A true escape into untouched wilderness.",
-        image: "https://images.unsplash.com/photo-1595846519845-68e298c2edd8?q=80&w=1200",
+        title: "Pahalgam",
+        subtitle: "Valley of Shepherds",
+        description: "Famous for its scenic beauty, lidder river, and lush pine forests. The perfect base for treks and relaxation.",
+        image: "/images/Pahalgam.jpg",
+        size: "medium"
+    },
+    {
+        id: "gulmarg",
+        title: "Gulmarg",
+        subtitle: "Meadow of Flowers",
+        description: "A premier hill station and skiing destination. World-famous for its gondola, powder snow, and lush summer meadows.",
+        image: "/images/gulmarg-featured.jpg",
         size: "small"
     }
 ];
@@ -112,28 +137,37 @@ export function FeaturedDestinations() {
                             <motion.div
                                 whileHover={{ y: -8 }}
                                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                                className={`${dest.size === "large" ? "h-[600px]" : "h-[300px]"} rounded-2xl overflow-hidden relative shadow-lg border border-white/5`}
+                                className={`${dest.size === "large" ? "h-[600px]" : "h-[300px]"} rounded-2xl overflow-hidden relative shadow-lg border border-white/5 bg-neutral-900 group`}
                             >
                                 {/* Image with zoom effect */}
                                 <motion.div
                                     whileHover={{ scale: 1.1 }}
                                     transition={{ duration: 0.7 }}
-                                    className="absolute inset-0 bg-cover bg-center"
-                                    style={{ backgroundImage: `url('${dest.image}')` }}
-                                />
+                                    className="absolute inset-0 w-full h-full"
+                                >
+                                    <div className="relative w-full h-full">
+                                        <Image
+                                            src={dest.image}
+                                            alt={dest.title}
+                                            fill
+                                            className="object-cover"
+                                            sizes={dest.size === "large" ? "(max-width: 768px) 100vw, 50vw" : "(max-width: 768px) 100vw, 33vw"}
+                                        />
+                                    </div>
+                                </motion.div>
 
                                 {/* Gradient overlay */}
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10" />
 
                                 {/* Hover overlay */}
                                 <motion.div
                                     initial={{ opacity: 0 }}
                                     whileHover={{ opacity: 1 }}
-                                    className="absolute inset-0 bg-primary/10"
+                                    className="absolute inset-0 bg-primary/10 z-20"
                                 />
 
                                 {/* Content */}
-                                <div className="absolute bottom-0 left-0 p-6 w-full">
+                                <div className="absolute bottom-0 left-0 p-6 w-full z-30">
                                     <motion.div
                                         initial={{ y: 20 }}
                                         whileHover={{ y: 0 }}

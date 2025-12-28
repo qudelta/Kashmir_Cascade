@@ -1,6 +1,7 @@
 import { PageHeader } from "@/components/layout/page-header";
 import { experiences } from "@/lib/data";
 import { ArrowUpRight } from "lucide-react";
+import Image from "next/image";
 
 export default function ExperiencesPage() {
     return (
@@ -8,7 +9,7 @@ export default function ExperiencesPage() {
             <PageHeader
                 title="Unforgettable Experiences"
                 subtitle="More than just sightseeing"
-                image="https://images.unsplash.com/photo-1566837945700-30057527ade0?q=80&w=2000"
+                image="/images/Doodhpathri.jpg"
             />
 
             <section className="container py-20">
@@ -18,11 +19,15 @@ export default function ExperiencesPage() {
                             key={index}
                             className="group relative h-96 rounded-2xl overflow-hidden cursor-pointer"
                         >
-                            <img
-                                src={exp.image}
-                                alt={exp.title}
-                                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                            />
+                            <div className="absolute inset-0 w-full h-full">
+                                <Image
+                                    src={exp.image}
+                                    alt={exp.title}
+                                    fill
+                                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                                    sizes="(max-width: 768px) 100vw, 33vw"
+                                />
+                            </div>
                             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-90 transition-opacity duration-300 group-hover:opacity-80" />
 
                             <div className="absolute bottom-0 left-0 p-8 transform transition-transform duration-300 translate-y-2 group-hover:translate-y-0">

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { PageHeader } from "@/components/layout/page-header";
 import { packages } from "@/lib/data";
@@ -40,29 +41,19 @@ export default function PackagesPage() {
             <PageHeader
                 title="Curated Packages"
                 subtitle="Crafted Itineraries for Every Traveler"
-                image="https://images.unsplash.com/photo-1626621341120-20d08bbb0797?q=80&w=2000"
+                image="/images/Sonmarg.jpg"
             />
 
             <section className="max-w-[1280px] mx-auto px-6 py-16">
                 {/* Category Filters */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5 }}
-                    className="flex flex-wrap gap-3 mb-12 justify-center"
-                >
+                <div className="flex flex-wrap gap-3 mb-12 justify-center">
                     <div className="flex items-center gap-2 text-white/50 mr-4">
                         <Filter className="w-4 h-4" />
                         <span className="text-sm font-medium">Filter:</span>
                     </div>
-                    {categories.map((filter, index) => (
-                        <motion.button
+                    {categories.map((filter) => (
+                        <button
                             key={filter}
-                            initial={{ opacity: 0, scale: 0.8 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            transition={{ duration: 0.3, delay: index * 0.05 }}
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
                             className={`px-6 py-2.5 rounded-full font-medium transition-all duration-300 ${filter === activeFilter
                                 ? "bg-primary text-background-dark shadow-lg shadow-primary/30"
                                 : "bg-white/5 text-white/70 hover:bg-white/10 hover:text-white border border-white/10"
@@ -70,9 +61,9 @@ export default function PackagesPage() {
                             onClick={() => setActiveFilter(filter)}
                         >
                             {filter}
-                        </motion.button>
+                        </button>
                     ))}
-                </motion.div>
+                </div>
 
                 {/* Stats Bar */}
                 <motion.div
@@ -111,13 +102,15 @@ export default function PackagesPage() {
                                 >
                                     {/* Image Section */}
                                     <div className="relative h-64 overflow-hidden">
-                                        <motion.img
-                                            whileHover={{ scale: 1.1 }}
-                                            transition={{ duration: 0.6 }}
-                                            src={pkg.image}
-                                            alt={pkg.title}
-                                            className="w-full h-full object-cover"
-                                        />
+                                        <div className="absolute inset-0 w-full h-full">
+                                            <Image
+                                                src={pkg.image}
+                                                alt={pkg.title}
+                                                fill
+                                                className="object-cover transition-transform duration-700 group-hover:scale-110"
+                                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                            />
+                                        </div>
                                         {/* Overlay Gradient */}
                                         <div className="absolute inset-0 bg-gradient-to-t from-card-dark via-transparent to-transparent" />
 
@@ -266,6 +259,11 @@ export default function PackagesPage() {
                         whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(201, 162, 39, 0.3)" }}
                         whileTap={{ scale: 0.98 }}
                         className="px-8 py-4 rounded-xl bg-primary text-background-dark font-bold hover:bg-primary/90 transition-colors relative z-10"
+                        onClick={() => {
+                            const modal = document.getElementById("planTripModal");
+                            if (modal) modal.classList.add("open");
+                            document.body.style.overflow = "hidden";
+                        }}
                     >
                         Plan Custom Trip
                     </motion.button>
