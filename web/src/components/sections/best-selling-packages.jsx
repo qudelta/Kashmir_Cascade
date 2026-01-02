@@ -52,7 +52,7 @@ export function BestSellingPackages() {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.5, delay: 0.2 }}
-                        className="text-3xl md:text-4xl font-bold text-white font-display"
+                        className="text-3xl md:text-4xl font-bold text-text-dark font-display"
                     >
                         Best Selling Tours
                     </motion.h2>
@@ -87,99 +87,81 @@ export function BestSellingPackages() {
                     >
                         <Link
                             to={`/packages/${pkg.id}`}
-                            className="block"
+                            className="block group"
                         >
                             <motion.div
-                                whileHover={{ y: -8, boxShadow: "0 25px 50px -12px rgba(201, 162, 39, 0.15)" }}
+                                whileHover={{ y: -5 }}
                                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                                className="bg-card-dark rounded-xl overflow-hidden border border-white/5 group"
+                                className="relative bg-transparent"
                             >
-                                <div className="h-56 relative overflow-hidden">
+                                {/* Image Container - Taller and Rounded */}
+                                <div className="h-72 relative rounded-[2rem] overflow-hidden shadow-md">
                                     <img
                                         src={pkg.image}
                                         alt={pkg.title}
                                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                     />
 
-                                    {/* Gradient Overlay */}
-                                    <div className="absolute inset-0 bg-gradient-to-t from-card-dark via-transparent to-transparent z-10" />
-
-                                    {/* Category Badge */}
+                                    {/* Category Badge - Floating */}
                                     <motion.div
                                         initial={{ opacity: 0, x: -20 }}
                                         whileInView={{ opacity: 1, x: 0 }}
                                         transition={{ delay: 0.3 }}
-                                        className="absolute top-4 left-4 bg-primary/90 backdrop-blur-sm text-background-dark text-xs font-bold px-3 py-1 rounded-full z-20"
+                                        className="absolute top-4 left-4 bg-white/90 backdrop-blur-md text-text-dark text-xs font-bold px-3 py-1 rounded-full z-20 shadow-sm"
                                     >
                                         {pkg.category}
                                     </motion.div>
 
                                     {/* Rating Badge */}
-                                    <div className="absolute top-4 right-4 bg-black/60 backdrop-blur-sm text-white text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1 z-20">
+                                    <div className="absolute top-4 right-4 bg-black/50 backdrop-blur-md text-white text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1 z-20">
                                         <Star className="w-3 h-3 text-yellow-400 fill-yellow-400" /> {pkg.rating}
                                     </div>
-
-                                    {/* Discount Badge */}
-                                    {pkg.originalPrice && (
-                                        <motion.div
-                                            initial={{ scale: 0 }}
-                                            whileInView={{ scale: 1 }}
-                                            transition={{ type: "spring", delay: 0.4 }}
-                                            className="absolute bottom-4 right-4 bg-green-500 text-white text-xs font-bold px-2 py-1 rounded-full z-20"
-                                        >
-                                            {Math.round((1 - pkg.price / pkg.originalPrice) * 100)}% OFF
-                                        </motion.div>
-                                    )}
                                 </div>
 
-                                <div className="p-6 relative z-20">
-                                    <div className="flex justify-between items-start mb-2">
-                                        <h3 className="text-xl font-bold text-white group-hover:text-primary transition-colors font-display">
+                                {/* Content Container - Overlapping & Floating */}
+                                <div className="mx-4 -mt-16 relative z-10 bg-white p-6 rounded-[1.5rem] shadow-xl border border-gray-100 flex flex-col gap-3">
+                                    <div className="flex justify-between items-start">
+                                        <h3 className="text-lg font-bold text-text-dark group-hover:text-primary transition-colors font-display leading-tight">
                                             {pkg.title}
                                         </h3>
-                                        <span className="bg-primary/20 text-primary text-xs font-bold px-2 py-1 rounded flex items-center gap-1 whitespace-nowrap">
+                                    </div>
+
+                                    <div className="flex items-center gap-3 text-xs font-medium text-text-dark/60">
+                                        <span className="flex items-center gap-1 bg-gray-100 px-2 py-1 rounded-md">
                                             <Clock className="w-3 h-3" /> {pkg.days}D/{pkg.nights}N
                                         </span>
-                                    </div>
-                                    <p className="text-white/60 text-sm mb-4 line-clamp-2">{pkg.overview}</p>
-
-                                    {/* Highlights Preview */}
-                                    <div className="flex flex-wrap gap-2 mb-4">
-                                        {pkg.highlights.slice(0, 2).map((h, i) => (
-                                            <motion.span
-                                                key={i}
-                                                initial={{ opacity: 0, scale: 0.8 }}
-                                                whileInView={{ opacity: 1, scale: 1 }}
-                                                transition={{ delay: 0.1 * i }}
-                                                className="text-xs bg-white/5 text-white/70 px-2 py-1 rounded"
-                                            >
+                                        {pkg.highlights.slice(0, 1).map((h, i) => (
+                                            <span key={i} className="flex items-center gap-1 bg-gray-100 px-2 py-1 rounded-md max-w-[100px] truncate">
                                                 {h}
-                                            </motion.span>
+                                            </span>
                                         ))}
                                     </div>
 
-                                    <div className="flex items-center justify-between mt-4 pt-4 border-t border-white/10">
+                                    <p className="text-text-dark/70 text-sm line-clamp-2 leading-relaxed">
+                                        {pkg.overview}
+                                    </p>
+
+                                    <div className="flex items-center justify-between mt-2 pt-3 border-t border-dashed border-gray-200">
                                         <div>
-                                            <p className="text-xs text-white/50">Starting from</p>
+                                            <p className="text-[10px] uppercase tracking-wider text-text-dark/50 font-bold">Starting from</p>
                                             <div className="flex items-center gap-2">
-                                                <p className="text-lg font-bold text-white flex items-center">
+                                                <p className="text-lg font-bold text-primary flex items-center">
                                                     <IndianRupee className="w-4 h-4" />
                                                     {pkg.price.toLocaleString('en-IN')}
                                                 </p>
                                                 {pkg.originalPrice && (
-                                                    <span className="text-xs text-white/40 line-through">
+                                                    <span className="text-xs text-text-dark/40 line-through">
                                                         ₹{pkg.originalPrice.toLocaleString('en-IN')}
                                                     </span>
                                                 )}
                                             </div>
-                                            <span className="text-xs text-white/50">per person</span>
                                         </div>
-                                        <motion.span
+                                        <motion.div
                                             whileHover={{ x: 5 }}
-                                            className="px-4 py-2 rounded-lg bg-white/5 group-hover:bg-primary group-hover:text-background-dark text-white text-sm font-medium transition-colors flex items-center gap-1 "
+                                            className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors"
                                         >
-                                            View Details <ArrowRight className="w-4 h-4" />
-                                        </motion.span>
+                                            <ArrowRight className="w-5 h-5" />
+                                        </motion.div>
                                     </div>
                                 </div>
                             </motion.div>

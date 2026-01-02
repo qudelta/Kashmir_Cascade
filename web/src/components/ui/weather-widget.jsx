@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Cloud, CloudRain, Sun, CloudSnow, CloudFog } from "lucide-react";
 
-export function WeatherWidget() {
+export function WeatherWidget({ isScrolled = false }) {
     const [weather, setWeather] = useState(null);
     const [loading, setLoading] = useState(true);
 
@@ -34,14 +34,14 @@ export function WeatherWidget() {
     }, []);
 
     const getWeatherIcon = (code) => {
-        // WMO Weather interpretation codes (http://www.wmo.int/pages/prog/www/IMOP/publications/CIMO-Guide/CIMO_Guide-7th_Edition-2008/Part_I/Chapter_4_Annex_4B.pdf)
+        // WMO Weather interpretation codes
         if (code <= 1) return <Sun className="w-4 h-4 text-yellow-400" />;
-        if (code <= 3) return <Cloud className="w-4 h-4 text-gray-300" />;
-        if (code <= 48) return <CloudFog className="w-4 h-4 text-gray-400" />;
+        if (code <= 3) return <Cloud className={`w-4 h-4 ${isScrolled ? 'text-gray-500' : 'text-gray-300'}`} />;
+        if (code <= 48) return <CloudFog className={`w-4 h-4 ${isScrolled ? 'text-gray-500' : 'text-gray-400'}`} />;
         if (code <= 67) return <CloudRain className="w-4 h-4 text-blue-400" />;
-        if (code <= 77) return <CloudSnow className="w-4 h-4 text-white" />;
+        if (code <= 77) return <CloudSnow className={`w-4 h-4 ${isScrolled ? 'text-gray-600' : 'text-white'}`} />;
         if (code <= 82) return <CloudRain className="w-4 h-4 text-blue-500" />;
-        if (code <= 86) return <CloudSnow className="w-4 h-4 text-white" />;
+        if (code <= 86) return <CloudSnow className={`w-4 h-4 ${isScrolled ? 'text-gray-600' : 'text-white'}`} />;
         if (code <= 99) return <CloudRain className="w-4 h-4 text-purple-400" />; // Thunderstorm
         return <Sun className="w-4 h-4 text-yellow-400" />;
     };
@@ -49,14 +49,20 @@ export function WeatherWidget() {
     if (loading) return null;
 
     return (
-        <div className="hidden md:flex items-center gap-2 bg-white/5 border border-white/10 px-3 py-1.5 rounded-full backdrop-blur-sm hover:bg-white/10 transition-colors cursor-default select-none" title="Current weather in Srinagar">
-            <span className="text-white/80 text-xs font-medium">Srinagar</span>
+        <div
+            className={`hidden md:flex items-center gap-2 px-3 py-1.5 rounded-full backdrop-blur-sm transition-colors cursor-default select-none ${isScrolled
+                    ? 'bg-text-dark/5 border border-text-dark/10 hover:bg-text-dark/10'
+                    : 'bg-white/10 border border-white/20 hover:bg-white/20'
+                }`}
+            title="Current weather in Srinagar"
+        >
+            <span className={`text-xs font-medium ${isScrolled ? 'text-text-dark/80' : 'text-white/90'}`}>Srinagar</span>
             {weather && (
                 <>
-                    <div className="h-4 w-[1px] bg-white/20"></div>
+                    <div className={`h-4 w-[1px] ${isScrolled ? 'bg-text-dark/20' : 'bg-white/30'}`}></div>
                     <div className="flex items-center gap-1.5">
                         {getWeatherIcon(weather.weathercode)}
-                        <span className="text-white text-xs font-bold">{Math.round(weather.temperature)}°C</span>
+                        <span className={`text-xs font-bold ${isScrolled ? 'text-text-dark' : 'text-white'}`}>{Math.round(weather.temperature)}°C</span>
                     </div>
                 </>
             )}

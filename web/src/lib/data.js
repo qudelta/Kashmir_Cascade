@@ -4,7 +4,7 @@
 
 export const destinations = [
     {
-        id: "srinagar-city",
+        id: "srinagar-city", region: "Kashmir",
         title: "Srinagar City",
         subtitle: "Heart of Kashmir",
         description: "Srinagar, the summer capital of Jammu & Kashmir, is a city of timeless beauty where history and nature converge. Famous for its serene Dal and Nigeen Lakes, the city offers unique experiences like staying in heritage houseboats and gliding through floating markets on traditional Shikaras. Beyond the lakes, Srinagar is home to the stunning Mughal Gardens—Shalimar, Nishat, and Chashme Shahi—which showcase Persian architectural brilliance against the backdrop of the Zabarwan mountains. The city's old quarter is a labyrinth of bustling markets selling world-famous Pashmina shawls, saffron, and intricate wood carvings, making it a cultural hub.",
@@ -22,7 +22,7 @@ export const destinations = [
         ]
     },
     {
-        id: "mystic-ladakh",
+        id: "mystic-ladakh", region: "Ladakh",
         title: "Mystic Ladakh",
         subtitle: "Land of High Passes",
         description: "Ladakh is a high-altitude desert that feels like another planet. Known as the 'Land of High Passes', it offers starkly beautiful landscapes of barren brown mountains contrasting with vivid turquoise lakes like Pangong Tso. It is a spiritual center with ancient Buddhist monasteries like Thiksey and Hemis perched on hilltops, echoing with chants. Adventure seekers flock here to drive on the world's highest motorable roads, ride double-humped camels in the cold desert of Nubra Valley, and experience the unique culture of the Indo-Tibetan borderlands.",
@@ -40,7 +40,7 @@ export const destinations = [
         ]
     },
     {
-        id: "dal-lake",
+        id: "dal-lake", region: "Kashmir",
         title: "Dal Lake",
         subtitle: "Jewel of Srinagar",
         description: "The jewel in the crown of Kashmir, Dal Lake is a vast, mirror-like body of water reflecting the Pir Panjal mountains. It is a vibrant ecosystem of life, home to floating gardens, lotus beds, and vivid kingfishers. Exploring it by a traditional Shikara reveals a unique water-world lifestyle, from the floating vegetable markets at dawn to the heritage houseboats that offer a stay unlike any other.",
@@ -58,7 +58,7 @@ export const destinations = [
         ]
     },
     {
-        id: "mughal-gardens",
+        id: "mughal-gardens", region: "Kashmir",
         title: "Mughal Gardens",
         subtitle: "Paradise on Earth",
         description: "A testament to the aesthetic brilliance of the Mughal empire, these terraced gardens—Nishat, Shalimar, and Chashme Shahi—are a symphony of fountains, flowers, and Chinar trees. Built against the backdrop of the Zabarwan range, they offer panoramic views of Dal Lake. The geometric layouts, cascading water channels, and blooming flowerbeds create a paradise-like atmosphere perfect for leisurely strolls.",
@@ -76,7 +76,7 @@ export const destinations = [
         ]
     },
     {
-        id: "shankaracharya-temple",
+        id: "shankaracharya-temple", region: "Kashmir",
         title: "Shankaracharya Temple",
         subtitle: "Throne of Solomon",
         description: "Perched atop the Shankaracharya Hill (Takht-e-Suleiman), this ancient stone temple dedicated to Lord Shiva dates back to 200 BC using massive stone blocks. A climb of 243 steps rewards visitors with spiritual solace and a breathtaking 360-degree view of Srinagar city, the winding Jhelum River, and the shimmering Dal Lake below.",
@@ -94,7 +94,7 @@ export const destinations = [
         ]
     },
     {
-        id: "hazratbal-shrine",
+        id: "hazratbal-shrine", region: "Kashmir",
         title: "Hazratbal Shrine",
         subtitle: "Majestic Dargah",
         description: "The Hazratbal Shrine, with its pristine white marble dome and minaret, is the holiest Muslim shrine in Kashmir, housing the Moi-e-Muqaddas (Holy Relic) of Prophet Muhammad. Located on the western banks of Dal Lake, its reflection in the water and the flock of pigeons in its courtyard create a scene of profound peace and spiritual reverence.",
@@ -111,7 +111,7 @@ export const destinations = [
         ]
     },
     {
-        id: "nigeen-lake",
+        id: "nigeen-lake", region: "Kashmir",
         title: "Nigeen Lake",
         subtitle: "Gem of Kashmir",
         description: "Often referred to as the 'Jewel in the Ring', Nigeen Lake is a serene sister to Dal Lake, connected by a narrow causeway. Surrounded by willow and poplar trees, it offers a quieter, more secluded experience. It is ideal for swimming, water skiing, and staying in luxury houseboats away from the hustle and bustle.",
@@ -128,7 +128,7 @@ export const destinations = [
         ]
     },
     {
-        id: "pari-mahal",
+        id: "pari-mahal", region: "Kashmir",
         title: "Pari Mahal",
         subtitle: "Palace of Fairies",
         description: "The 'Palace of Fairies' is a seven-terraced garden perched high above the Royal Spring. Built in the mid-1600s by Prince Dara Shikoh as a library and observatory, it represents a unique blend of Islamic architecture and landscape gardening. The illuminated ruins at night offer a hauntingly beautiful view of the glittering city lights below.",
@@ -145,7 +145,7 @@ export const destinations = [
         ]
     },
     {
-        id: "gulmarg",
+        id: "gulmarg", region: "Kashmir",
         title: "Gulmarg",
         subtitle: "Meadow of Flowers",
         description: "Gulmarg is a world-renowned ski destination and a summer paradise. It is famous for housing one of the world's highest gondolas, which takes you up to Apharwat Peak for breathtaking panoramic views of the Himalayas. In winter, it becomes India's premier skiing hub with powder snow slopes. In summer, the valley is carpeted with vibrant wildflowers and lupines, and its legendary 18-hole golf course—the highest green golf course in the world—attracts enthusiasts from across the globe.",
@@ -163,7 +163,7 @@ export const destinations = [
         ]
     },
     {
-        id: "pahalgam",
+        id: "pahalgam", region: "Kashmir",
         title: "Pahalgam",
         subtitle: "Valley of Shepherds",
         description: "Pahalgam is a postcard-perfect valley known for its lush pine forests, gushing Lidder River, and sprawling meadows. Originally a shepherd's village, it has evolved into a premier hill station that serves as the base camp for the Amarnath Yatra. Visitors can explore the cinematic Betaab Valley, the pristine Aru Valley, and the mini-Switzerland of Baisaran. Whether you want to enjoy a riverside picnic, go horse riding through the woods, or simply relax in luxury resorts, Pahalgam offers the perfect blend of relaxation and adventure.",
@@ -181,7 +181,7 @@ export const destinations = [
         ]
     },
     {
-        id: "sonamarg",
+        id: "sonamarg", region: "Kashmir",
         title: "Sonamarg",
         subtitle: "Meadow of Gold",
         description: "Sonamarg, translating to 'Meadow of Gold', is a mesmerizing hill station located on the Srinagar-Ladakh highway. As the gateway to Ladakh, it boasts imposing glaciers like Thajiwas, accessible by pony rides, and flower-laden alpine meadows. The Sindh River flows powerfully through the valley, making it a hotspot for trout fishing and white-water rafting. In winter, it transforms into a snow-white wonderland, and in summer, it serves as the base for the holy Amarnath Yatra and numerous high-altitude treks.",
@@ -199,7 +199,7 @@ export const destinations = [
         ]
     },
     {
-        id: "yusmarg",
+        id: "yusmarg", region: "Kashmir",
         title: "Yusmarg",
         subtitle: "Meadow of Jesus",
         description: "Yusmarg, or the 'Meadow of Jesus', is an idyllic grassy meadow surrounded by dense pine forests and snow-clad peaks. Less commercialized than other hill stations, it offers pristine trails for trekking and horse riding. The Doodh Ganga river flows through it, its frothy white waters adding to the mystical charm of this quiet retreat.",
@@ -217,7 +217,7 @@ export const destinations = [
         ]
     },
     {
-        id: "doodhpathri",
+        id: "doodhpathri", region: "Kashmir",
         title: "Doodhpathri",
         subtitle: "Valley of Milk",
         description: "Literally translating to 'Valley of Milk', Doodhpathri is a hidden gem where the streams flow so fast they appear milky white. lush green meadows gently undulating against a backdrop of jagged peaks make it a perfect picnic spot. It remains relatively untouched by mass tourism, offering pure air and tranquility.",
@@ -235,7 +235,7 @@ export const destinations = [
         ]
     },
     {
-        id: "gurez",
+        id: "gurez", region: "Kashmir",
         title: "Gurez Valley",
         subtitle: "The Hidden Paradise",
         description: "Gurez Valley is Kashmir's best-kept secret, an offbeat paradise located near the Line of Control. Dominated by the majestic Habba Khatoon Peak, this valley remains cut off from the world in winter, preserving its pristine beauty and unique Dard-Shin culture. The Kishanganga River flows through lush green meadows and traditional wooden villages, offering a peaceful retreat far from the tourist crowds. It is the perfect destination for those seeking solitude, untouched nature, and authentic rural experiences.",
@@ -253,7 +253,7 @@ export const destinations = [
         ]
     },
     {
-        id: "aru-valley",
+        id: "aru-valley", region: "Kashmir",
         title: "Aru Valley",
         subtitle: "Gateway to the Lakes",
         description: "Aru Valley is a pristine scenic village situated 12 km from Pahalgam, serving as a base camp for treks to the Kolahoi Glacier and Tarsar Marsar lakes. Its rolling meadows, dotted with tribal huts and grazing sheep, look like they've been lifted straight out of a Heidi story. It's a haven for peace lovers and adventure enthusiasts alike.",
@@ -268,13 +268,199 @@ export const destinations = [
             { title: "Tarsar Lake", desc: "Stunning alpine lake accessible by trek." },
             { title: "Kolahoi Glacier", desc: "Majestic glacier trek starting point." },
             { title: "Local Homestays", desc: "Experience authentic rural Kashmiri life." }
-        ]
+        ],
+        region: "Kashmir"
+    },
+    // New Kashmir Destinations
+    {
+        id: "bungus-valley",
+        title: "Bungus Valley",
+        subtitle: "The Unexplored Eden",
+        description: "Bungus Valley is a pristine biosphere reserve located in Kupwara district. It is a hidden gem with lush green meadows, dense forests, and crystal clear streams. The valley is known for its biodiversity and tranquility.",
+        image: "/images/placeholder-bungus.jpg",
+        stats: { altitude: "3,000 m", bestTime: "May - Sep", distance: "90 km from Srinagar" },
+        attractions: [
+            { title: "Biosphere Reserve", desc: "Rich flora and fauna." },
+            { title: "Meadows", desc: "Vast green pastures." }
+        ],
+        region: "Kashmir"
+    },
+    {
+        id: "wular-lake",
+        title: "Wular Lake",
+        subtitle: "Asia's Largest Freshwater Lake",
+        description: "Wular Lake is one of the largest fresh water lakes in Asia. It plays a significant role in the hydrographic system of the Kashmir Valley by acting as a huge absorption basin for floodwaters.",
+        image: "/images/placeholder-wular.jpg",
+        stats: { altitude: "1,580 m", bestTime: "Year Round", distance: "60 km from Srinagar" },
+        attractions: [
+            { title: "Boating", desc: "Explore the vast lake." },
+            { title: "Bird Watching", desc: "Home to many migratory birds." }
+        ],
+        region: "Kashmir"
+    },
+    {
+        id: "verinag",
+        title: "Verinag",
+        subtitle: "Source of Jhelum",
+        description: "Verinag is a tourist resort and mugal garden in Anantnag district. It is famous for its octagonal spring and a beautiful garden built by Emperor Jahangir.",
+        image: "/images/placeholder-verinag.jpg",
+        stats: { altitude: "1,876 m", bestTime: "Apr - Oct", distance: "78 km from Srinagar" },
+        attractions: [
+            { title: "Mughal Garden", desc: "Beautifully laid out garden." },
+            { title: "Verinag Spring", desc: "Major source of River Jhelum." }
+        ],
+        region: "Kashmir"
+    },
+    {
+        id: "aharbal",
+        title: "Aharbal",
+        subtitle: "Niagara of Kashmir",
+        description: "Aharbal is known for its waterfall, Aharbal Falls, where the Veshu River falls noisily 25 metres and 7 metres through a narrow gorge of granite boulders.",
+        image: "/images/placeholder-aharbal.jpg",
+        stats: { altitude: "2,266 m", bestTime: "May - Oct", distance: "75 km from Srinagar" },
+        attractions: [
+            { title: "Aharbal Waterfall", desc: "Stunning waterfall." },
+            { title: "Trekking", desc: "Base for Kounsarnag trek." }
+        ],
+        region: "Kashmir"
+    },
+    {
+        id: "dakshum",
+        title: "Dakshum",
+        subtitle: "Wildlife Sanctuary",
+        description: "Dakshum is a beautiful picnic spot, situated in the middle of Bhringi River and rich vegetation. It is also a wildlife sanctuary home to trout fish, musk deer, and leopards.",
+        image: "/images/placeholder-dakshum.jpg",
+        stats: { altitude: "2,438 m", bestTime: "Apr - Sep", distance: "85 km from Srinagar" },
+        attractions: [
+            { title: "Wildlife Sanctuary", desc: "Spot exotic wildlife." },
+            { title: "Trout Fishing", desc: "Famous for fishing." }
+        ],
+        region: "Kashmir"
+    },
+    {
+        id: "dachigam",
+        title: "Dachigam National Park",
+        subtitle: "Home of the Hangul",
+        description: "Dachigam National Park is located 22 kilometers from Srinagar. The park is famous for being the home of the Hangul, or Kashmir stag.",
+        image: "/images/placeholder-dachigam.jpg",
+        stats: { altitude: "1,700-4,300 m", bestTime: "May - Aug", distance: "22 km from Srinagar" },
+        attractions: [
+            { title: "Wildlife Safari", desc: "Spot the Kashmir Stag (Hangul)." },
+            { title: "Nature Trails", desc: "Beautiful hiking paths." }
+        ],
+        region: "Kashmir"
+    },
+    {
+        id: "sinthan-top",
+        title: "Sinthan Top",
+        subtitle: "Mountain Pass",
+        description: "Sinthan Top is a hill station located between South Kashmir's Breng Valley and Kishtwar. It is popular for its panoramic views and year-round snow.",
+        image: "/images/placeholder-sinthan.jpg",
+        stats: { altitude: "3,748 m", bestTime: "Apr - Sep", distance: "130 km from Srinagar" },
+        attractions: [
+            { title: "Snow Activities", desc: "Snow available most of the year." },
+            { title: "Panoramic Views", desc: "360 degree mountain views." }
+        ],
+        region: "Kashmir"
+    },
+    {
+        id: "razdan-pass",
+        title: "Razdan Pass",
+        subtitle: "Gateway to Gurez",
+        description: "Razdan Pass connects the Gurez Valley to the rest of Kashmir. It offers spectacular views of the surrounding mountains and valleys.",
+        image: "/images/placeholder-razdan.jpg",
+        stats: { altitude: "3,557 m", bestTime: "May - Oct", distance: "76 km from Srinagar" },
+        attractions: [
+            { title: "Scenic Drive", desc: "Breathtaking mountain road." },
+            { title: "Viewpoints", desc: "Stunning valley views." }
+        ],
+        region: "Kashmir"
+    },
+    // Ladakh Destinations
+    {
+        id: "zanskar",
+        title: "Zanskar Valley",
+        subtitle: "The Isolated Kingdom",
+        description: "Zanskar is a sub-district or tehsil of the Kargil district. It is famous for its high breathtaking mountains and the Zanskar River.",
+        image: "/images/placeholder-zanskar.jpg",
+        stats: { altitude: "3,500-7,000 m", bestTime: "Jun - Sep", distance: "460 km from Leh" },
+        attractions: [
+            { title: "Phugtal Monastery", desc: "Unique cave monastery." },
+            { title: "Frozen River Trek", desc: "Famous Chadar Trek in winter." }
+        ],
+        region: "Ladakh"
+    },
+    {
+        id: "umling-la",
+        title: "Umling La Pass",
+        subtitle: "Highest Motorable Road",
+        description: "Umling La is currently the highest motorable road in the world, standing at an altitude of 19,024 feet. It is a must-visit for adventure bikers.",
+        image: "/images/placeholder-umling.jpg",
+        stats: { altitude: "5,798 m", bestTime: "Jun - Sep", distance: "105 km from Hanle" },
+        attractions: [
+            { title: "Highest Road", desc: "World Record holder." },
+            { title: "Adventure Biking", desc: "Ultimate challenge for bikers." }
+        ],
+        region: "Ladakh"
+    },
+    {
+        id: "kaksang-la",
+        title: "Kaksang La",
+        subtitle: "High Mountain Pass",
+        description: "Kaksang La is a high mountain pass in Ladakh, offering stunning views and a challenging drive. It features serene lakes near the top.",
+        image: "/images/placeholder-kaksang.jpg",
+        stats: { altitude: "5,438 m", bestTime: "Jun - Sep", distance: "Near Mahe" },
+        attractions: [
+            { title: "Twin Lakes", desc: "Beautiful high altitude lakes." },
+            { title: "Scenic Drive", desc: "Less crowded route." }
+        ],
+        region: "Ladakh"
+    },
+    {
+        id: "khardung-la",
+        title: "Khardung La Pass",
+        subtitle: "Gateway to Nubra",
+        description: "Khardung La is a mountain pass in the Ladakh region. It is the gateway to the Shyok and Nubra valleys and is historically significant.",
+        image: "/images/placeholder-khardungla.jpg",
+        stats: { altitude: "5,359 m", bestTime: "Year Round", distance: "40 km from Leh" },
+        attractions: [
+            { title: "Photo Point", desc: "Classic photo op at the top." },
+            { title: "Souvenir Shop", desc: "Highest souvenir shop." }
+        ],
+        region: "Ladakh"
+    },
+    {
+        id: "tso-moriri",
+        title: "Tso Moriri",
+        subtitle: "Mountain Lake",
+        description: "Tso Moriri is a lake in the Changthang Plateau in Ladakh. It is the largest of the high altitude lakes entirely within India.",
+        image: "/images/placeholder-tsomoriri.jpg",
+        stats: { altitude: "4,522 m", bestTime: "Jun - Sep", distance: "220 km from Leh" },
+        attractions: [
+            { title: "Bird Watching", desc: "Migratory birds." },
+            { title: "Korzok Monastery", desc: "Ancient monastery near the lake." }
+        ],
+        region: "Ladakh"
+    },
+    {
+        id: "lamayuru",
+        title: "Lamayuru",
+        subtitle: "Moonland of Ladakh",
+        description: "Lamayuru is known for its 'Moonland' like landscapes and the Lamayuru Monastery, one of the oldest and largest in Ladakh.",
+        image: "/images/placeholder-lamayuru.jpg",
+        stats: { altitude: "3,510 m", bestTime: "Apr - Oct", distance: "127 km from Leh" },
+        attractions: [
+            { title: "Lamayuru Monastery", desc: "Ancient Buddhist monastery." },
+            { title: "Moonland", desc: "Unique geological formations." }
+        ],
+        region: "Ladakh"
     }
 ];
 
 export const packages = [
     {
         id: "romantic-kashmir-honeymoon",
+        region: "Kashmir",
         title: "Romantic Kashmir Honeymoon",
         tagline: "The Perfect Honeymoon Getaway in Paradise",
         price: 35999,
@@ -379,6 +565,7 @@ export const packages = [
     },
     {
         id: "kashmir-family-adventure",
+        region: "Kashmir",
         title: "Kashmir Family Adventure",
         tagline: "Create Unforgettable Family Memories",
         price: 28999,
@@ -480,6 +667,7 @@ export const packages = [
     },
     {
         id: "ladakh-adventure-expedition",
+        region: "Ladakh",
         title: "Ladakh Adventure Expedition",
         tagline: "Conquer the Highest Passes on Earth",
         price: 54999,
@@ -612,7 +800,498 @@ export const packages = [
         ]
     },
     {
+        id: "ladakh-monastery-trail",
+        region: "Ladakh",
+        title: "Ladakh Monastery Trail",
+        tagline: "Ancient Wisdom in the Land of Lamas",
+        price: 42999,
+        originalPrice: 54999,
+        days: 8,
+        nights: 7,
+        rating: 4.8,
+        reviews: 76,
+        image: "/images/placeholder-lamayuru.jpg",
+        gallery: [
+            "/images/Leh Ladakh.jpg",
+            "/images/placeholder-lamayuru.jpg",
+            "/images/placeholder-tsomoriri.jpg"
+        ],
+        category: "Spiritual",
+        groupSize: "4-12 People",
+        difficulty: "Moderate",
+        overview: "Embark on a spiritual odyssey through Ladakh's ancient Buddhist monasteries. From the hilltop gompas of Thiksey and Hemis to the remote cave monastery of Phugtal, this journey takes you through centuries of Buddhist heritage, offering meditation sessions, monk interactions, and the profound peace of the Himalayan highlands.",
+        highlights: ["Thiksey Monastery Sunrise", "Hemis Festival (seasonal)", "Lamayuru Moonland", "Alchi Ancient Murals", "Meditation Sessions", "Monk Interactions"],
+        inclusions: [
+            "7 Nights accommodation in monasteries and hotels",
+            "All meals (vegetarian)",
+            "Private vehicle with experienced driver",
+            "English-speaking Buddhist guide",
+            "All monastery entrance fees",
+            "Meditation session with resident monks",
+            "Inner Line Permits",
+            "Oxygen support"
+        ],
+        exclusions: [
+            "Flights to/from Leh",
+            "Personal expenses and donations",
+            "Travel insurance",
+            "Camera fees at monasteries",
+            "Personal meditation gear"
+        ],
+        route: ["Leh", "Alchi", "Lamayuru", "Leh", "Hemis", "Thiksey", "Leh"],
+        itinerary: [
+            {
+                day: 1,
+                title: "Arrival in Leh - Gateway to Buddhism",
+                desc: "Arrive at Leh Airport and transfer to your hotel. Spend the day acclimatizing to the high altitude. Light walking to Shanti Stupa for sunset prayers and panoramic views. Introduction to Ladakhi Buddhist culture by your guide.",
+                highlights: ["Airport pickup", "Acclimatization day", "Shanti Stupa sunset", "Buddhist culture intro"],
+                meals: "Lunch & Dinner",
+                accommodation: "Hotel in Leh",
+                timelineImage: "/images/Leh Ladakh.jpg"
+            },
+            {
+                day: 2,
+                title: "Leh Monasteries - Thiksey & Shey",
+                desc: "Early morning visit to Thiksey Monastery for the morning prayer ceremony - a magical experience as chants fill the cold mountain air. Explore the Maitreya Buddha and museum. Visit Shey Palace and its giant Buddha statue. Afternoon at Rancho School (3 Idiots location) and Stok Palace Museum.",
+                highlights: ["Morning prayers at Thiksey", "Giant Maitreya Buddha", "Shey Palace", "Stok Museum"],
+                meals: "Breakfast, Lunch & Dinner",
+                accommodation: "Hotel in Leh",
+                timelineImage: "/images/Shankra Charya temple.jpg"
+            },
+            {
+                day: 3,
+                title: "Journey to Lamayuru via Alchi",
+                desc: "Drive towards Lamayuru, stopping at the 1000-year-old Alchi Monastery, famous for its ancient murals and unique Kashmiri-influenced art. Continue through the dramatic Moonland landscape to Lamayuru, one of Ladakh's oldest and most dramatically located monasteries. Evening prayer session with monks.",
+                highlights: ["Alchi ancient murals", "Moonland landscape", "Lamayuru Monastery", "Evening prayers"],
+                meals: "Breakfast, Lunch & Dinner",
+                accommodation: "Guesthouse at Lamayuru",
+                distance: "160 km (5-6 hours)",
+                timelineImage: "/images/placeholder-lamayuru.jpg"
+            },
+            {
+                day: 4,
+                title: "Lamayuru - Day of Meditation",
+                desc: "Spend a contemplative day at Lamayuru. Participate in guided meditation sessions with resident monks. Learn about the Drikung Kagyu order of Tibetan Buddhism. Explore the monastery's caves where ancient monks meditated. Optional hike to nearby hermitage caves.",
+                highlights: ["Guided meditation", "Monk interactions", "Cave exploration", "Monastery history"],
+                meals: "Breakfast, Lunch & Dinner",
+                accommodation: "Guesthouse at Lamayuru",
+                timelineImage: "/images/placeholder-lamayuru.jpg"
+            },
+            {
+                day: 5,
+                title: "Lamayuru to Leh via Likir & Basgo",
+                desc: "Return towards Leh with stops at Likir Monastery, home to a giant golden Maitreya Buddha, and Basgo ruins with its ancient frescoes. Visit the magnetic hill and Sangam confluence of Indus and Zanskar rivers. Reach Leh by evening.",
+                highlights: ["Likir Monastery", "Basgo Palace ruins", "Magnetic Hill", "Sangam confluence"],
+                meals: "Breakfast, Lunch & Dinner",
+                accommodation: "Hotel in Leh",
+                distance: "130 km (4-5 hours)",
+                timelineImage: "/images/Leh Ladakh.jpg"
+            },
+            {
+                day: 6,
+                title: "Hemis Monastery - Largest in Ladakh",
+                desc: "Visit Hemis Monastery, Ladakh's largest and wealthiest monastery. Explore its museum housing ancient thangkas, Buddha statues, and sacred objects. If visiting during the Hemis Festival (June/July), witness the spectacular masked dances. Afternoon visit to Stakna and Matho monasteries.",
+                highlights: ["Hemis Monastery", "Ancient thangkas", "Stakna Monastery", "Matho Oracle tradition"],
+                meals: "Breakfast, Lunch & Dinner",
+                accommodation: "Hotel in Leh",
+                distance: "45 km (round trip)",
+                timelineImage: "/images/Hazratbal Shrine.jpg"
+            },
+            {
+                day: 7,
+                title: "Spituk & Phyang - Final Blessings",
+                desc: "Morning visit to Spituk Monastery overlooking the Indus Valley. Continue to Phyang Monastery with its sacred tangkha displayed during the annual festival. Afternoon free for shopping Buddhist artifacts or revisiting favorite spots. Farewell dinner with traditional Ladakhi music.",
+                highlights: ["Spituk Monastery", "Phyang Monastery", "Artifact shopping", "Farewell dinner"],
+                meals: "Breakfast, Lunch & Dinner",
+                accommodation: "Hotel in Leh",
+                timelineImage: "/images/Parimahal.jpg"
+            },
+            {
+                day: 8,
+                title: "Departure with Inner Peace",
+                desc: "After a leisurely breakfast and final meditation, transfer to Leh Airport. Carry home not just photographs, but a deeper understanding of Buddhist philosophy and the serenity of the Himalayas. Julley!",
+                highlights: ["Morning meditation", "Airport transfer", "Spiritual memories", "Julley!"],
+                meals: "Breakfast",
+                timelineImage: "/images/Leh Ladakh.jpg"
+            }
+        ]
+    },
+    {
+        id: "ladakh-lakes-explorer",
+        region: "Ladakh",
+        title: "Ladakh Lakes Explorer",
+        tagline: "Turquoise Treasures of the High Himalaya",
+        price: 48999,
+        originalPrice: 62999,
+        days: 9,
+        nights: 8,
+        rating: 4.9,
+        reviews: 134,
+        image: "/images/placeholder-tsomoriri.jpg",
+        gallery: [
+            "/images/Leh Ladakh.jpg",
+            "/images/placeholder-tsomoriri.jpg",
+            "/images/Nigeen Lake.jpg"
+        ],
+        category: "Adventure",
+        groupSize: "4-10 People",
+        difficulty: "Challenging",
+        overview: "Discover the magical high-altitude lakes of Ladakh - from the legendary Pangong Tso that changes colors through the day to the pristine Tso Moriri, a hidden gem rarely visited by tourists. Camp under star-filled skies, witness incredible wildlife, and experience landscapes that seem from another planet.",
+        highlights: ["Pangong Lake Camping", "Tso Moriri Exploration", "Tso Kar Salt Lake", "Changthang Wildlife", "Khardung La Pass", "Stargazing"],
+        inclusions: [
+            "8 Nights accommodation (hotels + luxury camps)",
+            "All meals during the trip",
+            "4x4 vehicle with experienced driver",
+            "Inner Line Permits for all restricted areas",
+            "Camping equipment and bonfire",
+            "Oxygen cylinder backup",
+            "First aid and emergency support"
+        ],
+        exclusions: [
+            "Flights to/from Leh",
+            "Personal cold-weather gear",
+            "Travel insurance (mandatory)",
+            "Personal expenses",
+            "Camera fees",
+            "Tips and gratuities"
+        ],
+        route: ["Leh", "Khardung La", "Pangong", "Tso Moriri", "Tso Kar", "Leh"],
+        itinerary: [
+            {
+                day: 1,
+                title: "Arrival in Leh - Acclimatization",
+                desc: "Arrive at Leh and transfer to your hotel. Complete rest day for acclimatization. Evening walk to Leh Market and Shanti Stupa. Briefing about the lake expedition ahead.",
+                highlights: ["Airport pickup", "Rest and acclimatization", "Shanti Stupa", "Trip briefing"],
+                meals: "Lunch & Dinner",
+                accommodation: "Hotel in Leh",
+                timelineImage: "/images/Leh Ladakh.jpg"
+            },
+            {
+                day: 2,
+                title: "Leh Local Exploration",
+                desc: "Continue acclimatization with gentle sightseeing. Visit Leh Palace, Hall of Fame museum, and Sangam confluence. Preparation for the high-altitude lakes ahead.",
+                highlights: ["Leh Palace", "Hall of Fame", "Sangam confluence", "Gear check"],
+                meals: "Breakfast, Lunch & Dinner",
+                accommodation: "Hotel in Leh",
+                timelineImage: "/images/Leh Ladakh.jpg"
+            },
+            {
+                day: 3,
+                title: "Leh to Pangong via Khardung La & Chang La",
+                desc: "Epic journey crossing two of the world's highest passes! Cross Khardung La (18,380 ft), descend to Nubra Valley briefly, then ascend Chang La (17,688 ft) to reach the legendary Pangong Lake. First glimpse of the magical blue waters is unforgettable!",
+                highlights: ["Khardung La crossing", "Chang La Pass", "First Pangong view", "Lakeside camping"],
+                meals: "Breakfast, Lunch & Dinner",
+                accommodation: "Luxury Camp at Pangong",
+                distance: "160 km (7-8 hours)",
+                timelineImage: "/images/Leh Ladakh.jpg"
+            },
+            {
+                day: 4,
+                title: "Pangong Lake - Full Day Experience",
+                desc: "Spend the entire day at Pangong, watching the lake change colors from deep blue to turquoise to green. Visit the famous 3 Idiots point, walk along the shore, and spot marmots. Optional kayaking. Night camping with incredible stargazing.",
+                highlights: ["Lake color changes", "3 Idiots point", "Marmot spotting", "Stargazing night"],
+                meals: "Breakfast, Lunch & Dinner",
+                accommodation: "Luxury Camp at Pangong",
+                timelineImage: "/images/Nigeen Lake.jpg"
+            },
+            {
+                day: 5,
+                title: "Pangong to Tso Moriri via Chushul",
+                desc: "Journey through the remote Changthang region to Tso Moriri. This rarely-traveled route passes through the village of Chushul near the Line of Actual Control. Spot Tibetan wild ass (Kiang), blue sheep, and if lucky, snow leopards!",
+                highlights: ["Remote Changthang", "Wildlife spotting", "Tso Moriri arrival", "Pristine wilderness"],
+                meals: "Breakfast, Lunch & Dinner",
+                accommodation: "Camp at Tso Moriri",
+                distance: "220 km (8-9 hours)",
+                timelineImage: "/images/placeholder-tsomoriri.jpg"
+            },
+            {
+                day: 6,
+                title: "Tso Moriri - The Hidden Gem",
+                desc: "Explore the pristine Tso Moriri, far less touristy than Pangong. Visit Korzok village and its 400-year-old monastery. Walk along the lake watching migratory birds including bar-headed geese and black-necked cranes. Experience the profound silence of the Changthang.",
+                highlights: ["Korzok Monastery", "Bird watching", "Village walk", "Mountain reflections"],
+                meals: "Breakfast, Lunch & Dinner",
+                accommodation: "Camp at Tso Moriri",
+                timelineImage: "/images/placeholder-tsomoriri.jpg"
+            },
+            {
+                day: 7,
+                title: "Tso Moriri to Tso Kar",
+                desc: "Drive to Tso Kar, the 'White Lake' named for its salt deposits. This high-altitude salt lake is home to Tibetan wild ass herds and numerous bird species. The stark white shoreline against blue waters creates surreal photographs.",
+                highlights: ["Tso Kar salt lake", "Kiang herds", "Salt flats", "Wildlife photography"],
+                meals: "Breakfast, Lunch & Dinner",
+                accommodation: "Camp at Tso Kar",
+                distance: "50 km (2-3 hours)",
+                timelineImage: "/images/Leh Ladakh.jpg"
+            },
+            {
+                day: 8,
+                title: "Tso Kar to Leh via Tanglang La",
+                desc: "Return to Leh crossing Tanglang La Pass (17,480 ft), one of the highest motorable passes. Stop at the beautiful Debring plains and More Plains. Arrive in Leh for a well-deserved rest and farewell dinner.",
+                highlights: ["Tanglang La crossing", "More Plains", "Farewell dinner", "Certificate ceremony"],
+                meals: "Breakfast, Lunch & Dinner",
+                accommodation: "Hotel in Leh",
+                distance: "180 km (6-7 hours)",
+                timelineImage: "/images/Leh Ladakh.jpg"
+            },
+            {
+                day: 9,
+                title: "Departure - Lake Memories",
+                desc: "Morning at leisure. Transfer to Leh Airport with memories of three magical lakes, countless stars, and the raw beauty of Ladakh's high-altitude wilderness.",
+                highlights: ["Leisure morning", "Airport transfer", "Lake memories forever"],
+                meals: "Breakfast",
+                timelineImage: "/images/Leh Ladakh.jpg"
+            }
+        ]
+    },
+    {
+        id: "ladakh-bike-expedition",
+        region: "Ladakh",
+        title: "Ladakh Bike Expedition",
+        tagline: "Ride the Roof of the World",
+        price: 39999,
+        originalPrice: 52999,
+        days: 10,
+        nights: 9,
+        rating: 5.0,
+        reviews: 198,
+        image: "/images/indian 2.jpg",
+        gallery: [
+            "/images/Leh Ladakh.jpg",
+            "/images/indian 2.jpg",
+            "/images/placeholder-khardungla.jpg"
+        ],
+        category: "Adventure",
+        groupSize: "6-15 Riders",
+        difficulty: "Challenging",
+        overview: "The ultimate bucket-list motorcycle expedition! Ride Royal Enfields through the world's highest motorable roads, conquer legendary passes like Khardung La and Umling La, camp beside magical lakes, and earn bragging rights that last a lifetime. This is not just a trip - it's a rite of passage.",
+        highlights: ["Khardung La (18,380 ft)", "Umling La - World's Highest Road", "Nubra Sand Dunes", "Pangong Lake", "Royal Enfield 500cc", "Biker Brotherhood"],
+        inclusions: [
+            "Royal Enfield 500cc motorcycle",
+            "All fuel costs",
+            "9 Nights accommodation (hotels + camps)",
+            "All meals",
+            "Backup vehicle with mechanic",
+            "Inner Line Permits",
+            "First aid and oxygen",
+            "Experienced ride captain"
+        ],
+        exclusions: [
+            "Flights to/from Leh",
+            "Riding gear (can be rented)",
+            "Travel insurance (mandatory)",
+            "Personal expenses",
+            "Alcoholic beverages",
+            "Damage to motorcycle"
+        ],
+        route: ["Leh", "Khardung La", "Nubra", "Pangong", "Hanle", "Umling La", "Leh"],
+        itinerary: [
+            {
+                day: 1,
+                title: "Arrival & Bike Allocation",
+                desc: "Arrive in Leh and rest for acclimatization. Evening meet-and-greet with fellow riders. Bike allocation and safety briefing. Night in Leh.",
+                highlights: ["Airport pickup", "Rider meetup", "Bike allocation", "Safety briefing"],
+                meals: "Dinner",
+                accommodation: "Hotel in Leh",
+                timelineImage: "/images/Leh Ladakh.jpg"
+            },
+            {
+                day: 2,
+                title: "Acclimatization Ride - Local Leh",
+                desc: "Short acclimatization ride around Leh. Visit Shanti Stupa, Leh Palace, and nearby areas. Get comfortable with your bike at altitude. Important rest day before the big rides.",
+                highlights: ["Test ride", "Shanti Stupa", "Bike familiarization", "Team bonding"],
+                meals: "Breakfast, Lunch & Dinner",
+                accommodation: "Hotel in Leh",
+                distance: "30 km",
+                timelineImage: "/images/Leh Ladakh.jpg"
+            },
+            {
+                day: 3,
+                title: "Leh to Nubra via Khardung La",
+                desc: "THE DAY! Conquer Khardung La, one of the world's highest motorable passes at 18,380 ft. The switchbacks, thin air, and stunning views make this legendary. Descend into Nubra Valley and ride to Hunder for camel safari on sand dunes.",
+                highlights: ["Khardung La conquest", "Photo at summit", "Nubra Valley descent", "Bactrian camel ride"],
+                meals: "Breakfast, Lunch & Dinner",
+                accommodation: "Camp in Nubra",
+                distance: "120 km",
+                timelineImage: "/images/placeholder-khardungla.jpg"
+            },
+            {
+                day: 4,
+                title: "Nubra Exploration - Turtuk",
+                desc: "Ride to Turtuk, India's northernmost village. Experience unique Balti culture, taste apricots, and interact with warm locals. Return via Diskit Monastery with its giant Maitreya Buddha.",
+                highlights: ["Turtuk village", "Balti culture", "Diskit Monastery", "Giant Buddha statue"],
+                meals: "Breakfast, Lunch & Dinner",
+                accommodation: "Camp in Nubra",
+                distance: "170 km (round trip)",
+                timelineImage: "/images/Gurez Habba Khatoon.jpg"
+            },
+            {
+                day: 5,
+                title: "Nubra to Pangong via Shyok",
+                desc: "Adventure route via Shyok River! Cross multiple water streams, navigate rocky terrain, and witness raw Ladakhi landscapes. Arrive at Pangong Lake for sunset - the first view takes your breath away.",
+                highlights: ["Shyok river route", "Water crossings", "Pangong sunset", "Lakeside camping"],
+                meals: "Breakfast, Lunch & Dinner",
+                accommodation: "Camp at Pangong",
+                distance: "160 km",
+                timelineImage: "/images/Leh Ladakh.jpg"
+            },
+            {
+                day: 6,
+                title: "Pangong to Hanle",
+                desc: "Ride through the mesmerizing Changthang region to Hanle, home to India's highest astronomical observatory. The route is remote and challenging. Night stargazing at the observatory (subject to permission).",
+                highlights: ["Changthang ride", "Hanle Observatory", "Remote wilderness", "Stargazing"],
+                meals: "Breakfast, Lunch & Dinner",
+                accommodation: "Homestay in Hanle",
+                distance: "170 km",
+                timelineImage: "/images/Leh Ladakh.jpg"
+            },
+            {
+                day: 7,
+                title: "Hanle to Umling La - WORLD'S HIGHEST ROAD",
+                desc: "THE ULTIMATE ACHIEVEMENT! Ride to Umling La at 19,024 ft - the world's highest motorable road. The thin air, surreal landscape, and sense of achievement is indescribable. Return to Hanle as champions.",
+                highlights: ["Umling La conquest", "World record road", "Summit celebration", "Champion status"],
+                meals: "Breakfast, Lunch & Dinner",
+                accommodation: "Homestay in Hanle",
+                distance: "110 km (round trip)",
+                timelineImage: "/images/placeholder-umling.jpg"
+            },
+            {
+                day: 8,
+                title: "Hanle to Leh via Chumathang",
+                desc: "Return route via Chumathang hot springs. Stop for a relaxing dip in natural hot springs after days of riding. Cross Mahe Bridge and scenic plains back to Leh.",
+                highlights: ["Chumathang hot springs", "Scenic return", "Mahe Bridge", "Return to Leh"],
+                meals: "Breakfast, Lunch & Dinner",
+                accommodation: "Hotel in Leh",
+                distance: "250 km",
+                timelineImage: "/images/Leh Ladakh.jpg"
+            },
+            {
+                day: 9,
+                title: "Buffer Day & Celebration",
+                desc: "Buffer day for rest or exploring missed spots. Bike return and inspection. Evening celebration dinner with certificates, awards, and stories of the expedition.",
+                highlights: ["Rest day", "Bike return", "Awards ceremony", "Celebration dinner"],
+                meals: "Breakfast, Lunch & Dinner",
+                accommodation: "Hotel in Leh",
+                timelineImage: "/images/kashmiri wazwan.jpg"
+            },
+            {
+                day: 10,
+                title: "Departure - Legends Ride Home",
+                desc: "Say goodbye to fellow riders and the magical land of Ladakh. Transfer to airport with memories of conquering the world's highest roads. You're now part of the Ladakh Biking Brotherhood!",
+                highlights: ["Farewell", "Airport transfer", "Brotherhood forever", "Until next ride!"],
+                meals: "Breakfast",
+                timelineImage: "/images/Leh Ladakh.jpg"
+            }
+        ]
+    },
+    {
+        id: "ladakh-budget-explorer",
+        region: "Ladakh",
+        title: "Ladakh Budget Explorer",
+        tagline: "High Altitude, Low Budget",
+        price: 24999,
+        originalPrice: 34999,
+        days: 7,
+        nights: 6,
+        rating: 4.6,
+        reviews: 287,
+        image: "/images/Leh Ladakh.jpg",
+        gallery: [
+            "/images/Leh Ladakh.jpg",
+            "/images/placeholder-khardungla.jpg"
+        ],
+        category: "Budget",
+        groupSize: "6-12 People",
+        difficulty: "Moderate",
+        overview: "Experience the magic of Ladakh without breaking the bank! This carefully designed budget trip covers all major attractions - Khardung La, Nubra Valley, Pangong Lake, and ancient monasteries - with smart accommodation choices and group travel to keep costs low.",
+        highlights: ["Khardung La Pass", "Nubra Valley", "Pangong Lake", "Leh Monasteries", "Group Travel", "Value for Money"],
+        inclusions: [
+            "6 Nights accommodation (guesthouses + camps)",
+            "Daily breakfast and dinner",
+            "Shared tempo traveller/SUV",
+            "Inner Line Permits",
+            "All sightseeing as per itinerary",
+            "Experienced local guide"
+        ],
+        exclusions: [
+            "Flights to/from Leh",
+            "Lunch (approx ₹300-500/day)",
+            "Travel insurance",
+            "Personal expenses",
+            "Tips and gratuities",
+            "Any activities not mentioned"
+        ],
+        route: ["Leh", "Nubra", "Pangong", "Leh"],
+        itinerary: [
+            {
+                day: 1,
+                title: "Arrival & Rest",
+                desc: "Arrive in Leh and transfer to guesthouse. Complete rest day for acclimatization. Evening walk to Shanti Stupa.",
+                highlights: ["Airport pickup", "Rest day", "Shanti Stupa", "Group meetup"],
+                meals: "Dinner",
+                accommodation: "Guesthouse in Leh",
+                timelineImage: "/images/Leh Ladakh.jpg"
+            },
+            {
+                day: 2,
+                title: "Leh Sightseeing",
+                desc: "Visit Leh Palace, Shanti Stupa, Hall of Fame, and local markets. Gentle acclimatization while seeing major Leh attractions.",
+                highlights: ["Leh Palace", "Hall of Fame", "Local markets", "Acclimatization"],
+                meals: "Breakfast & Dinner",
+                accommodation: "Guesthouse in Leh",
+                timelineImage: "/images/Leh Ladakh.jpg"
+            },
+            {
+                day: 3,
+                title: "Leh to Nubra via Khardung La",
+                desc: "Cross the legendary Khardung La pass. Descend to Nubra Valley and enjoy camel safari at Hunder sand dunes (on own cost).",
+                highlights: ["Khardung La", "Nubra Valley", "Sand dunes", "Camel safari"],
+                meals: "Breakfast & Dinner",
+                accommodation: "Camp in Nubra",
+                distance: "120 km",
+                timelineImage: "/images/placeholder-khardungla.jpg"
+            },
+            {
+                day: 4,
+                title: "Nubra to Pangong",
+                desc: "Drive to Pangong Lake via the scenic Shyok route. Arrive at the magical lake by afternoon for sunset views.",
+                highlights: ["Shyok route", "Pangong arrival", "Sunset views", "Lakeside camping"],
+                meals: "Breakfast & Dinner",
+                accommodation: "Camp at Pangong",
+                distance: "160 km",
+                timelineImage: "/images/Leh Ladakh.jpg"
+            },
+            {
+                day: 5,
+                title: "Pangong to Leh",
+                desc: "Morning at Pangong for photos. Return to Leh via Chang La pass, stopping at Hemis Monastery and Thiksey Monastery.",
+                highlights: ["Morning at Pangong", "Chang La", "Hemis Monastery", "Thiksey Monastery"],
+                meals: "Breakfast & Dinner",
+                accommodation: "Guesthouse in Leh",
+                distance: "160 km",
+                timelineImage: "/images/Hazratbal Shrine.jpg"
+            },
+            {
+                day: 6,
+                title: "Day Trip - Sangam & More",
+                desc: "Visit Magnetic Hill, Sangam confluence, Gurudwara Pathar Sahib, and Spituk Monastery. Shopping time at Leh markets.",
+                highlights: ["Magnetic Hill", "Sangam", "Pathar Sahib", "Shopping"],
+                meals: "Breakfast & Dinner",
+                accommodation: "Guesthouse in Leh",
+                timelineImage: "/images/Parimahal.jpg"
+            },
+            {
+                day: 7,
+                title: "Departure",
+                desc: "Transfer to airport with affordable memories of incredible Ladakh.",
+                highlights: ["Airport transfer", "Budget memories", "Julley!"],
+                meals: "Breakfast",
+                timelineImage: "/images/Leh Ladakh.jpg"
+            }
+        ]
+    },
+    {
         id: "spiritual-kashmir-pilgrimage",
+        region: "Kashmir",
         title: "Spiritual Kashmir Pilgrimage",
         tagline: "A Journey of Faith & Inner Peace",
         price: 24999,
@@ -695,6 +1374,7 @@ export const packages = [
     },
     {
         id: "kashmir-great-lakes-trek",
+        region: "Kashmir",
         title: "Kashmir Great Lakes Trek",
         tagline: "Alpine Lakes & Himalayan Meadows",
         price: 18999,
@@ -811,6 +1491,7 @@ export const packages = [
     },
     {
         id: "winter-white-kashmir",
+        region: "Kashmir",
         title: "Winter White Kashmir",
         tagline: "Snow, Skiing & Cozy Firesides",
         price: 32999,
@@ -902,6 +1583,7 @@ export const packages = [
     },
     {
         id: "budget-kashmir-explorer",
+        region: "Kashmir",
         title: "Budget Kashmir Explorer",
         tagline: "Experience Paradise Without Breaking the Bank",
         price: 15999,
@@ -985,6 +1667,7 @@ export const packages = [
     },
     {
         id: "kashmir-photography-expedition",
+        region: "Kashmir",
         title: "Kashmir Photography Expedition",
         tagline: "Capture Paradise Through Your Lens",
         price: 45999,
@@ -1085,6 +1768,7 @@ export const packages = [
     },
     {
         id: "senior-citizen-kashmir",
+        region: "Kashmir",
         title: "Senior Citizen Kashmir Special",
         tagline: "Comfortable & Relaxed Exploration of Paradise",
         price: 29999,
@@ -1231,3 +1915,158 @@ export const experiences = [
         icon: "Footprints"
     }
 ];
+
+// Wedding Venues & Premium Hotels
+export const weddingVenues = [
+    {
+        id: "lalit-grand-palace",
+        name: "The LaLiT Grand Palace",
+        type: "Heritage Palace Hotel",
+        location: "Gupkar Road, Srinagar",
+        description: "A majestic 19th-century palace overlooking Dal Lake, offering regal grandeur for fairytale weddings. The sprawling lawns, heritage interiors, and stunning lake views create an unforgettable backdrop.",
+        image: "/images/placeholder-lalit.jpg",
+        capacity: "Up to 1000 guests",
+        priceRange: "₹15,00,000 - ₹50,00,000",
+        highlights: ["Dal Lake Views", "Heritage Architecture", "Mughal Gardens", "Royal Ballrooms", "Luxury Suites"],
+        amenities: ["In-house Catering", "Valet Parking", "Bridal Suite", "Spa & Wellness", "Helipad"]
+    },
+    {
+        id: "vivanta-dal-view",
+        name: "Vivanta Dal View",
+        type: "Luxury Resort",
+        location: "Kralsangri, Brein, Srinagar",
+        description: "Perched on a hilltop with panoramic views of Dal Lake and the Zabarwan mountains. Modern luxury meets Kashmiri aesthetics in this architectural marvel perfect for contemporary weddings.",
+        image: "/images/placeholder-vivanta.jpg",
+        capacity: "Up to 500 guests",
+        priceRange: "₹10,00,000 - ₹35,00,000",
+        highlights: ["Panoramic Lake Views", "Mountain Backdrop", "Modern Banquet Hall", "Outdoor Terraces", "Infinity Pool"],
+        amenities: ["Multi-cuisine Catering", "Wedding Planner", "Décor Services", "DJ & Sound System", "Accommodation"]
+    },
+    {
+        id: "khyber-himalayan",
+        name: "The Khyber Himalayan Resort & Spa",
+        type: "Mountain Luxury Resort",
+        location: "Gulmarg",
+        description: "Set amidst snow-capped peaks and alpine meadows at 8,825 ft, this award-winning resort offers a magical winter wonderland wedding experience unlike any other in India.",
+        image: "/images/gulmarg-featured.jpg",
+        capacity: "Up to 300 guests",
+        priceRange: "₹20,00,000 - ₹75,00,000",
+        highlights: ["Snow-capped Mountains", "Private Gondola Access", "Alpine Meadows", "Fireplace Venues", "Ski Resort"],
+        amenities: ["Gourmet Dining", "Spa Retreat", "Helipad", "Butler Service", "Private Chalets"]
+    },
+    {
+        id: "houseboat-wedding",
+        name: "Royal Houseboat Wedding",
+        type: "Floating Venue",
+        location: "Dal Lake, Srinagar",
+        description: "An intimate and utterly unique wedding experience on a decorated heritage houseboat, surrounded by the serene waters of Dal Lake. Perfect for smaller, intimate celebrations.",
+        image: "/images/Kashmir 2.jpg",
+        capacity: "Up to 100 guests",
+        priceRange: "₹5,00,000 - ₹15,00,000",
+        highlights: ["Floating Venue", "Shikara Procession", "Sunset Ceremonies", "Traditional Décor", "Intimate Setting"],
+        amenities: ["On-board Catering", "Live Music", "Decorated Shikaras", "Photography Boats", "Fireworks (permitted areas)"]
+    },
+    {
+        id: "mughal-garden-wedding",
+        name: "Mughal Gardens Ceremony",
+        type: "Garden Venue",
+        location: "Shalimar Bagh / Nishat Bagh",
+        description: "Exchange vows in the historic Mughal Gardens, where emperors once celebrated love. The terraced gardens, cascading fountains, and Chinar-lined pathways create a timeless romantic setting.",
+        image: "/images/Mughal gardens.jpg",
+        capacity: "Up to 500 guests",
+        priceRange: "₹8,00,000 - ₹25,00,000",
+        highlights: ["Historic Gardens", "Terraced Lawns", "Cascading Fountains", "Chinar Trees", "Lake Views"],
+        amenities: ["Government Permit Assistance", "Temporary Structures", "Lighting Setup", "Catering Space", "Guest Facilities"]
+    },
+    {
+        id: "nedous-hotel",
+        name: "Hotel & Restaurant Nedou's",
+        type: "Heritage Hotel",
+        location: "Gulmarg Road, Near Golf Course",
+        description: "One of Kashmir's oldest heritage properties, Nedou's combines colonial charm with Kashmiri hospitality. The vintage ballrooms and manicured lawns offer a classic wedding setting.",
+        image: "/images/placeholder-nedous.jpg",
+        capacity: "Up to 400 guests",
+        priceRange: "₹7,00,000 - ₹20,00,000",
+        highlights: ["Colonial Architecture", "Golf Course Views", "Vintage Ballroom", "Garden Lawn", "Heritage Charm"],
+        amenities: ["Traditional Wazwan", "Vintage Décor", "Live Band Space", "Bridal Suite", "Parking"]
+    }
+];
+
+export const weddingServices = [
+    {
+        id: "planning",
+        title: "Complete Wedding Planning",
+        description: "End-to-end wedding coordination from venue selection to farewell brunch, ensuring a stress-free celebration.",
+        icon: "ClipboardList"
+    },
+    {
+        id: "decor",
+        title: "Kashmiri Themed Décor",
+        description: "Authentic Kashmiri aesthetics with Papier-mâché, Pashmina drapes, walnut wood, and traditional floral arrangements.",
+        icon: "Palette"
+    },
+    {
+        id: "catering",
+        title: "Royal Wazwan Feast",
+        description: "Traditional 36-course Kashmiri Wazwan prepared by master Wazas, plus multi-cuisine options for diverse guests.",
+        icon: "ChefHat"
+    },
+    {
+        id: "entertainment",
+        title: "Cultural Entertainment",
+        description: "Rouf dancers, Santoor players, Sufi musicians, and Hafiza singers for authentic Kashmiri entertainment.",
+        icon: "Music"
+    },
+    {
+        id: "photography",
+        title: "Destination Photography",
+        description: "Pre-wedding shoots at iconic locations - Dal Lake, Gulmarg snow, Mughal Gardens, and Alpine meadows.",
+        icon: "Camera"
+    },
+    {
+        id: "transport",
+        title: "Luxury Transport",
+        description: "Decorated Shikaras, vintage cars, luxury SUVs, and helicopter services for grand entries and transfers.",
+        icon: "Car"
+    },
+    {
+        id: "accommodation",
+        title: "Guest Accommodation",
+        description: "Premium houseboats, luxury hotels, and boutique stays curated for your guests with group discounts.",
+        icon: "Hotel"
+    },
+    {
+        id: "honeymoon",
+        title: "Honeymoon Planning",
+        description: "Extended honeymoon packages to Gulmarg, Pahalgam, or Ladakh following your Kashmir wedding.",
+        icon: "Heart"
+    }
+];
+
+export const weddingPackages = [
+    {
+        id: "intimate-kashmir",
+        title: "Intimate Kashmir Wedding",
+        guests: "Up to 100 guests",
+        duration: "3 Days / 2 Nights",
+        price: "₹15,00,000 onwards",
+        includes: ["Houseboat Venue", "Décor & Flowers", "Wazwan Dinner", "Photography", "Shikara Transfers"]
+    },
+    {
+        id: "royal-celebration",
+        title: "Royal Kashmir Celebration",
+        guests: "100-300 guests",
+        duration: "4 Days / 3 Nights",
+        price: "₹35,00,000 onwards",
+        includes: ["Palace Hotel Venue", "Complete Planning", "Multi-event Décor", "Catering", "Entertainment", "Guest Coordination"]
+    },
+    {
+        id: "grand-destination",
+        title: "Grand Destination Wedding",
+        guests: "300-1000 guests",
+        duration: "5 Days / 4 Nights",
+        price: "₹75,00,000 onwards",
+        includes: ["Multiple Venues", "Celebrity Planner", "Luxury Décor", "Multi-cuisine", "A-list Entertainment", "Full Guest Management", "Helicopter Services"]
+    }
+];
+

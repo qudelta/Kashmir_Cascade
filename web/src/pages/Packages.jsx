@@ -1,11 +1,12 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link, useSearchParams } from "react-router-dom";
 import { motion } from "framer-motion";
 import { PageHeader } from "@/components/layout/page-header";
 import { packages } from "@/lib/data";
-import { Clock, Star, ArrowRight, IndianRupee, MapPin, Filter } from "lucide-react";
+import { Clock, Star, ArrowRight, IndianRupee, MapPin, Filter, Map } from "lucide-react";
 
-const categories = ["All", "Honeymoon", "Family", "Adventure", "Spiritual", "Winter Special"];
+const categories = ["All", "Honeymoon", "Family", "Adventure", "Spiritual", "Winter Special", "Budget", "Photography", "Senior Special"];
+const regions = ["All", "Kashmir", "Ladakh"];
 
 const containerVariants = {
     hidden: {},
@@ -27,35 +28,85 @@ const cardVariants = {
 };
 
 export default function Packages() {
-    const [activeFilter, setActiveFilter] = useState("All");
+    const [searchParams, setSearchParams] = useSearchParams();
+    const [activeCategory, setActiveCategory] = useState("All");
+    const [activeRegion, setActiveRegion] = useState("All");
 
-    const filteredPackages = activeFilter === "All"
-        ? packages
-        : packages.filter(pkg => pkg.category === activeFilter);
+    useEffect(() => {
+        const regionParam = searchParams.get("region");
+        if (regionParam && ["Kashmir", "Ladakh"].includes(regionParam)) {
+            setActiveRegion(regionParam);
+        } else {
+            setActiveRegion("All");
+        }
+    }, [searchParams]);
+
+    const handleRegionChange = (region) => {
+        setActiveRegion(region);
+        if (region === "All") {
+            setSearchParams({});
+        } else {
+            setSearchParams({ region });
+        }
+        // Reset category when region changes? Optional. Let's keep it for now.
+        setActiveCategory("All");
+    };
+
+    const filteredPackages = packages.filter(pkg => {
+        const categoryMatch = activeCategory === "All" || pkg.category === activeCategory;
+        const regionMatch = activeRegion === "All" || pkg.region === activeRegion;
+        return categoryMatch && regionMatch;
+    });
 
     return (
-        <div className="min-h-screen bg-background-dark">
+        <div className="min-h-screen bg-background-light">
             <PageHeader
                 title="Curated Packages"
-                subtitle="Crafted Itineraries for Every Traveler"
+                subtitle={<>Handpicked <span className="text-primary">Itineraries</span> for You</>}
                 image="/images/Sonmarg.jpg"
             />
 
             <section className="max-w-[1280px] mx-auto px-6 py-16">
+
+                {/* Region Filters */}
+                <div className="flex justify-center mb-8">
+                    <div className="bg-white/5 border border-text-dark/10 p-1.5 rounded-full inline-flex relative">
+                        {regions.map((region) => (
+                            <button
+                                key={region}
+                                onClick={() => handleRegionChange(region)}
+                                className={`relative px-8 py-2 rounded-full text-sm font-bold z-10 transition-colors duration-300 ${activeRegion === region
+                                    ? "text-background-dark"
+                                    : "text-text-dark/70 hover:text-text-dark"
+                                    }`}
+                            >
+                                {activeRegion === region && (
+                                    <motion.div
+                                        layoutId="activeRegion"
+                                        className="absolute inset-0 bg-primary rounded-full -z-10 shadow-lg"
+                                        transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                                    />
+                                )}
+                                {region === "All" ? "All Regions" : region}
+                            </button>
+                        ))}
+                    </div>
+                </div>
+
                 {/* Category Filters */}
                 <div className="flex flex-wrap gap-3 mb-12 justify-center">
-                    <div className="flex items-center gap-2 text-white/50 mr-4">
+                    <div className="flex items-center gap-2 text-text-dark/70 mr-4">
                         <Filter className="w-4 h-4" />
-                        <span className="text-sm font-medium">Filter:</span>
+                        <span className="text-sm font-medium">Category:</span>
                     </div>
                     {categories.map((filter) => (
                         <button
                             key={filter}
-                            className={`px-6 py-2.5 rounded-full font-medium transition-all duration-300 ${filter === activeFilter
-                                ? "bg-primary text-background-dark shadow-lg shadow-primary/30"
-                                : "bg-white/5 text-white/70 hover:bg-white/10 hover:text-white border border-white/10"
+                            className={`px-6 py-2.5 rounded-full font-medium transition-all duration-300 ${filter === activeCategory
+                                ? "bg-text-dark text-white shadow-lg"
+                                : "bg-white/5 text-text-dark/90 hover:bg-white/10 hover:text-text-dark border border-text-dark/10"
                                 }`}
-                            onClick={() => setActiveFilter(filter)}
+                            onClick={() => setActiveCategory(filter)}
                         >
                             {filter}
                         </button>
@@ -69,9 +120,10 @@ export default function Packages() {
                     transition={{ delay: 0.3 }}
                     className="text-center mb-12"
                 >
-                    <p className="text-white/60">
+                    <p className="text-text-dark/80">
                         Showing <span className="font-bold text-primary">{filteredPackages.length}</span> packages
-                        {activeFilter !== "All" && ` in ${activeFilter}`}
+                        {activeRegion !== "All" && <span> in <span className="font-semibold text-text-dark">{activeRegion}</span></span>}
+                        {activeCategory !== "All" && <span> for <span className="font-semibold text-text-dark">{activeCategory}</span></span>}
                     </p>
                 </motion.div>
 
@@ -79,7 +131,7 @@ export default function Packages() {
                     variants={containerVariants}
                     initial="hidden"
                     animate="visible"
-                    key={activeFilter} // Re-animate when filter changes
+                    key={`${activeRegion}-${activeCategory}`} // Re-animate when filter changes
                     className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
                 >
                     {filteredPackages.map((pkg) => (
@@ -95,10 +147,10 @@ export default function Packages() {
                                 <motion.div
                                     whileHover={{ y: -8, boxShadow: "0 25px 50px -12px rgba(201, 162, 39, 0.15)" }}
                                     transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                                    className="flex flex-col bg-card-dark border border-white/5 rounded-2xl overflow-hidden h-full"
+                                    className="flex flex-col bg-white border border-text-dark/10 rounded-2xl overflow-hidden h-full"
                                 >
                                     {/* Image Section */}
-                                    <div className="relative h-64 overflow-hidden">
+                                    <div className="relative h-64 overflow-hidden bg-white">
                                         <div className="absolute inset-0 w-full h-full">
                                             <img
                                                 src={pkg.image}
@@ -108,7 +160,7 @@ export default function Packages() {
                                             />
                                         </div>
                                         {/* Overlay Gradient */}
-                                        <div className="absolute inset-0 bg-gradient-to-t from-card-dark via-transparent to-transparent" />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
 
                                         {/* Top Badges */}
                                         <div className="absolute top-4 left-4 right-4 flex justify-between items-start">
@@ -125,7 +177,7 @@ export default function Packages() {
                                                     initial={{ scale: 0 }}
                                                     animate={{ scale: 1 }}
                                                     transition={{ type: "spring", delay: 0.3 }}
-                                                    className="bg-green-500 text-white text-xs font-bold px-3 py-1.5 rounded-full"
+                                                    className="bg-green-500 text-text-dark text-xs font-bold px-3 py-1.5 rounded-full"
                                                 >
                                                     {Math.round((1 - pkg.price / pkg.originalPrice) * 100)}% OFF
                                                 </motion.span>
@@ -147,17 +199,30 @@ export default function Packages() {
 
                                     {/* Content Section */}
                                     <div className="p-6 flex flex-col flex-grow">
-                                        <h2 className="text-xl font-bold font-heading text-white mb-2 group-hover:text-primary transition-colors">
-                                            {pkg.title}
-                                        </h2>
-                                        <p className="text-sm text-white/60 mb-4 line-clamp-2">
+                                        <div className="flex items-center justify-between mb-2">
+                                            <h2 className="text-xl font-bold font-heading text-text-dark group-hover:text-primary transition-colors">
+                                                {pkg.title}
+                                            </h2>
+                                        </div>
+
+                                        <p className="text-sm text-text-dark/80 mb-4 line-clamp-2">
                                             {pkg.overview}
                                         </p>
 
                                         {/* Route Preview */}
-                                        <div className="flex items-center gap-2 text-xs text-white/50 mb-4">
+                                        <div className="flex items-center gap-2 text-xs text-text-dark/70 mb-4">
                                             <MapPin className="w-3.5 h-3.5 text-primary flex-shrink-0" />
                                             <span className="truncate">{pkg.route.join(" → ")}</span>
+                                        </div>
+
+                                        {/* Region Badge (New) */}
+                                        <div className="mb-4">
+                                            <span className={`text-[10px] font-bold px-2 py-0.5 rounded border ${pkg.region === "Ladakh"
+                                                ? "border-orange-500 text-orange-600 bg-orange-50"
+                                                : "border-green-500 text-green-600 bg-green-50"
+                                                }`}>
+                                                {pkg.region}
+                                            </span>
                                         </div>
 
                                         {/* Highlights Preview */}
@@ -168,7 +233,7 @@ export default function Packages() {
                                                     initial={{ opacity: 0, scale: 0.8 }}
                                                     animate={{ opacity: 1, scale: 1 }}
                                                     transition={{ delay: 0.1 * i }}
-                                                    className="text-xs bg-white/5 text-white/60 px-2 py-1 rounded-full"
+                                                    className="text-xs bg-white/5 text-text-dark/80 px-2 py-1 rounded-full border border-text-dark/5"
                                                 >
                                                     {highlight}
                                                 </motion.span>
@@ -181,21 +246,21 @@ export default function Packages() {
                                         </div>
 
                                         {/* Price & CTA */}
-                                        <div className="mt-auto pt-4 border-t border-white/10 flex items-center justify-between">
+                                        <div className="mt-auto pt-4 border-t border-text-dark/10 flex items-center justify-between">
                                             <div>
-                                                <span className="text-xs text-white/50 block">From</span>
+                                                <span className="text-xs text-text-dark/70 block">From</span>
                                                 <div className="flex items-center gap-2">
-                                                    <span className="flex items-center text-2xl font-bold text-white">
+                                                    <span className="flex items-center text-2xl font-bold text-text-dark">
                                                         <IndianRupee className="w-5 h-5" />
                                                         {pkg.price.toLocaleString('en-IN')}
                                                     </span>
                                                     {pkg.originalPrice && (
-                                                        <span className="text-sm text-white/40 line-through">
+                                                        <span className="text-sm text-text-dark/40 line-through">
                                                             ₹{pkg.originalPrice.toLocaleString('en-IN')}
                                                         </span>
                                                     )}
                                                 </div>
-                                                <span className="text-xs text-white/50">per person</span>
+                                                <span className="text-xs text-text-dark/70">per person</span>
                                             </div>
                                             <motion.span
                                                 whileHover={{ x: 5 }}
@@ -218,14 +283,14 @@ export default function Packages() {
                         animate={{ opacity: 1, y: 0 }}
                         className="text-center py-16"
                     >
-                        <p className="text-xl text-white/60 mb-4">No packages found in this category.</p>
+                        <p className="text-xl text-text-dark/80 mb-4">No packages found for this selection.</p>
                         <motion.button
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
-                            onClick={() => setActiveFilter("All")}
-                            className="px-6 py-2 rounded-full bg-white/10 text-white hover:bg-primary hover:text-background-dark transition-colors"
+                            onClick={() => { setActiveRegion("All"); setActiveCategory("All"); setSearchParams({}); }}
+                            className="px-6 py-2 rounded-full bg-primary text-background-dark font-bold hover:bg-primary/90 transition-colors"
                         >
-                            View All Packages
+                            Reset Filters
                         </motion.button>
                     </motion.div>
                 )}
@@ -245,10 +310,10 @@ export default function Packages() {
                         className="absolute -right-20 -top-20 w-64 h-64 bg-primary/10 rounded-full blur-3xl"
                     />
 
-                    <h2 className="text-3xl md:text-4xl font-bold font-heading text-white mb-4 relative z-10">
+                    <h2 className="text-3xl md:text-4xl font-bold font-heading text-text-dark mb-4 relative z-10">
                         Can't Find What You're Looking For?
                     </h2>
-                    <p className="text-lg text-white/70 mb-8 max-w-2xl mx-auto relative z-10">
+                    <p className="text-lg text-text-dark/90 mb-8 max-w-2xl mx-auto relative z-10">
                         Let us create a custom itinerary tailored to your preferences, budget, and travel dates.
                     </p>
                     <motion.button

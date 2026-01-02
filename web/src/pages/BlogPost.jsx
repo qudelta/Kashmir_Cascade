@@ -30,7 +30,7 @@ export default function BlogPost() {
         .slice(0, 2);
 
     return (
-        <div className="min-h-screen bg-background-dark">
+        <div className="min-h-screen bg-background-light">
             <main className="pt-28 pb-20">
                 {/* Hero Image */}
                 <motion.div
@@ -44,7 +44,7 @@ export default function BlogPost() {
                         alt={post.title}
                         className="w-full h-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/50 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent" />
                 </motion.div>
 
                 <div className="max-w-3xl mx-auto px-6">
@@ -57,7 +57,7 @@ export default function BlogPost() {
                     >
                         <Link
                             to="/blog"
-                            className="inline-flex items-center gap-2 text-white/60 hover:text-primary transition-colors"
+                            className="inline-flex items-center gap-2 text-text-dark/80 hover:text-primary transition-colors"
                         >
                             <ArrowLeft className="w-4 h-4" />
                             Back to Blog
@@ -69,7 +69,7 @@ export default function BlogPost() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.1 }}
-                        className="flex flex-wrap items-center gap-4 text-sm text-white/60 mb-4"
+                        className="flex flex-wrap items-center gap-4 text-sm text-text-dark/80 mb-4"
                     >
                         <span className="bg-primary/20 text-primary px-3 py-1 rounded-full font-medium">
                             {post.category}
@@ -89,7 +89,7 @@ export default function BlogPost() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.2 }}
-                        className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 font-display leading-tight"
+                        className="text-3xl md:text-4xl lg:text-5xl font-bold text-text-dark mb-6 font-display leading-tight"
                     >
                         {post.title}
                     </motion.h1>
@@ -99,7 +99,7 @@ export default function BlogPost() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.3 }}
-                        className="flex items-center gap-4 pb-8 mb-8 border-b border-white/10"
+                        className="flex items-center gap-4 pb-8 mb-8 border-b border-text-dark/10"
                     >
                         <img
                             src={post.authorImage}
@@ -107,8 +107,8 @@ export default function BlogPost() {
                             className="w-14 h-14 rounded-full"
                         />
                         <div>
-                            <p className="text-white font-semibold">{post.author}</p>
-                            <p className="text-white/50 text-sm">{post.authorRole}</p>
+                            <p className="text-text-dark font-semibold">{post.author}</p>
+                            <p className="text-text-dark/70 text-sm">{post.authorRole}</p>
                         </div>
                     </motion.div>
 
@@ -119,24 +119,24 @@ export default function BlogPost() {
                         transition={{ duration: 0.5, delay: 0.4 }}
                         className="prose prose-lg prose-invert max-w-none mb-12"
                     >
-                        <div className="text-white/80 leading-relaxed space-y-4 blog-content">
+                        <div className="text-text-dark/80 leading-relaxed space-y-4 blog-content">
                             <ReactMarkdown
                                 remarkPlugins={[remarkGfm]}
                                 components={{
-                                    h2: ({ ...props }) => <h2 className="text-2xl font-bold text-white mt-10 mb-4 font-display" {...props} />,
-                                    h3: ({ ...props }) => <h3 className="text-xl font-bold text-white mt-8 mb-3" {...props} />,
-                                    p: ({ ...props }) => <p className="text-white/80 leading-relaxed mb-4" {...props} />,
-                                    ul: ({ ...props }) => <ul className="list-disc list-inside text-white/80 mb-4 space-y-2" {...props} />,
-                                    ol: ({ ...props }) => <ol className="list-decimal list-inside text-white/80 mb-4 space-y-2" {...props} />,
+                                    h2: ({ ...props }) => <h2 className="text-2xl font-bold text-text-dark mt-10 mb-4 font-display" {...props} />,
+                                    h3: ({ ...props }) => <h3 className="text-xl font-bold text-text-dark mt-8 mb-3" {...props} />,
+                                    p: ({ ...props }) => <p className="text-text-dark/80 leading-relaxed mb-4" {...props} />,
+                                    ul: ({ ...props }) => <ul className="list-disc list-inside text-text-dark/80 mb-4 space-y-2" {...props} />,
+                                    ol: ({ ...props }) => <ol className="list-decimal list-inside text-text-dark/80 mb-4 space-y-2" {...props} />,
                                     li: ({ ...props }) => <li className="ml-4" {...props} />,
-                                    strong: ({ ...props }) => <strong className="text-white font-semibold" {...props} />,
+                                    strong: ({ ...props }) => <strong className="text-text-dark font-semibold" {...props} />,
                                     table: ({ ...props }) => (
                                         <div className="overflow-x-auto my-6">
                                             <table className="w-full border-collapse text-sm" {...props} />
                                         </div>
                                     ),
                                     th: ({ ...props }) => <th className="text-left py-3 px-4 text-primary font-semibold border-b border-white/20" {...props} />,
-                                    td: ({ ...props }) => <td className="py-3 px-4 border-b border-white/10 text-white/80" {...props} />,
+                                    td: ({ ...props }) => <td className="py-3 px-4 border-b border-text-dark/10 text-text-dark/80" {...props} />,
                                     // Custom components for images in markdown
                                     img: ({ src, alt, ...props }) => (
                                         <img
@@ -158,13 +158,13 @@ export default function BlogPost() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.5 }}
-                        className="flex flex-wrap items-center gap-2 pb-8 mb-8 border-b border-white/10"
+                        className="flex flex-wrap items-center gap-2 pb-8 mb-8 border-b border-text-dark/10"
                     >
-                        <Tag className="w-4 h-4 text-white/50" />
+                        <Tag className="w-4 h-4 text-text-dark/70" />
                         {post.tags.map((tag) => (
                             <span
                                 key={tag}
-                                className="bg-white/5 text-white/70 px-3 py-1 rounded-full text-sm"
+                                className="bg-white/5 text-text-dark/90 px-3 py-1 rounded-full text-sm"
                             >
                                 {tag}
                             </span>
@@ -178,8 +178,8 @@ export default function BlogPost() {
                         transition={{ duration: 0.5, delay: 0.6 }}
                         className="bg-gradient-to-r from-primary/10 to-primary/5 rounded-2xl border border-primary/20 p-8 text-center mb-12"
                     >
-                        <h3 className="text-2xl font-bold text-white mb-3 font-display">Ready to Experience Kashmir?</h3>
-                        <p className="text-white/70 mb-6">Let us help you plan your perfect trip</p>
+                        <h3 className="text-2xl font-bold text-text-dark mb-3 font-display">Ready to Experience Kashmir?</h3>
+                        <p className="text-text-dark/90 mb-6">Let us help you plan your perfect trip</p>
                         <Link
                             to="/contact"
                             className="inline-flex items-center gap-2 bg-primary text-background-dark font-bold px-8 py-4 rounded-xl hover:bg-primary/90 transition-colors"
@@ -195,13 +195,13 @@ export default function BlogPost() {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: 0.7 }}
                         >
-                            <h3 className="text-xl font-bold text-white mb-6">Related Articles</h3>
+                            <h3 className="text-xl font-bold text-text-dark mb-6">Related Articles</h3>
                             <div className="grid md:grid-cols-2 gap-6">
                                 {relatedPosts.map((relatedPost) => (
                                     <Link
                                         key={relatedPost.id}
                                         to={`/blog/${relatedPost.id}`}
-                                        className="group bg-card-dark rounded-xl border border-white/5 overflow-hidden flex"
+                                        className="group bg-white rounded-xl border border-text-dark/10 overflow-hidden flex"
                                     >
                                         <div className="relative w-24 md:w-32 flex-shrink-0">
                                             <img
@@ -211,10 +211,10 @@ export default function BlogPost() {
                                             />
                                         </div>
                                         <div className="p-4 flex flex-col justify-center">
-                                            <h4 className="text-white font-medium group-hover:text-primary transition-colors line-clamp-2 text-sm">
+                                            <h4 className="text-text-dark font-medium group-hover:text-primary transition-colors line-clamp-2 text-sm">
                                                 {relatedPost.title}
                                             </h4>
-                                            <p className="text-white/50 text-xs mt-1">{relatedPost.readTime}</p>
+                                            <p className="text-text-dark/70 text-xs mt-1">{relatedPost.readTime}</p>
                                         </div>
                                     </Link>
                                 ))}

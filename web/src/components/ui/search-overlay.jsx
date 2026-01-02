@@ -83,13 +83,13 @@ export function SearchOverlay({ isOpen, onClose }) {
                                 placeholder="Search destinations, packages, or stories..."
                                 value={query}
                                 onChange={(e) => setQuery(e.target.value)}
-                                className="flex-1 bg-transparent border-none text-3xl md:text-5xl font-bold text-white placeholder:text-white/20 focus:outline-none focus:ring-0"
+                                className="flex-1 bg-transparent border-none text-3xl md:text-5xl font-bold text-text-dark placeholder:text-text-dark/20 focus:outline-none focus:ring-0"
                             />
                             <button
                                 onClick={onClose}
                                 className="p-2 rounded-full hover:bg-white/10 transition-colors"
                             >
-                                <X className="w-8 h-8 text-white/50 hover:text-white" />
+                                <X className="w-8 h-8 text-text-dark/70 hover:text-text-dark" />
                             </button>
                         </div>
 
@@ -98,7 +98,7 @@ export function SearchOverlay({ isOpen, onClose }) {
                             {!query ? (
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                                     <div>
-                                        <h3 className="text-white/40 font-medium mb-6 uppercase tracking-wider text-sm">Quick Links</h3>
+                                        <h3 className="text-text-dark/40 font-medium mb-6 uppercase tracking-wider text-sm">Quick Links</h3>
                                         <ul className="space-y-4">
                                             {[
                                                 { label: "View All Packages", href: "/packages" },
@@ -110,7 +110,7 @@ export function SearchOverlay({ isOpen, onClose }) {
                                                     <Link
                                                         to={link.href}
                                                         onClick={onClose}
-                                                        className="text-2xl font-bold text-white hover:text-primary transition-colors inline-flex items-center gap-3 group"
+                                                        className="text-2xl font-bold text-text-dark hover:text-primary transition-colors inline-flex items-center gap-3 group"
                                                     >
                                                         {link.label}
                                                         <ArrowRight className="w-5 h-5 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
@@ -120,13 +120,13 @@ export function SearchOverlay({ isOpen, onClose }) {
                                         </ul>
                                     </div>
                                     <div>
-                                        <h3 className="text-white/40 font-medium mb-6 uppercase tracking-wider text-sm">Popular Searches</h3>
+                                        <h3 className="text-text-dark/40 font-medium mb-6 uppercase tracking-wider text-sm">Popular Searches</h3>
                                         <div className="flex flex-wrap gap-3">
                                             {["Honeymoon", "Gulmarg Skiing", "Houseboat", "Trekking", "Family Trip", "Winter"].map((tag) => (
                                                 <button
                                                     key={tag}
                                                     onClick={() => setQuery(tag)}
-                                                    className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-white/80 hover:bg-primary/20 hover:border-primary/50 hover:text-white transition-all"
+                                                    className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-text-dark/80 hover:bg-primary/20 hover:border-primary/50 hover:text-text-dark transition-all"
                                                 >
                                                     {tag}
                                                 </button>
@@ -139,7 +139,7 @@ export function SearchOverlay({ isOpen, onClose }) {
                                     {/* No Results */}
                                     {!hasResults && (
                                         <div className="text-center py-20">
-                                            <p className="text-2xl text-white/40">No results found for "{query}"</p>
+                                            <p className="text-2xl text-text-dark/40">No results found for "{query}"</p>
                                         </div>
                                     )}
 
@@ -165,8 +165,8 @@ export function SearchOverlay({ isOpen, onClose }) {
                                                             />
                                                         </div>
                                                         <div>
-                                                            <h4 className="text-lg font-bold text-white group-hover:text-primary transition-colors">{d.title}</h4>
-                                                            <p className="text-sm text-white/50">{d.subtitle}</p>
+                                                            <h4 className="text-lg font-bold text-text-dark group-hover:text-primary transition-colors">{d.title}</h4>
+                                                            <p className="text-sm text-text-dark/70">{d.subtitle}</p>
                                                         </div>
                                                     </Link>
                                                 ))}
@@ -197,8 +197,8 @@ export function SearchOverlay({ isOpen, onClose }) {
                                                             />
                                                         </div>
                                                         <div>
-                                                            <h4 className="text-lg font-bold text-white group-hover:text-primary transition-colors">{p.title}</h4>
-                                                            <p className="text-sm text-white/50">{p.days} Days / {p.nights} Nights • ₹{p.price.toLocaleString()}</p>
+                                                            <h4 className="text-lg font-bold text-text-dark group-hover:text-primary transition-colors">{p.title}</h4>
+                                                            <p className="text-sm text-text-dark/70">{p.days} Days / {p.nights} Nights • ₹{p.price.toLocaleString()}</p>
                                                         </div>
                                                     </Link>
                                                 ))}
@@ -228,8 +228,8 @@ export function SearchOverlay({ isOpen, onClose }) {
                                                             />
                                                         </div>
                                                         <div>
-                                                            <h4 className="text-lg font-bold text-white group-hover:text-primary transition-colors line-clamp-1">{b.title}</h4>
-                                                            <p className="text-sm text-white/50 line-clamp-1">{b.excerpt}</p>
+                                                            <h4 className="text-lg font-bold text-text-dark group-hover:text-primary transition-colors line-clamp-1">{b.title}</h4>
+                                                            <p className="text-sm text-text-dark/70 line-clamp-1">{b.excerpt}</p>
                                                         </div>
                                                     </Link>
                                                 ))}

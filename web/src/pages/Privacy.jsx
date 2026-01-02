@@ -51,7 +51,7 @@ const sections = [
 
 export default function Privacy() {
     return (
-        <div className="min-h-screen bg-background-dark">
+        <div className="min-h-screen bg-background-light">
             <PageHeader
                 title="Privacy Policy"
                 subtitle="Your privacy is important to us"
@@ -64,11 +64,11 @@ export default function Privacy() {
                     animate={{ opacity: 1, y: 0 }}
                     className="prose prose-invert max-w-none"
                 >
-                    <p className="text-lg text-white/70 mb-8">
+                    <p className="text-lg text-text-dark/90 mb-8">
                         Last updated: December 2024
                     </p>
 
-                    <p className="text-white/70 mb-12">
+                    <p className="text-text-dark/90 mb-12">
                         Kashmir Travels ("we," "our," or "us") is committed to protecting your privacy.
                         This Privacy Policy explains how we collect, use, disclose, and safeguard your
                         information when you visit our website or use our services.
@@ -84,17 +84,17 @@ export default function Privacy() {
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ delay: index * 0.1 }}
-                                    className="bg-card-dark border border-white/10 rounded-2xl p-8"
+                                    className="bg-white border border-text-dark/10 rounded-2xl p-8"
                                 >
                                     <div className="flex items-center gap-4 mb-6">
                                         <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center text-primary">
                                             <Icon className="w-6 h-6" />
                                         </div>
-                                        <h2 className="text-xl font-bold text-white">{section.title}</h2>
+                                        <h2 className="text-xl font-bold text-text-dark">{section.title}</h2>
                                     </div>
                                     <ul className="space-y-3">
                                         {section.content.map((item, i) => (
-                                            <li key={i} className="flex items-start gap-3 text-white/70">
+                                            <li key={i} className="flex items-start gap-3 text-text-dark/90">
                                                 <span className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0" />
                                                 {item}
                                             </li>
@@ -113,10 +113,10 @@ export default function Privacy() {
                     >
                         <div className="flex items-center gap-4 mb-4">
                             <Shield className="w-8 h-8 text-primary" />
-                            <h2 className="text-xl font-bold text-white">Your Rights</h2>
+                            <h2 className="text-xl font-bold text-text-dark">Your Rights</h2>
                         </div>
-                        <p className="text-white/70 mb-4">You have the right to:</p>
-                        <ul className="space-y-2 text-white/70">
+                        <p className="text-text-dark/90 mb-4">You have the right to:</p>
+                        <ul className="space-y-2 text-text-dark/90">
                             <li>• Access your personal data we hold</li>
                             <li>• Request correction of inaccurate data</li>
                             <li>• Request deletion of your data</li>
@@ -131,7 +131,7 @@ export default function Privacy() {
                         viewport={{ once: true }}
                         className="mt-12 text-center"
                     >
-                        <p className="text-white/60 mb-4">Questions about our privacy practices?</p>
+                        <p className="text-text-dark/80 mb-4">Questions about our privacy practices?</p>
                         <a
                             href="mailto:privacy@kashmirtravels.com"
                             className="inline-flex items-center gap-2 text-primary hover:underline"

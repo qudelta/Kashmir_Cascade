@@ -90,13 +90,102 @@ export function WhyChooseUs() {
     return (
         <section>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                {/* Why Us */}
+                {/* Testimonials */}
                 <motion.div
                     initial={{ opacity: 0, x: isMobile ? 0 : -30 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: isMobile ? 0.4 : 0.6 }}
-                    className="bg-card-dark rounded-3xl p-8 md:p-12 border border-white/5 relative overflow-hidden"
+                    className="bg-white rounded-3xl p-8 md:p-12 border border-text-dark/10 flex flex-col justify-center"
+                >
+                    <div className="text-center mb-8">
+                        <motion.h3
+                            initial={{ opacity: 0, y: 10 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.5 }}
+                            className="text-primary font-medium tracking-wider uppercase mb-2"
+                        >
+                            Testimonials
+                        </motion.h3>
+                        <motion.h2
+                            initial={{ opacity: 0, y: 10 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.5, delay: 0.1 }}
+                            className="text-3xl md:text-4xl font-bold text-text-dark font-display"
+                        >
+                            What Our Travelers Say
+                        </motion.h2>
+                    </div>
+
+                    <motion.div
+                        variants={containerVariants}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true }}
+                        className="grid grid-cols-1 gap-4"
+                    >
+                        {testimonials.map((t, i) => (
+                            <motion.div
+                                key={i}
+                                variants={itemVariants}
+                                whileHover={{ scale: 1.02, borderColor: "rgba(201, 162, 39, 0.3)" }}
+                                className="p-6 rounded-2xl border border-text-dark/10 relative bg-background-dark overflow-hidden group"
+                            >
+                                {/* Quote icon */}
+                                <motion.div
+                                    initial={{ opacity: 0, scale: 0 }}
+                                    whileInView={{ opacity: 0.1, scale: 1 }}
+                                    transition={{ delay: 0.3 + (i * 0.1) }}
+                                    className="absolute top-2 right-2"
+                                >
+                                    <Quote className="w-12 h-12 text-primary" />
+                                </motion.div>
+
+                                {/* Rating stars */}
+                                <div className="flex gap-1 mb-3">
+                                    {[...Array(t.rating)].map((_, starIndex) => (
+                                        <motion.div
+                                            key={starIndex}
+                                            initial={{ opacity: 0, scale: 0 }}
+                                            whileInView={{ opacity: 1, scale: 1 }}
+                                            transition={{ delay: 0.2 + (starIndex * 0.05) }}
+                                        >
+                                            <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                                        </motion.div>
+                                    ))}
+                                </div>
+
+                                <p className="text-text-dark/80 mb-4 relative z-10 text-sm leading-relaxed">"{t.text}"</p>
+                                <div className="flex items-center gap-3">
+                                    <motion.div
+                                        whileHover={{ scale: 1.1 }}
+                                        className="size-10 rounded-full border-2 border-primary/50 group-hover:border-primary transition-colors relative overflow-hidden"
+                                    >
+                                        <img
+                                            src={t.image}
+                                            alt={t.name}
+                                            className="w-full h-full object-cover"
+                                        />
+                                    </motion.div>
+                                    <div>
+                                        <h4 className="text-text-dark font-bold text-sm">{t.name}</h4>
+                                        <p className="text-text-dark/40 text-xs">{t.location}</p>
+                                    </div>
+                                </div>
+                            </motion.div>
+                        ))}
+                    </motion.div>
+                </motion.div>
+
+                {/* Why Us */}
+                <motion.div
+                    initial={{ opacity: 0, x: 30 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                    className="bg-white rounded-3xl p-8 md:p-12 border border-text-dark/10 relative overflow-hidden"
                 >
                     {/* Animated background orbs - only on desktop */}
                     {!isMobile && (
@@ -126,7 +215,7 @@ export function WhyChooseUs() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5 }}
-                            className="text-3xl md:text-4xl font-bold text-white mb-4 font-display"
+                            className="text-3xl md:text-4xl font-bold text-text-dark mb-4 font-display"
                         >
                             Why Travel With Us?
                         </motion.h2>
@@ -135,7 +224,7 @@ export function WhyChooseUs() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: 0.1 }}
-                            className="text-white/60 max-w-2xl mx-auto"
+                            className="text-text-dark/80 max-w-2xl mx-auto"
                         >
                             We don't just sell packages; we craft experiences. Here is why thousands of travelers trust us with their Kashmir journey.
                         </motion.p>
@@ -155,7 +244,7 @@ export function WhyChooseUs() {
                                     key={feature.title}
                                     variants={itemVariants}
                                     whileHover={{ scale: 1.02, backgroundColor: "rgba(255,255,255,0.05)" }}
-                                    className="flex flex-col items-center text-center p-6 rounded-2xl bg-white/[0.02] border border-white/5 transition-colors cursor-pointer"
+                                    className="flex flex-col items-center text-center p-6 rounded-2xl bg-white border border-text-dark/10 transition-colors cursor-pointer hover:border-primary/30"
                                 >
                                     <motion.div
                                         whileHover={{ rotate: 360, scale: 1.1 }}
@@ -164,100 +253,11 @@ export function WhyChooseUs() {
                                     >
                                         <Icon className="w-8 h-8" />
                                     </motion.div>
-                                    <h3 className="text-xl font-bold text-white mb-3 font-display">{feature.title}</h3>
-                                    <p className="text-white/60 text-sm">{feature.description}</p>
+                                    <h3 className="text-xl font-bold text-text-dark mb-3 font-display">{feature.title}</h3>
+                                    <p className="text-text-dark/80 text-sm">{feature.description}</p>
                                 </motion.div>
                             );
                         })}
-                    </motion.div>
-                </motion.div>
-
-                {/* Testimonials */}
-                <motion.div
-                    initial={{ opacity: 0, x: 30 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: 0.2 }}
-                    className="bg-card-dark rounded-3xl p-8 md:p-12 border border-white/5 flex flex-col justify-center"
-                >
-                    <div className="text-center mb-8">
-                        <motion.h3
-                            initial={{ opacity: 0, y: 10 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.5 }}
-                            className="text-primary font-medium tracking-wider uppercase mb-2"
-                        >
-                            Testimonials
-                        </motion.h3>
-                        <motion.h2
-                            initial={{ opacity: 0, y: 10 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay: 0.1 }}
-                            className="text-3xl md:text-4xl font-bold text-white font-display"
-                        >
-                            What Our Travelers Say
-                        </motion.h2>
-                    </div>
-
-                    <motion.div
-                        variants={containerVariants}
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true }}
-                        className="grid grid-cols-1 gap-4"
-                    >
-                        {testimonials.map((t, i) => (
-                            <motion.div
-                                key={i}
-                                variants={itemVariants}
-                                whileHover={{ scale: 1.02, borderColor: "rgba(201, 162, 39, 0.3)" }}
-                                className="p-6 rounded-2xl border border-white/5 relative bg-background-dark overflow-hidden group"
-                            >
-                                {/* Quote icon */}
-                                <motion.div
-                                    initial={{ opacity: 0, scale: 0 }}
-                                    whileInView={{ opacity: 0.1, scale: 1 }}
-                                    transition={{ delay: 0.3 + (i * 0.1) }}
-                                    className="absolute top-2 right-2"
-                                >
-                                    <Quote className="w-12 h-12 text-primary" />
-                                </motion.div>
-
-                                {/* Rating stars */}
-                                <div className="flex gap-1 mb-3">
-                                    {[...Array(t.rating)].map((_, starIndex) => (
-                                        <motion.div
-                                            key={starIndex}
-                                            initial={{ opacity: 0, scale: 0 }}
-                                            whileInView={{ opacity: 1, scale: 1 }}
-                                            transition={{ delay: 0.2 + (starIndex * 0.05) }}
-                                        >
-                                            <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                                        </motion.div>
-                                    ))}
-                                </div>
-
-                                <p className="text-white/80 mb-4 relative z-10 text-sm leading-relaxed">"{t.text}"</p>
-                                <div className="flex items-center gap-3">
-                                    <motion.div
-                                        whileHover={{ scale: 1.1 }}
-                                        className="size-10 rounded-full border-2 border-primary/50 group-hover:border-primary transition-colors relative overflow-hidden"
-                                    >
-                                        <img
-                                            src={t.image}
-                                            alt={t.name}
-                                            className="w-full h-full object-cover"
-                                        />
-                                    </motion.div>
-                                    <div>
-                                        <h4 className="text-white font-bold text-sm">{t.name}</h4>
-                                        <p className="text-white/40 text-xs">{t.location}</p>
-                                    </div>
-                                </div>
-                            </motion.div>
-                        ))}
                     </motion.div>
                 </motion.div>
             </div>

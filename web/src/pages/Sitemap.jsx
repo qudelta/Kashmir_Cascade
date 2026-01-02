@@ -21,23 +21,23 @@ const legalPages = [
 
 export default function Sitemap() {
     return (
-        <main className="min-h-screen bg-background-dark pt-28 pb-20">
+        <main className="min-h-screen bg-background-light pt-28 pb-20">
             <div className="max-w-6xl mx-auto px-6">
                 {/* Header */}
                 <div className="text-center mb-16">
                     <span className="text-primary font-bold tracking-wider uppercase text-sm">Navigation</span>
-                    <h1 className="text-4xl md:text-5xl font-bold text-white mt-2 mb-4 font-display">
+                    <h1 className="text-4xl md:text-5xl font-bold text-text-dark mt-2 mb-4 font-display">
                         Sitemap
                     </h1>
-                    <p className="text-white/60 max-w-2xl mx-auto">
+                    <p className="text-text-dark/80 max-w-2xl mx-auto">
                         Find everything on our website. Navigate to any page quickly from here.
                     </p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {/* Main Pages */}
-                    <div className="bg-card-dark rounded-2xl border border-white/10 p-6">
-                        <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                    <div className="bg-white rounded-2xl border border-text-dark/10 p-6">
+                        <h2 className="text-xl font-bold text-text-dark mb-6 flex items-center gap-2">
                             <MapPin className="w-5 h-5 text-primary" />
                             Main Pages
                         </h2>
@@ -46,7 +46,7 @@ export default function Sitemap() {
                                 <li key={page.href}>
                                     <Link
                                         to={page.href}
-                                        className="flex items-center gap-3 text-white/70 hover:text-primary transition-colors group"
+                                        className="flex items-center gap-3 text-text-dark/90 hover:text-primary transition-colors group"
                                     >
                                         <page.icon className="w-4 h-4 text-primary/60 group-hover:text-primary" />
                                         <span>{page.name}</span>
@@ -57,8 +57,8 @@ export default function Sitemap() {
                     </div>
 
                     {/* Destinations */}
-                    <div className="bg-card-dark rounded-2xl border border-white/10 p-6">
-                        <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                    <div className="bg-white rounded-2xl border border-text-dark/10 p-6">
+                        <h2 className="text-xl font-bold text-text-dark mb-6 flex items-center gap-2">
                             <MapPin className="w-5 h-5 text-primary" />
                             Destinations
                         </h2>
@@ -75,7 +75,7 @@ export default function Sitemap() {
                                 <li key={dest.id}>
                                     <Link
                                         to={`/destinations/${dest.id}`}
-                                        className="text-white/70 hover:text-primary transition-colors"
+                                        className="text-text-dark/90 hover:text-primary transition-colors"
                                     >
                                         {dest.title}
                                     </Link>
@@ -85,8 +85,8 @@ export default function Sitemap() {
                     </div>
 
                     {/* Packages */}
-                    <div className="bg-card-dark rounded-2xl border border-white/10 p-6">
-                        <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                    <div className="bg-white rounded-2xl border border-text-dark/10 p-6">
+                        <h2 className="text-xl font-bold text-text-dark mb-6 flex items-center gap-2">
                             <Package className="w-5 h-5 text-primary" />
                             Tour Packages
                         </h2>
@@ -103,7 +103,7 @@ export default function Sitemap() {
                                 <li key={pkg.id}>
                                     <Link
                                         to={`/packages/${pkg.id}`}
-                                        className="text-white/70 hover:text-primary transition-colors"
+                                        className="text-text-dark/90 hover:text-primary transition-colors"
                                     >
                                         {pkg.title}
                                     </Link>
@@ -113,8 +113,8 @@ export default function Sitemap() {
                     </div>
 
                     {/* Blog Posts */}
-                    <div className="bg-card-dark rounded-2xl border border-white/10 p-6">
-                        <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                    <div className="bg-white rounded-2xl border border-text-dark/10 p-6">
+                        <h2 className="text-xl font-bold text-text-dark mb-6 flex items-center gap-2">
                             <BookOpen className="w-5 h-5 text-primary" />
                             Blog & Articles
                         </h2>
@@ -131,7 +131,7 @@ export default function Sitemap() {
                                 <li key={post.id}>
                                     <Link
                                         to={`/blog/${post.id}`}
-                                        className="text-white/70 hover:text-primary transition-colors line-clamp-1"
+                                        className="text-text-dark/90 hover:text-primary transition-colors line-clamp-1"
                                     >
                                         {post.title}
                                     </Link>
@@ -141,8 +141,8 @@ export default function Sitemap() {
                     </div>
 
                     {/* Legal Pages */}
-                    <div className="bg-card-dark rounded-2xl border border-white/10 p-6">
-                        <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                    <div className="bg-white rounded-2xl border border-text-dark/10 p-6">
+                        <h2 className="text-xl font-bold text-text-dark mb-6 flex items-center gap-2">
                             <Shield className="w-5 h-5 text-primary" />
                             Legal & Policies
                         </h2>
@@ -151,7 +151,7 @@ export default function Sitemap() {
                                 <li key={page.href}>
                                     <Link
                                         to={page.href}
-                                        className="text-white/70 hover:text-primary transition-colors"
+                                        className="text-text-dark/90 hover:text-primary transition-colors"
                                     >
                                         {page.name}
                                     </Link>
@@ -161,12 +161,12 @@ export default function Sitemap() {
                     </div>
 
                     {/* XML Sitemap - keeping standard anchor for file resource */}
-                    <div className="bg-card-dark rounded-2xl border border-white/10 p-6">
-                        <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                    <div className="bg-white rounded-2xl border border-text-dark/10 p-6">
+                        <h2 className="text-xl font-bold text-text-dark mb-6 flex items-center gap-2">
                             <FileText className="w-5 h-5 text-primary" />
                             For Search Engines
                         </h2>
-                        <p className="text-white/60 mb-4 text-sm">
+                        <p className="text-text-dark/80 mb-4 text-sm">
                             Search engines can access our XML sitemap for better indexing.
                         </p>
                         <a

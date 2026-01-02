@@ -96,7 +96,7 @@ export function FeaturedDestinations() {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.5, delay: 0.2 }}
-                        className="text-3xl md:text-4xl font-bold text-white font-display"
+                        className="text-3xl md:text-4xl font-bold text-text-dark font-display"
                     >
                         Featured Destinations
                     </motion.h2>
@@ -134,7 +134,7 @@ export function FeaturedDestinations() {
                             <motion.div
                                 whileHover={{ y: -8 }}
                                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                                className={`${dest.size === "large" ? "h-[600px]" : "h-[300px]"} rounded-2xl overflow-hidden relative shadow-lg border border-white/5 bg-neutral-900 group`}
+                                className={`${dest.size === "large" ? "h-[600px]" : "h-[300px]"} rounded-tl-[2.5rem] rounded-br-[2.5rem] rounded-tr-none rounded-bl-none overflow-hidden relative shadow-xl border border-white/10 bg-neutral-900 group`}
                             >
                                 {/* Image with zoom effect */}
                                 <motion.div
@@ -151,41 +151,34 @@ export function FeaturedDestinations() {
                                     </div>
                                 </motion.div>
 
-                                {/* Gradient overlay */}
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10" />
+                                {/* Gradient overlay - lighter now */}
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10" />
 
-                                {/* Hover overlay */}
-                                <motion.div
-                                    initial={{ opacity: 0 }}
-                                    whileHover={{ opacity: 1 }}
-                                    className="absolute inset-0 bg-primary/10 z-20"
-                                />
-
-                                {/* Content */}
-                                <div className="absolute bottom-0 left-0 p-6 w-full z-30">
+                                {/* Content - Floating Glass Card */}
+                                <div className="absolute bottom-4 left-4 right-4 z-30">
                                     <motion.div
-                                        initial={{ y: 20 }}
+                                        initial={{ y: 0 }}
                                         whileHover={{ y: 0 }}
                                         transition={{ duration: 0.3 }}
+                                        className="bg-black/20 backdrop-blur-sm border border-white/10 p-4 rounded-xl"
                                     >
-                                        <h3 className={`${dest.size === "large" ? "text-3xl" : "text-2xl"} font-bold text-white mb-1 font-display`}>
+                                        <h3 className={`${dest.size === "large" ? "text-2xl" : "text-xl"} font-bold text-white mb-0.5 font-display`}>
                                             {dest.title}
                                         </h3>
-                                        <p className="text-primary text-sm font-medium mb-3">{dest.subtitle}</p>
-                                        <p className={`text-white/80 text-sm ${dest.size === "large" ? "line-clamp-3" : "line-clamp-2"} opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-4 group-hover:translate-y-0`}>
-                                            {dest.description}
-                                        </p>
+                                        <p className="text-primary text-[10px] font-bold uppercase tracking-wider mb-1">{dest.subtitle}</p>
 
-                                        {/* Explore button */}
-                                        <motion.div
-                                            initial={{ opacity: 0, y: 10 }}
-                                            whileHover={{ opacity: 1, y: 0 }}
-                                            className="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                                        >
-                                            <span className="inline-flex items-center gap-2 text-primary text-sm font-semibold">
-                                                Explore <ArrowRight className="w-4 h-4" />
-                                            </span>
-                                        </motion.div>
+                                        <div className="overflow-hidden">
+                                            <p className={`text-white/80 text-xs ${dest.size === "large" ? "line-clamp-2" : "line-clamp-2"} mt-1 leading-relaxed`}>
+                                                {dest.description}
+                                            </p>
+
+                                            {/* Explore button */}
+                                            <div className="mt-2">
+                                                <span className="inline-flex items-center gap-1.5 text-white text-[10px] font-bold uppercase tracking-tight opacity-90 group-hover:opacity-100 group-hover:gap-2 transition-all">
+                                                    Explore <ArrowRight className="w-3 h-3 text-primary" />
+                                                </span>
+                                            </div>
+                                        </div>
                                     </motion.div>
                                 </div>
                             </motion.div>

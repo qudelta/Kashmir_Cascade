@@ -30,7 +30,7 @@ export default function Gallery() {
         : galleryImages.filter(img => img.category === activeCategory);
 
     return (
-        <div className="min-h-screen bg-background-dark">
+        <div className="min-h-screen bg-background-light">
             <PageHeader
                 title="Visual Journey"
                 subtitle="Capturing the Soul of Kashmir"
@@ -46,7 +46,7 @@ export default function Gallery() {
                             onClick={() => setActiveCategory(category)}
                             className={`px-6 py-2 rounded-full border transition-all duration-300 font-medium ${activeCategory === category
                                 ? "bg-primary text-background-dark border-primary"
-                                : "bg-transparent border-white/10 text-white/60 hover:border-primary/50 hover:text-white"
+                                : "bg-transparent border-text-dark/10 text-text-dark/80 hover:border-primary/50 hover:text-text-dark"
                                 }`}
                         >
                             {category}
@@ -80,8 +80,8 @@ export default function Gallery() {
                                 </div>
                                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
                                     <div className="text-center transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                                        <ZoomIn className="w-8 h-8 text-white mx-auto mb-2" />
-                                        <p className="text-white font-bold">{image.title}</p>
+                                        <ZoomIn className="w-8 h-8 text-text-dark mx-auto mb-2" />
+                                        <p className="text-text-dark font-bold">{image.title}</p>
                                     </div>
                                 </div>
                             </motion.div>
@@ -101,7 +101,7 @@ export default function Gallery() {
                         onClick={() => setSelectedImage(null)}
                     >
                         <button
-                            className="absolute top-6 right-6 p-2 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors"
+                            className="absolute top-6 right-6 p-2 rounded-full bg-white/10 text-text-dark hover:bg-white/20 transition-colors"
                             onClick={() => setSelectedImage(null)}
                         >
                             <X className="w-8 h-8" />
@@ -121,7 +121,7 @@ export default function Gallery() {
                                 />
                             </div>
                             <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
-                                <h3 className="text-2xl font-bold text-white mb-1">{selectedImage.title}</h3>
+                                <h3 className="text-2xl font-bold text-text-dark mb-1">{selectedImage.title}</h3>
                                 <p className="text-primary font-medium">{selectedImage.category}</p>
                             </div>
                         </motion.div>

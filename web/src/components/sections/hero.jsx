@@ -7,7 +7,7 @@ export function Hero() {
     const isMobile = useMobile();
 
     return (
-        <section className="relative h-screen w-full flex items-center overflow-hidden">
+        <section className="relative h-screen w-full flex items-end pb-24 md:pb-32 overflow-hidden">
             {/* Image Background with Parallax Effect */}
             <motion.div
                 initial={{ scale: isMobile ? 1 : 1.1 }}
@@ -27,22 +27,21 @@ export function Hero() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1 }}
-                className="absolute inset-0 bg-gradient-to-r from-background-dark/90 via-background-dark/60 to-transparent"
+                className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-background-dark/40" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
 
-            {/* Content - Left Aligned with proper spacing from navbar */}
-            <div className="relative z-10 max-w-[1280px] mx-auto px-6 w-full pt-20">
-                <div className="max-w-xl text-white">
+            {/* Content - Bottom Left Aligned */}
+            <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full">
+                <div className="max-w-2xl text-white">
                     {/* Animated Badge */}
                     <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.6, delay: 0.2 }}
-                        className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-2 rounded-full mb-6"
+                        className="inline-flex items-center gap-2 pl-1 mb-6"
                     >
-                        <span className="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
-                        <span className="text-sm font-medium">Discover Kashmir with Local Experts</span>
+                        <span className="text-2xl md:text-3xl font-accent text-primary">Experience the art of travel</span>
                     </motion.div>
 
                     {/* Heading */}
@@ -50,28 +49,18 @@ export function Hero() {
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.4 }}
-                        className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 drop-shadow-lg font-display"
+                        className="text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.9] mb-6 font-display text-white tracking-tighter"
                     >
-                        Experience Paradise on Earth
+                        Experience <br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70">Paradise</span>
                     </motion.h1>
 
                     <motion.p
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.6, delay: 0.6 }}
-                        className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary mb-6"
+                        className="text-xl md:text-2xl font-medium text-white/80 mb-10 max-w-lg leading-relaxed"
                     >
-                        Beyond the Ordinary
-                    </motion.p>
-
-                    {/* Description */}
-                    <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.7 }}
-                        className="text-base md:text-lg text-white/80 font-medium mb-8 max-w-md"
-                    >
-                        Curated journeys to the heart of the Himalayas. Discover the unseen beauty of Kashmir with local experts.
+                        Curated journeys to the heart of the Himalayas. Discover the unseen beauty of Kashmir.
                     </motion.p>
 
                     {/* CTA Buttons */}
@@ -79,12 +68,12 @@ export function Hero() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.8 }}
-                        className="flex flex-wrap gap-4"
+                        className="flex flex-wrap gap-4 items-center"
                     >
                         <motion.button
-                            whileHover={{ scale: 1.02 }}
-                            whileTap={{ scale: 0.98 }}
-                            className="px-8 py-4 bg-primary text-background-dark font-bold rounded-xl hover:bg-primary/90 transition-colors "
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                            className="px-8 py-4 bg-primary text-background-dark font-bold rounded-full hover:bg-primary/90 transition-all shadow-lg shadow-primary/20"
                             onClick={() => {
                                 const modal = document.getElementById("planTripModal");
                                 if (modal) modal.classList.add("open");
@@ -93,57 +82,48 @@ export function Hero() {
                         >
                             Plan Your Trip
                         </motion.button>
-                        <Link to="/packages">
-                            <motion.button
-                                whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.15)" }}
-                                whileTap={{ scale: 0.98 }}
-                                className="px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/20 text-white font-bold rounded-xl transition-colors"
-                            >
-                                Explore Packages
-                            </motion.button>
+
+                        <Link to="/packages" className="group flex items-center gap-2 px-6 py-4 text-white font-medium hover:text-primary transition-colors">
+                            <span>Explore Packages</span>
+                            <span className="group-hover:translate-x-1 transition-transform">→</span>
                         </Link>
                     </motion.div>
 
-                    {/* Stats */}
+                    {/* Stats - Minimal */}
                     <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
                         transition={{ duration: 0.6, delay: 1 }}
-                        className="mt-12 flex gap-8"
+                        className="hidden md:flex gap-12 mt-16 border-t border-white/10 pt-8"
                     >
                         {[
-                            { value: "500+", label: "Happy Travelers" },
-                            { value: "50+", label: "Tour Packages" },
-                            { value: "4.9", label: "Rating" },
+                            { value: "500+", label: "Travelers" },
+                            { value: "98%", label: "Satisfaction" },
                         ].map((stat, i) => (
-                            <motion.div
-                                key={stat.label}
-                                initial={{ opacity: 0, scale: 0.8 }}
-                                animate={{ opacity: 1, scale: 1 }}
-                                transition={{ duration: 0.4, delay: 1.2 + (i * 0.1) }}
-                                className="text-center"
-                            >
-                                <div className="text-2xl md:text-3xl font-bold text-primary">{stat.value}</div>
-                                <div className="text-xs text-white/60 uppercase tracking-wider">{stat.label}</div>
-                            </motion.div>
+                            <div key={stat.label}>
+                                <div className="text-3xl font-bold text-white mb-1">{stat.value}</div>
+                                <div className="text-xs text-white/40 uppercase tracking-widest">{stat.label}</div>
+                            </div>
                         ))}
                     </motion.div>
                 </div>
             </div>
 
-            {/* Scroll Indicator - hidden on mobile for cleaner UX */}
+            {/* Scroll Indicator - Right Side Vertical */}
             {!isMobile && (
                 <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1, y: [0, 10, 0] }}
-                    transition={{
-                        opacity: { duration: 0.6, delay: 1.5 },
-                        y: { duration: 1.5, repeat: Infinity, ease: "easeInOut" }
-                    }}
-                    className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/60 flex flex-col items-center gap-2"
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.8, delay: 1.2 }}
+                    className="absolute bottom-12 right-12 z-20 hidden md:flex flex-col items-center gap-6"
                 >
-                    <span className="text-xs uppercase tracking-widest">Scroll to Explore</span>
-                    <ChevronDown className="w-5 h-5" />
+                    <div className="h-24 w-[1px] bg-gradient-to-b from-transparent via-white/50 to-white"></div>
+                    <span
+                        className="text-xs font-medium text-white/60 tracking-[0.3em] uppercase whitespace-nowrap"
+                        style={{ writingMode: 'vertical-rl' }}
+                    >
+                        Scroll to Explore
+                    </span>
                 </motion.div>
             )}
         </section>

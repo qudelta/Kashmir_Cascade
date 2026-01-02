@@ -32,7 +32,7 @@ export function InteractiveMap() {
                     <h2 className="text-4xl md:text-5xl font-heading font-bold text-white mt-2 mb-4">
                         Discover the Valley
                     </h2>
-                    <p className="text-white/60 max-w-2xl mx-auto">
+                    <p className="text-white/80 max-w-2xl mx-auto">
                         Interactive map of our featured destinations. Click on the markers to explore more.
                     </p>
                 </div>
@@ -65,7 +65,7 @@ export function InteractiveMap() {
                                 <div className="w-4 h-4 rounded-full border-2 border-white bg-primary/50 group-hover/spot:bg-primary transition-all duration-300 scale-100 group-hover/spot:scale-125" />
 
                                 {/* Label (Hidden on Mobile, visible on Desktop) */}
-                                <span className="absolute top-6 left-1/2 -translate-x-1/2 text-xs font-bold whitespace-nowrap transition-all duration-300 text-white/60 group-hover/spot:text-primary group-hover/spot:-translate-y-1 hidden md:block">
+                                <span className="absolute top-6 left-1/2 -translate-x-1/2 text-xs font-bold whitespace-nowrap transition-all duration-300 text-white/90 group-hover/spot:text-primary group-hover/spot:-translate-y-1 hidden md:block">
                                     {spot.title}
                                 </span>
                             </div>

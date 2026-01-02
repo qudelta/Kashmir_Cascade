@@ -39,7 +39,7 @@ const cancellationTiers = [
 
 export default function Cancellation() {
     return (
-        <div className="min-h-screen bg-background-dark">
+        <div className="min-h-screen bg-background-light">
             <PageHeader
                 title="Cancellation Policy"
                 subtitle="Flexible policies for peace of mind"
@@ -51,10 +51,10 @@ export default function Cancellation() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                 >
-                    <p className="text-lg text-white/70 mb-4">
+                    <p className="text-lg text-text-dark/90 mb-4">
                         Last updated: December 2024
                     </p>
-                    <p className="text-white/70 mb-12">
+                    <p className="text-text-dark/90 mb-12">
                         We understand that plans can change. Our cancellation policy is designed to be
                         fair to both travelers and our team. Please review the following guidelines.
                     </p>
@@ -70,7 +70,7 @@ export default function Cancellation() {
                             <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center text-primary">
                                 <Calendar className="w-6 h-6" />
                             </div>
-                            <h2 className="text-2xl font-bold text-white">Refund Schedule</h2>
+                            <h2 className="text-2xl font-bold text-text-dark">Refund Schedule</h2>
                         </div>
 
                         <div className="grid gap-4">
@@ -85,15 +85,15 @@ export default function Cancellation() {
                                 >
                                     <div className="flex items-center gap-4">
                                         <Clock className={`w-5 h-5 ${tier.color}`} />
-                                        <span className="text-white font-medium">{tier.period}</span>
+                                        <span className="text-text-dark font-medium">{tier.period}</span>
                                     </div>
                                     <div className="flex items-center gap-6">
                                         <div className="text-center">
                                             <p className={`text-2xl font-bold ${tier.color}`}>{tier.refund}</p>
-                                            <p className="text-xs text-white/50">Refund</p>
+                                            <p className="text-xs text-text-dark/70">Refund</p>
                                         </div>
                                         <div className="text-right">
-                                            <p className="text-white/70 text-sm">{tier.deduction}</p>
+                                            <p className="text-text-dark/90 text-sm">{tier.deduction}</p>
                                         </div>
                                     </div>
                                 </motion.div>
@@ -106,15 +106,15 @@ export default function Cancellation() {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="bg-card-dark border border-white/10 rounded-2xl p-8 mb-8"
+                        className="bg-white border border-text-dark/10 rounded-2xl p-8 mb-8"
                     >
                         <div className="flex items-center gap-4 mb-6">
                             <div className="w-12 h-12 rounded-xl bg-blue-500/20 flex items-center justify-center text-blue-400">
                                 <RefreshCcw className="w-6 h-6" />
                             </div>
-                            <h2 className="text-xl font-bold text-white">Date Modification</h2>
+                            <h2 className="text-xl font-bold text-text-dark">Date Modification</h2>
                         </div>
-                        <ul className="space-y-3 text-white/70">
+                        <ul className="space-y-3 text-text-dark/90">
                             <li className="flex items-start gap-3">
                                 <span className="w-1.5 h-1.5 bg-blue-400 rounded-full mt-2 flex-shrink-0" />
                                 One free date change allowed if requested 30+ days before departure
@@ -139,15 +139,15 @@ export default function Cancellation() {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="bg-card-dark border border-white/10 rounded-2xl p-8 mb-8"
+                        className="bg-white border border-text-dark/10 rounded-2xl p-8 mb-8"
                     >
                         <div className="flex items-center gap-4 mb-6">
                             <div className="w-12 h-12 rounded-xl bg-red-500/20 flex items-center justify-center text-red-400">
                                 <XCircle className="w-6 h-6" />
                             </div>
-                            <h2 className="text-xl font-bold text-white">Non-Refundable Items</h2>
+                            <h2 className="text-xl font-bold text-text-dark">Non-Refundable Items</h2>
                         </div>
-                        <ul className="space-y-3 text-white/70">
+                        <ul className="space-y-3 text-text-dark/90">
                             <li className="flex items-start gap-3">
                                 <span className="w-1.5 h-1.5 bg-red-400 rounded-full mt-2 flex-shrink-0" />
                                 Flight tickets (airline policies apply separately)
@@ -176,9 +176,9 @@ export default function Cancellation() {
                     >
                         <div className="flex items-center gap-4 mb-4">
                             <AlertCircle className="w-6 h-6 text-primary" />
-                            <h3 className="text-lg font-bold text-white">How to Cancel</h3>
+                            <h3 className="text-lg font-bold text-text-dark">How to Cancel</h3>
                         </div>
-                        <ol className="space-y-3 text-white/70 list-decimal list-inside">
+                        <ol className="space-y-3 text-text-dark/90 list-decimal list-inside">
                             <li>Send a cancellation request via email with your booking reference</li>
                             <li>Include the reason for cancellation (optional)</li>
                             <li>Receive confirmation within 24 hours</li>
@@ -192,7 +192,7 @@ export default function Cancellation() {
                         viewport={{ once: true }}
                         className="text-center"
                     >
-                        <p className="text-white/60 mb-4">Need to modify or cancel your booking?</p>
+                        <p className="text-text-dark/80 mb-4">Need to modify or cancel your booking?</p>
                         <a
                             href="mailto:bookings@kashmirtravels.com"
                             className="inline-flex items-center gap-2 text-primary hover:underline"

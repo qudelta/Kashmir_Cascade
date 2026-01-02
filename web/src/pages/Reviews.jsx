@@ -67,7 +67,7 @@ const reviews = [
 
 export default function Reviews() {
     return (
-        <div className="min-h-screen bg-background-dark">
+        <div className="min-h-screen bg-background-light">
             <PageHeader
                 title="Guest Stories"
                 subtitle="Memories created with Kashmir Travels"
@@ -77,8 +77,8 @@ export default function Reviews() {
             <section className="max-w-[1280px] mx-auto px-6 py-20">
                 {/* Intro */}
                 <div className="text-center max-w-3xl mx-auto mb-16">
-                    <h2 className="text-3xl font-heading font-bold text-white mb-6">Real Reviews from Real Travelers</h2>
-                    <p className="text-white/60 text-lg">
+                    <h2 className="text-3xl font-heading font-bold text-text-dark mb-6">Real Reviews from Real Travelers</h2>
+                    <p className="text-text-dark/80 text-lg">
                         We don't just book trips; we craft experiences. Here's what our guests have to say about their journey through paradise with us.
                     </p>
                 </div>
@@ -92,7 +92,7 @@ export default function Reviews() {
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
                             key={review.id}
-                            className="bg-card-dark border border-white/10 rounded-2xl p-8 hover:border-primary/30 transition-colors group"
+                            className="bg-white border border-text-dark/10 rounded-2xl p-8 hover:border-primary/30 transition-colors group"
                         >
                             <div className="flex items-center gap-4 mb-6">
                                 <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-primary/20 group-hover:border-primary transition-colors relative">
@@ -103,8 +103,8 @@ export default function Reviews() {
                                     />
                                 </div>
                                 <div>
-                                    <h3 className="font-bold text-white">{review.name}</h3>
-                                    <p className="text-white/40 text-xs">{review.location}</p>
+                                    <h3 className="font-bold text-text-dark">{review.name}</h3>
+                                    <p className="text-text-dark/40 text-xs">{review.location}</p>
                                 </div>
                             </div>
 
@@ -114,12 +114,12 @@ export default function Reviews() {
                                 ))}
                             </div>
 
-                            <h4 className="text-xl font-bold text-white mb-3 font-display">"{review.title}"</h4>
-                            <p className="text-white/70 leading-relaxed text-sm mb-6">
+                            <h4 className="text-xl font-bold text-text-dark mb-3 font-display">"{review.title}"</h4>
+                            <p className="text-text-dark/90 leading-relaxed text-sm mb-6">
                                 {review.text}
                             </p>
 
-                            <div className="pt-6 border-t border-white/5 flex items-center justify-between text-xs text-white/40">
+                            <div className="pt-6 border-t border-text-dark/10 flex items-center justify-between text-xs text-text-dark/40">
                                 <span className="flex items-center gap-2">
                                     <Calendar className="w-3 h-3" /> {review.date}
                                 </span>
@@ -131,8 +131,8 @@ export default function Reviews() {
 
                 {/* CTA */}
                 <div className="bg-primary/10 border border-primary/20 rounded-3xl p-12 text-center">
-                    <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Have you traveled with us?</h2>
-                    <p className="text-white/70 mb-8 max-w-xl mx-auto">We'd love to hear your story! Your feedback helps us create even better experiences for future travelers.</p>
+                    <h2 className="text-2xl md:text-3xl font-bold text-text-dark mb-4">Have you traveled with us?</h2>
+                    <p className="text-text-dark/90 mb-8 max-w-xl mx-auto">We'd love to hear your story! Your feedback helps us create even better experiences for future travelers.</p>
                     <a
                         href="/contact"
                         className="inline-flex items-center justify-center h-14 px-8 rounded-xl bg-primary text-background-dark font-bold text-lg hover:bg-primary/90 transition-colors "

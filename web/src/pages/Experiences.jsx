@@ -31,7 +31,7 @@ export default function Experiences() {
 
                             <div className="absolute bottom-0 left-0 p-8 transform transition-transform duration-300 translate-y-2 group-hover:translate-y-0">
                                 <div className="w-12 h-1 bg-primary mb-4 transition-all duration-300 group-hover:w-20" />
-                                <h3 className="text-2xl font-bold text-white mb-2 font-heading">{exp.title}</h3>
+                                <h3 className="text-2xl font-bold text-text-dark mb-2 font-heading">{exp.title}</h3>
                                 <p className="text-gray-300 mb-6 line-clamp-2 max-w-sm group-hover:line-clamp-none transition-all">
                                     {exp.description}
                                 </p>

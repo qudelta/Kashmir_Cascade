@@ -13,18 +13,18 @@ export function PageHeader({ title, subtitle, image, className, imageClassName =
             </div>
 
             {/* Gradient Overlay - matches homepage hero */}
-            <div className="absolute inset-0 bg-gradient-to-b from-background-dark/60 via-background-dark/40 to-background-dark z-10" />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70 z-10" />
             <div className="absolute inset-0 bg-black/30 z-10" />
 
             {/* Content */}
             <div className="relative z-20 max-w-[1280px] mx-auto px-6">
-                <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold mb-4 drop-shadow-xl">
+                <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold mb-4 drop-shadow-xl text-white">
                     {title}
                 </h1>
                 {subtitle && (
-                    <p className="text-lg md:text-xl font-medium tracking-wide text-primary uppercase drop-shadow-md">
+                    <div className="text-lg md:text-xl font-medium tracking-wide text-white/90 uppercase drop-shadow-md">
                         {subtitle}
-                    </p>
+                    </div>
                 )}
             </div>
         </div>

@@ -67,7 +67,7 @@ By booking with us, you agree to these terms and conditions in their entirety.`
 
 export default function Terms() {
     return (
-        <div className="min-h-screen bg-background-dark">
+        <div className="min-h-screen bg-background-light">
             <PageHeader
                 title="Terms & Conditions"
                 subtitle="Please read carefully before booking"
@@ -79,10 +79,10 @@ export default function Terms() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                 >
-                    <p className="text-lg text-white/70 mb-4">
+                    <p className="text-lg text-text-dark/90 mb-4">
                         Last updated: December 2024
                     </p>
-                    <p className="text-white/70 mb-12">
+                    <p className="text-text-dark/90 mb-12">
                         By using our services and booking tours with Kashmir Travels, you agree to
                         comply with and be bound by the following terms and conditions. Please review
                         them carefully.
@@ -98,15 +98,15 @@ export default function Terms() {
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ delay: index * 0.1 }}
-                                    className="bg-card-dark border border-white/10 rounded-2xl p-8"
+                                    className="bg-white border border-text-dark/10 rounded-2xl p-8"
                                 >
                                     <div className="flex items-center gap-4 mb-6">
                                         <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center text-primary">
                                             <Icon className="w-6 h-6" />
                                         </div>
-                                        <h2 className="text-xl font-bold text-white">{section.title}</h2>
+                                        <h2 className="text-xl font-bold text-text-dark">{section.title}</h2>
                                     </div>
-                                    <div className="text-white/70 whitespace-pre-line leading-relaxed">
+                                    <div className="text-text-dark/90 whitespace-pre-line leading-relaxed">
                                         {section.content}
                                     </div>
                                 </motion.div>
@@ -122,9 +122,9 @@ export default function Terms() {
                     >
                         <div className="flex items-center gap-4 mb-4">
                             <AlertTriangle className="w-6 h-6 text-yellow-500" />
-                            <h3 className="text-lg font-bold text-white">Important Notice</h3>
+                            <h3 className="text-lg font-bold text-text-dark">Important Notice</h3>
                         </div>
-                        <p className="text-white/70">
+                        <p className="text-text-dark/90">
                             These terms and conditions are subject to change. We recommend reviewing
                             them periodically. Continued use of our services after modifications
                             constitutes acceptance of the updated terms.
@@ -137,7 +137,7 @@ export default function Terms() {
                         viewport={{ once: true }}
                         className="mt-12 text-center"
                     >
-                        <p className="text-white/60 mb-4">Have questions about our terms?</p>
+                        <p className="text-text-dark/80 mb-4">Have questions about our terms?</p>
                         <a
                             href="mailto:legal@kashmirtravels.com"
                             className="inline-flex items-center gap-2 text-primary hover:underline"

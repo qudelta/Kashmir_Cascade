@@ -67,7 +67,7 @@ export function PackageTimeline({ items }) {
     return (
         <div className="relative py-8 px-4 md:px-0">
             {/* Central Line */}
-            <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-1 bg-white/10 -translate-x-1/2 md:-ml-0.5 rounded-full" />
+            <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-primary/40 via-primary to-primary/40 -translate-x-1/2 md:-ml-0.5 rounded-full" />
 
             <div className="space-y-12">
                 {items.map((item, index) => {
@@ -84,7 +84,7 @@ export function PackageTimeline({ items }) {
                             className={`relative flex items-center md:justify-between ${isLeft ? 'flex-row' : 'flex-row-reverse md:flex-row-reverse'}`}
                         >
                             {/* Icon Marker */}
-                            <div className={`absolute left-8 md:left-1/2 -translate-x-1/2 flex items-center justify-center w-12 h-12 rounded-full border-4 z-10 shadow-xl overflow-hidden bg-background-dark ${theme.isImage ? 'border-primary' : `${theme.bg} ${theme.border}`}`}>
+                            <div className={`absolute left-8 md:left-1/2 -translate-x-1/2 flex items-center justify-center w-12 h-12 rounded-full border-4 z-10 shadow-xl overflow-hidden ${theme.isImage ? 'border-primary bg-white' : `${theme.bg} ${theme.border}`}`}>
                                 {item.timelineImage ? (
                                     <img
                                         src={item.timelineImage}
@@ -102,37 +102,37 @@ export function PackageTimeline({ items }) {
                             <div className="hidden md:block w-5/12" />
 
                             {/* Content Card */}
-                            <div className="ml-20 md:ml-0 md:w-5/12 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors shadow-lg">
-                                <div className={`absolute top-6 w-4 h-4 rotate-45 bg-white/5 border-l border-b border-white/10 ${isLeft ? '-right-2 md:right-auto md:-left-2' : '-left-2 md:left-auto md:-right-2'}`} />
+                            <div className="ml-20 md:ml-0 md:w-5/12 bg-white border border-text-dark/10 rounded-2xl p-6 hover:border-primary/30 hover:shadow-lg transition-all shadow-sm">
+                                <div className={`absolute top-6 w-4 h-4 rotate-45 bg-white border-l border-b border-text-dark/10 ${isLeft ? '-right-2 md:right-auto md:-left-2' : '-left-2 md:left-auto md:-right-2'}`} />
 
                                 <div className="flex items-center gap-3 mb-3">
-                                    <span className="bg-primary/20 text-primary text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                                    <span className="bg-primary/10 text-primary text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
                                         Day {item.day}
                                     </span>
                                     {(item.distance || item.duration) && (
-                                        <span className="text-xs text-white/40 font-medium flex items-center gap-1">
+                                        <span className="text-xs text-text-dark/60 font-medium flex items-center gap-1">
                                             {item.distance && <><MapPin className="w-3 h-3" /> {item.distance}</>}
                                         </span>
                                     )}
                                 </div>
 
-                                <h3 className="text-xl font-bold text-white mb-3 font-heading">
+                                <h3 className="text-xl font-bold text-text-dark mb-3 font-heading">
                                     {item.title}
                                 </h3>
 
-                                <p className="text-white/70 text-sm leading-relaxed mb-4">
+                                <p className="text-text-dark/80 text-sm leading-relaxed mb-4">
                                     {item.desc}
                                 </p>
 
                                 {/* Highlights */}
                                 {item.highlights && item.highlights.length > 0 && (
-                                    <div className="border-t border-white/10 pt-4 mt-4">
-                                        <h4 className="flex items-center gap-2 text-xs font-bold text-white/50 uppercase tracking-widest mb-3">
-                                            <Sparkles className="w-3 h-3 text-yellow-400" /> Highlights
+                                    <div className="border-t border-text-dark/10 pt-4 mt-4">
+                                        <h4 className="flex items-center gap-2 text-xs font-bold text-text-dark/70 uppercase tracking-widest mb-3">
+                                            <Sparkles className="w-3 h-3 text-yellow-500" /> Highlights
                                         </h4>
                                         <div className="flex flex-wrap gap-2">
                                             {item.highlights.map((h, i) => (
-                                                <span key={i} className="text-xs bg-white/5 text-white/80 px-2 py-1 rounded-md border border-white/5">
+                                                <span key={i} className="text-xs bg-primary/5 text-text-dark px-2 py-1 rounded-md border border-text-dark/10">
                                                     {h}
                                                 </span>
                                             ))}
@@ -141,14 +141,14 @@ export function PackageTimeline({ items }) {
                                 )}
 
                                 {/* Meta Info */}
-                                <div className="flex flex-wrap gap-3 mt-4 pt-4 border-t border-white/10">
+                                <div className="flex flex-wrap gap-3 mt-4 pt-4 border-t border-text-dark/10">
                                     {item.meals && (
-                                        <div className="flex items-center gap-1.5 text-xs text-orange-200 bg-orange-500/10 px-2 py-1 rounded">
+                                        <div className="flex items-center gap-1.5 text-xs text-orange-600 bg-orange-50 px-2 py-1 rounded border border-orange-100">
                                             <Utensils className="w-3 h-3" /> {item.meals}
                                         </div>
                                     )}
                                     {item.accommodation && (
-                                        <div className="flex items-center gap-1.5 text-xs text-blue-200 bg-blue-500/10 px-2 py-1 rounded">
+                                        <div className="flex items-center gap-1.5 text-xs text-blue-600 bg-blue-50 px-2 py-1 rounded border border-blue-100">
                                             <Hotel className="w-3 h-3" /> {item.accommodation}
                                         </div>
                                     )}
@@ -160,9 +160,9 @@ export function PackageTimeline({ items }) {
 
                 {/* End Marker */}
                 <div className="relative flex justify-center pt-8">
-                    <div className="absolute left-8 md:left-1/2 -translate-x-1/2 top-0 w-1 h-8 bg-white/10" />
-                    <div className="relative z-10 bg-primary text-background-dark font-bold px-6 py-2 rounded-full shadow-lg shadow-primary/20 flex items-center gap-2">
-                        <Heart className="w-4 h-4 fill-background-dark" /> Trip Complete
+                    <div className="absolute left-8 md:left-1/2 -translate-x-1/2 top-0 w-1 h-8 bg-primary" />
+                    <div className="relative z-10 bg-primary text-white font-bold px-6 py-2 rounded-full shadow-lg shadow-primary/20 flex items-center gap-2">
+                        <Heart className="w-4 h-4 fill-white" /> Trip Complete
                     </div>
                 </div>
             </div>

@@ -17,10 +17,10 @@ export default function About() {
     ];
 
     return (
-        <div className="min-h-screen bg-background-dark">
+        <div className="min-h-screen bg-background-light">
             <PageHeader
                 title="Our Story"
-                subtitle="Authentic Kashmiri Hospitality"
+                subtitle={<>Authentic Kashmiri <span className="text-primary">Hospitality</span></>}
                 image="/images/Doodhpathri.jpg"
             />
 
@@ -31,7 +31,7 @@ export default function About() {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-3xl font-heading font-bold text-white mb-6"
+                        className="text-3xl font-heading font-bold text-text-dark mb-6"
                     >
                         Bringing the World to Paradise
                     </motion.h2>
@@ -40,7 +40,7 @@ export default function About() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
-                        className="text-lg text-white/70 leading-relaxed"
+                        className="text-lg text-text-dark/90 leading-relaxed"
                     >
                         Founded in 2015, <strong className="text-primary">Kashmir Travels</strong> started with a simple mission: to show the world the true, authentic Kashmir beyond the headlines.
                         We are a team of locals who grew up exploring these mountains, fishing in these lakes, and walking these meadows.
@@ -50,7 +50,7 @@ export default function About() {
             </section>
 
             {/* Values */}
-            <section className="bg-card-dark border-y border-white/10 py-20">
+            <section className="bg-white border-y border-text-dark/10 py-20">
                 <div className="max-w-[1280px] mx-auto px-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 text-center">
                         {values.map((value, index) => {
@@ -67,8 +67,8 @@ export default function About() {
                                     <div className="w-16 h-16 mx-auto bg-primary/20 rounded-2xl flex items-center justify-center text-primary">
                                         <Icon className="h-8 w-8" />
                                     </div>
-                                    <h3 className="text-xl font-bold text-white">{value.title}</h3>
-                                    <p className="text-white/60 text-sm">{value.desc}</p>
+                                    <h3 className="text-xl font-bold text-text-dark">{value.title}</h3>
+                                    <p className="text-text-dark text-sm">{value.desc}</p>
                                 </motion.div>
                             );
                         })}
@@ -84,8 +84,8 @@ export default function About() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                     >
-                        <h2 className="text-3xl font-heading font-bold text-white mb-4">Meet the Team</h2>
-                        <p className="text-white/60">The faces behind your perfect holiday</p>
+                        <h2 className="text-3xl font-heading font-bold text-text-dark mb-4">Meet the Team</h2>
+                        <p className="text-text-dark">The faces behind your perfect holiday</p>
                     </motion.div>
                 </div>
 
@@ -99,14 +99,14 @@ export default function About() {
                             transition={{ delay: index * 0.1 }}
                             className="text-center group"
                         >
-                            <div className="w-48 h-48 mx-auto rounded-2xl overflow-hidden mb-6 border-2 border-white/10 group-hover:border-primary/50 transition-all duration-300 relative">
+                            <div className="w-48 h-48 mx-auto rounded-2xl overflow-hidden mb-6 border-2 border-text-dark/10 group-hover:border-primary/50 transition-all duration-300 relative">
                                 <img
                                     src={member.img}
                                     alt={member.name}
                                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                                 />
                             </div>
-                            <h3 className="text-xl font-bold text-white">{member.name}</h3>
+                            <h3 className="text-xl font-bold text-text-dark">{member.name}</h3>
                             <p className="text-primary font-medium text-sm uppercase tracking-wide">{member.role}</p>
                         </motion.div>
                     ))}

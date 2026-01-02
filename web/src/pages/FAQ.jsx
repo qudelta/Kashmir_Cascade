@@ -142,10 +142,10 @@ export default function FAQ() {
     };
 
     return (
-        <div className="min-h-screen bg-background-dark">
+        <div className="min-h-screen bg-background-light">
             <PageHeader
                 title="Frequently Asked Questions"
-                subtitle="Everything you need to know about traveling to Kashmir"
+                subtitle={<>Everything You Need to Know About <span className="text-primary">Traveling</span> to Kashmir</>}
                 image="/images/Aruvillage.jpg"
             />
 
@@ -163,15 +163,15 @@ export default function FAQ() {
                         <motion.div
                             key={category.category}
                             variants={itemVariants}
-                            className="bg-card-dark rounded-2xl border border-white/5 overflow-hidden"
+                            className="bg-white rounded-2xl border border-text-dark/10 overflow-hidden shadow-sm"
                         >
                             {/* Category Header */}
-                            <div className="bg-white/5 px-6 py-4 border-b border-white/5">
-                                <h2 className="text-lg font-semibold text-white">{category.category}</h2>
+                            <div className="bg-primary/5 px-6 py-4 border-b border-text-dark/10">
+                                <h2 className="text-lg font-semibold text-text-dark">{category.category}</h2>
                             </div>
 
                             {/* Questions */}
-                            <div className="divide-y divide-white/5">
+                            <div className="divide-y divide-text-dark/10">
                                 {category.questions.map((faq, questionIndex) => {
                                     const itemId = `${categoryIndex}-${questionIndex}`;
                                     const isOpen = openItems.includes(itemId);
@@ -180,9 +180,9 @@ export default function FAQ() {
                                         <div key={itemId}>
                                             <button
                                                 onClick={() => toggleItem(itemId)}
-                                                className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-white/5 transition-colors"
+                                                className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-primary/5 transition-colors"
                                             >
-                                                <span className="text-white font-medium pr-4">{faq.q}</span>
+                                                <span className="text-text-dark font-medium pr-4">{faq.q}</span>
                                                 <motion.div
                                                     animate={{ rotate: isOpen ? 180 : 0 }}
                                                     transition={{ duration: 0.2 }}
@@ -200,7 +200,7 @@ export default function FAQ() {
                                                         transition={{ duration: 0.3 }}
                                                         className="overflow-hidden"
                                                     >
-                                                        <div className="px-6 pt-2 pb-5 text-white/70 leading-relaxed">
+                                                        <div className="px-6 pt-2 pb-5 text-text-dark/90 leading-relaxed">
                                                             {faq.a}
                                                         </div>
                                                     </motion.div>
@@ -222,8 +222,8 @@ export default function FAQ() {
                     transition={{ duration: 0.6, delay: 0.3 }}
                     className="mt-16 text-center bg-gradient-to-r from-primary/10 to-primary/5 rounded-2xl border border-primary/20 p-8"
                 >
-                    <h3 className="text-2xl font-bold text-white mb-2">Still have questions?</h3>
-                    <p className="text-white/70 mb-6">We're here to help you plan your perfect Kashmir trip</p>
+                    <h3 className="text-2xl font-bold text-text-dark mb-2">Still have questions?</h3>
+                    <p className="text-text-dark/90 mb-6">We're here to help you plan your perfect Kashmir trip</p>
                     <Link
                         to="/contact"
                         className="inline-flex items-center gap-2 bg-primary text-background-dark font-bold px-8 py-4 rounded-xl hover:bg-primary/90 transition-colors"
