@@ -67,12 +67,12 @@ export function PackageTimeline({ items }) {
     return (
         <div className="relative py-8 px-4 md:px-0">
             {/* Central Line */}
-            <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-primary/40 via-primary to-primary/40 -translate-x-1/2 md:-ml-0.5 rounded-full" />
+            <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-primary/40 via-primary to-primary/40 -translate-x-1/2 rounded-full" />
 
             <div className="space-y-12">
                 {items.map((item, index) => {
                     const theme = getIconAndColor(item, index, items.length);
-                    const isLeft = index % 2 === 0;
+                    const isEven = index % 2 === 0;
 
                     return (
                         <motion.div
@@ -81,10 +81,10 @@ export function PackageTimeline({ items }) {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, margin: "-100px" }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className={`relative flex items-center md:justify-between ${isLeft ? 'flex-row' : 'flex-row-reverse md:flex-row-reverse'}`}
+                            className={`relative flex items-center md:justify-between flex-row ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'}`}
                         >
                             {/* Icon Marker */}
-                            <div className={`absolute left-8 md:left-1/2 -translate-x-1/2 flex items-center justify-center w-12 h-12 rounded-full border-4 z-10 shadow-xl overflow-hidden ${theme.isImage ? 'border-primary bg-white' : `${theme.bg} ${theme.border}`}`}>
+                            <div className={`absolute left-2 md:left-1/2 -translate-x-1/2 flex items-center justify-center w-12 h-12 rounded-full border-4 z-10 shadow-xl overflow-hidden ${theme.isImage ? 'border-primary bg-white' : `${theme.bg} ${theme.border}`}`}>
                                 {item.timelineImage ? (
                                     <img
                                         src={item.timelineImage}
@@ -102,8 +102,10 @@ export function PackageTimeline({ items }) {
                             <div className="hidden md:block w-5/12" />
 
                             {/* Content Card */}
-                            <div className="ml-20 md:ml-0 md:w-5/12 bg-white border border-text-dark/10 rounded-2xl p-6 hover:border-primary/30 hover:shadow-lg transition-all shadow-sm">
-                                <div className={`absolute top-6 w-4 h-4 rotate-45 bg-white border-l border-b border-text-dark/10 ${isLeft ? '-right-2 md:right-auto md:-left-2' : '-left-2 md:left-auto md:-right-2'}`} />
+                            <div className="ml-20 md:ml-0 md:w-5/12 bg-white border border-text-dark/10 rounded-2xl p-6 hover:border-primary/30 hover:shadow-lg transition-all shadow-sm relative">
+                                <div className={`absolute top-6 w-4 h-4 rotate-45 bg-white border-text-dark/10 -left-2 border-l border-b ${!isEven ? 'md:left-auto md:-right-2 md:border-l-0 md:border-b-0 md:border-r md:border-t' : ''}`} />
+
+                                <div className={`absolute top-6 w-4 h-4 rotate-45 bg-white border-l border-b border-text-dark/10 ${!isEven ? 'hidden' : 'hidden'}`} /> {/* Cleaning up old div if present, but replacing completely above */}
 
                                 <div className="flex items-center gap-3 mb-3">
                                     <span className="bg-primary/10 text-primary text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
@@ -159,10 +161,10 @@ export function PackageTimeline({ items }) {
                 })}
 
                 {/* End Marker */}
-                <div className="relative flex justify-center pt-8">
-                    <div className="absolute left-8 md:left-1/2 -translate-x-1/2 top-0 w-1 h-8 bg-primary" />
-                    <div className="relative z-10 bg-primary text-white font-bold px-6 py-2 rounded-full shadow-lg shadow-primary/20 flex items-center gap-2">
-                        <Heart className="w-4 h-4 fill-white" /> Trip Complete
+                <div className="relative h-16 pt-8">
+                    {/* Badge */}
+                    <div className="absolute left-8 md:left-1/2 md:-translate-x-1/2 top-4 z-10 bg-gray-100 text-gray-500 border border-gray-200 font-bold px-4 py-1.5 rounded-full flex items-center gap-2 text-xs uppercase tracking-wide whitespace-nowrap">
+                        <Heart className="w-3 h-3 text-gray-400 fill-gray-400" /> Trip Complete
                     </div>
                 </div>
             </div>

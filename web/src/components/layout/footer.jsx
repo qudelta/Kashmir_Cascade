@@ -11,26 +11,37 @@ export function Footer() {
             </div>
             <div className="max-w-[1280px] mx-auto px-6 md:px-12 relative z-10">
                 {/* Top Section: Centered Newsletter */}
-                <div className="max-w-2xl mx-auto text-center mb-16">
+                {/* Top Section: Brand CTA */}
+                <div className="max-w-3xl mx-auto text-center mb-16">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
                     >
-                        <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 font-display">Join Our Journey</h2>
-                        <p className="text-white/60 mb-8 leading-relaxed">Subscribe to our newsletter for exclusive offers, travel guides, and inspiration for your next Kashmir adventure.</p>
+                        <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 font-display tracking-tight">Ready to Experience <span className="text-secondary">Kashmir</span>?</h2>
+                        <p className="text-white/70 mb-10 text-lg leading-relaxed max-w-2xl mx-auto">
+                            Discover the breathtaking beauty of the valley with our curated premium packages,
+                            designed to give you memories that last a lifetime.
+                        </p>
 
-                        <form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-                            <input
-                                type="email"
-                                placeholder="Your Email Address"
-                                className="flex-1 bg-white/5 border border-white/10 rounded-full h-12 px-6 text-white text-sm focus:outline-none focus:ring-2 focus:ring-primary placeholder:text-white/30 backdrop-blur-sm transition-all"
-                            />
-                            <button className="h-12 px-8 bg-primary hover:bg-primary-dark text-background-dark font-bold rounded-full transition-all shadow-lg hover:shadow-primary/25 whitespace-nowrap">
-                                Subscribe
-                            </button>
-                        </form>
+                        <div className="flex flex-wrap justify-center gap-6">
+                            <Link
+                                to="/packages"
+                                className="h-14 px-10 bg-primary hover:bg-primary-dark text-background-dark font-bold rounded-full transition-all shadow-xl hover:shadow-primary/30 flex items-center justify-center group"
+                            >
+                                Explore Our Packages
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                </svg>
+                            </Link>
+                            <Link
+                                to="/contact"
+                                className="h-14 px-10 bg-white/5 hover:bg-white/10 text-white font-bold rounded-full transition-all border border-white/10 backdrop-blur-sm flex items-center justify-center"
+                            >
+                                Contact Our Experts
+                            </Link>
+                        </div>
                     </motion.div>
                 </div>
 
@@ -85,21 +96,25 @@ export function Footer() {
                             <li><Link className="text-white/60 hover:text-primary transition-colors text-sm" to="/privacy-policy">Privacy Policy</Link></li>
                             <li><Link className="text-white/60 hover:text-primary transition-colors text-sm" to="/cancellation-policy">Cancellation Policy</Link></li>
                             <li><Link className="text-white/60 hover:text-primary transition-colors text-sm" to="/faq">FAQs</Link></li>
-                            <li><Link className="text-white/60 hover:text-primary transition-colors text-sm" to="/site-map">Sitemap</Link></li>
+                            <li><Link className="text-white/60 hover:text-primary transition-colors text-sm" to="/sitemap">Sitemap</Link></li>
                         </ul>
                     </div>
                 </div>
 
                 {/* Bottom */}
-                <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-                    <p className="text-white/40 text-xs">© 2025 Kashmir Travels. All rights reserved.</p>
-                    <p className="text-white/40 text-xs text-center md:text-left">
-                        Designed with <span className="text-red-500">❤</span> by{" "}
+                <div className="border-t border-white/10 pt-10 flex flex-col items-center gap-6 text-center">
+                    <div className="flex flex-col items-center gap-2">
+                        <p className="text-white/40 text-xs tracking-widest uppercase">© 2025 Kashmir Travels. All rights reserved.</p>
+                        <div className="w-12 h-0.5 bg-primary/30 rounded-full"></div>
+                    </div>
+
+                    <p className="text-white/40 text-[10px] sm:text-xs">
+                        Handcrafted with passion by{" "}
                         <a
                             href="https://qudeltasolutions.com"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-primary hover:underline"
+                            className="text-primary hover:text-white transition-colors font-medium border-b border-primary/20 hover:border-white/40"
                         >
                             Qudelta Studios
                         </a>

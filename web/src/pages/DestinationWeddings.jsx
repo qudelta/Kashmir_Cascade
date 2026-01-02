@@ -187,13 +187,7 @@ export default function DestinationWeddings() {
                             </div>
                             <div className="p-6">
                                 <p className="text-text-dark/70 text-sm mb-4 line-clamp-2">{venue.description}</p>
-                                <div className="flex items-center justify-between text-sm mb-4">
-                                    <div className="flex items-center gap-1 text-text-dark/70">
-                                        <Users className="w-4 h-4" />
-                                        <span>{venue.capacity}</span>
-                                    </div>
-                                    <span className="font-semibold text-primary">{venue.priceRange}</span>
-                                </div>
+
                                 <div className="flex flex-wrap gap-2 mb-4">
                                     {venue.highlights.slice(0, 3).map((h, i) => (
                                         <span key={i} className="text-xs bg-primary/5 text-primary px-2 py-1 rounded-full">
@@ -203,9 +197,9 @@ export default function DestinationWeddings() {
                                 </div>
                                 <button
                                     onClick={() => {
-                                        const modal = document.getElementById("planTripModal");
-                                        if (modal) modal.classList.add("open");
-                                        document.body.style.overflow = "hidden";
+                                        window.dispatchEvent(new CustomEvent('open-plan-trip', {
+                                            detail: { tripType: 'Destination Wedding', message: `Inquiry for venue: ${venue.name}` }
+                                        }));
                                     }}
                                     className="w-full py-2.5 bg-text-dark text-white font-semibold rounded-xl hover:bg-primary transition-colors"
                                 >
@@ -294,11 +288,9 @@ export default function DestinationWeddings() {
                             )}
                             <h3 className="text-xl font-bold mb-2">{pkg.title}</h3>
                             <p className={`text-sm mb-4 ${i === 1 ? "text-background-dark/70" : "text-text-dark/70"}`}>
-                                {pkg.guests} • {pkg.duration}
+                                {pkg.duration}
                             </p>
-                            <p className={`text-3xl font-bold mb-6 ${i === 1 ? "" : "text-primary"}`}>
-                                {pkg.price}
-                            </p>
+
                             <ul className="space-y-3 mb-8">
                                 {pkg.includes.map((item, j) => (
                                     <li key={j} className="flex items-center gap-2 text-sm">
@@ -309,16 +301,16 @@ export default function DestinationWeddings() {
                             </ul>
                             <button
                                 onClick={() => {
-                                    const modal = document.getElementById("planTripModal");
-                                    if (modal) modal.classList.add("open");
-                                    document.body.style.overflow = "hidden";
+                                    window.dispatchEvent(new CustomEvent('open-plan-trip', {
+                                        detail: { tripType: 'Destination Wedding', selectedPackage: pkg.title }
+                                    }));
                                 }}
                                 className={`w-full py-3 font-bold rounded-xl transition-colors ${i === 1
-                                    ? "bg-background-dark text-white hover:bg-text-dark"
+                                    ? "bg-white text-primary hover:bg-white/90"
                                     : "bg-primary text-background-dark hover:bg-primary/90"
                                     }`}
                             >
-                                Get Quote
+                                Enquire Now
                             </button>
                         </motion.div>
                     ))}
@@ -347,9 +339,9 @@ export default function DestinationWeddings() {
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.98 }}
                                 onClick={() => {
-                                    const modal = document.getElementById("planTripModal");
-                                    if (modal) modal.classList.add("open");
-                                    document.body.style.overflow = "hidden";
+                                    window.dispatchEvent(new CustomEvent('open-plan-trip', {
+                                        detail: { tripType: 'Destination Wedding' }
+                                    }));
                                 }}
                                 className="px-8 py-4 bg-primary text-background-dark font-bold rounded-xl shadow-lg shadow-primary/30 flex items-center gap-2"
                             >

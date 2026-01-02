@@ -173,7 +173,7 @@ export default function PackageDetail() {
                             </div>
                             <span className="text-sm text-text-dark/70">per person</span>
                             {pkg.originalPrice && (
-                                <div className="mt-2 inline-block bg-green-100 text-green-700 text-xs font-bold px-3 py-1 rounded-full border border-green-200">
+                                <div className="mt-2 inline-block bg-green-100 text-green-700 text-[10px] font-bold px-2 py-0.5 rounded-full border border-green-200">
                                     Save ₹{(pkg.originalPrice - pkg.price).toLocaleString('en-IN')}
                                 </div>
                             )}

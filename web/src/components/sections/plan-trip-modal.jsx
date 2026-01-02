@@ -71,6 +71,28 @@ export function PlanTripModal() {
         const modal = document.getElementById("planTripModal");
         const closeBtn = document.getElementById("closePlanTripModal");
 
+        const handleOpenTrip = (e) => {
+            const { tripType, selectedPackage, message: newMessage } = e.detail || {};
+            setFormData(prev => {
+                // Prevent duplicate message injection
+                let updatedMessage = prev.message;
+                if (newMessage && !updatedMessage.includes(newMessage)) {
+                    updatedMessage = updatedMessage ? `${newMessage}\n\n${updatedMessage}` : newMessage;
+                }
+
+                return {
+                    ...prev,
+                    tripType: tripType || prev.tripType,
+                    selectedPackage: selectedPackage || prev.selectedPackage,
+                    message: updatedMessage,
+                    destination: tripType === "Destination Wedding" ? "Destination Wedding Venue" : prev.destination
+                };
+            });
+            if (modal) modal.classList.add("open");
+            document.body.style.overflow = "hidden";
+        };
+
+        window.addEventListener("open-plan-trip", handleOpenTrip);
         closeBtn?.addEventListener("click", closeModal);
         modal?.addEventListener("click", (e) => {
             if (e.target === modal) closeModal();
@@ -82,6 +104,7 @@ export function PlanTripModal() {
         document.addEventListener("keydown", handleEsc);
 
         return () => {
+            window.removeEventListener("open-plan-trip", handleOpenTrip);
             closeBtn?.removeEventListener("click", closeModal);
             document.removeEventListener("keydown", handleEsc);
         };
@@ -94,6 +117,8 @@ export function PlanTripModal() {
             return;
         }
 
+        const isWedding = formData.tripType === "Destination Wedding";
+
         // Build WhatsApp message
         const message = `*KASHMIR CASCADE - NEW INQUIRY*
 - Experience the Art of Travel -
@@ -103,13 +128,13 @@ export function PlanTripModal() {
 • Phone: ${formData.phone}
 • Email: ${formData.email || "Not provided"}
 
-*Trip Preferences:*
+*${isWedding ? "Wedding Details" : "Trip Preferences"}:*
 • Trip Type: ${formData.tripType}
 • Destination: ${formData.destination}
 • Package: ${formData.selectedPackage}
-• Travel Month: ${formData.travelMonth}
+• ${isWedding ? "Wedding Date" : "Travel Month"}: ${formData.travelMonth}
 • Budget: ${formData.budgetRange}
-• Group Size: ${formData.travelers} Persons
+• ${isWedding ? "Guest Count" : "Group Size"}: ${formData.travelers} Persons
 
 *Special Requirements:*
 ${formData.message || "I'm looking for the best experience!"}
@@ -136,7 +161,21 @@ _Sent via kashmircascade.com_`;
             finalValue = value.replace(/\D/g, "").slice(0, 10);
         }
 
-        setFormData(prev => ({ ...prev, [field]: finalValue }));
+        setFormData(prev => {
+            const newData = { ...prev, [field]: finalValue };
+
+            // Auto-reset budget if switching trip types to/from Wedding
+            if (field === "tripType") {
+                if (finalValue === "Destination Wedding") {
+                    newData.budgetRange = "Under ₹15 Lakhs";
+                    newData.destination = "Destination Wedding Venue";
+                } else if (prev.tripType === "Destination Wedding") {
+                    newData.budgetRange = "Mid-range (₹40k-80k)";
+                    newData.destination = "Kashmir (Classic)";
+                }
+            }
+            return newData;
+        });
 
         // Real-time error clearing
         if (errors[field]) {
@@ -154,21 +193,53 @@ _Sent via kashmircascade.com_`;
                     </button>
 
                     <div className="w-20 h-20 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <CheckCircle className="w-10 h-10 text-primary" />
+                        <MessageSquare className="w-10 h-10 text-primary" />
                     </div>
 
                     <h3 className="text-2xl md:text-3xl font-bold text-text-dark mb-4 font-display">
-                        Inquiry Sent!
+                        Opening WhatsApp...
                     </h3>
                     <p className="text-text-dark/80 mb-6">
-                        Your inquiry has been sent via WhatsApp. Our team will respond within 24 hours to help plan your dream Kashmir trip!
+                        We are redirecting you to WhatsApp to send your inquiry details. If it doesn't open automatically, click the button below.
                     </p>
 
                     <button
-                        onClick={closeModal}
-                        className="w-full h-14 bg-primary text-background-dark font-bold rounded-xl hover:bg-primary/90 transition-all"
+                        onClick={() => {
+                            const isWedding = formData.tripType === "Destination Wedding";
+                            const message = `*KASHMIR CASCADE - NEW INQUIRY*
+- Experience the Art of Travel -
+
+*Customer Details:*
+• Name: ${formData.name}
+• Phone: ${formData.phone}
+• Email: ${formData.email || "Not provided"}
+
+*${isWedding ? "Wedding Details" : "Trip Preferences"}:*
+• Trip Type: ${formData.tripType}
+• Destination: ${formData.destination}
+• Package: ${formData.selectedPackage}
+• ${isWedding ? "Wedding Date" : "Travel Month"}: ${formData.travelMonth}
+• Budget: ${formData.budgetRange}
+• ${isWedding ? "Guest Count" : "Group Size"}: ${formData.travelers} Persons
+
+*Special Requirements:*
+${formData.message || "I'm looking for the best experience!"}
+
+---
+_Sent via kashmircascade.com_`;
+                            const whatsappUrl = `https://wa.me/916006853203?text=${encodeURIComponent(message)}`;
+                            window.open(whatsappUrl, "_blank");
+                        }}
+                        className="w-full h-14 bg-[#25D366] text-white font-bold rounded-xl hover:bg-[#20bd5a] transition-all flex items-center justify-center gap-2 mb-3"
                     >
-                        Close
+                        <Send className="w-5 h-5" /> Open WhatsApp
+                    </button>
+
+                    <button
+                        onClick={closeModal}
+                        className="text-text-dark/60 hover:text-text-dark text-sm font-medium"
+                    >
+                        Close Window
                     </button>
                 </div>
             </div>
@@ -266,6 +337,7 @@ _Sent via kashmircascade.com_`;
                                     <option value="Not Decided">Not Decided / Help Me Choose</option>
                                     {formData.tripType === "Kashmir Trip" && (
                                         <>
+                                            <option value="Destination Wedding">Destination Wedding</option>
                                             <option value="Romantic Honeymoon">Romantic Honeymoon</option>
                                             <option value="Family Adventure">Family Adventure</option>
                                             <option value="Great Lakes Trek">Great Lakes Trek</option>
@@ -326,10 +398,22 @@ _Sent via kashmircascade.com_`;
                                     value={formData.budgetRange}
                                     onChange={(e) => handleInputChange("budgetRange", e.target.value)}
                                 >
-                                    <option value="Economy (₹20k-40k)">Economy (₹20k-40k / person)</option>
-                                    <option value="Mid-range (₹40k-80k)">Mid-range (₹40k-80k / person)</option>
-                                    <option value="Luxury (₹80k-1.5L)">Luxury (₹80k-1.5L / person)</option>
-                                    <option value="Elite (₹1.5L+)">Elite (₹1.5L+ / person)</option>
+                                    {formData.tripType === "Destination Wedding" ? (
+                                        <>
+                                            <option value="Under ₹15 Lakhs">Under ₹15 Lakhs (Total)</option>
+                                            <option value="₹15 Lakhs - ₹30 Lakhs">₹15 Lakhs - ₹30 Lakhs (Total)</option>
+                                            <option value="₹30 Lakhs - ₹50 Lakhs">₹30 Lakhs - ₹50 Lakhs (Total)</option>
+                                            <option value="₹50 Lakhs - ₹1 Crore">₹50 Lakhs - ₹1 Crore (Total)</option>
+                                            <option value="₹1 Crore+">₹1 Crore+ (Total)</option>
+                                        </>
+                                    ) : (
+                                        <>
+                                            <option value="Economy (₹20k-40k)">Economy (₹20k-40k / person)</option>
+                                            <option value="Mid-range (₹40k-80k)">Mid-range (₹40k-80k / person)</option>
+                                            <option value="Luxury (₹80k-1.5L)">Luxury (₹80k-1.5L / person)</option>
+                                            <option value="Elite (₹1.5L+)">Elite (₹1.5L+ / person)</option>
+                                        </>
+                                    )}
                                 </select>
                             </div>
                         </div>
@@ -337,34 +421,48 @@ _Sent via kashmircascade.com_`;
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div className="space-y-1.5">
-                            <label className="text-[10px] font-bold text-text-dark/60 uppercase tracking-widest ml-1">Travel Month</label>
+                            <label className="text-[10px] font-bold text-text-dark/60 uppercase tracking-widest ml-1">
+                                {formData.tripType === "Destination Wedding" ? "Tentative Wedding Date" : "Travel Month"}
+                            </label>
                             <div className="relative group">
                                 <div className="absolute left-4 top-1/2 -translate-y-1/2 text-primary/60 group-focus-within:text-primary transition-colors">
                                     <Calendar className="w-4 h-4" />
                                 </div>
-                                <select
-                                    className="w-full h-11 pl-10 pr-4 bg-white/5 border border-white/10 rounded-xl text-text-dark text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary appearance-none cursor-pointer transition-all"
-                                    value={formData.travelMonth}
-                                    onChange={(e) => handleInputChange("travelMonth", e.target.value)}
-                                >
-                                    <option value="Any Month">Any Month</option>
-                                    <option value="January">January</option>
-                                    <option value="February">February</option>
-                                    <option value="March">March</option>
-                                    <option value="April">April</option>
-                                    <option value="May">May</option>
-                                    <option value="June">June</option>
-                                    <option value="July">July</option>
-                                    <option value="August">August</option>
-                                    <option value="September">September</option>
-                                    <option value="October">October</option>
-                                    <option value="November">November</option>
-                                    <option value="December">December</option>
-                                </select>
+                                {formData.tripType === "Destination Wedding" ? (
+                                    <input
+                                        type="text"
+                                        placeholder="E.g. Dec 2025"
+                                        value={formData.travelMonth}
+                                        onChange={(e) => handleInputChange("travelMonth", e.target.value)}
+                                        className="w-full h-11 pl-10 pr-4 bg-white/5 border border-white/10 rounded-xl text-text-dark text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all"
+                                    />
+                                ) : (
+                                    <select
+                                        className="w-full h-11 pl-10 pr-4 bg-white/5 border border-white/10 rounded-xl text-text-dark text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary appearance-none cursor-pointer transition-all"
+                                        value={formData.travelMonth}
+                                        onChange={(e) => handleInputChange("travelMonth", e.target.value)}
+                                    >
+                                        <option value="Any Month">Any Month</option>
+                                        <option value="January">January</option>
+                                        <option value="February">February</option>
+                                        <option value="March">March</option>
+                                        <option value="April">April</option>
+                                        <option value="May">May</option>
+                                        <option value="June">June</option>
+                                        <option value="July">July</option>
+                                        <option value="August">August</option>
+                                        <option value="September">September</option>
+                                        <option value="October">October</option>
+                                        <option value="November">November</option>
+                                        <option value="December">December</option>
+                                    </select>
+                                )}
                             </div>
                         </div>
                         <div className="space-y-1.5">
-                            <label className="text-[10px] font-bold text-text-dark/60 uppercase tracking-widest ml-1">Travelers</label>
+                            <label className="text-[10px] font-bold text-text-dark/60 uppercase tracking-widest ml-1">
+                                {formData.tripType === "Destination Wedding" ? "Estimated Guest Count" : "Travelers"}
+                            </label>
                             <div className="relative group">
                                 <div className="absolute left-4 top-1/2 -translate-y-1/2 text-primary/60 group-focus-within:text-primary transition-colors">
                                     <Users className="w-4 h-4" />
@@ -372,7 +470,7 @@ _Sent via kashmircascade.com_`;
                                 <input
                                     type="number"
                                     min="1"
-                                    max="50"
+                                    max="500"
                                     value={formData.travelers}
                                     onChange={(e) => handleInputChange("travelers", parseInt(e.target.value) || 1)}
                                     className="w-full h-11 pl-10 pr-4 bg-white/5 border border-white/10 rounded-xl text-text-dark text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"

@@ -6,7 +6,7 @@
 
 @layer base {
     body {
-        @apply bg-background-light text-text-dark antialiased font-body font-light;
+        @apply bg-background-dark text-text-dark antialiased font-body font-light;
         overflow-x: hidden;
         /* Prevent horizontal scroll */
     }
@@ -242,9 +242,7 @@
     animation: slide-up 0.5s ease-out forwards;
 }
 
-.animate-fade-in {
-    animation: fade-in 0.5s ease-out forwards;
-}
+/* .animate-fade-in removal */
 
 /* Stagger delay utilities */
 .stagger-1 {

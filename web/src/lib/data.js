@@ -277,7 +277,7 @@ export const destinations = [
         title: "Bungus Valley",
         subtitle: "The Unexplored Eden",
         description: "Bungus Valley is a pristine biosphere reserve located in Kupwara district. It is a hidden gem with lush green meadows, dense forests, and crystal clear streams. The valley is known for its biodiversity and tranquility.",
-        image: "/images/placeholder-bungus.jpg",
+        image: "/images/Bungus Valley.webp",
         stats: { altitude: "3,000 m", bestTime: "May - Sep", distance: "90 km from Srinagar" },
         attractions: [
             { title: "Biosphere Reserve", desc: "Rich flora and fauna." },
@@ -290,7 +290,7 @@ export const destinations = [
         title: "Wular Lake",
         subtitle: "Asia's Largest Freshwater Lake",
         description: "Wular Lake is one of the largest fresh water lakes in Asia. It plays a significant role in the hydrographic system of the Kashmir Valley by acting as a huge absorption basin for floodwaters.",
-        image: "/images/placeholder-wular.jpg",
+        image: "/images/wular-lake.jpg",
         stats: { altitude: "1,580 m", bestTime: "Year Round", distance: "60 km from Srinagar" },
         attractions: [
             { title: "Boating", desc: "Explore the vast lake." },
@@ -303,7 +303,7 @@ export const destinations = [
         title: "Verinag",
         subtitle: "Source of Jhelum",
         description: "Verinag is a tourist resort and mugal garden in Anantnag district. It is famous for its octagonal spring and a beautiful garden built by Emperor Jahangir.",
-        image: "/images/placeholder-verinag.jpg",
+        image: "/images/Verinag.jpg",
         stats: { altitude: "1,876 m", bestTime: "Apr - Oct", distance: "78 km from Srinagar" },
         attractions: [
             { title: "Mughal Garden", desc: "Beautifully laid out garden." },
@@ -316,7 +316,7 @@ export const destinations = [
         title: "Aharbal",
         subtitle: "Niagara of Kashmir",
         description: "Aharbal is known for its waterfall, Aharbal Falls, where the Veshu River falls noisily 25 metres and 7 metres through a narrow gorge of granite boulders.",
-        image: "/images/placeholder-aharbal.jpg",
+        image: "/images/Aharbal Waterfall.webp",
         stats: { altitude: "2,266 m", bestTime: "May - Oct", distance: "75 km from Srinagar" },
         attractions: [
             { title: "Aharbal Waterfall", desc: "Stunning waterfall." },
@@ -329,7 +329,7 @@ export const destinations = [
         title: "Dakshum",
         subtitle: "Wildlife Sanctuary",
         description: "Dakshum is a beautiful picnic spot, situated in the middle of Bhringi River and rich vegetation. It is also a wildlife sanctuary home to trout fish, musk deer, and leopards.",
-        image: "/images/placeholder-dakshum.jpg",
+        image: "/images/Daksum.jpg",
         stats: { altitude: "2,438 m", bestTime: "Apr - Sep", distance: "85 km from Srinagar" },
         attractions: [
             { title: "Wildlife Sanctuary", desc: "Spot exotic wildlife." },
@@ -342,7 +342,7 @@ export const destinations = [
         title: "Dachigam National Park",
         subtitle: "Home of the Hangul",
         description: "Dachigam National Park is located 22 kilometers from Srinagar. The park is famous for being the home of the Hangul, or Kashmir stag.",
-        image: "/images/placeholder-dachigam.jpg",
+        image: "/images/Dachigan national park.jpg",
         stats: { altitude: "1,700-4,300 m", bestTime: "May - Aug", distance: "22 km from Srinagar" },
         attractions: [
             { title: "Wildlife Safari", desc: "Spot the Kashmir Stag (Hangul)." },
@@ -355,7 +355,7 @@ export const destinations = [
         title: "Sinthan Top",
         subtitle: "Mountain Pass",
         description: "Sinthan Top is a hill station located between South Kashmir's Breng Valley and Kishtwar. It is popular for its panoramic views and year-round snow.",
-        image: "/images/placeholder-sinthan.jpg",
+        image: "/images/Sinthan top.webp",
         stats: { altitude: "3,748 m", bestTime: "Apr - Sep", distance: "130 km from Srinagar" },
         attractions: [
             { title: "Snow Activities", desc: "Snow available most of the year." },
@@ -368,7 +368,7 @@ export const destinations = [
         title: "Razdan Pass",
         subtitle: "Gateway to Gurez",
         description: "Razdan Pass connects the Gurez Valley to the rest of Kashmir. It offers spectacular views of the surrounding mountains and valleys.",
-        image: "/images/placeholder-razdan.jpg",
+        image: "/images/Razdan Pass.jpg",
         stats: { altitude: "3,557 m", bestTime: "May - Oct", distance: "76 km from Srinagar" },
         attractions: [
             { title: "Scenic Drive", desc: "Breathtaking mountain road." },
@@ -382,7 +382,7 @@ export const destinations = [
         title: "Zanskar Valley",
         subtitle: "The Isolated Kingdom",
         description: "Zanskar is a sub-district or tehsil of the Kargil district. It is famous for its high breathtaking mountains and the Zanskar River.",
-        image: "/images/placeholder-zanskar.jpg",
+        image: "/images/Zanskar_Valley.jpg",
         stats: { altitude: "3,500-7,000 m", bestTime: "Jun - Sep", distance: "460 km from Leh" },
         attractions: [
             { title: "Phugtal Monastery", desc: "Unique cave monastery." },
@@ -395,7 +395,7 @@ export const destinations = [
         title: "Umling La Pass",
         subtitle: "Highest Motorable Road",
         description: "Umling La is currently the highest motorable road in the world, standing at an altitude of 19,024 feet. It is a must-visit for adventure bikers.",
-        image: "/images/placeholder-umling.jpg",
+        image: "/images/Uming La.jpg",
         stats: { altitude: "5,798 m", bestTime: "Jun - Sep", distance: "105 km from Hanle" },
         attractions: [
             { title: "Highest Road", desc: "World Record holder." },
@@ -408,7 +408,7 @@ export const destinations = [
         title: "Kaksang La",
         subtitle: "High Mountain Pass",
         description: "Kaksang La is a high mountain pass in Ladakh, offering stunning views and a challenging drive. It features serene lakes near the top.",
-        image: "/images/placeholder-kaksang.jpg",
+        image: "/images/Kaksang La.webp",
         stats: { altitude: "5,438 m", bestTime: "Jun - Sep", distance: "Near Mahe" },
         attractions: [
             { title: "Twin Lakes", desc: "Beautiful high altitude lakes." },
@@ -421,7 +421,7 @@ export const destinations = [
         title: "Khardung La Pass",
         subtitle: "Gateway to Nubra",
         description: "Khardung La is a mountain pass in the Ladakh region. It is the gateway to the Shyok and Nubra valleys and is historically significant.",
-        image: "/images/placeholder-khardungla.jpg",
+        image: "/images/Khardungla Pss.png",
         stats: { altitude: "5,359 m", bestTime: "Year Round", distance: "40 km from Leh" },
         attractions: [
             { title: "Photo Point", desc: "Classic photo op at the top." },
@@ -434,7 +434,7 @@ export const destinations = [
         title: "Tso Moriri",
         subtitle: "Mountain Lake",
         description: "Tso Moriri is a lake in the Changthang Plateau in Ladakh. It is the largest of the high altitude lakes entirely within India.",
-        image: "/images/placeholder-tsomoriri.jpg",
+        image: "/images/Tso Miriri Lake.jpg",
         stats: { altitude: "4,522 m", bestTime: "Jun - Sep", distance: "220 km from Leh" },
         attractions: [
             { title: "Bird Watching", desc: "Migratory birds." },
@@ -447,7 +447,7 @@ export const destinations = [
         title: "Lamayuru",
         subtitle: "Moonland of Ladakh",
         description: "Lamayuru is known for its 'Moonland' like landscapes and the Lamayuru Monastery, one of the oldest and largest in Ladakh.",
-        image: "/images/placeholder-lamayuru.jpg",
+        image: "/images/Lamayuru.jpg",
         stats: { altitude: "3,510 m", bestTime: "Apr - Oct", distance: "127 km from Leh" },
         attractions: [
             { title: "Lamayuru Monastery", desc: "Ancient Buddhist monastery." },
@@ -469,11 +469,13 @@ export const packages = [
         nights: 5,
         rating: 4.9,
         reviews: 156,
-        image: "/images/Kashmir 2.jpg",
+        image: "/images/Luxury houseboat.jpg",
         gallery: [
+            "/images/Luxury houseboat.jpg",
+            "/images/Deluxe House Boar.jpg",
             "/images/Kashmir 2.jpg",
-            "/images/Doodhpathri.jpg",
-            "/images/Pahalgam.jpg"
+            "/images/indian 3.jpg",
+            "/images/pexels-imadclicks-12622138.jpg"
         ],
         category: "Honeymoon",
         groupSize: "2 People (Private)",
@@ -507,7 +509,7 @@ export const packages = [
                 accommodation: "Deluxe Houseboat, Dal Lake",
                 distance: "12 km from Airport",
                 icon: 'plane',
-                timelineImage: "/images/Kashmir Dal Lake Background.jpg"
+                timelineImage: "/images/Luxury houseboat.jpg"
             },
             {
                 day: 2,
@@ -517,7 +519,7 @@ export const packages = [
                 meals: "Breakfast & Dinner",
                 accommodation: "Deluxe Houseboat, Dal Lake",
                 icon: 'camera',
-                timelineImage: "/images/Mughal gardens.jpg"
+                timelineImage: "/images/Deluxe House Boar.jpg"
             },
             {
                 day: 3,
@@ -575,6 +577,11 @@ export const packages = [
         rating: 4.8,
         reviews: 234,
         image: "/images/gulmarg-featured.jpg",
+        gallery: [
+            "/images/gulmarg-featured.jpg",
+            "/images/srinagar-city.jpg",
+            "/images/Pahalgam.jpg"
+        ],
         category: "Family",
         groupSize: "2-8 People",
         difficulty: "Easy",
@@ -605,7 +612,7 @@ export const packages = [
                 highlights: ["Traditional Kahwa welcome", "Houseboat exploration for kids", "Family Shikara ride", "Dinner on houseboat deck"],
                 meals: "Dinner",
                 accommodation: "Family Houseboat, Dal Lake",
-                timelineImage: "/images/Kashmir Dal Lake Background.jpg"
+                timelineImage: "/images/Deluxe House Boar.jpg"
             },
             {
                 day: 2,
@@ -614,7 +621,7 @@ export const packages = [
                 highlights: ["Mughal Gardens with family photo ops", "Panoramic views from Shankaracharya", "Floating Vegetable Market", "Shopping for family souvenirs"],
                 meals: "Breakfast & Dinner",
                 accommodation: "Family Houseboat, Dal Lake",
-                timelineImage: "/images/Srinagr City.jpg"
+                timelineImage: "/images/Deluxe House Boar.jpg"
             },
             {
                 day: 3,
@@ -661,7 +668,7 @@ export const packages = [
                 highlights: ["Leisure morning", "Apple town visit (seasonal)", "Photo stop at scenic points", "Warm farewell"],
                 meals: "Breakfast",
                 distance: "90 km (2.5 hours)",
-                timelineImage: "/images/Srinagr City.jpg"
+                timelineImage: "/images/srinagar-city.jpg"
             }
         ]
     },
@@ -810,11 +817,11 @@ export const packages = [
         nights: 7,
         rating: 4.8,
         reviews: 76,
-        image: "/images/placeholder-lamayuru.jpg",
+        image: "/images/Lamayuru.jpg",
         gallery: [
-            "/images/Leh Ladakh.jpg",
-            "/images/placeholder-lamayuru.jpg",
-            "/images/placeholder-tsomoriri.jpg"
+            "/images/Ladakh Monastery.jpg",
+            "/images/Lamayuru.jpg",
+            "/images/Leh Ladakh.jpg"
         ],
         category: "Spiritual",
         groupSize: "4-12 People",
@@ -866,7 +873,7 @@ export const packages = [
                 meals: "Breakfast, Lunch & Dinner",
                 accommodation: "Guesthouse at Lamayuru",
                 distance: "160 km (5-6 hours)",
-                timelineImage: "/images/placeholder-lamayuru.jpg"
+                timelineImage: "/images/Lamayuru.jpg"
             },
             {
                 day: 4,
@@ -927,11 +934,11 @@ export const packages = [
         nights: 8,
         rating: 4.9,
         reviews: 134,
-        image: "/images/placeholder-tsomoriri.jpg",
+        image: "/images/Tso Miriri Lake.jpg",
         gallery: [
-            "/images/Leh Ladakh.jpg",
-            "/images/placeholder-tsomoriri.jpg",
-            "/images/Nigeen Lake.jpg"
+            "/images/Ladakh Pangong Lake.webp",
+            "/images/Tso Miriri Lake.jpg",
+            "/images/Ladakh 2.jpg"
         ],
         category: "Adventure",
         groupSize: "4-10 People",
@@ -1002,7 +1009,7 @@ export const packages = [
                 meals: "Breakfast, Lunch & Dinner",
                 accommodation: "Camp at Tso Moriri",
                 distance: "220 km (8-9 hours)",
-                timelineImage: "/images/placeholder-tsomoriri.jpg"
+                timelineImage: "/images/Tso Miriri Lake.jpg"
             },
             {
                 day: 6,
@@ -1011,7 +1018,7 @@ export const packages = [
                 highlights: ["Korzok Monastery", "Bird watching", "Village walk", "Mountain reflections"],
                 meals: "Breakfast, Lunch & Dinner",
                 accommodation: "Camp at Tso Moriri",
-                timelineImage: "/images/placeholder-tsomoriri.jpg"
+                timelineImage: "/images/Tso Miriri Lake.jpg"
             },
             {
                 day: 7,
@@ -1054,11 +1061,11 @@ export const packages = [
         nights: 9,
         rating: 5.0,
         reviews: 198,
-        image: "/images/indian 2.jpg",
+        image: "/images/Ladakh Bike.webp",
         gallery: [
-            "/images/Leh Ladakh.jpg",
-            "/images/indian 2.jpg",
-            "/images/placeholder-khardungla.jpg"
+            "/images/Ladakh Bike.webp",
+            "/images/Khardungla Pss.png",
+            "/images/Uming La.jpg"
         ],
         category: "Adventure",
         groupSize: "6-15 Riders",
@@ -1112,7 +1119,7 @@ export const packages = [
                 meals: "Breakfast, Lunch & Dinner",
                 accommodation: "Camp in Nubra",
                 distance: "120 km",
-                timelineImage: "/images/placeholder-khardungla.jpg"
+                timelineImage: "/images/Khardungla Pss.png"
             },
             {
                 day: 4,
@@ -1152,7 +1159,7 @@ export const packages = [
                 meals: "Breakfast, Lunch & Dinner",
                 accommodation: "Homestay in Hanle",
                 distance: "110 km (round trip)",
-                timelineImage: "/images/placeholder-umling.jpg"
+                timelineImage: "/images/Uming La.jpg"
             },
             {
                 day: 8,
@@ -1194,10 +1201,11 @@ export const packages = [
         nights: 6,
         rating: 4.6,
         reviews: 287,
-        image: "/images/Leh Ladakh.jpg",
+        image: "/images/Ladakh budget.jpg",
         gallery: [
+            "/images/Ladakh budget.jpg",
             "/images/Leh Ladakh.jpg",
-            "/images/placeholder-khardungla.jpg"
+            "/images/Ladakh 2.jpg"
         ],
         category: "Budget",
         groupSize: "6-12 People",
@@ -1248,7 +1256,7 @@ export const packages = [
                 meals: "Breakfast & Dinner",
                 accommodation: "Camp in Nubra",
                 distance: "120 km",
-                timelineImage: "/images/placeholder-khardungla.jpg"
+                timelineImage: "/images/Khardungla Pss.png"
             },
             {
                 day: 4,
@@ -1368,7 +1376,7 @@ export const packages = [
                 highlights: ["Morning prayers", "Charar-e-Sharief shrine", "Jamia Masjid visit", "Blessed departure"],
                 meals: "Breakfast",
                 distance: "90 km to Airport",
-                timelineImage: "/images/Srinagr City.jpg"
+                timelineImage: "/images/srinagar-city.jpg"
             }
         ]
     },
@@ -1485,7 +1493,7 @@ export const packages = [
                 highlights: ["Leisure breakfast", "Wular Lake stop", "Return to Srinagar", "Trek completion certificate"],
                 meals: "Breakfast",
                 distance: "75 km drive",
-                timelineImage: "/images/Srinagr City.jpg"
+                timelineImage: "/images/srinagar-city.jpg"
             }
         ]
     },
@@ -1540,7 +1548,7 @@ export const packages = [
                 highlights: ["Snow-covered Mughal Gardens", "Winter Shikara ride", "Misty lake photography", "Pashmina shopping"],
                 meals: "Breakfast & Dinner",
                 accommodation: "Heated Houseboat, Dal Lake",
-                timelineImage: "/images/Srinagr City.jpg"
+                timelineImage: "/images/srinagar-city.jpg"
             },
             {
                 day: 3,
@@ -1577,7 +1585,7 @@ export const packages = [
                 highlights: ["Leisure morning", "Scenic return drive", "Airport transfer", "Winter memories to cherish"],
                 meals: "Breakfast",
                 distance: "51 km (3-4 hours)",
-                timelineImage: "/images/Srinagr City.jpg"
+                timelineImage: "/images/srinagar-city.jpg"
             }
         ]
     },
@@ -1624,7 +1632,7 @@ export const packages = [
                 highlights: ["Airport pickup", "Guesthouse check-in", "Sunset Shikara ride", "Boulevard walk"],
                 meals: "None",
                 accommodation: "Budget Guesthouse, Srinagar",
-                timelineImage: "/images/Kashmir Dal Lake Background.jpg"
+                timelineImage: "/images/Deluxe House Boar.jpg"
             },
             {
                 day: 2,
@@ -1633,7 +1641,7 @@ export const packages = [
                 highlights: ["Mughal Gardens tour", "Shankaracharya Temple", "Old city exploration", "Local food tasting"],
                 meals: "Breakfast",
                 accommodation: "Budget Guesthouse, Srinagar",
-                timelineImage: "/images/Srinagr City.jpg"
+                timelineImage: "/images/srinagar-city.jpg"
             },
             {
                 day: 3,
@@ -1709,7 +1717,7 @@ export const packages = [
                 highlights: ["Equipment check", "Camera settings workshop", "Dal Lake golden hour", "First photo review"],
                 meals: "Dinner",
                 accommodation: "Luxury Houseboat, Dal Lake",
-                timelineImage: "/images/Kashmir Dal Lake Background.jpg"
+                timelineImage: "/images/Luxury houseboat.jpg"
             },
             {
                 day: 2,
@@ -1718,7 +1726,7 @@ export const packages = [
                 highlights: ["Floating market sunrise", "Street photography", "Architectural shots", "Hazratbal sunset"],
                 meals: "Breakfast, Lunch & Dinner",
                 accommodation: "Luxury Houseboat, Dal Lake",
-                timelineImage: "/images/Srinagr City.jpg"
+                timelineImage: "/images/Luxury houseboat.jpg"
             },
             {
                 day: 3,
@@ -1736,7 +1744,7 @@ export const packages = [
                 highlights: ["High altitude shots", "Gondola ride photography", "Blue hour meadows", "Night resort shots"],
                 meals: "Breakfast, Lunch & Dinner",
                 accommodation: "Resort, Gulmarg",
-                timelineImage: "/images/gulmarg-featured.jpg"
+                timelineImage: "/images/Khyber Himalayan Resoort.webp"
             },
             {
                 day: 5,
@@ -1754,7 +1762,7 @@ export const packages = [
                 highlights: ["River photography", "Valley landscapes", "Shepherd portraits", "Best photo awards"],
                 meals: "Breakfast, Lunch & Dinner",
                 accommodation: "Resort, Pahalgam",
-                timelineImage: "/images/Pahalgam.jpg"
+                timelineImage: "/images/Riverside Resort.avif"
             },
             {
                 day: 7,
@@ -1810,7 +1818,7 @@ export const packages = [
                 highlights: ["Assisted airport pickup", "Comfortable hotel check-in", "Rest day", "Light dinner"],
                 meals: "Dinner",
                 accommodation: "Premium Hotel, Srinagar",
-                timelineImage: "/images/Kashmir Dal Lake Background.jpg"
+                timelineImage: "/images/Premium Hotel Srinagar.jpg"
             },
             {
                 day: 2,
@@ -1857,7 +1865,7 @@ export const packages = [
                 highlights: ["Free day", "Optional activities", "Shopping assistance", "Farewell dinner"],
                 meals: "Breakfast, Lunch & Dinner",
                 accommodation: "Premium Hotel, Srinagar",
-                timelineImage: "/images/Srinagr City.jpg"
+                timelineImage: "/images/srinagar-city.jpg"
             },
             {
                 day: 7,
@@ -1883,7 +1891,7 @@ export const experiences = [
         id: "houseboat-stay",
         title: "Luxury Houseboat Stay",
         description: "Experience the unique heritage of Kashmir by staying in a intricately carved cedar wood houseboat floating on the lake.",
-        image: "/images/Kashmir 2.jpg",
+        image: "/images/Luxury houseboat.jpg",
         icon: "Home"
     },
     {
@@ -1924,9 +1932,7 @@ export const weddingVenues = [
         type: "Heritage Palace Hotel",
         location: "Gupkar Road, Srinagar",
         description: "A majestic 19th-century palace overlooking Dal Lake, offering regal grandeur for fairytale weddings. The sprawling lawns, heritage interiors, and stunning lake views create an unforgettable backdrop.",
-        image: "/images/placeholder-lalit.jpg",
-        capacity: "Up to 1000 guests",
-        priceRange: "₹15,00,000 - ₹50,00,000",
+        image: "/images/Lalit Grand palace.webp",
         highlights: ["Dal Lake Views", "Heritage Architecture", "Mughal Gardens", "Royal Ballrooms", "Luxury Suites"],
         amenities: ["In-house Catering", "Valet Parking", "Bridal Suite", "Spa & Wellness", "Helipad"]
     },
@@ -1936,9 +1942,7 @@ export const weddingVenues = [
         type: "Luxury Resort",
         location: "Kralsangri, Brein, Srinagar",
         description: "Perched on a hilltop with panoramic views of Dal Lake and the Zabarwan mountains. Modern luxury meets Kashmiri aesthetics in this architectural marvel perfect for contemporary weddings.",
-        image: "/images/placeholder-vivanta.jpg",
-        capacity: "Up to 500 guests",
-        priceRange: "₹10,00,000 - ₹35,00,000",
+        image: "/images/Taj Vivanta.jpg",
         highlights: ["Panoramic Lake Views", "Mountain Backdrop", "Modern Banquet Hall", "Outdoor Terraces", "Infinity Pool"],
         amenities: ["Multi-cuisine Catering", "Wedding Planner", "Décor Services", "DJ & Sound System", "Accommodation"]
     },
@@ -1948,9 +1952,7 @@ export const weddingVenues = [
         type: "Mountain Luxury Resort",
         location: "Gulmarg",
         description: "Set amidst snow-capped peaks and alpine meadows at 8,825 ft, this award-winning resort offers a magical winter wonderland wedding experience unlike any other in India.",
-        image: "/images/gulmarg-featured.jpg",
-        capacity: "Up to 300 guests",
-        priceRange: "₹20,00,000 - ₹75,00,000",
+        image: "/images/Khyber Himalayan Resoort.webp",
         highlights: ["Snow-capped Mountains", "Private Gondola Access", "Alpine Meadows", "Fireplace Venues", "Ski Resort"],
         amenities: ["Gourmet Dining", "Spa Retreat", "Helipad", "Butler Service", "Private Chalets"]
     },
@@ -1960,9 +1962,7 @@ export const weddingVenues = [
         type: "Floating Venue",
         location: "Dal Lake, Srinagar",
         description: "An intimate and utterly unique wedding experience on a decorated heritage houseboat, surrounded by the serene waters of Dal Lake. Perfect for smaller, intimate celebrations.",
-        image: "/images/Kashmir 2.jpg",
-        capacity: "Up to 100 guests",
-        priceRange: "₹5,00,000 - ₹15,00,000",
+        image: "/images/Luxury houseboat.jpg",
         highlights: ["Floating Venue", "Shikara Procession", "Sunset Ceremonies", "Traditional Décor", "Intimate Setting"],
         amenities: ["On-board Catering", "Live Music", "Decorated Shikaras", "Photography Boats", "Fireworks (permitted areas)"]
     },
@@ -1973,8 +1973,6 @@ export const weddingVenues = [
         location: "Shalimar Bagh / Nishat Bagh",
         description: "Exchange vows in the historic Mughal Gardens, where emperors once celebrated love. The terraced gardens, cascading fountains, and Chinar-lined pathways create a timeless romantic setting.",
         image: "/images/Mughal gardens.jpg",
-        capacity: "Up to 500 guests",
-        priceRange: "₹8,00,000 - ₹25,00,000",
         highlights: ["Historic Gardens", "Terraced Lawns", "Cascading Fountains", "Chinar Trees", "Lake Views"],
         amenities: ["Government Permit Assistance", "Temporary Structures", "Lighting Setup", "Catering Space", "Guest Facilities"]
     },
@@ -1984,9 +1982,7 @@ export const weddingVenues = [
         type: "Heritage Hotel",
         location: "Gulmarg Road, Near Golf Course",
         description: "One of Kashmir's oldest heritage properties, Nedou's combines colonial charm with Kashmiri hospitality. The vintage ballrooms and manicured lawns offer a classic wedding setting.",
-        image: "/images/placeholder-nedous.jpg",
-        capacity: "Up to 400 guests",
-        priceRange: "₹7,00,000 - ₹20,00,000",
+        image: "/images/Nedous Hotel.jpeg",
         highlights: ["Colonial Architecture", "Golf Course Views", "Vintage Ballroom", "Garden Lawn", "Heritage Charm"],
         amenities: ["Traditional Wazwan", "Vintage Décor", "Live Band Space", "Bridal Suite", "Parking"]
     }
@@ -2047,25 +2043,19 @@ export const weddingPackages = [
     {
         id: "intimate-kashmir",
         title: "Intimate Kashmir Wedding",
-        guests: "Up to 100 guests",
         duration: "3 Days / 2 Nights",
-        price: "₹15,00,000 onwards",
         includes: ["Houseboat Venue", "Décor & Flowers", "Wazwan Dinner", "Photography", "Shikara Transfers"]
     },
     {
         id: "royal-celebration",
         title: "Royal Kashmir Celebration",
-        guests: "100-300 guests",
         duration: "4 Days / 3 Nights",
-        price: "₹35,00,000 onwards",
         includes: ["Palace Hotel Venue", "Complete Planning", "Multi-event Décor", "Catering", "Entertainment", "Guest Coordination"]
     },
     {
         id: "grand-destination",
         title: "Grand Destination Wedding",
-        guests: "300-1000 guests",
         duration: "5 Days / 4 Nights",
-        price: "₹75,00,000 onwards",
         includes: ["Multiple Venues", "Celebrity Planner", "Luxury Décor", "Multi-cuisine", "A-list Entertainment", "Full Guest Management", "Helicopter Services"]
     }
 ];

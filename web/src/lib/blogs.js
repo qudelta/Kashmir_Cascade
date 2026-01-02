@@ -498,5 +498,50 @@ Come back next year for Ladakh. Trust me, you'll want to come back anyway.
         category: "Travel Guide",
         image: "/images/Leh Ladakh.jpg",
         tags: ["Ladakh", "Kashmir", "Comparison", "Travel Planning", "Adventure"]
+    },
+    {
+        id: "gulmarg-snowfall-jan-2025",
+        title: "Gulmarg's First Major Snowfall of 2025: A Winter Spectacle",
+        excerpt: "The year 2025 has started with a magical white blanket over Gulmarg. Discover how the recent snowfall is transforming the valley into an adventurer's dream.",
+        content: `The first week of January 2025 has gifted Kashmir something we've all been waiting for—a heavy, consistent snowfall that has transformed Gulmarg into a pristine white paradise. If you're planning a trip this month, you're in for a treat.
+
+## The Magic of Recent Snowfall
+
+On January 2nd, Gulmarg received over 12 inches of fresh powder snow. The pine trees are bowed under the weight of the white flakes, and the legendary golf course is now a vast, undulating field of white. This is the kind of snow that skiers dream of—thick, soft, and perfect for carving.
+
+**Current Conditions:**
+- **Temperature:** -4°C to -10°C
+- **Snow Depth:** 2-3 feet at the base, 5+ feet at Phase 2
+- **Visibility:** Crystal clear on sunny days following the storm
+
+## What's New in Gulmarg This Season?
+
+### 1. Improved Skiing Infrastructure
+The local authorities have upgraded the ski lifts and groomed several new trails for intermediate skiers. Whether you're a pro or a beginner taking your first lesson, the slopes are in peak condition right now.
+
+### 2. Winter Festivals
+With the arrival of snow, several slope-side festivals are being planned, featuring local music, Kashmiri street food, and night skiing opportunities.
+
+### 3. Photography Paradase
+The 'Blue Hour' in Gulmarg after a fresh snowfall is incomparable. The way the moonlight reflects off the fresh snow creates a luminous landscape that is a dream for photographers.
+
+## Planning Your Visit
+
+If you're coming to see the snow, now is the time. We recommend:
+- Booking a hotel with central heating (essential for these temperatures).
+- Ensuring your 4x4 vehicle is equipped with chains for the drive up from Tangmarg.
+- Taking the Gondola to Phase 2 for the best panoramic views of the Nanga Parbat.
+
+**A message from our team:** We are currently on the ground in Gulmarg, assisting our guests with skiing equipment and ensuring their stay is warm and comfortable. The magic is here, and we can't wait to share it with you.
+
+*Ready to walk in this winter wonderland? Claim our Limited Time Offer for 20% off on all winter packages.*`,
+        author: "Faisal Mir",
+        authorRole: "Founder, Kashmir Travels",
+        authorImage: "/images/team-faisal.png",
+        date: "2025-01-02",
+        readTime: "5 min read",
+        category: "News & Updates",
+        image: "/images/Winter white snow gulmatg.jpg",
+        tags: ["Gulmarg", "Snowfall", "Kashmir 2025", "Winter Travel", "Skiing"]
     }
 ];

@@ -5,6 +5,7 @@ import { Footer } from "@/components/layout/footer";
 import { WhatsAppCta } from "@/components/ui/whatsapp-cta";
 import { PlanTripModal } from "@/components/sections/plan-trip-modal";
 import { ScrollToTop } from "@/components/layout/scroll-to-top";
+import { PageTransition } from "@/components/layout/page-transition";
 import { Loader2 } from "lucide-react";
 
 // Lazy load pages
@@ -42,26 +43,28 @@ function App() {
         <Navbar />
         <main className="flex-grow">
           <Suspense fallback={<PageLoader />}>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/destinations" element={<Destinations />} />
-              <Route path="/destinations/:id" element={<DestinationDetail />} />
-              <Route path="/packages" element={<Packages />} />
-              <Route path="/packages/:id" element={<PackageDetail />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/blog" element={<Blog />} />
-              <Route path="/blog/:id" element={<BlogPost />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/faq" element={<FAQ />} />
-              <Route path="/privacy-policy" element={<Privacy />} />
-              <Route path="/terms" element={<Terms />} />
-              <Route path="/cancellation-policy" element={<Cancellation />} />
-              <Route path="/gallery" element={<Gallery />} />
-              <Route path="/reviews" element={<Reviews />} />
-              <Route path="/experiences" element={<Experiences />} />
-              <Route path="/sitemap" element={<Sitemap />} />
-              <Route path="/destination-weddings" element={<DestinationWeddings />} />
-            </Routes>
+            <PageTransition>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/destinations" element={<Destinations />} />
+                <Route path="/destinations/:id" element={<DestinationDetail />} />
+                <Route path="/packages" element={<Packages />} />
+                <Route path="/packages/:id" element={<PackageDetail />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/blog" element={<Blog />} />
+                <Route path="/blog/:id" element={<BlogPost />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/faq" element={<FAQ />} />
+                <Route path="/privacy-policy" element={<Privacy />} />
+                <Route path="/terms" element={<Terms />} />
+                <Route path="/cancellation-policy" element={<Cancellation />} />
+                <Route path="/gallery" element={<Gallery />} />
+                <Route path="/reviews" element={<Reviews />} />
+                <Route path="/experiences" element={<Experiences />} />
+                <Route path="/sitemap" element={<Sitemap />} />
+                <Route path="/destination-weddings" element={<DestinationWeddings />} />
+              </Routes>
+            </PageTransition>
           </Suspense>
         </main>
         <Footer />
