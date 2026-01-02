@@ -1,5 +1,6 @@
 {
-  "name": "web",
+  "name": "kashmir-cascade-web",
+  "description": "Premium travel agency website for Kashmir tours built with React + Vite",
   "private": true,
   "version": "0.0.0",
   "type": "module",

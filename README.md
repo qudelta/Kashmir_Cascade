@@ -1,4 +1,4 @@
-# Kashmiri Tours 🏔️
+# Kashmir Cascade 🏔️
 
 A premium, modern web application for Kashmir-based Tours and Travel Agency. This beautifully designed platform showcases stunning destinations, tour packages, and detailed itineraries for exploring the paradise on Earth - Kashmir.
 
@@ -14,13 +14,14 @@ A premium, modern web application for Kashmir-based Tours and Travel Agency. Thi
 
 ## 🛠️ Tech Stack
 
-- **Framework**: Next.js 16
-- **UI**: React 19
+- **Framework**: Vite + React 19
+- **Build Tool**: Vite
 - **Styling**: Tailwind CSS
 - **Animations**: Framer Motion
 - **Icons**: Lucide React
 - **Timeline**: React Vertical Timeline Component
-- **Language**: TypeScript
+- **Routing**: React Router DOM
+- **Deployment**: Ready for Cloudflare Pages / Static Hosting
 
 ## 🚀 Getting Started
 
@@ -32,8 +33,8 @@ A premium, modern web application for Kashmir-based Tours and Travel Agency. Thi
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/Mehras-Bhat03/kashmiri-tours.git
-cd kashmiri-tours
+git clone https://github.com/qudelta/Kashmir_Cascade.git
+cd Kashmir_Cascade
 ```
 
 2. Navigate to the web directory:
@@ -51,21 +52,26 @@ npm install
 npm run dev
 ```
 
-5. Open [http://localhost:3000](http://localhost:3000) in your browser
+5. Open [http://localhost:5173](http://localhost:5173) in your browser
 
 ## 📁 Project Structure
 
 ```
-kashmiri-tours/
-├── web/                    # Main Next.js application
+Kashmir_Cascade/
+├── web/                    # Main Vite React application
 │   ├── src/
-│   │   ├── app/           # Next.js App Router pages
+│   │   ├── pages/         # Application pages (Home, Destinations, Packages, etc.)
 │   │   ├── components/    # React components
-│   │   │   ├── layout/    # Layout components (Navbar, Footer)
+│   │   │   ├── layout/    # Layout components (Navbar, Footer, PageHeader)
 │   │   │   ├── sections/  # Page sections (Hero, Destinations, etc.)
 │   │   │   └── ui/        # Reusable UI components
-│   │   └── lib/           # Utilities and data
-│   ├── public/            # Static assets
+│   │   ├── lib/           # Utilities and data
+│   │   ├── assets/        # Static assets
+│   │   ├── App.jsx        # Main routing configuration
+│   │   └── main.jsx       # Application entry point
+│   ├── public/            # Public static assets
+│   ├── index.html         # HTML entry point
+│   ├── vite.config.js     # Vite configuration
 │   └── package.json
 └── legacy_prototype/      # Legacy prototype files
 ```
@@ -81,4 +87,4 @@ This project is private and proprietary.
 
 ---
 
-*Experience the magic of Kashmir with Kashmiri Tours* 🌸
+*Experience the magic of Kashmir with Kashmir Cascade* 🌸
