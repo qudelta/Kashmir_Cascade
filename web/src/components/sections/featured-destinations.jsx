@@ -160,7 +160,7 @@ export function FeaturedDestinations() {
                                         initial={{ y: 0 }}
                                         whileHover={{ y: 0 }}
                                         transition={{ duration: 0.3 }}
-                                        className="bg-black/20 backdrop-blur-sm border border-white/10 p-4 rounded-xl"
+                                        className="bg-black/20 backdrop-blur-[2px] border border-white/10 p-4 rounded-tl-[1.5rem] rounded-br-[1.5rem] rounded-tr-none rounded-bl-none"
                                     >
                                         <h3 className={`${dest.size === "large" ? "text-2xl" : "text-xl"} font-bold text-white mb-0.5 font-display`}>
                                             {dest.title}
