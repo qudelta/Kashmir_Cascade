@@ -41,75 +41,6 @@ export function PlanTripModal() {
 
         // Phone validation (Required, 10 digits)
         const phoneDigits = formData.phone.replace(/\D/g, "");
-        // ... (skip lines)
-        {/* Basic Info */ }
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="space-y-1.5">
-                <label className="text-[10px] font-bold text-text-dark/60 uppercase tracking-widest ml-1">
-                    Full Name <span className="text-red-400">*</span>
-                </label>
-                <div className="relative group">
-                    <div className="absolute left-4 top-1/2 -translate-y-1/2 text-primary/60 group-focus-within:text-primary transition-colors">
-                        <User className="w-4 h-4" />
-                    </div>
-                    <input
-                        type="text"
-                        required
-                        placeholder="John Doe"
-                        value={formData.name}
-                        onChange={(e) => handleInputChange("name", e.target.value)}
-                        className={`w-full h-11 pl-10 pr-4 bg-white/5 border rounded-xl text-text-dark text-sm focus:outline-none focus:ring-2 transition-all placeholder:text-text-dark/20 ${errors.name
-                            ? "border-red-500/50 focus:ring-red-500/20"
-                            : "border-white/10 focus:ring-primary/50 focus:border-primary"
-                            }`}
-                    />
-                </div>
-            </div>
-            <div className="space-y-1.5">
-                <label className="text-[10px] font-bold text-text-dark/60 uppercase tracking-widest ml-1">
-                    Email Address <span className="text-red-400">*</span>
-                </label>
-                <div className="relative group">
-                    <div className="absolute left-4 top-1/2 -translate-y-1/2 text-primary/60 group-focus-within:text-primary transition-colors">
-                        <MessageSquare className="w-4 h-4" />
-                    </div>
-                    <input
-                        type="email"
-                        required
-                        placeholder="john@example.com"
-                        value={formData.email}
-                        onChange={(e) => handleInputChange("email", e.target.value)}
-                        className={`w-full h-11 pl-10 pr-4 bg-white/5 border rounded-xl text-text-dark text-sm focus:outline-none focus:ring-2 transition-all placeholder:text-text-dark/20 ${errors.email
-                            ? "border-red-500/50 focus:ring-red-500/20"
-                            : "border-white/10 focus:ring-primary/50 focus:border-primary"
-                            }`}
-                    />
-                </div>
-            </div>
-        </div>
-
-        {/* Phone Number - Full Width */ }
-        <div className="space-y-1.5">
-            <label className="text-[10px] font-bold text-text-dark/60 uppercase tracking-widest ml-1">
-                Phone Number <span className="text-red-400">*</span>
-            </label>
-            <div className="relative group">
-                <div className="absolute left-4 top-1/2 -translate-y-1/2 text-primary/60 group-focus-within:text-primary transition-colors">
-                    <Phone className="w-4 h-4" />
-                </div>
-                <input
-                    type="tel"
-                    required
-                    placeholder="10-digit number"
-                    value={formData.phone}
-                    onChange={(e) => handleInputChange("phone", e.target.value)}
-                    className={`w-full h-11 pl-10 pr-4 bg-white/5 border rounded-xl text-text-dark text-sm focus:outline-none focus:ring-2 transition-all placeholder:text-text-dark/20 ${errors.phone
-                        ? "border-red-500/50 focus:ring-red-500/20"
-                        : "border-white/10 focus:ring-primary/50 focus:border-primary"
-                        }`}
-                />
-            </div>
-        </div>
         if (!formData.phone.trim()) {
             tempErrors.phone = "Phone number is required";
         } else if (phoneDigits.length < 10) {
@@ -280,6 +211,11 @@ _Sent via kashmircascade.com_`;
         if (errors[field]) {
             setErrors(prev => ({ ...prev, [field]: null }));
         }
+
+        // Auto-fill custom destination if selected
+        if (field === "destination" && finalValue === "Custom / Other Destination") {
+            setFormData(prev => ({ ...prev, customDestination: "I'm looking for a custom experience" }));
+        }
     };
 
     // Success state
@@ -345,6 +281,23 @@ _Sent via kashmircascade.com_`;
         );
     }
 
+    // derived state for button disable
+    const isFormValid = () => {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const phoneDigits = formData.phone.replace(/\D/g, "");
+
+        // Destination check (Always valid now as per user request, but keeping structure for safety)
+        // Custom text box is optional (and auto-filled), standard selection is always valid.
+        const hasValidDestination = true;
+
+        const hasValidName = formData.name.trim().length >= 3;
+        const hasValidEmail = formData.email.trim() && emailRegex.test(formData.email);
+        const hasValidPhone = phoneDigits.length === 10;
+        const hasValidTravelers = formData.travelers >= 1 && formData.travelers <= 50;
+
+        return hasValidName && hasValidEmail && hasValidPhone && hasValidTravelers && hasValidDestination;
+    };
+
     return (
         <div className="fixed inset-0 bg-black/80 z-[100] flex items-start md:items-center justify-center modal-overlay p-4 pt-20 md:pt-4 overflow-y-auto" id="planTripModal">
             <div className="bg-white rounded-2xl p-5 md:p-8 max-w-2xl w-full shadow-2xl relative modal-content border border-white/10 my-auto">
@@ -383,24 +336,47 @@ _Sent via kashmircascade.com_`;
                         </div>
                         <div className="space-y-1.5">
                             <label className="text-[10px] font-bold text-text-dark/60 uppercase tracking-widest ml-1">
-                                Phone Number <span className="text-red-400">*</span>
+                                Email Address <span className="text-red-400">*</span>
                             </label>
                             <div className="relative group">
                                 <div className="absolute left-4 top-1/2 -translate-y-1/2 text-primary/60 group-focus-within:text-primary transition-colors">
-                                    <Phone className="w-4 h-4" />
+                                    <MessageSquare className="w-4 h-4" />
                                 </div>
                                 <input
-                                    type="tel"
+                                    type="email"
                                     required
-                                    placeholder="10-digit number"
-                                    value={formData.phone}
-                                    onChange={(e) => handleInputChange("phone", e.target.value)}
-                                    className={`w-full h-11 pl-10 pr-4 bg-white/5 border rounded-xl text-text-dark text-sm focus:outline-none focus:ring-2 transition-all placeholder:text-text-dark/20 ${errors.phone
+                                    placeholder="john@example.com"
+                                    value={formData.email}
+                                    onChange={(e) => handleInputChange("email", e.target.value)}
+                                    className={`w-full h-11 pl-10 pr-4 bg-white/5 border rounded-xl text-text-dark text-sm focus:outline-none focus:ring-2 transition-all placeholder:text-text-dark/20 ${errors.email
                                         ? "border-red-500/50 focus:ring-red-500/20"
                                         : "border-white/10 focus:ring-primary/50 focus:border-primary"
                                         }`}
                                 />
                             </div>
+                        </div>
+                    </div>
+
+                    {/* Phone Number - Full Width */}
+                    <div className="space-y-1.5">
+                        <label className="text-[10px] font-bold text-text-dark/60 uppercase tracking-widest ml-1">
+                            Phone Number <span className="text-red-400">*</span>
+                        </label>
+                        <div className="relative group">
+                            <div className="absolute left-4 top-1/2 -translate-y-1/2 text-primary/60 group-focus-within:text-primary transition-colors">
+                                <Phone className="w-4 h-4" />
+                            </div>
+                            <input
+                                type="tel"
+                                required
+                                placeholder="10-digit number"
+                                value={formData.phone}
+                                onChange={(e) => handleInputChange("phone", e.target.value)}
+                                className={`w-full h-11 pl-10 pr-4 bg-white/5 border rounded-xl text-text-dark text-sm focus:outline-none focus:ring-2 transition-all placeholder:text-text-dark/20 ${errors.phone
+                                    ? "border-red-500/50 focus:ring-red-500/20"
+                                    : "border-white/10 focus:ring-primary/50 focus:border-primary"
+                                    }`}
+                            />
                         </div>
                     </div>
 
@@ -574,7 +550,10 @@ _Sent via kashmircascade.com_`;
 
                     <button
                         type="submit"
-                        className="w-full h-12 bg-primary text-background-dark font-bold rounded-xl hover:bg-primary/90 transition-all flex items-center justify-center gap-2 shadow-lg shadow-primary/20"
+                        disabled={!isFormValid()}
+                        className={`w-full h-12 font-bold rounded-xl transition-all flex items-center justify-center gap-2 shadow-lg shadow-primary/20 ${isFormValid()
+                            ? "bg-primary text-background-dark hover:bg-primary/90"
+                            : "bg-gray-100 text-gray-400 cursor-not-allowed"}`}
                     >
                         <Send className="w-4 h-4" />
                         <span>Confirm & Send via WhatsApp</span>
