@@ -218,6 +218,7 @@ _Sent via kashmircascade.com_`;
                                 <input
                                     type="email"
                                     id="email"
+                                    required
                                     value={formData.email}
                                     onChange={handleInputChange}
                                     className="w-full h-12 px-4 rounded-xl bg-white/5 border border-text-dark/10 focus:border-primary focus:ring-1 focus:ring-primary/50 text-text-dark placeholder:text-text-dark/50 outline-none transition-all"

@@ -31,8 +31,85 @@ export function PlanTripModal() {
             tempErrors.name = "Name must be at least 3 characters";
         }
 
+        // Email validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!formData.email.trim()) {
+            tempErrors.email = "Email is required";
+        } else if (!emailRegex.test(formData.email)) {
+            tempErrors.email = "Please enter a valid email address";
+        }
+
         // Phone validation (Required, 10 digits)
         const phoneDigits = formData.phone.replace(/\D/g, "");
+        // ... (skip lines)
+        {/* Basic Info */ }
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="space-y-1.5">
+                <label className="text-[10px] font-bold text-text-dark/60 uppercase tracking-widest ml-1">
+                    Full Name <span className="text-red-400">*</span>
+                </label>
+                <div className="relative group">
+                    <div className="absolute left-4 top-1/2 -translate-y-1/2 text-primary/60 group-focus-within:text-primary transition-colors">
+                        <User className="w-4 h-4" />
+                    </div>
+                    <input
+                        type="text"
+                        required
+                        placeholder="John Doe"
+                        value={formData.name}
+                        onChange={(e) => handleInputChange("name", e.target.value)}
+                        className={`w-full h-11 pl-10 pr-4 bg-white/5 border rounded-xl text-text-dark text-sm focus:outline-none focus:ring-2 transition-all placeholder:text-text-dark/20 ${errors.name
+                            ? "border-red-500/50 focus:ring-red-500/20"
+                            : "border-white/10 focus:ring-primary/50 focus:border-primary"
+                            }`}
+                    />
+                </div>
+            </div>
+            <div className="space-y-1.5">
+                <label className="text-[10px] font-bold text-text-dark/60 uppercase tracking-widest ml-1">
+                    Email Address <span className="text-red-400">*</span>
+                </label>
+                <div className="relative group">
+                    <div className="absolute left-4 top-1/2 -translate-y-1/2 text-primary/60 group-focus-within:text-primary transition-colors">
+                        <MessageSquare className="w-4 h-4" />
+                    </div>
+                    <input
+                        type="email"
+                        required
+                        placeholder="john@example.com"
+                        value={formData.email}
+                        onChange={(e) => handleInputChange("email", e.target.value)}
+                        className={`w-full h-11 pl-10 pr-4 bg-white/5 border rounded-xl text-text-dark text-sm focus:outline-none focus:ring-2 transition-all placeholder:text-text-dark/20 ${errors.email
+                            ? "border-red-500/50 focus:ring-red-500/20"
+                            : "border-white/10 focus:ring-primary/50 focus:border-primary"
+                            }`}
+                    />
+                </div>
+            </div>
+        </div>
+
+        {/* Phone Number - Full Width */ }
+        <div className="space-y-1.5">
+            <label className="text-[10px] font-bold text-text-dark/60 uppercase tracking-widest ml-1">
+                Phone Number <span className="text-red-400">*</span>
+            </label>
+            <div className="relative group">
+                <div className="absolute left-4 top-1/2 -translate-y-1/2 text-primary/60 group-focus-within:text-primary transition-colors">
+                    <Phone className="w-4 h-4" />
+                </div>
+                <input
+                    type="tel"
+                    required
+                    placeholder="10-digit number"
+                    value={formData.phone}
+                    onChange={(e) => handleInputChange("phone", e.target.value)}
+                    className={`w-full h-11 pl-10 pr-4 bg-white/5 border rounded-xl text-text-dark text-sm focus:outline-none focus:ring-2 transition-all placeholder:text-text-dark/20 ${errors.phone
+                        ? "border-red-500/50 focus:ring-red-500/20"
+                        : "border-white/10 focus:ring-primary/50 focus:border-primary"
+                        }`}
+                />
+            </div>
+        </div>
         if (!formData.phone.trim()) {
             tempErrors.phone = "Phone number is required";
         } else if (phoneDigits.length < 10) {
