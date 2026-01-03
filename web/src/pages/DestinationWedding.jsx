@@ -54,8 +54,31 @@ export default function DestinationWedding() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log("Wedding Inquiry:", formData);
-        alert("Thank you! We'll contact you within 24 hours.");
+
+        const message = `*KASHMIR CASCADE - WEDDING INQUIRY*
+- Experience the Art of Travel -
+
+*Customer Details:*
+• Name: ${formData.name}
+• Email: ${formData.email}
+• Phone: ${formData.phone}
+
+*Wedding Details:*
+• Date: ${formData.date}
+• Guests: ${formData.guests}
+• Budget: ${formData.budget || "Not specified"}
+• Venue: ${formData.venue || "To be decided"}
+
+*Special Requirements:*
+${formData.message || "I'm looking for the perfect destination wedding in Kashmir!"}
+
+---
+_Sent via kashmircascade.com_`;
+
+        const encodedMessage = encodeURIComponent(message);
+        const whatsappUrl = `https://wa.me/916006853203?text=${encodedMessage}`;
+        window.open(whatsappUrl, "_blank");
+
         setFormData({ name: "", email: "", phone: "", date: "", guests: "", budget: "", venue: "", message: "" });
     };
 

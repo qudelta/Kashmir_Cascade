@@ -1,6 +1,7 @@
 import { PageHeader } from "@/components/layout/page-header";
 import { Mail, Phone, MapPin, Clock, Send } from "lucide-react";
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 export default function Contact() {
     const contactInfo = [
@@ -50,6 +51,45 @@ export default function Contact() {
             phone: "+91 8899 299 127"
         }
     ];
+
+    const [formData, setFormData] = useState({
+        firstName: "",
+        lastName: "",
+        email: "",
+        phone: "",
+        message: ""
+    });
+
+    const handleInputChange = (e) => {
+        const { id, value } = e.target;
+        setFormData(prev => ({
+            ...prev,
+            [id]: value
+        }));
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        const fullName = `${formData.firstName} ${formData.lastName}`.trim();
+        const waMessage = `*KASHMIR CASCADE - CONTACT INQUIRY*
+- Experience the Art of Travel -
+
+*Customer Details:*
+• Name: ${fullName}
+• Email: ${formData.email || "Not provided"}
+• Phone: ${formData.phone}
+
+*Message:*
+${formData.message || "I'm looking for more information about your services."}
+
+---
+_Sent via kashmircascade.com_`;
+
+        const encodedMessage = encodeURIComponent(waMessage);
+        const whatsappUrl = `https://wa.me/916006853203?text=${encodedMessage}`;
+        window.open(whatsappUrl, "_blank");
+    };
 
     return (
         <div className="min-h-screen bg-background-light">
@@ -134,12 +174,16 @@ export default function Contact() {
                         className="bg-white rounded-2xl border border-text-dark/10 p-8 md:p-12"
                     >
                         <h3 className="text-2xl font-bold text-text-dark mb-6">Send us a Message</h3>
-                        <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+                        <form className="space-y-6" onSubmit={handleSubmit}>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div className="space-y-2">
                                     <label className="text-sm font-medium text-text-dark">First Name</label>
                                     <input
                                         type="text"
+                                        id="firstName"
+                                        required
+                                        value={formData.firstName}
+                                        onChange={handleInputChange}
                                         className="w-full h-12 px-4 rounded-xl bg-white/5 border border-text-dark/10 focus:border-primary focus:ring-1 focus:ring-primary/50 text-text-dark placeholder:text-text-dark/50 outline-none transition-all"
                                         placeholder="John"
                                     />
@@ -148,6 +192,10 @@ export default function Contact() {
                                     <label className="text-sm font-medium text-text-dark">Last Name</label>
                                     <input
                                         type="text"
+                                        id="lastName"
+                                        required
+                                        value={formData.lastName}
+                                        onChange={handleInputChange}
                                         className="w-full h-12 px-4 rounded-xl bg-white/5 border border-text-dark/10 focus:border-primary focus:ring-1 focus:ring-primary/50 text-text-dark placeholder:text-text-dark/50 outline-none transition-all"
                                         placeholder="Doe"
                                     />
@@ -158,6 +206,9 @@ export default function Contact() {
                                 <label className="text-sm font-medium text-text-dark">Email Address</label>
                                 <input
                                     type="email"
+                                    id="email"
+                                    value={formData.email}
+                                    onChange={handleInputChange}
                                     className="w-full h-12 px-4 rounded-xl bg-white/5 border border-text-dark/10 focus:border-primary focus:ring-1 focus:ring-primary/50 text-text-dark placeholder:text-text-dark/50 outline-none transition-all"
                                     placeholder="john@example.com"
                                 />
@@ -167,6 +218,10 @@ export default function Contact() {
                                 <label className="text-sm font-medium text-text-dark">Phone Number</label>
                                 <input
                                     type="tel"
+                                    id="phone"
+                                    required
+                                    value={formData.phone}
+                                    onChange={handleInputChange}
                                     className="w-full h-12 px-4 rounded-xl bg-white/5 border border-text-dark/10 focus:border-primary focus:ring-1 focus:ring-primary/50 text-text-dark placeholder:text-text-dark/50 outline-none transition-all"
                                     placeholder="+91 9999999999"
                                 />
@@ -175,6 +230,10 @@ export default function Contact() {
                             <div className="space-y-2">
                                 <label className="text-sm font-medium text-text-dark">Message</label>
                                 <textarea
+                                    id="message"
+                                    required
+                                    value={formData.message}
+                                    onChange={handleInputChange}
                                     className="w-full h-32 px-4 py-3 rounded-xl bg-white/5 border border-text-dark/10 focus:border-primary focus:ring-1 focus:ring-primary/50 text-text-dark placeholder:text-text-dark/50 outline-none transition-all resize-none"
                                     placeholder="Tell us about your travel plans..."
                                 />
@@ -184,7 +243,7 @@ export default function Contact() {
                                 type="submit"
                                 className="w-full h-14 rounded-xl bg-primary text-background-dark font-bold text-lg hover:bg-primary/90 transition-colors flex items-center justify-center gap-2"
                             >
-                                Send Message <Send className="w-5 h-5" />
+                                Send via WhatsApp <Send className="w-5 h-5" />
                             </button>
                         </form>
                     </motion.div>

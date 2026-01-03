@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { X, User, Phone, MapPin, Calendar, Users, MessageSquare, Send, CheckCircle, Mountain } from "lucide-react";
+import { CustomSelect } from "../ui/custom-select";
 
 export function PlanTripModal() {
     const [formData, setFormData] = useState({
@@ -9,7 +10,8 @@ export function PlanTripModal() {
         tripType: "Kashmir Trip",
         destination: "Kashmir (Classic)",
         selectedPackage: "Not Decided",
-        travelMonth: "Any Month",
+        customDestination: "",
+        travelMonth: ["Any Month"],
         budgetRange: "Mid-range (₹40k-80k)",
         travelers: 2,
         message: ""
@@ -59,7 +61,8 @@ export function PlanTripModal() {
                 tripType: "Kashmir Trip",
                 destination: "Kashmir (Classic)",
                 selectedPackage: "Not Decided",
-                travelMonth: "Any Month",
+                customDestination: "",
+                travelMonth: ["Any Month"],
                 budgetRange: "Mid-range (₹40k-80k)",
                 travelers: 2,
                 message: ""
@@ -132,7 +135,7 @@ export function PlanTripModal() {
 • Trip Type: ${formData.tripType}
 • Destination: ${formData.destination}
 • Package: ${formData.selectedPackage}
-• ${isWedding ? "Wedding Date" : "Travel Month"}: ${formData.travelMonth}
+• ${isWedding ? "Wedding Date" : "Travel Month"}: ${Array.isArray(formData.travelMonth) ? formData.travelMonth.join(", ") : formData.travelMonth}
 • Budget: ${formData.budgetRange}
 • ${isWedding ? "Guest Count" : "Group Size"}: ${formData.travelers} Persons
 
@@ -218,7 +221,7 @@ _Sent via kashmircascade.com_`;
 • Trip Type: ${formData.tripType}
 • Destination: ${formData.destination}
 • Package: ${formData.selectedPackage}
-• ${isWedding ? "Wedding Date" : "Travel Month"}: ${formData.travelMonth}
+• ${isWedding ? "Wedding Date" : "Travel Month"}: ${Array.isArray(formData.travelMonth) ? formData.travelMonth.join(", ") : formData.travelMonth}
 • Budget: ${formData.budgetRange}
 • ${isWedding ? "Guest Count" : "Group Size"}: ${formData.travelers} Persons
 
@@ -306,129 +309,116 @@ _Sent via kashmircascade.com_`;
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div className="space-y-1.5">
-                            <label className="text-[10px] font-bold text-text-dark/60 uppercase tracking-widest ml-1">Trip Type</label>
-                            <div className="relative group">
-                                <div className="absolute left-4 top-1/2 -translate-y-1/2 text-primary/60 group-focus-within:text-primary transition-colors">
-                                    <Mountain className="w-4 h-4" />
-                                </div>
-                                <select
-                                    className="w-full h-11 pl-10 pr-4 bg-white/5 border border-white/10 rounded-xl text-text-dark text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary appearance-none cursor-pointer transition-all"
-                                    value={formData.tripType}
-                                    onChange={(e) => handleInputChange("tripType", e.target.value)}
-                                >
-                                    <option value="Kashmir Trip">Kashmir Trip</option>
-                                    <option value="Ladakh Trip">Ladakh Trip</option>
-                                    <option value="Destination Wedding">Destination Wedding</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div className="space-y-1.5">
-                            <label className="text-[10px] font-bold text-text-dark/60 uppercase tracking-widest ml-1">Preferred Package</label>
-                            <div className="relative group">
-                                <div className="absolute left-4 top-1/2 -translate-y-1/2 text-primary/60 group-focus-within:text-primary transition-colors">
-                                    <CheckCircle className="w-4 h-4" />
-                                </div>
-                                <select
-                                    className="w-full h-11 pl-10 pr-4 bg-white/5 border border-white/10 rounded-xl text-text-dark text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary appearance-none cursor-pointer transition-all"
-                                    value={formData.selectedPackage}
-                                    onChange={(e) => handleInputChange("selectedPackage", e.target.value)}
-                                >
-                                    <option value="Not Decided">Not Decided / Help Me Choose</option>
-                                    {formData.tripType === "Kashmir Trip" && (
-                                        <>
-                                            <option value="Destination Wedding">Destination Wedding</option>
-                                            <option value="Romantic Honeymoon">Romantic Honeymoon</option>
-                                            <option value="Family Adventure">Family Adventure</option>
-                                            <option value="Great Lakes Trek">Great Lakes Trek</option>
-                                            <option value="Spiritual Pilgrimage">Spiritual Pilgrimage</option>
-                                            <option value="Winter Special">Winter Special</option>
-                                        </>
-                                    )}
-                                    {formData.tripType === "Ladakh Trip" && (
-                                        <>
-                                            <option value="Monastery Trail">Monastery Trail</option>
-                                            <option value="Lakes Explorer">Lakes Explorer</option>
-                                            <option value="Bike Expedition">Bike Expedition</option>
-                                            <option value="Adventure Expedition">Adventure Expedition</option>
-                                            <option value="Budget Explorer">Budget Explorer</option>
-                                        </>
-                                    )}
-                                    {formData.tripType === "Destination Wedding" && (
-                                        <>
-                                            <option value="Intimate Wedding">Intimate Wedding</option>
-                                            <option value="Royal Celebration">Royal Celebration</option>
-                                            <option value="Grand Destination">Grand Destination</option>
-                                        </>
-                                    )}
-                                </select>
-                            </div>
-                        </div>
+                        <CustomSelect
+                            label="Trip Type"
+                            icon={Mountain}
+                            value={formData.tripType}
+                            onChange={(value) => handleInputChange("tripType", value)}
+                            options={[
+                                { value: "Kashmir Trip", label: "Kashmir Trip" },
+                                { value: "Ladakh Trip", label: "Ladakh Trip" },
+                                { value: "Destination Wedding", label: "Destination Wedding" }
+                            ]}
+                        />
+                        <CustomSelect
+                            label="Preferred Package"
+                            icon={CheckCircle}
+                            value={formData.selectedPackage}
+                            onChange={(value) => handleInputChange("selectedPackage", value)}
+                            options={[
+                                { value: "Not Decided", label: "Not Decided / Help Me Choose" },
+                                ...(formData.tripType === "Kashmir Trip" ? [
+                                    { value: "Romantic Honeymoon", label: "Romantic Honeymoon" },
+                                    { value: "Family Adventure", label: "Family Adventure" },
+                                    { value: "Offbeat Expedition", label: "Offbeat Expedition" },
+                                    { value: "Great Lakes Trek", label: "Great Lakes Trek" },
+                                    { value: "Spiritual Pilgrimage", label: "Spiritual Pilgrimage" },
+                                    { value: "Winter Special", label: "Winter Special" },
+                                    { value: "Photography Special", label: "Photography Special" }
+                                ] : []),
+                                ...(formData.tripType === "Ladakh Trip" ? [
+                                    { value: "Monastery Trail", label: "Monastery Trail" },
+                                    { value: "Lakes Explorer", label: "Lakes Explorer" },
+                                    { value: "Pangong & Tso Moriri", label: "Pangong & Tso Moriri" },
+                                    { value: "Bike Expedition", label: "Bike Expedition" },
+                                    { value: "Adventure Expedition", label: "Adventure Expedition" },
+                                    { value: "Zanskar Expedition", label: "Zanskar Expedition" },
+                                    { value: "Winter Chadar Trek", label: "Winter Chadar Trek" },
+                                    { value: "Budget Explorer", label: "Budget Explorer" }
+                                ] : []),
+                                ...(formData.tripType === "Destination Wedding" ? [
+                                    { value: "Intimate Wedding", label: "Intimate Wedding" },
+                                    { value: "Royal Celebration", label: "Royal Celebration" },
+                                    { value: "Grand Destination", label: "Grand Destination" }
+                                ] : [])
+                            ]}
+                        />
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div className="space-y-1.5">
-                            <label className="text-[10px] font-bold text-text-dark/60 uppercase tracking-widest ml-1">Destination Focus</label>
-                            <div className="relative group">
-                                <div className="absolute left-4 top-1/2 -translate-y-1/2 text-primary/60 group-focus-within:text-primary transition-colors">
-                                    <MapPin className="w-4 h-4" />
+                        <CustomSelect
+                            label="Destination Focus"
+                            icon={MapPin}
+                            value={formData.destination}
+                            onChange={(value) => handleInputChange("destination", value)}
+                            options={[
+                                { value: "Kashmir (Classic)", label: "Kashmir (Classic)" },
+                                { value: "Kashmir (Off-beat)", label: "Kashmir (Off-beat)" },
+                                { value: "Ladakh (Classic)", label: "Ladakh (Classic)" },
+                                { value: "Ladakh (Off-beat)", label: "Ladakh (Off-beat)" },
+                                { value: "Kashmir & Ladakh (Combo)", label: "Kashmir & Ladakh (Combo)" },
+                                { value: "Destination Wedding Venue", label: "Destination Wedding Venue" },
+                                { value: "Custom / Other Destination", label: "Custom / Other Destination" }
+                            ]}
+                        />
+                        {formData.destination === "Custom / Other Destination" && (
+                            <div className="space-y-1.5 md:col-span-1">
+                                <label className="text-[10px] font-bold text-text-dark/60 uppercase tracking-widest ml-1">
+                                    Specify Destination <span className="text-red-400">*</span>
+                                </label>
+                                <div className="relative group">
+                                    <div className="absolute left-4 top-1/2 -translate-y-1/2 text-primary/60 group-focus-within:text-primary transition-colors">
+                                        <MapPin className="w-4 h-4" />
+                                    </div>
+                                    <input
+                                        type="text"
+                                        required
+                                        placeholder="E.g. Gurez Valley, Zanskar..."
+                                        value={formData.customDestination}
+                                        onChange={(e) => handleInputChange("customDestination", e.target.value)}
+                                        className="w-full h-11 pl-10 pr-4 bg-white/5 border border-white/10 rounded-xl text-text-dark text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all placeholder:text-text-dark/20"
+                                    />
                                 </div>
-                                <select
-                                    className="w-full h-11 pl-10 pr-4 bg-white/5 border border-white/10 rounded-xl text-text-dark text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary appearance-none cursor-pointer transition-all"
-                                    value={formData.destination}
-                                    onChange={(e) => handleInputChange("destination", e.target.value)}
-                                >
-                                    <option value="Kashmir (Classic)">Kashmir (Classic)</option>
-                                    <option value="Kashmir (Off-beat)">Kashmir (Off-beat)</option>
-                                    <option value="Ladakh (Classic)">Ladakh (Classic)</option>
-                                    <option value="Ladakh (Off-beat)">Ladakh (Off-beat)</option>
-                                    <option value="Kashmir & Ladakh (Combo)">Kashmir & Ladakh (Combo)</option>
-                                    <option value="Destination Wedding Venue">Destination Wedding Venue</option>
-                                </select>
                             </div>
-                        </div>
-                        <div className="space-y-1.5">
-                            <label className="text-[10px] font-bold text-text-dark/60 uppercase tracking-widest ml-1">Approx. Budget</label>
-                            <div className="relative group">
-                                <div className="absolute left-4 top-1/2 -translate-y-1/2 text-primary/60 group-focus-within:text-primary transition-colors">
-                                    <Users className="w-4 h-4" />
-                                </div>
-                                <select
-                                    className="w-full h-11 pl-10 pr-4 bg-white/5 border border-white/10 rounded-xl text-text-dark text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary appearance-none cursor-pointer transition-all"
-                                    value={formData.budgetRange}
-                                    onChange={(e) => handleInputChange("budgetRange", e.target.value)}
-                                >
-                                    {formData.tripType === "Destination Wedding" ? (
-                                        <>
-                                            <option value="Under ₹15 Lakhs">Under ₹15 Lakhs (Total)</option>
-                                            <option value="₹15 Lakhs - ₹30 Lakhs">₹15 Lakhs - ₹30 Lakhs (Total)</option>
-                                            <option value="₹30 Lakhs - ₹50 Lakhs">₹30 Lakhs - ₹50 Lakhs (Total)</option>
-                                            <option value="₹50 Lakhs - ₹1 Crore">₹50 Lakhs - ₹1 Crore (Total)</option>
-                                            <option value="₹1 Crore+">₹1 Crore+ (Total)</option>
-                                        </>
-                                    ) : (
-                                        <>
-                                            <option value="Economy (₹20k-40k)">Economy (₹20k-40k / person)</option>
-                                            <option value="Mid-range (₹40k-80k)">Mid-range (₹40k-80k / person)</option>
-                                            <option value="Luxury (₹80k-1.5L)">Luxury (₹80k-1.5L / person)</option>
-                                            <option value="Elite (₹1.5L+)">Elite (₹1.5L+ / person)</option>
-                                        </>
-                                    )}
-                                </select>
-                            </div>
-                        </div>
+                        )}
+                        <CustomSelect
+                            label="Approx. Budget"
+                            icon={Users}
+                            value={formData.budgetRange}
+                            onChange={(value) => handleInputChange("budgetRange", value)}
+                            options={formData.tripType === "Destination Wedding" ? [
+                                { value: "Under ₹15 Lakhs", label: "Under ₹15 Lakhs (Total)" },
+                                { value: "₹15 Lakhs - ₹30 Lakhs", label: "₹15 Lakhs - ₹30 Lakhs (Total)" },
+                                { value: "₹30 Lakhs - ₹50 Lakhs", label: "₹30 Lakhs - ₹50 Lakhs (Total)" },
+                                { value: "₹50 Lakhs - ₹1 Crore", label: "₹50 Lakhs - ₹1 Crore (Total)" },
+                                { value: "₹1 Crore+", label: "₹1 Crore+ (Total)" }
+                            ] : [
+                                { value: "Economy (₹20k-40k)", label: "Economy (₹20k-40k / person)" },
+                                { value: "Mid-range (₹40k-80k)", label: "Mid-range (₹40k-80k / person)" },
+                                { value: "Luxury (₹80k-1.5L)", label: "Luxury (₹80k-1.5L / person)" },
+                                { value: "Elite (₹1.5L+)", label: "Elite (₹1.5L+ / person)" }
+                            ]}
+                        />
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div className="space-y-1.5">
-                            <label className="text-[10px] font-bold text-text-dark/60 uppercase tracking-widest ml-1">
-                                {formData.tripType === "Destination Wedding" ? "Tentative Wedding Date" : "Travel Month"}
-                            </label>
-                            <div className="relative group">
-                                <div className="absolute left-4 top-1/2 -translate-y-1/2 text-primary/60 group-focus-within:text-primary transition-colors">
-                                    <Calendar className="w-4 h-4" />
-                                </div>
-                                {formData.tripType === "Destination Wedding" ? (
+                        {formData.tripType === "Destination Wedding" ? (
+                            <div className="space-y-1.5">
+                                <label className="text-[10px] font-bold text-text-dark/60 uppercase tracking-widest ml-1">Tentative Wedding Date</label>
+                                <div className="relative group">
+                                    <div className="absolute left-4 top-1/2 -translate-y-1/2 text-primary/60 group-focus-within:text-primary transition-colors">
+                                        <Calendar className="w-4 h-4" />
+                                    </div>
                                     <input
                                         type="text"
                                         placeholder="E.g. Dec 2025"
@@ -436,29 +426,21 @@ _Sent via kashmircascade.com_`;
                                         onChange={(e) => handleInputChange("travelMonth", e.target.value)}
                                         className="w-full h-11 pl-10 pr-4 bg-white/5 border border-white/10 rounded-xl text-text-dark text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all"
                                     />
-                                ) : (
-                                    <select
-                                        className="w-full h-11 pl-10 pr-4 bg-white/5 border border-white/10 rounded-xl text-text-dark text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary appearance-none cursor-pointer transition-all"
-                                        value={formData.travelMonth}
-                                        onChange={(e) => handleInputChange("travelMonth", e.target.value)}
-                                    >
-                                        <option value="Any Month">Any Month</option>
-                                        <option value="January">January</option>
-                                        <option value="February">February</option>
-                                        <option value="March">March</option>
-                                        <option value="April">April</option>
-                                        <option value="May">May</option>
-                                        <option value="June">June</option>
-                                        <option value="July">July</option>
-                                        <option value="August">August</option>
-                                        <option value="September">September</option>
-                                        <option value="October">October</option>
-                                        <option value="November">November</option>
-                                        <option value="December">December</option>
-                                    </select>
-                                )}
+                                </div>
                             </div>
-                        </div>
+                        ) : (
+                            <CustomSelect
+                                label="Travel Month"
+                                icon={Calendar}
+                                value={formData.travelMonth}
+                                onChange={(value) => handleInputChange("travelMonth", value)}
+                                multi={true}
+                                options={[
+                                    "Any Month", "January", "February", "March", "April", "May", "June",
+                                    "July", "August", "September", "October", "November", "December"
+                                ]}
+                            />
+                        )}
                         <div className="space-y-1.5">
                             <label className="text-[10px] font-bold text-text-dark/60 uppercase tracking-widest ml-1">
                                 {formData.tripType === "Destination Wedding" ? "Estimated Guest Count" : "Travelers"}

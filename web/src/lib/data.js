@@ -504,7 +504,7 @@ export const packages = [
             "/images/Luxury houseboat.jpg",
             "/images/Deluxe House Boar.jpg",
             "/images/Kashmir 2.jpg",
-            "/images/indian 3.jpg",
+            "/images/Mughal gardens.jpg",
             "/images/pexels-imadclicks-12622138.jpg"
         ],
         category: "Honeymoon",
@@ -756,7 +756,7 @@ export const packages = [
                 highlights: ["Leh Palace exploration", "Namgyal Tsemo Monastery", "Hall of Fame Army Museum", "Expedition briefing"],
                 meals: "Breakfast, Lunch & Dinner",
                 accommodation: "Hotel in Leh",
-                timelineImage: "/images/Hazratbal Shrine.jpg"
+                timelineImage: "/images/Ladakh Monastery.jpg"
             },
             {
                 day: 3,
@@ -766,7 +766,7 @@ export const packages = [
                 meals: "Breakfast, Lunch & Dinner",
                 accommodation: "Camp in Hunder, Nubra",
                 distance: "120 km (5-6 hours)",
-                timelineImage: "/images/indian 2.jpg"
+                timelineImage: "/images/Khardungla Pss.png"
             },
             {
                 day: 4,
@@ -776,7 +776,7 @@ export const packages = [
                 meals: "Breakfast, Lunch & Dinner",
                 accommodation: "Camp in Hunder, Nubra",
                 distance: "90 km (3 hours each way)",
-                timelineImage: "/images/Gurez Habba Khatoon.jpg"
+                timelineImage: "/images/Zanskar_Valley.jpg"
             },
             {
                 day: 5,
@@ -795,7 +795,7 @@ export const packages = [
                 highlights: ["Sunrise at Pangong", "3 Idiots movie point", "Lake photography session", "Optional kayaking"],
                 meals: "Breakfast, Lunch & Dinner",
                 accommodation: "Camp at Pangong Lake",
-                timelineImage: "/images/Nigeen Lake.jpg"
+                timelineImage: "/images/Ladakh Pangong Lake.webp"
             },
             {
                 day: 7,
@@ -805,7 +805,7 @@ export const packages = [
                 meals: "Breakfast, Lunch & Dinner",
                 accommodation: "Hotel in Leh",
                 distance: "160 km (6-7 hours)",
-                timelineImage: "/images/Shankra Charya temple.jpg"
+                timelineImage: "/images/Ladakh Monastery.jpg"
             },
             {
                 day: 8,
@@ -814,7 +814,7 @@ export const packages = [
                 highlights: ["Thiksey Monastery sunrise", "Sangam confluence", "Magnetic Hill mystery", "Farewell Ladakhi dinner"],
                 meals: "Breakfast, Lunch & Dinner",
                 accommodation: "Hotel in Leh",
-                timelineImage: "/images/Parimahal.jpg"
+                timelineImage: "/images/Ladakh 2.jpg"
             },
             {
                 day: 9,
@@ -893,7 +893,7 @@ export const packages = [
                 highlights: ["Morning prayers at Thiksey", "Giant Maitreya Buddha", "Shey Palace", "Stok Museum"],
                 meals: "Breakfast, Lunch & Dinner",
                 accommodation: "Hotel in Leh",
-                timelineImage: "/images/Shankra Charya temple.jpg"
+                timelineImage: "/images/Ladakh Monastery.jpg"
             },
             {
                 day: 3,
@@ -912,7 +912,7 @@ export const packages = [
                 highlights: ["Guided meditation", "Monk interactions", "Cave exploration", "Monastery history"],
                 meals: "Breakfast, Lunch & Dinner",
                 accommodation: "Guesthouse at Lamayuru",
-                timelineImage: "/images/placeholder-lamayuru.jpg"
+                timelineImage: "/images/Lamayuru.jpg"
             },
             {
                 day: 5,
@@ -932,7 +932,7 @@ export const packages = [
                 meals: "Breakfast, Lunch & Dinner",
                 accommodation: "Hotel in Leh",
                 distance: "45 km (round trip)",
-                timelineImage: "/images/Hazratbal Shrine.jpg"
+                timelineImage: "/images/Ladakh Monastery.jpg"
             },
             {
                 day: 7,
@@ -941,7 +941,7 @@ export const packages = [
                 highlights: ["Spituk Monastery", "Phyang Monastery", "Artifact shopping", "Farewell dinner"],
                 meals: "Breakfast, Lunch & Dinner",
                 accommodation: "Hotel in Leh",
-                timelineImage: "/images/Parimahal.jpg"
+                timelineImage: "/images/Ladakh 2.jpg"
             },
             {
                 day: 8,
@@ -1029,7 +1029,7 @@ export const packages = [
                 highlights: ["Lake color changes", "3 Idiots point", "Marmot spotting", "Stargazing night"],
                 meals: "Breakfast, Lunch & Dinner",
                 accommodation: "Luxury Camp at Pangong",
-                timelineImage: "/images/Nigeen Lake.jpg"
+                timelineImage: "/images/Ladakh Pangong Lake.webp"
             },
             {
                 day: 5,
@@ -1296,7 +1296,7 @@ export const packages = [
                 meals: "Breakfast & Dinner",
                 accommodation: "Camp at Pangong",
                 distance: "160 km",
-                timelineImage: "/images/Leh Ladakh.jpg"
+                timelineImage: "/images/Ladakh Pangong Lake.webp"
             },
             {
                 day: 5,
@@ -1306,7 +1306,7 @@ export const packages = [
                 meals: "Breakfast & Dinner",
                 accommodation: "Guesthouse in Leh",
                 distance: "160 km",
-                timelineImage: "/images/Hazratbal Shrine.jpg"
+                timelineImage: "/images/Ladakh Monastery.jpg"
             },
             {
                 day: 6,
@@ -1315,7 +1315,7 @@ export const packages = [
                 highlights: ["Magnetic Hill", "Sangam", "Pathar Sahib", "Shopping"],
                 meals: "Breakfast & Dinner",
                 accommodation: "Guesthouse in Leh",
-                timelineImage: "/images/Parimahal.jpg"
+                timelineImage: "/images/Ladakh 2.jpg"
             },
             {
                 day: 7,
@@ -1388,7 +1388,7 @@ export const packages = [
                 meals: "Breakfast, Lunch & Dinner",
                 accommodation: "Hotel in Pahalgam",
                 distance: "100 km (3 hours)",
-                timelineImage: "/images/Parimahal.jpg"
+                timelineImage: "/images/Mughal gardens.jpg"
             },
             {
                 day: 4,
@@ -1783,7 +1783,7 @@ export const packages = [
                 highlights: ["Mountain sunrise", "Portrait workshop", "Cultural portraits", "Group photo critique"],
                 meals: "Breakfast, Lunch & Dinner",
                 accommodation: "Resort, Gulmarg",
-                timelineImage: "/images/indian woman.jpg"
+                timelineImage: "/images/gulmarg-featured.jpg"
             },
             {
                 day: 6,
@@ -1942,7 +1942,7 @@ export const experiences = [
         id: "pashmina-shopping",
         title: "Pashmina & Saffron",
         description: "Visit authentic workshops to see how the world-famous Pashmina shawls are hand-woven and buy pure saffron from the source.",
-        image: "/images/indian woman.jpg",
+        image: "/images/srinagar-city.jpg",
         icon: "ShoppingBag"
     },
     {
