@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { X, User, Phone, MapPin, Calendar, Users, MessageSquare, Send, CheckCircle, Mountain } from "lucide-react";
 import { CustomSelect } from "../ui/custom-select";
 
+import { submitLead } from "@/lib/api";
+
 export function PlanTripModal() {
     const [formData, setFormData] = useState({
         name: "",
@@ -121,6 +123,23 @@ export function PlanTripModal() {
         }
 
         const isWedding = formData.tripType === "Destination Wedding";
+
+        // Prepare data for API
+        const apiData = {
+            name: formData.name,
+            email: formData.email,
+            phone_number: formData.phone,
+            trip_type: formData.tripType,
+            preferred_package: formData.selectedPackage,
+            destination_focus: formData.customDestination || formData.destination,
+            approx_budget: formData.budgetRange,
+            travel_months: Array.isArray(formData.travelMonth) ? formData.travelMonth.join(", ") : formData.travelMonth,
+            traveller_count: formData.travelers,
+            custom_requirements: formData.message
+        };
+
+        // Submit to API (concurrently, don't await)
+        submitLead(apiData).catch(err => console.error("Background API submission failed:", err));
 
         // Build WhatsApp message
         const message = `*KASHMIR CASCADE - NEW INQUIRY*

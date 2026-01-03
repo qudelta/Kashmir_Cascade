@@ -2,6 +2,7 @@ import { PageHeader } from "@/components/layout/page-header";
 import { Mail, Phone, MapPin, Clock, Send } from "lucide-react";
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { submitLead } from "@/lib/api";
 
 export default function Contact() {
     const contactInfo = [
@@ -72,6 +73,16 @@ export default function Contact() {
         e.preventDefault();
 
         const fullName = `${formData.firstName} ${formData.lastName}`.trim();
+
+        // Submit lead concurrently
+        submitLead({
+            name: fullName,
+            email: formData.email,
+            phone_number: formData.phone,
+            trip_type: "General/Contact Inquiry",
+            custom_requirements: formData.message
+        }).catch(err => console.error("Background API submission failed:", err));
+
         const waMessage = `*KASHMIR CASCADE - CONTACT INQUIRY*
 - Experience the Art of Travel -
 

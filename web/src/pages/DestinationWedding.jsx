@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Heart, Calendar, Users, Sparkles, MapPin, Camera, Music, Utensils } from "lucide-react";
 import { PageHeader } from "@/components/layout/page-header";
 import { useState } from "react";
+import { submitLead } from "@/lib/api";
 
 const weddingVenues = [
     {
@@ -54,6 +55,19 @@ export default function DestinationWedding() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+
+        // Submit lead concurrently
+        submitLead({
+            name: formData.name,
+            email: formData.email,
+            phone_number: formData.phone,
+            trip_type: "Destination Wedding",
+            travel_months: formData.date,
+            traveller_count: formData.guests,
+            approx_budget: formData.budget,
+            destination_focus: formData.venue,
+            custom_requirements: formData.message
+        }).catch(err => console.error("Background API submission failed:", err));
 
         const message = `*KASHMIR CASCADE - WEDDING INQUIRY*
 - Experience the Art of Travel -
