@@ -126,12 +126,12 @@ export function BestSellingPackages() {
                                         </h3>
                                     </div>
 
-                                    <div className="flex items-center gap-3 text-xs font-medium text-text-dark/60">
+                                    <div className="flex flex-wrap items-center gap-3 text-xs font-medium text-text-dark/60">
                                         <span className="flex items-center gap-1 bg-gray-100 px-2 py-1 rounded-md">
                                             <Clock className="w-3 h-3" /> {pkg.days}D/{pkg.nights}N
                                         </span>
                                         {pkg.highlights.slice(0, 1).map((h, i) => (
-                                            <span key={i} className="flex items-center gap-1 bg-gray-100 px-2 py-1 rounded-md max-w-[100px] truncate">
+                                            <span key={i} className="flex items-center gap-1 bg-gray-100 px-2 py-1 rounded-md">
                                                 {h}
                                             </span>
                                         ))}

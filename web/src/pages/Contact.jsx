@@ -7,7 +7,11 @@ export default function Contact() {
         {
             icon: Phone,
             title: "Phone & WhatsApp",
-            lines: ["+91 6006 853 203"]
+            lines: [
+                "+91 6006 853 203 (WhatsApp)",
+                "+91 8899 299 127",
+                "+91 7006 348 236 (Helpline)"
+            ]
         },
         {
             icon: Mail,
@@ -17,12 +21,12 @@ export default function Contact() {
         {
             icon: MapPin,
             title: "Visit Our Office",
-            lines: ["2nd Floor, Tourism Complex,", "Boulevard Road, Dal Lake,", "Srinagar, Kashmir - 190001"]
+            lines: ["Main Chowk, Sopore,", "Jammu & Kashmir - 193201"]
         },
         {
             icon: Clock,
             title: "Office Hours",
-            lines: ["Mon - Sat: 09:00 AM - 08:00 PM", "Sun: 10:00 AM - 04:00 PM"]
+            lines: ["Mon - Sat: 09:00 AM - 05:00 PM", "Sun: Closed"]
         }
     ];
 
@@ -37,13 +41,13 @@ export default function Contact() {
             name: "Mehvish Akhtar",
             role: "Customer Relations Manager",
             image: "/images/team-mehvish.png",
-            phone: "+91 7006XXXXXX"
+            phone: "+91 7006 348 236"
         },
         {
             name: "Tariq Hussain Lone",
             role: "Senior Tour Coordinator",
             image: "/images/team-tariq.png",
-            phone: "+91 9419XXXXXX"
+            phone: "+91 8899 299 127"
         }
     ];
 
@@ -67,6 +71,8 @@ export default function Contact() {
                             <h2 className="text-3xl font-heading font-bold text-text-dark mb-6">Contact Information</h2>
                             <p className="text-text-dark mb-12 text-lg">
                                 Have questions about a package or need a custom itinerary? Our travel experts are here to help you 24/7.
+                                <br />
+                                <span className="text-sm font-semibold text-primary/80 mt-2 block">J&K Tourism (Excursion Agent) Reg No: JKEA00005258</span>
                             </p>
                         </motion.div>
 

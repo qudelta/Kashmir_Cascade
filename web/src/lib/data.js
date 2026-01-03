@@ -12,7 +12,9 @@ export const destinations = [
         stats: {
             altitude: "1,585 m",
             bestTime: "Apr - Oct",
-            distance: "0 km (Base)"
+            distance: "0 km (Base)",
+            lat: 34.08,
+            lon: 74.80
         },
         attractions: [
             { title: "Lal Chowk", desc: "Historic city center with bustling markets and cafes." },
@@ -30,7 +32,9 @@ export const destinations = [
         stats: {
             altitude: "3,500 m",
             bestTime: "Jun - Sep",
-            distance: "418 km from Srinagar"
+            distance: "418 km from Srinagar",
+            lat: 34.17,
+            lon: 77.58
         },
         attractions: [
             { title: "Pangong Lake", desc: "Famous color-changing high-altitude lake." },
@@ -48,7 +52,9 @@ export const destinations = [
         stats: {
             altitude: "1,583 m",
             bestTime: "Year Round",
-            distance: "In Srinagar"
+            distance: "In Srinagar",
+            lat: 34.10,
+            lon: 74.85
         },
         attractions: [
             { title: "Shikara Ride", desc: "Traditional wooden boats for a romantic lake cruise." },
@@ -66,7 +72,9 @@ export const destinations = [
         stats: {
             altitude: "1,600 m",
             bestTime: "Mar - Nov",
-            distance: "8-12 km from Srinagar"
+            distance: "8-12 km from Srinagar",
+            lat: 34.13,
+            lon: 74.87
         },
         attractions: [
             { title: "Shalimar Bagh", desc: "Garden of Love built by Emperor Jahangir." },
@@ -84,7 +92,9 @@ export const destinations = [
         stats: {
             altitude: "1,876 m",
             bestTime: "Year Round",
-            distance: "5 km from Srinagar"
+            distance: "5 km from Srinagar",
+            lat: 34.08,
+            lon: 74.85
         },
         attractions: [
             { title: "Ancient Shrine", desc: "Temple dedicated to Lord Shiva, dating 2000+ years." },
@@ -102,7 +112,9 @@ export const destinations = [
         stats: {
             altitude: "1,584 m",
             bestTime: "Year Round",
-            distance: "7 km from Srinagar"
+            distance: "7 km from Srinagar",
+            lat: 34.12,
+            lon: 74.84
         },
         attractions: [
             { title: "Moi-e-Muqaddas", desc: "Sacred relic displayed on special occasions." },
@@ -119,7 +131,9 @@ export const destinations = [
         stats: {
             altitude: "1,583 m",
             bestTime: "Year Round",
-            distance: "In Srinagar"
+            distance: "In Srinagar",
+            lat: 34.11,
+            lon: 74.84
         },
         attractions: [
             { title: "Quiet Houseboats", desc: "More private and peaceful than Dal Lake." },
@@ -136,7 +150,9 @@ export const destinations = [
         stats: {
             altitude: "1,620 m",
             bestTime: "Year Round",
-            distance: "10 km from Srinagar"
+            distance: "10 km from Srinagar",
+            lat: 34.09,
+            lon: 74.87
         },
         attractions: [
             { title: "Terraced Gardens", desc: "Seven beautiful levels with arched structures." },
@@ -153,7 +169,9 @@ export const destinations = [
         stats: {
             altitude: "2,650 m",
             bestTime: "Dec - Mar (Skiing)",
-            distance: "51 km from Srinagar"
+            distance: "51 km from Srinagar",
+            lat: 34.05,
+            lon: 74.38
         },
         attractions: [
             { title: "Gulmarg Gondola", desc: "World's second highest operating cable car." },
@@ -171,7 +189,9 @@ export const destinations = [
         stats: {
             altitude: "2,740 m",
             bestTime: "Mar - Nov",
-            distance: "90 km from Srinagar"
+            distance: "90 km from Srinagar",
+            lat: 34.01,
+            lon: 75.19
         },
         attractions: [
             { title: "Betaab Valley", desc: "Famous location from the Bollywood movie Betaab." },
@@ -189,7 +209,9 @@ export const destinations = [
         stats: {
             altitude: "2,800 m",
             bestTime: "May - Oct",
-            distance: "80 km from Srinagar"
+            distance: "80 km from Srinagar",
+            lat: 34.30,
+            lon: 75.29
         },
         attractions: [
             { title: "Thajiwas Glacier", desc: "Stunning glacier accessible by pony ride." },
@@ -207,7 +229,9 @@ export const destinations = [
         stats: {
             altitude: "2,396 m",
             bestTime: "Apr - Oct",
-            distance: "47 km from Srinagar"
+            distance: "47 km from Srinagar",
+            lat: 33.83,
+            lon: 75.30
         },
         attractions: [
             { title: "Doodh Ganga", desc: "Milky white river originating from glaciers." },
@@ -225,7 +249,9 @@ export const destinations = [
         stats: {
             altitude: "2,730 m",
             bestTime: "Apr - Sep",
-            distance: "42 km from Srinagar"
+            distance: "42 km from Srinagar",
+            lat: 33.85,
+            lon: 74.56
         },
         attractions: [
             { title: "Tangnar", desc: "Scenic meadow with panoramic mountain views." },
@@ -243,7 +269,9 @@ export const destinations = [
         stats: {
             altitude: "2,400 m",
             bestTime: "May - Oct",
-            distance: "123 km from Srinagar"
+            distance: "123 km from Srinagar",
+            lat: 34.63,
+            lon: 74.85
         },
         attractions: [
             { title: "Habba Khatoon Peak", desc: "Named after the famous Kashmiri poetess." },
@@ -261,7 +289,9 @@ export const destinations = [
         stats: {
             altitude: "2,414 m",
             bestTime: "Mar - Nov",
-            distance: "12 km from Pahalgam"
+            distance: "12 km from Pahalgam",
+            lat: 34.09,
+            lon: 75.25
         },
         attractions: [
             { title: "Lidderwat", desc: "Beautiful meadow and camping site." },
@@ -278,7 +308,7 @@ export const destinations = [
         subtitle: "The Unexplored Eden",
         description: "Bungus Valley is a pristine biosphere reserve located in Kupwara district. It is a hidden gem with lush green meadows, dense forests, and crystal clear streams. The valley is known for its biodiversity and tranquility.",
         image: "/images/Bungus Valley.webp",
-        stats: { altitude: "3,000 m", bestTime: "May - Sep", distance: "90 km from Srinagar" },
+        stats: { altitude: "3,000 m", bestTime: "May - Sep", distance: "90 km from Srinagar", lat: 34.38, lon: 74.07 },
         attractions: [
             { title: "Biosphere Reserve", desc: "Rich flora and fauna." },
             { title: "Meadows", desc: "Vast green pastures." }
@@ -291,7 +321,7 @@ export const destinations = [
         subtitle: "Asia's Largest Freshwater Lake",
         description: "Wular Lake is one of the largest fresh water lakes in Asia. It plays a significant role in the hydrographic system of the Kashmir Valley by acting as a huge absorption basin for floodwaters.",
         image: "/images/wular-lake.jpg",
-        stats: { altitude: "1,580 m", bestTime: "Year Round", distance: "60 km from Srinagar" },
+        stats: { altitude: "1,580 m", bestTime: "Year Round", distance: "60 km from Srinagar", lat: 34.33, lon: 74.60 },
         attractions: [
             { title: "Boating", desc: "Explore the vast lake." },
             { title: "Bird Watching", desc: "Home to many migratory birds." }
@@ -304,7 +334,7 @@ export const destinations = [
         subtitle: "Source of Jhelum",
         description: "Verinag is a tourist resort and mugal garden in Anantnag district. It is famous for its octagonal spring and a beautiful garden built by Emperor Jahangir.",
         image: "/images/Verinag.jpg",
-        stats: { altitude: "1,876 m", bestTime: "Apr - Oct", distance: "78 km from Srinagar" },
+        stats: { altitude: "1,876 m", bestTime: "Apr - Oct", distance: "78 km from Srinagar", lat: 33.53, lon: 75.25 },
         attractions: [
             { title: "Mughal Garden", desc: "Beautifully laid out garden." },
             { title: "Verinag Spring", desc: "Major source of River Jhelum." }
@@ -317,7 +347,7 @@ export const destinations = [
         subtitle: "Niagara of Kashmir",
         description: "Aharbal is known for its waterfall, Aharbal Falls, where the Veshu River falls noisily 25 metres and 7 metres through a narrow gorge of granite boulders.",
         image: "/images/Aharbal Waterfall.webp",
-        stats: { altitude: "2,266 m", bestTime: "May - Oct", distance: "75 km from Srinagar" },
+        stats: { altitude: "2,266 m", bestTime: "May - Oct", distance: "75 km from Srinagar", lat: 33.64, lon: 74.78 },
         attractions: [
             { title: "Aharbal Waterfall", desc: "Stunning waterfall." },
             { title: "Trekking", desc: "Base for Kounsarnag trek." }
@@ -330,7 +360,7 @@ export const destinations = [
         subtitle: "Wildlife Sanctuary",
         description: "Dakshum is a beautiful picnic spot, situated in the middle of Bhringi River and rich vegetation. It is also a wildlife sanctuary home to trout fish, musk deer, and leopards.",
         image: "/images/Daksum.jpg",
-        stats: { altitude: "2,438 m", bestTime: "Apr - Sep", distance: "85 km from Srinagar" },
+        stats: { altitude: "2,438 m", bestTime: "Apr - Sep", distance: "85 km from Srinagar", lat: 33.62, lon: 75.43 },
         attractions: [
             { title: "Wildlife Sanctuary", desc: "Spot exotic wildlife." },
             { title: "Trout Fishing", desc: "Famous for fishing." }
@@ -343,7 +373,7 @@ export const destinations = [
         subtitle: "Home of the Hangul",
         description: "Dachigam National Park is located 22 kilometers from Srinagar. The park is famous for being the home of the Hangul, or Kashmir stag.",
         image: "/images/Dachigan national park.jpg",
-        stats: { altitude: "1,700-4,300 m", bestTime: "May - Aug", distance: "22 km from Srinagar" },
+        stats: { altitude: "1,700-4,300 m", bestTime: "May - Aug", distance: "22 km from Srinagar", lat: 34.13, lon: 75.03 },
         attractions: [
             { title: "Wildlife Safari", desc: "Spot the Kashmir Stag (Hangul)." },
             { title: "Nature Trails", desc: "Beautiful hiking paths." }
@@ -356,7 +386,7 @@ export const destinations = [
         subtitle: "Mountain Pass",
         description: "Sinthan Top is a hill station located between South Kashmir's Breng Valley and Kishtwar. It is popular for its panoramic views and year-round snow.",
         image: "/images/Sinthan top.webp",
-        stats: { altitude: "3,748 m", bestTime: "Apr - Sep", distance: "130 km from Srinagar" },
+        stats: { altitude: "3,748 m", bestTime: "Apr - Sep", distance: "130 km from Srinagar", lat: 33.58, lon: 75.51 },
         attractions: [
             { title: "Snow Activities", desc: "Snow available most of the year." },
             { title: "Panoramic Views", desc: "360 degree mountain views." }
@@ -369,7 +399,7 @@ export const destinations = [
         subtitle: "Gateway to Gurez",
         description: "Razdan Pass connects the Gurez Valley to the rest of Kashmir. It offers spectacular views of the surrounding mountains and valleys.",
         image: "/images/Razdan Pass.jpg",
-        stats: { altitude: "3,557 m", bestTime: "May - Oct", distance: "76 km from Srinagar" },
+        stats: { altitude: "3,557 m", bestTime: "May - Oct", distance: "76 km from Srinagar", lat: 34.50, lon: 74.60 },
         attractions: [
             { title: "Scenic Drive", desc: "Breathtaking mountain road." },
             { title: "Viewpoints", desc: "Stunning valley views." }
@@ -383,7 +413,7 @@ export const destinations = [
         subtitle: "The Isolated Kingdom",
         description: "Zanskar is a sub-district or tehsil of the Kargil district. It is famous for its high breathtaking mountains and the Zanskar River.",
         image: "/images/Zanskar_Valley.jpg",
-        stats: { altitude: "3,500-7,000 m", bestTime: "Jun - Sep", distance: "460 km from Leh" },
+        stats: { altitude: "3,500-7,000 m", bestTime: "Jun - Sep", distance: "460 km from Leh", lat: 33.50, lon: 76.83 },
         attractions: [
             { title: "Phugtal Monastery", desc: "Unique cave monastery." },
             { title: "Frozen River Trek", desc: "Famous Chadar Trek in winter." }
@@ -396,7 +426,7 @@ export const destinations = [
         subtitle: "Highest Motorable Road",
         description: "Umling La is currently the highest motorable road in the world, standing at an altitude of 19,024 feet. It is a must-visit for adventure bikers.",
         image: "/images/Uming La.jpg",
-        stats: { altitude: "5,798 m", bestTime: "Jun - Sep", distance: "105 km from Hanle" },
+        stats: { altitude: "5,798 m", bestTime: "Jun - Sep", distance: "105 km from Hanle", lat: 32.69, lon: 79.27 },
         attractions: [
             { title: "Highest Road", desc: "World Record holder." },
             { title: "Adventure Biking", desc: "Ultimate challenge for bikers." }
@@ -409,7 +439,7 @@ export const destinations = [
         subtitle: "High Mountain Pass",
         description: "Kaksang La is a high mountain pass in Ladakh, offering stunning views and a challenging drive. It features serene lakes near the top.",
         image: "/images/Kaksang La.webp",
-        stats: { altitude: "5,438 m", bestTime: "Jun - Sep", distance: "Near Mahe" },
+        stats: { altitude: "5,438 m", bestTime: "Jun - Sep", distance: "Near Mahe", lat: 33.43, lon: 78.56 },
         attractions: [
             { title: "Twin Lakes", desc: "Beautiful high altitude lakes." },
             { title: "Scenic Drive", desc: "Less crowded route." }
@@ -422,7 +452,7 @@ export const destinations = [
         subtitle: "Gateway to Nubra",
         description: "Khardung La is a mountain pass in the Ladakh region. It is the gateway to the Shyok and Nubra valleys and is historically significant.",
         image: "/images/Khardungla Pss.png",
-        stats: { altitude: "5,359 m", bestTime: "Year Round", distance: "40 km from Leh" },
+        stats: { altitude: "5,359 m", bestTime: "Year Round", distance: "40 km from Leh", lat: 34.27, lon: 77.60 },
         attractions: [
             { title: "Photo Point", desc: "Classic photo op at the top." },
             { title: "Souvenir Shop", desc: "Highest souvenir shop." }
@@ -435,7 +465,7 @@ export const destinations = [
         subtitle: "Mountain Lake",
         description: "Tso Moriri is a lake in the Changthang Plateau in Ladakh. It is the largest of the high altitude lakes entirely within India.",
         image: "/images/Tso Miriri Lake.jpg",
-        stats: { altitude: "4,522 m", bestTime: "Jun - Sep", distance: "220 km from Leh" },
+        stats: { altitude: "4,522 m", bestTime: "Jun - Sep", distance: "220 km from Leh", lat: 32.90, lon: 78.30 },
         attractions: [
             { title: "Bird Watching", desc: "Migratory birds." },
             { title: "Korzok Monastery", desc: "Ancient monastery near the lake." }
@@ -448,7 +478,7 @@ export const destinations = [
         subtitle: "Moonland of Ladakh",
         description: "Lamayuru is known for its 'Moonland' like landscapes and the Lamayuru Monastery, one of the oldest and largest in Ladakh.",
         image: "/images/Lamayuru.jpg",
-        stats: { altitude: "3,510 m", bestTime: "Apr - Oct", distance: "127 km from Leh" },
+        stats: { altitude: "3,510 m", bestTime: "Apr - Oct", distance: "127 km from Leh", lat: 34.28, lon: 76.77 },
         attractions: [
             { title: "Lamayuru Monastery", desc: "Ancient Buddhist monastery." },
             { title: "Moonland", desc: "Unique geological formations." }

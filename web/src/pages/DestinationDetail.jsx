@@ -1,11 +1,39 @@
 import { useParams, Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 import { PageHeader } from "@/components/layout/page-header";
 import { destinations } from "@/lib/data";
-import { MapPin, Calendar, Mountain, CloudSun, Compass } from "lucide-react";
+import { fetchWeather } from "@/lib/weather-service";
+import { MapPin, Calendar, Mountain, CloudSun, Compass, CloudRain, CloudSnow, CloudFog, CloudLightning, Sun, Cloud } from "lucide-react";
+
+const WeatherIcon = ({ icon, className }) => {
+    switch (icon) {
+        case 'Sun': return <Sun className={className} />;
+        case 'CloudSun': return <CloudSun className={className} />;
+        case 'CloudFog': return <CloudFog className={className} />;
+        case 'CloudRain': return <CloudRain className={className} />;
+        case 'CloudSnow': return <CloudSnow className={className} />;
+        case 'CloudLightning': return <CloudLightning className={className} />;
+        default: return <Cloud className={className} />;
+    }
+};
 
 export default function DestinationDetail() {
     const { id } = useParams();
     const destination = destinations.find((d) => d.id === id);
+    const [weather, setWeather] = useState(null);
+    const [loadingWeather, setLoadingWeather] = useState(false);
+
+    useEffect(() => {
+        async function getWeather() {
+            if (destination?.stats?.lat && destination?.stats?.lon) {
+                setLoadingWeather(true);
+                const data = await fetchWeather(destination.stats.lat, destination.stats.lon);
+                setWeather(data);
+                setLoadingWeather(false);
+            }
+        }
+        getWeather();
+    }, [destination]);
 
     if (!destination) {
         return (
@@ -110,11 +138,23 @@ export default function DestinationDetail() {
 
                             <div className="flex items-start gap-4">
                                 <div className="w-10 h-10 rounded-xl bg-primary/20 flex items-center justify-center text-primary shrink-0">
-                                    <CloudSun className="h-5 w-5" />
+                                    {weather ? (
+                                        <WeatherIcon icon={weather.icon} className="h-5 w-5" />
+                                    ) : (
+                                        <CloudSun className="h-5 w-5" />
+                                    )}
                                 </div>
                                 <div>
-                                    <span className="block text-sm text-text-dark/70">Weather</span>
-                                    <span className="font-semibold text-text-dark">Check Forecast</span>
+                                    <span className="block text-sm text-text-dark/70">Current Weather</span>
+                                    <span className="font-semibold text-text-dark">
+                                        {loadingWeather ? (
+                                            "Fetching..."
+                                        ) : weather ? (
+                                            `${weather.temp}°C, ${weather.condition}`
+                                        ) : (
+                                            "Check Forecast"
+                                        )}
+                                    </span>
                                 </div>
                             </div>
                         </div>

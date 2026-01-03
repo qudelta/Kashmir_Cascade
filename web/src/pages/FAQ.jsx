@@ -145,7 +145,7 @@ export default function FAQ() {
         <div className="min-h-screen bg-background-light">
             <PageHeader
                 title="Frequently Asked Questions"
-                subtitle={<>Everything You Need to Know About <span className="text-primary">Traveling</span> to Kashmir</>}
+                subtitle={<>Everything You Need to Know About <span className="text-primary">Travelling</span> to Kashmir</>}
                 image="/images/Aruvillage.jpg"
             />
 

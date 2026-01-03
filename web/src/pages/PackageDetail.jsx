@@ -242,7 +242,7 @@ export default function PackageDetail() {
                         </p>
                         <div className="space-y-2 text-sm">
                             <p className="font-semibold text-text-dark flex items-center gap-2">
-                                <Phone className="w-4 h-4 text-primary" /> +91 1234 567 890
+                                <Phone className="w-4 h-4 text-primary" /> +91 6006 853 203
                             </p>
                             <p className="font-semibold text-text-dark flex items-center gap-2">
                                 <Mail className="w-4 h-4 text-primary" /> info@kashmirtours.com

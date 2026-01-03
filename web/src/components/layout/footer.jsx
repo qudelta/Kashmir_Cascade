@@ -60,7 +60,7 @@ export function Footer() {
                             />
                         </Link>
                         <p className="text-white/50 text-sm leading-relaxed mb-8 max-w-sm">
-                            Your trusted partner for exploring the unseen beauty of Kashmir and Ladakh. Registered with J&K Tourism.
+                            Your trusted partner for exploring the unseen beauty of Kashmir and Ladakh. Registered with J&K Tourism (Excursion Agent) Reg No: JKEA00005258
                         </p>
                         <div className="flex gap-4">
                             {/* Social Icons */}
@@ -104,14 +104,14 @@ export function Footer() {
                 {/* Bottom */}
                 <div className="border-t border-white/10 pt-10 flex flex-col items-center gap-6 text-center">
                     <div className="flex flex-col items-center gap-2">
-                        <p className="text-white/40 text-xs tracking-widest uppercase">© 2025 Kashmir Travels. All rights reserved.</p>
+                        <p className="text-white/40 text-xs tracking-widest uppercase">© 2026 Kashmir Cascade. All rights reserved.</p>
                         <div className="w-12 h-0.5 bg-primary/30 rounded-full"></div>
                     </div>
 
                     <p className="text-white/40 text-[10px] sm:text-xs">
                         Handcrafted with passion by{" "}
                         <a
-                            href="https://qudeltasolutions.com"
+                            href="https://qudeltastudios.com"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-primary hover:text-white transition-colors font-medium border-b border-primary/20 hover:border-white/40"

@@ -3,7 +3,7 @@ import { Link, useSearchParams } from "react-router-dom";
 import { motion } from "framer-motion";
 import { PageHeader } from "@/components/layout/page-header";
 import { packages } from "@/lib/data";
-import { Clock, Star, ArrowRight, IndianRupee, MapPin, Filter, Map } from "lucide-react";
+import { Clock, Star, ArrowRight, IndianRupee, MapPin, Filter, Map, Search, ArrowUpDown, ChevronDown } from "lucide-react";
 
 const categories = ["All", "Honeymoon", "Family", "Adventure", "Spiritual", "Winter Special", "Budget", "Photography", "Senior Special"];
 const regions = ["All", "Kashmir", "Ladakh"];
@@ -27,10 +27,12 @@ const cardVariants = {
     }
 };
 
-export default function Packages() {
+const Packages = () => {
     const [searchParams, setSearchParams] = useSearchParams();
     const [activeCategory, setActiveCategory] = useState("All");
     const [activeRegion, setActiveRegion] = useState("All");
+    const [searchTerm, setSearchTerm] = useState("");
+    const [sortBy, setSortBy] = useState("featured");
 
     useEffect(() => {
         const regionParam = searchParams.get("region");
@@ -48,15 +50,24 @@ export default function Packages() {
         } else {
             setSearchParams({ region });
         }
-        // Reset category when region changes? Optional. Let's keep it for now.
         setActiveCategory("All");
     };
 
-    const filteredPackages = packages.filter(pkg => {
-        const categoryMatch = activeCategory === "All" || pkg.category === activeCategory;
-        const regionMatch = activeRegion === "All" || pkg.region === activeRegion;
-        return categoryMatch && regionMatch;
-    });
+    const filteredPackages = packages
+        .filter(pkg => {
+            const categoryMatch = activeCategory === "All" || pkg.category === activeCategory;
+            const regionMatch = activeRegion === "All" || pkg.region === activeRegion;
+            const searchMatch = pkg.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                pkg.overview.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                pkg.route.some(r => r.toLowerCase().includes(searchTerm.toLowerCase()));
+            return categoryMatch && regionMatch && searchMatch;
+        })
+        .sort((a, b) => {
+            if (sortBy === "price-low-high") return a.price - b.price;
+            if (sortBy === "price-high-low") return b.price - a.price;
+            if (sortBy === "rating") return b.rating - a.rating;
+            return 0; // featured/default
+        });
 
     return (
         <div className="min-h-screen bg-background-light">
@@ -68,63 +79,116 @@ export default function Packages() {
 
             <section className="max-w-[1280px] mx-auto px-6 py-16">
 
-                {/* Region Filters */}
-                <div className="flex justify-center mb-8">
-                    <div className="bg-white/5 border border-text-dark/10 p-1.5 rounded-full inline-flex relative">
-                        {regions.map((region) => (
+                {/* Main Filter Controls */}
+                <div className="flex flex-col gap-10 mb-16">
+                    {/* Top Row: Search and Region */}
+                    <div className="flex flex-col lg:flex-row gap-8 items-stretch justify-between">
+                        {/* Region Toggle */}
+                        <div className="bg-white border border-text-dark/10 p-2 rounded-[3rem] flex relative w-full lg:w-auto shadow-xl shadow-black/[0.03]">
+                            {regions.map((region) => (
+                                <button
+                                    key={region}
+                                    onClick={() => handleRegionChange(region)}
+                                    className={`relative flex-1 lg:flex-none px-6 lg:px-14 py-4.5 rounded-[2.5rem] text-sm font-bold z-10 transition-all duration-300 ${activeRegion === region
+                                        ? "text-background-dark"
+                                        : "text-text-dark/60 hover:text-text-dark"
+                                        }`}
+                                >
+                                    {activeRegion === region && (
+                                        <motion.div
+                                            layoutId="activeRegion"
+                                            className="absolute inset-0 bg-primary rounded-[2.5rem] -z-10 shadow-[0_8px_25px_rgba(201,162,39,0.25)]"
+                                            transition={{ type: "spring", bounce: 0.15, duration: 0.5 }}
+                                        />
+                                    )}
+                                    <span className="relative whitespace-nowrap block">
+                                        {region === "All" ? "All Regions" : region}
+                                    </span>
+                                </button>
+                            ))}
+                        </div>
+
+                        {/* Search Bar */}
+                        <div className="relative w-full lg:max-w-md group">
+                            <Search className="absolute left-7 top-1/2 -translate-y-1/2 w-5 h-5 text-text-dark/40 group-focus-within:text-primary transition-colors z-10" />
+                            <input
+                                type="text"
+                                placeholder="Search by destination, title..."
+                                value={searchTerm}
+                                onChange={(e) => setSearchTerm(e.target.value)}
+                                className="w-full bg-white border border-text-dark/10 rounded-[3rem] py-6 pl-16 pr-8 text-text-dark text-base focus:outline-none focus:ring-4 focus:ring-primary/10 focus:border-primary transition-all shadow-xl shadow-black/[0.03] placeholder:text-text-dark/30"
+                            />
+                        </div>
+
+                        {/* Sort Dropdown */}
+                        <div className="relative w-full lg:w-auto">
+                            <div className="flex items-center bg-white border border-text-dark/10 p-1.5 rounded-[3rem] shadow-xl shadow-black/[0.03] group hover:border-text-dark/20 transition-all">
+                                <div className="flex items-center gap-3 text-text-dark/50 px-5 border-r border-text-dark/5 py-2">
+                                    <ArrowUpDown className="w-4 h-4 group-hover:text-primary transition-colors shrink-0" />
+                                    <div className="flex flex-col">
+                                        <span className="text-[8px] font-black uppercase tracking-widest leading-none">Sort</span>
+                                        <span className="text-[8px] font-black uppercase tracking-widest leading-none">By</span>
+                                    </div>
+                                </div>
+                                <div className="relative flex-grow">
+                                    <select
+                                        value={sortBy}
+                                        onChange={(e) => setSortBy(e.target.value)}
+                                        className="bg-transparent text-sm font-bold text-text-dark pr-12 pl-4 py-4 focus:outline-none appearance-none cursor-pointer w-full min-w-[180px]"
+                                    >
+                                        <option value="featured">Featured Search</option>
+                                        <option value="price-low-high">Price: Low to High</option>
+                                        <option value="price-high-low">Price: High to Low</option>
+                                        <option value="rating">Best Rated</option>
+                                    </select>
+                                    <ChevronDown className="absolute right-5 top-1/2 -translate-y-1/2 w-4 h-4 text-text-dark/40 pointer-events-none" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Category Tabs */}
+                    <div className="flex flex-wrap gap-3 justify-center">
+                        {categories.map((category) => (
                             <button
-                                key={region}
-                                onClick={() => handleRegionChange(region)}
-                                className={`relative px-8 py-2 rounded-full text-sm font-bold z-10 transition-colors duration-300 ${activeRegion === region
-                                    ? "text-background-dark"
-                                    : "text-text-dark/70 hover:text-text-dark"
+                                key={category}
+                                onClick={() => setActiveCategory(category)}
+                                className={`px-8 py-3.5 rounded-[1.25rem] text-sm font-bold transition-all duration-300 border-2 ${activeCategory === category
+                                    ? "bg-text-dark text-white border-text-dark shadow-[0_10px_25px_rgba(0,0,0,0.1)] scale-105"
+                                    : "bg-white text-text-dark/60 border-text-dark/5 hover:border-text-dark/20 hover:text-text-dark hover:bg-gray-50 shadow-sm"
                                     }`}
                             >
-                                {activeRegion === region && (
-                                    <motion.div
-                                        layoutId="activeRegion"
-                                        className="absolute inset-0 bg-primary rounded-full -z-10 shadow-lg"
-                                        transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-                                    />
-                                )}
-                                {region === "All" ? "All Regions" : region}
+                                {category}
                             </button>
                         ))}
                     </div>
                 </div>
 
-                {/* Category Filters */}
-                <div className="flex flex-wrap gap-3 mb-12 justify-center">
-                    <div className="flex items-center gap-2 text-text-dark/70 mr-4">
-                        <Filter className="w-4 h-4" />
-                        <span className="text-sm font-medium">Category:</span>
-                    </div>
-                    {categories.map((filter) => (
-                        <button
-                            key={filter}
-                            className={`px-6 py-2.5 rounded-full font-medium transition-all duration-300 ${filter === activeCategory
-                                ? "bg-text-dark text-white shadow-lg"
-                                : "bg-white/5 text-text-dark/90 hover:bg-white/10 hover:text-text-dark border border-text-dark/10"
-                                }`}
-                            onClick={() => setActiveCategory(filter)}
-                        >
-                            {filter}
-                        </button>
-                    ))}
-                </div>
-
-                {/* Stats Bar */}
+                {/* Stats & Results Count */}
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    transition={{ delay: 0.3 }}
-                    className="text-center mb-12"
+                    className="flex items-center justify-between mb-10 bg-white/50 backdrop-blur-sm border border-text-dark/5 px-8 py-4 rounded-2xl"
                 >
-                    <p className="text-text-dark/80">
-                        Showing <span className="font-bold text-primary">{filteredPackages.length}</span> packages
-                        {activeRegion !== "All" && <span> in <span className="font-semibold text-text-dark">{activeRegion}</span></span>}
-                        {activeCategory !== "All" && <span> for <span className="font-semibold text-text-dark">{activeCategory}</span></span>}
+                    <p className="text-sm text-text-dark/60 font-semibold flex items-center gap-2">
+                        <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+                        Showing <span className="text-text-dark font-black tabular-nums">{filteredPackages.length}</span> luxury itineraries
                     </p>
+                    {(activeRegion !== "All" || activeCategory !== "All" || searchTerm) && (
+                        <button
+                            onClick={() => {
+                                setActiveRegion("All");
+                                setActiveCategory("All");
+                                setSearchTerm("");
+                                setSortBy("featured");
+                                setSearchParams({});
+                            }}
+                            className="text-xs font-black text-primary hover:text-primary-dark flex items-center gap-2 transition-all group"
+                        >
+                            <span className="w-4 h-4 flex items-center justify-center rounded-full border-2 border-primary group-hover:bg-primary group-hover:text-white transition-all">×</span>
+                            Reset filters
+                        </button>
+                    )}
                 </motion.div>
 
                 <motion.div
@@ -332,4 +396,6 @@ export default function Packages() {
             </section>
         </div>
     );
-}
+};
+
+export default Packages;
