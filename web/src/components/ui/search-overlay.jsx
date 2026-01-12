@@ -9,7 +9,9 @@ import { blogPosts } from "@/lib/blogs";
 
 export function SearchOverlay({ isOpen, onClose }) {
     const [query, setQuery] = useState("");
+    const [selectedIndex, setSelectedIndex] = useState(-1);
     const inputRef = useRef(null);
+    const resultRefs = useRef([]);
     const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
@@ -22,15 +24,6 @@ export function SearchOverlay({ isOpen, onClose }) {
             setTimeout(() => inputRef.current?.focus(), 100);
         }
     }, [isOpen]);
-
-    // Close on Escape key
-    useEffect(() => {
-        const handleEsc = (e) => {
-            if (e.key === "Escape") onClose();
-        };
-        window.addEventListener("keydown", handleEsc);
-        return () => window.removeEventListener("keydown", handleEsc);
-    }, [onClose]);
 
     // Prevent body scroll when open
     useEffect(() => {
@@ -59,7 +52,57 @@ export function SearchOverlay({ isOpen, onClose }) {
         ? blogPosts.filter(b => b.title.toLowerCase().includes(query.toLowerCase()) || b.excerpt.toLowerCase().includes(query.toLowerCase()))
         : [];
 
-    const hasResults = filteredDestinations.length > 0 || filteredPackages.length > 0 || filteredBlogs.length > 0;
+    const allResults = [
+        ...filteredDestinations.map(d => ({ ...d, type: 'destination', link: `/destinations/${d.id}` })),
+        ...filteredPackages.map(p => ({ ...p, type: 'package', link: `/packages/${p.id}` })),
+        ...filteredBlogs.map(b => ({ ...b, type: 'blog', link: `/blog/${b.id}` }))
+    ];
+
+    const hasResults = allResults.length > 0;
+
+    // Reset selection when query changes
+    useEffect(() => {
+        setSelectedIndex(-1);
+    }, [query]);
+
+    // Handle Keyboard Navigation
+    useEffect(() => {
+        const handleKeyDown = (e) => {
+            if (!isOpen) return;
+
+            if (e.key === "Escape") {
+                onClose();
+            } else if (e.key === "ArrowDown") {
+                e.preventDefault();
+                setSelectedIndex(prev => (prev < allResults.length - 1 ? prev + 1 : prev));
+            } else if (e.key === "ArrowUp") {
+                e.preventDefault();
+                setSelectedIndex(prev => (prev > 0 ? prev - 1 : prev));
+            } else if (e.key === "Enter" && selectedIndex >= 0) {
+                e.preventDefault();
+                // Trigger navigation
+                const selectedItem = allResults[selectedIndex];
+                if (selectedItem) {
+                    const linkButton = resultRefs.current[selectedIndex];
+                    if (linkButton) linkButton.click();
+                }
+            }
+        };
+
+        window.addEventListener("keydown", handleKeyDown);
+        return () => window.removeEventListener("keydown", handleKeyDown);
+    }, [isOpen, allResults, selectedIndex, onClose]);
+
+    // Scroll selected item into view
+    useEffect(() => {
+        if (selectedIndex >= 0 && resultRefs.current[selectedIndex]) {
+            resultRefs.current[selectedIndex].scrollIntoView({
+                behavior: "smooth",
+                block: "nearest"
+            });
+        }
+    }, [selectedIndex]);
+
 
     if (!mounted) return null;
 
@@ -84,6 +127,10 @@ export function SearchOverlay({ isOpen, onClose }) {
                                 value={query}
                                 onChange={(e) => setQuery(e.target.value)}
                                 className="flex-1 bg-transparent border-none text-3xl md:text-5xl font-bold text-text-dark placeholder:text-text-dark/20 focus:outline-none focus:ring-0"
+                                aria-expanded={hasResults}
+                                aria-activedescendant={selectedIndex >= 0 ? `result-${selectedIndex}` : undefined}
+                                role="combobox"
+                                aria-controls="search-results"
                             />
                             <button
                                 onClick={onClose}
@@ -94,7 +141,7 @@ export function SearchOverlay({ isOpen, onClose }) {
                         </div>
 
                         {/* Content */}
-                        <div className="flex-1 overflow-y-auto pr-4 custom-scrollbar">
+                        <div id="search-results" className="flex-1 overflow-y-auto pr-4 custom-scrollbar" role="listbox">
                             {!query ? (
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                                     <div>
@@ -143,93 +190,38 @@ export function SearchOverlay({ isOpen, onClose }) {
                                         </div>
                                     )}
 
-                                    {/* Destinations */}
-                                    {filteredDestinations.length > 0 && (
+                                    {/* All Results Mapped */}
+                                    {hasResults && (
                                         <section>
-                                            <h3 className="flex items-center gap-2 text-primary font-bold mb-6">
-                                                <MapPin className="w-5 h-5" /> Destinations
-                                            </h3>
                                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                                {filteredDestinations.map(d => (
+                                                {allResults.map((item, index) => (
                                                     <Link
-                                                        key={d.id}
-                                                        to={`/destinations/${d.id}`}
+                                                        key={item.id}
+                                                        id={`result-${index}`}
+                                                        ref={el => resultRefs.current[index] = el}
+                                                        to={item.link}
                                                         onClick={onClose}
-                                                        className="flex items-center gap-4 p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-colors group"
+                                                        className={`flex items-center gap-4 p-4 rounded-xl transition-colors group ${index === selectedIndex ? 'bg-white/10 ring-2 ring-primary/50' : 'bg-white/5 hover:bg-white/10'
+                                                            }`}
+                                                        aria-selected={index === selectedIndex}
+                                                        role="option"
                                                     >
                                                         <div className="w-16 h-16 rounded-lg bg-white/10 overflow-hidden shrink-0 relative">
                                                             <img
-                                                                src={d.image}
-                                                                alt={d.title}
+                                                                src={item.image || (item.gallery && item.gallery[0])}
+                                                                alt={item.title}
                                                                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                                                             />
+                                                            {/* Type Badge */}
+                                                            <div className="absolute top-0 right-0 bg-black/60 text-white xs-text px-1 text-[10px] uppercase">
+                                                                {item.type}
+                                                            </div>
                                                         </div>
-                                                        <div>
-                                                            <h4 className="text-lg font-bold text-text-dark group-hover:text-primary transition-colors">{d.title}</h4>
-                                                            <p className="text-sm text-text-dark/70">{d.subtitle}</p>
-                                                        </div>
-                                                    </Link>
-                                                ))}
-                                            </div>
-                                        </section>
-                                    )}
-
-                                    {/* Packages */}
-                                    {filteredPackages.length > 0 && (
-                                        <section>
-                                            <h3 className="flex items-center gap-2 text-primary font-bold mb-6">
-                                                <Package className="w-5 h-5" /> Packages
-                                            </h3>
-                                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                                {filteredPackages.map(p => (
-                                                    <Link
-                                                        key={p.id}
-                                                        to={`/packages/${p.id}`}
-                                                        onClick={onClose}
-                                                        className="flex items-center gap-4 p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-colors group"
-                                                    >
-                                                        <div className="w-16 h-16 rounded-lg bg-white/10 overflow-hidden shrink-0 relative">
-                                                            {/* Assuming first image from gallery or map appropriately */}
-                                                            <img
-                                                                src={p.gallery?.[0] || p.image}
-                                                                alt={p.title}
-                                                                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                                                            />
-                                                        </div>
-                                                        <div>
-                                                            <h4 className="text-lg font-bold text-text-dark group-hover:text-primary transition-colors">{p.title}</h4>
-                                                            <p className="text-sm text-text-dark/70">{p.days} Days / {p.nights} Nights • ₹{p.price.toLocaleString()}</p>
-                                                        </div>
-                                                    </Link>
-                                                ))}
-                                            </div>
-                                        </section>
-                                    )}
-
-                                    {/* Blogs */}
-                                    {filteredBlogs.length > 0 && (
-                                        <section>
-                                            <h3 className="flex items-center gap-2 text-primary font-bold mb-6">
-                                                <FileText className="w-5 h-5" /> Stories & Guides
-                                            </h3>
-                                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                                {filteredBlogs.map(b => (
-                                                    <Link
-                                                        key={b.id}
-                                                        to={`/blog/${b.id}`}
-                                                        onClick={onClose}
-                                                        className="flex items-center gap-4 p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-colors group"
-                                                    >
-                                                        <div className="w-16 h-16 rounded-lg bg-white/10 overflow-hidden shrink-0 relative">
-                                                            <img
-                                                                src={b.image}
-                                                                alt={b.title}
-                                                                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                                                            />
-                                                        </div>
-                                                        <div>
-                                                            <h4 className="text-lg font-bold text-text-dark group-hover:text-primary transition-colors line-clamp-1">{b.title}</h4>
-                                                            <p className="text-sm text-text-dark/70 line-clamp-1">{b.excerpt}</p>
+                                                        <div className="min-w-0">
+                                                            <h4 className="text-lg font-bold text-text-dark group-hover:text-primary transition-colors truncate">{item.title}</h4>
+                                                            <p className="text-sm text-text-dark/70 truncate">
+                                                                {item.subtitle || item.tagline || item.excerpt || `${item.days} Days / ${item.nights} Nights`}
+                                                            </p>
                                                         </div>
                                                     </Link>
                                                 ))}

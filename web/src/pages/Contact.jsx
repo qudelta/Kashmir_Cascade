@@ -1,8 +1,9 @@
 import { PageHeader } from "@/components/layout/page-header";
-import { Mail, Phone, MapPin, Clock, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Clock, Send, User } from "lucide-react";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { submitLead } from "@/lib/api";
+import SEO from "@/components/layout/SEO";
 
 export default function Contact() {
     const contactInfo = [
@@ -34,22 +35,14 @@ export default function Contact() {
 
     const teamMembers = [
         {
-            name: "Kashmir Cascade Team",
-            role: "Travel Experts",
-            image: "/images/kashmir-hero.jpg",
+            name: "Sakib",
+            role: "Co-Founder",
             phone: "+91 6006 853 203"
         },
         {
-            name: "Mehvish Akhtar",
-            role: "Customer Relations Manager",
-            image: "/images/team-mehvish.png",
-            phone: "+91 7006 348 236"
-        },
-        {
-            name: "Tariq Hussain Lone",
-            role: "Senior Tour Coordinator",
-            image: "/images/team-tariq.png",
-            phone: "+91 8899 299 127"
+            name: "Ubaid",
+            role: "Co-Founder",
+            phone: "+91 6006 853 203"
         }
     ];
 
@@ -104,6 +97,11 @@ _Sent via kashmircascade.com_`;
 
     return (
         <div className="min-h-screen bg-background-light">
+            <SEO
+                title="Contact Us"
+                description="Get in touch with Kashmir Cascade for custom tour planning, package inquiries, and travel assistance in Kashmir and Ladakh."
+                canonical="/contact"
+            />
             <PageHeader
                 title="Get in Touch"
                 subtitle={<>Let's Plan Your <span className="text-primary">Dream Vacation</span></>}
@@ -275,7 +273,7 @@ _Sent via kashmircascade.com_`;
                             <p className="text-text-dark max-w-2xl mx-auto">Our dedicated team of Kashmiri locals is ready to make your journey unforgettable</p>
                         </motion.div>
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
                         {teamMembers.map((member, index) => (
                             <motion.div
                                 key={member.name}
@@ -285,12 +283,8 @@ _Sent via kashmircascade.com_`;
                                 transition={{ delay: index * 0.1 }}
                                 className="bg-background-dark rounded-2xl border border-text-dark/10 p-6 text-center group hover:border-primary/30 transition-colors"
                             >
-                                <div className="relative w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-primary/20 group-hover:border-primary/50 transition-colors">
-                                    <img
-                                        src={member.image}
-                                        alt={member.name}
-                                        className="w-full h-full object-cover"
-                                    />
+                                <div className="relative w-32 h-32 mx-auto mb-4 rounded-full bg-background-light flex items-center justify-center overflow-hidden border-4 border-primary/20 group-hover:border-primary/50 transition-colors">
+                                    <User className="w-16 h-16 text-text-dark/30 group-hover:text-primary transition-colors" />
                                 </div>
                                 <h3 className="text-xl font-bold text-text-dark mb-1">{member.name}</h3>
                                 <p className="text-primary text-sm font-medium mb-3">{member.role}</p>

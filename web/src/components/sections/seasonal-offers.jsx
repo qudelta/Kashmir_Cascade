@@ -38,7 +38,7 @@ export function SeasonalOffers() {
                                 Experience the Magic of <span className="text-primary">Winter Kashmir</span>
                             </h2>
                             <p className="text-white/70 text-lg mb-8 leading-relaxed">
-                                Book your winter getaway now and get <span className="text-white font-bold">Flat 20% Off</span> on all Gulmarg skiing packages and premium houseboat stays. Offer valid for bookings made this month.
+                                Book your winter getaway now and experience premium skiing packages in Gulmarg and luxury houseboat stays. Offer valid for bookings made this month.
                             </p>
 
                             <div className="flex flex-col sm:flex-row items-center gap-4 text-white/80 text-sm">

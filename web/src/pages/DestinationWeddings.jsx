@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 import { PageHeader } from "@/components/layout/page-header";
 import { weddingVenues, weddingServices, weddingPackages } from "@/lib/data";
 import {
-    Heart, MapPin, Users, Star, ArrowRight,
+    Heart, MapPin, Star,
     ClipboardList, Palette, ChefHat, Music, Camera, Car, Hotel,
-    Phone, Mail, Sparkles, Crown, Castle
+    Phone, Sparkles, Crown, Castle
 } from "lucide-react";
 
 const iconMap = {

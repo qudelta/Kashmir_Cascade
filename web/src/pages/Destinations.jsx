@@ -4,6 +4,7 @@ import { PageHeader } from "@/components/layout/page-header";
 import { InteractiveMap } from "@/components/sections/interactive-map";
 import { destinations } from "@/lib/data";
 import { ArrowRight, Calendar, Navigation, Filter } from "lucide-react";
+import SEO from "@/components/layout/SEO";
 
 const regions = ["All", "Kashmir", "Ladakh"];
 
@@ -36,6 +37,11 @@ export default function Destinations() {
 
     return (
         <div className="min-h-screen bg-background-light">
+            <SEO
+                title="Destinations"
+                description="Discover the gems of Kashmir and Ladakh. From the serenity of Dal Lake to the peaks of Gulmarg and Sonmarg."
+                canonical="/destinations"
+            />
             <PageHeader
                 title="Explore Destinations"
                 subtitle={<>The <span className="text-primary">Gems</span> of Kashmir & Ladakh</>}

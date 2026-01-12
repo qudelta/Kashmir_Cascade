@@ -141,21 +141,7 @@ export function BestSellingPackages() {
                                         {pkg.overview}
                                     </p>
 
-                                    <div className="flex items-center justify-between mt-2 pt-3 border-t border-dashed border-gray-200">
-                                        <div>
-                                            <p className="text-[10px] uppercase tracking-wider text-text-dark/50 font-bold">Starting from</p>
-                                            <div className="flex items-center gap-2">
-                                                <p className="text-lg font-bold text-primary flex items-center">
-                                                    <IndianRupee className="w-4 h-4" />
-                                                    {pkg.price.toLocaleString('en-IN')}
-                                                </p>
-                                                {pkg.originalPrice && (
-                                                    <span className="text-xs text-text-dark/40 line-through">
-                                                        ₹{pkg.originalPrice.toLocaleString('en-IN')}
-                                                    </span>
-                                                )}
-                                            </div>
-                                        </div>
+                                    <div className="flex items-center justify-end mt-2 pt-3 border-t border-dashed border-gray-200">
                                         <motion.div
                                             whileHover={{ x: 5 }}
                                             className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors"

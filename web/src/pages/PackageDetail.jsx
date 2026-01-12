@@ -3,6 +3,7 @@ import { PageHeader } from "@/components/layout/page-header";
 import { packages } from "@/lib/data";
 import { PackageTimeline } from "@/components/ui/package-timeline";
 import { CheckCircle2, XCircle, MapPin, Clock, Users, Mountain, Star, IndianRupee, Shield, Phone, Mail } from "lucide-react";
+import SEO from "@/components/layout/SEO";
 
 export default function PackageDetail() {
     const { id } = useParams();
@@ -19,8 +20,39 @@ export default function PackageDetail() {
         );
     }
 
+    const productSchema = {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": pkg.title,
+        "image": pkg.image,
+        "description": pkg.overview,
+        "brand": {
+            "@type": "Brand",
+            "name": "Kashmir Cascade"
+        },
+        "offers": {
+            "@type": "Offer",
+            "url": `https://kashmircascade.com/packages/${id}`,
+            "priceCurrency": "INR",
+            "price": pkg.price,
+            "availability": "https://schema.org/InStock",
+            "itemCondition": "https://schema.org/NewCondition"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": pkg.rating,
+            "reviewCount": pkg.reviews
+        }
+    };
+
     return (
         <div className="min-h-screen bg-background-light">
+            <SEO
+                title={pkg.title}
+                description={pkg.overview.substring(0, 160)}
+                ogType="article"
+                schemaData={productSchema}
+            />
             <PageHeader
                 title={pkg.title}
                 subtitle={pkg.tagline}
@@ -158,25 +190,10 @@ export default function PackageDetail() {
                 <div className="space-y-8">
                     <div className="bg-white border border-text-dark/10 p-8 rounded-2xl sticky top-24">
                         {/* Price */}
+                        {/* Booking CTA */}
                         <div className="mb-6">
-                            <span className="text-sm text-text-dark/70">Starting from</span>
-                            <div className="flex items-baseline gap-3">
-                                <div className="flex items-center text-4xl font-bold text-text-dark">
-                                    <IndianRupee className="w-8 h-8" />
-                                    {pkg.price.toLocaleString('en-IN')}
-                                </div>
-                                {pkg.originalPrice && (
-                                    <span className="text-lg text-text-dark/40 line-through">
-                                        ₹{pkg.originalPrice.toLocaleString('en-IN')}
-                                    </span>
-                                )}
-                            </div>
-                            <span className="text-sm text-text-dark/70">per person</span>
-                            {pkg.originalPrice && (
-                                <div className="mt-2 inline-block bg-green-100 text-green-700 text-[10px] font-bold px-2 py-0.5 rounded-full border border-green-200">
-                                    Save ₹{(pkg.originalPrice - pkg.price).toLocaleString('en-IN')}
-                                </div>
-                            )}
+                            <h3 className="text-xl font-bold text-text-dark">Interested in this tour?</h3>
+                            <p className="text-sm text-text-dark/70 mt-1">Contact us for a personalized quote.</p>
                         </div>
 
                         {/* Quick Details */}

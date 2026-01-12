@@ -5,6 +5,7 @@ import { blogPosts } from "@/lib/blogs";
 import { useMobile } from "@/lib/useMobile";
 import { PageHeader } from "@/components/layout/page-header";
 import { Footer } from "@/components/layout/footer";
+import SEO from "@/components/layout/SEO";
 
 export default function Blog() {
     const isMobile = useMobile();
@@ -45,6 +46,11 @@ export default function Blog() {
 
     return (
         <div className="min-h-screen bg-background-light">
+            <SEO
+                title="Blog"
+                description="Travel stories, guides, and tips for exploring Kashmir and Ladakh. Learn about the best time to visit, places to see, and more."
+                canonical="/blog"
+            />
             <PageHeader
                 title="Our Blog"
                 subtitle={<>Travel <span className="text-primary">Stories</span> & Tips from Kashmir</>}

@@ -4,6 +4,7 @@ import { PageHeader } from "@/components/layout/page-header";
 import { destinations } from "@/lib/data";
 import { fetchWeather } from "@/lib/weather-service";
 import { MapPin, Calendar, Mountain, CloudSun, Compass, CloudRain, CloudSnow, CloudFog, CloudLightning, Sun, Cloud } from "lucide-react";
+import SEO from "@/components/layout/SEO";
 
 const WeatherIcon = ({ icon, className }) => {
     switch (icon) {
@@ -46,8 +47,27 @@ export default function DestinationDetail() {
         );
     }
 
+    const placeSchema = {
+        "@context": "https://schema.org",
+        "@type": "Place",
+        "name": destination.title,
+        "description": destination.description,
+        "image": destination.image,
+        "geo": destination.stats.lat ? {
+            "@type": "GeoCoordinates",
+            "latitude": destination.stats.lat,
+            "longitude": destination.stats.lon
+        } : null
+    };
+
     return (
         <div className="min-h-screen bg-background-light">
+            <SEO
+                title={destination.title}
+                description={destination.description.substring(0, 160)}
+                ogType="place"
+                schemaData={placeSchema}
+            />
             <PageHeader
                 title={destination.title}
                 subtitle={destination.subtitle}

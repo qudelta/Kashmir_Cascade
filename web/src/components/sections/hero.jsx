@@ -7,7 +7,7 @@ export function Hero() {
     const isMobile = useMobile();
 
     return (
-        <section className="relative h-screen w-full flex items-end pb-24 md:pb-32 overflow-hidden">
+        <section className="relative h-screen w-full flex items-center overflow-hidden">
             {/* Image Background with Parallax Effect */}
             <motion.div
                 initial={{ scale: isMobile ? 1 : 1.1 }}
@@ -19,6 +19,8 @@ export function Hero() {
                     src="/images/Kashmir Dal Lake Background.jpg"
                     alt="Kashmir Dal Lake"
                     className="w-full h-full object-cover object-center"
+                    fetchPriority="high"
+                    loading="eager"
                 />
             </motion.div>
 
@@ -32,7 +34,7 @@ export function Hero() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
 
             {/* Content - Bottom Left Aligned */}
-            <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full">
+            <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full mb-16 md:mb-20">
                 <div className="max-w-2xl text-white">
                     {/* Animated Badge */}
                     <motion.div
@@ -49,7 +51,7 @@ export function Hero() {
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.4 }}
-                        className="text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.9] mb-6 font-display text-white tracking-tighter"
+                        className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[0.9] mb-6 font-display text-white tracking-tighter"
                     >
                         Experience <br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70">Paradise</span>
                     </motion.h1>

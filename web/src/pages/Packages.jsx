@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { PageHeader } from "@/components/layout/page-header";
 import { packages } from "@/lib/data";
 import { Clock, Star, ArrowRight, IndianRupee, MapPin, Filter, Map, Search, ArrowUpDown, ChevronDown } from "lucide-react";
+import SEO from "@/components/layout/SEO";
 
 const categories = ["All", "Honeymoon", "Family", "Adventure", "Spiritual", "Winter Special", "Budget", "Photography", "Senior Special"];
 const regions = ["All", "Kashmir", "Ladakh"];
@@ -71,6 +72,11 @@ const Packages = () => {
 
     return (
         <div className="min-h-screen bg-background-light">
+            <SEO
+                title="Tour Packages"
+                description="Explore our handpicked tour packages for Kashmir and Ladakh. From honeymoon specials to adventure trips, find your perfect itinerary."
+                canonical="/packages"
+            />
             <PageHeader
                 title="Curated Packages"
                 subtitle={<>Handpicked <span className="text-primary">Itineraries</span> for You</>}
@@ -137,8 +143,6 @@ const Packages = () => {
                                         className="bg-transparent text-sm font-bold text-text-dark pr-12 pl-4 py-4 focus:outline-none appearance-none cursor-pointer w-full min-w-[180px]"
                                     >
                                         <option value="featured">Featured Search</option>
-                                        <option value="price-low-high">Price: Low to High</option>
-                                        <option value="price-high-low">Price: High to Low</option>
                                         <option value="rating">Best Rated</option>
                                     </select>
                                     <ChevronDown className="absolute right-5 top-1/2 -translate-y-1/2 w-4 h-4 text-text-dark/40 pointer-events-none" />
@@ -236,16 +240,6 @@ const Packages = () => {
                                             >
                                                 {pkg.category}
                                             </motion.span>
-                                            {pkg.originalPrice && (
-                                                <motion.span
-                                                    initial={{ scale: 0 }}
-                                                    animate={{ scale: 1 }}
-                                                    transition={{ type: "spring", delay: 0.3 }}
-                                                    className="bg-green-500 text-text-dark text-xs font-bold px-3 py-1.5 rounded-full"
-                                                >
-                                                    {Math.round((1 - pkg.price / pkg.originalPrice) * 100)}% OFF
-                                                </motion.span>
-                                            )}
                                         </div>
 
                                         {/* Bottom Info */}
@@ -309,23 +303,7 @@ const Packages = () => {
                                             )}
                                         </div>
 
-                                        {/* Price & CTA */}
-                                        <div className="mt-auto pt-4 border-t border-text-dark/10 flex items-center justify-between">
-                                            <div>
-                                                <span className="text-xs text-text-dark/70 block">From</span>
-                                                <div className="flex items-center gap-2">
-                                                    <span className="flex items-center text-2xl font-bold text-text-dark">
-                                                        <IndianRupee className="w-5 h-5" />
-                                                        {pkg.price.toLocaleString('en-IN')}
-                                                    </span>
-                                                    {pkg.originalPrice && (
-                                                        <span className="text-sm text-text-dark/40 line-through">
-                                                            ₹{pkg.originalPrice.toLocaleString('en-IN')}
-                                                        </span>
-                                                    )}
-                                                </div>
-                                                <span className="text-xs text-text-dark/70">per person</span>
-                                            </div>
+                                        <div className="mt-auto pt-4 border-t border-text-dark/10 flex items-center justify-end">
                                             <motion.span
                                                 whileHover={{ x: 5 }}
                                                 className="flex items-center gap-1 text-sm font-semibold text-primary"

@@ -1,6 +1,7 @@
 import { PageHeader } from "@/components/layout/page-header";
-import { Heart, Award, ShieldCheck, Map } from "lucide-react";
+import { Heart, Award, ShieldCheck, Map, User } from "lucide-react";
 import { motion } from "framer-motion";
+import SEO from "@/components/layout/SEO";
 
 export default function About() {
     const values = [
@@ -11,13 +12,17 @@ export default function About() {
     ];
 
     const team = [
-        { name: "Faisal Ahmad Mir", role: "Founder & Travel Director", img: "/images/team-faisal.png" },
-        { name: "Mehvish Akhtar", role: "Customer Relations Manager", img: "/images/team-mehvish.png" },
-        { name: "Tariq Hussain Lone", role: "Senior Tour Coordinator", img: "/images/team-tariq.png" }
+        { name: "Sakib", role: "Co-Founder" },
+        { name: "Ubaid", role: "Co-Founder" }
     ];
 
     return (
         <div className="min-h-screen bg-background-light">
+            <SEO
+                title="Our Story"
+                description="Learn about Kashmir Cascade, our mission to show the authentic beauty of Kashmir, and the team behind your perfect holiday."
+                canonical="/about"
+            />
             <PageHeader
                 title="Our Story"
                 subtitle={<>Authentic Kashmiri <span className="text-primary">Hospitality</span></>}
@@ -89,7 +94,7 @@ export default function About() {
                     </motion.div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
                     {team.map((member, index) => (
                         <motion.div
                             key={member.name}
@@ -99,12 +104,8 @@ export default function About() {
                             transition={{ delay: index * 0.1 }}
                             className="text-center group"
                         >
-                            <div className="w-48 h-48 mx-auto rounded-2xl overflow-hidden mb-6 border-2 border-text-dark/10 group-hover:border-primary/50 transition-all duration-300 relative">
-                                <img
-                                    src={member.img}
-                                    alt={member.name}
-                                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                                />
+                            <div className="w-48 h-48 mx-auto rounded-full bg-background-dark/5 flex items-center justify-center mb-6 border-2 border-text-dark/10 group-hover:border-primary/50 transition-all duration-300 relative">
+                                <User className="w-20 h-20 text-text-dark/30 group-hover:text-primary transition-colors" />
                             </div>
                             <h3 className="text-xl font-bold text-text-dark">{member.name}</h3>
                             <p className="text-primary font-medium text-sm uppercase tracking-wide">{member.role}</p>

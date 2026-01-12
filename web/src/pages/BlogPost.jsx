@@ -6,6 +6,7 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
+import SEO from "@/components/layout/SEO";
 
 export default function BlogPost() {
     const { id } = useParams();
@@ -29,8 +30,35 @@ export default function BlogPost() {
         .filter(p => p.category === post.category && p.id !== post.id)
         .slice(0, 2);
 
+    const blogSchema = {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": post.title,
+        "image": post.image,
+        "author": {
+            "@type": "Person",
+            "name": post.author
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Kashmir Cascade",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://kashmircascade.com/logo-black.png"
+            }
+        },
+        "datePublished": post.date,
+        "description": post.excerpt
+    };
+
     return (
         <div className="min-h-screen bg-background-light">
+            <SEO
+                title={post.title}
+                description={post.excerpt}
+                ogType="article"
+                schemaData={blogSchema}
+            />
             <main className="pt-28 pb-20">
                 {/* Hero Image */}
                 <motion.div
