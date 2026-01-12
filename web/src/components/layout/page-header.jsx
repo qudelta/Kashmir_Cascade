@@ -9,8 +9,6 @@ export function PageHeader({ title, subtitle, image, className, imageClassName =
                     src={image}
                     alt={title}
                     className={cn("w-full h-full object-cover scale-105", imageClassName)}
-                    fetchPriority="high"
-                    loading="eager"
                 />
             </div>
 

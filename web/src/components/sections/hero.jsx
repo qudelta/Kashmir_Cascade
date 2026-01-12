@@ -19,8 +19,6 @@ export function Hero() {
                     src="/images/Kashmir Dal Lake Background.jpg"
                     alt="Kashmir Dal Lake"
                     className="w-full h-full object-cover object-center"
-                    fetchPriority="high"
-                    loading="eager"
                 />
             </motion.div>
 
