@@ -7,7 +7,7 @@ export function Hero() {
     const isMobile = useMobile();
 
     return (
-        <section className="relative h-screen w-full flex items-center overflow-hidden">
+        <section className="relative h-screen w-full flex flex-col justify-center overflow-hidden pt-20 pb-32">
             {/* Image Background with Parallax Effect */}
             <motion.div
                 initial={{ scale: isMobile ? 1 : 1.1 }}
@@ -32,7 +32,7 @@ export function Hero() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
 
             {/* Content - Bottom Left Aligned */}
-            <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full mb-16 md:mb-20">
+            <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full">
                 <div className="max-w-2xl text-white">
                     {/* Animated Badge */}
                     <motion.div
@@ -58,7 +58,7 @@ export function Hero() {
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.6, delay: 0.6 }}
-                        className="text-xl md:text-2xl font-medium text-white/80 mb-10 max-w-lg leading-relaxed"
+                        className="text-xl md:text-2xl font-medium text-white/80 mb-8 max-w-lg leading-relaxed"
                     >
                         Curated journeys to the heart of the Himalayas. Discover the unseen beauty of Kashmir.
                     </motion.p>
@@ -94,7 +94,7 @@ export function Hero() {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ duration: 0.6, delay: 1 }}
-                        className="hidden md:flex gap-12 mt-16 border-t border-white/10 pt-8"
+                        className="hidden md:flex gap-12 mt-6 border-t border-white/10 pt-8"
                     >
                         {[
                             { value: "500+", label: "Travelers" },

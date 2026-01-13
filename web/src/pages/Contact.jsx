@@ -37,12 +37,14 @@ export default function Contact() {
         {
             name: "Sakib",
             role: "Co-Founder",
-            phone: "+91 6006 853 203"
+            phone: "+91 6006 853 203",
+            image: "/images/team/sakib.jpg"
         },
         {
             name: "Ubaid",
             role: "Co-Founder",
-            phone: "+91 6006 853 203"
+            phone: "+91 8899 299 127",
+            image: "/images/team/ubaid.jpg"
         }
     ];
 
@@ -284,7 +286,18 @@ _Sent via kashmircascade.com_`;
                                 className="bg-background-dark rounded-2xl border border-text-dark/10 p-6 text-center group hover:border-primary/30 transition-colors"
                             >
                                 <div className="relative w-32 h-32 mx-auto mb-4 rounded-full bg-background-light flex items-center justify-center overflow-hidden border-4 border-primary/20 group-hover:border-primary/50 transition-colors">
-                                    <User className="w-16 h-16 text-text-dark/30 group-hover:text-primary transition-colors" />
+                                    {member.image ? (
+                                        <img
+                                            src={member.image}
+                                            alt={member.name}
+                                            className={`w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 
+                                                ${member.name === 'Sakib' ? 'rotate-3 scale-135' : ''}
+                                                ${member.name === 'Ubaid' ? 'scale-135 object-[center_20%]' : 'object-center'}
+                                            `}
+                                        />
+                                    ) : (
+                                        <User className="w-16 h-16 text-text-dark/30 group-hover:text-primary transition-colors" />
+                                    )}
                                 </div>
                                 <h3 className="text-xl font-bold text-text-dark mb-1">{member.name}</h3>
                                 <p className="text-primary text-sm font-medium mb-3">{member.role}</p>

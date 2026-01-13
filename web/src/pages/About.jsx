@@ -12,8 +12,8 @@ export default function About() {
     ];
 
     const team = [
-        { name: "Sakib", role: "Co-Founder" },
-        { name: "Ubaid", role: "Co-Founder" }
+        { name: "Sakib", role: "Co-Founder", image: "/images/team/sakib.jpg" },
+        { name: "Ubaid", role: "Co-Founder", image: "/images/team/ubaid.jpg" }
     ];
 
     return (
@@ -104,8 +104,19 @@ export default function About() {
                             transition={{ delay: index * 0.1 }}
                             className="text-center group"
                         >
-                            <div className="w-48 h-48 mx-auto rounded-full bg-background-dark/5 flex items-center justify-center mb-6 border-2 border-text-dark/10 group-hover:border-primary/50 transition-all duration-300 relative">
-                                <User className="w-20 h-20 text-text-dark/30 group-hover:text-primary transition-colors" />
+                            <div className="w-48 h-48 mx-auto rounded-full bg-background-dark/5 flex items-center justify-center mb-6 border-2 border-text-dark/10 group-hover:border-primary/50 transition-all duration-300 relative overflow-hidden">
+                                {member.image ? (
+                                    <img
+                                        src={member.image}
+                                        alt={member.name}
+                                        className={`w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 
+                                            ${member.name === 'Sakib' ? 'rotate-3 scale-135' : ''}
+                                            ${member.name === 'Ubaid' ? 'scale-135 object-[center_20%]' : 'object-center'}
+                                        `}
+                                    />
+                                ) : (
+                                    <User className="w-20 h-20 text-text-dark/30 group-hover:text-primary transition-colors" />
+                                )}
                             </div>
                             <h3 className="text-xl font-bold text-text-dark">{member.name}</h3>
                             <p className="text-primary font-medium text-sm uppercase tracking-wide">{member.role}</p>
