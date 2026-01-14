@@ -37,8 +37,8 @@ We've had guests tell us they wish they had come in winter sooner. The magic is 
 
 **Ready to experience Winter Kashmir?** Our Winter Special packages are now open for bookings. We'll take care of everything - you just bring the wonder.`,
         author: "Umeed",
-        authorRole: "Founder, Kashmir Cascade",
-        authorImage: "/images/team/umeed.jpg",
+        authorRole: "Local Explorer",
+        authorImage: "/images/team/umeed_blog.jpg",
         date: "2025-01-15",
         readTime: "6 min read",
         category: "Travel Guide",
@@ -87,8 +87,8 @@ Over the years, we've learned what makes a honeymoon special - it's not just the
 
 That's why our honeymoon packages include these thoughtful touches. Because your first trip together as a married couple deserves to be perfect.`,
         author: "Fayiq",
-        authorRole: "Honeymoon Specialist",
-        authorImage: "/images/team/fayiq.jpg",
+        authorRole: "Experience Curator",
+        authorImage: "/images/team/fayiq_blog.jpg",
         date: "2024-11-20",
         readTime: "7 min read",
         category: "Honeymoon",
@@ -151,7 +151,7 @@ I've seen families bond deeper in a week here than they expected. That's the mag
 
 **Planning a family trip?** Our family packages are designed with everyone in mind - comfortable transportation, family-friendly hotels, and activities that create memories.`,
         author: "Sakib",
-        authorRole: "Senior Travel Consultant",
+        authorRole: "Lead – Travel Operations",
         authorImage: "/images/team/sakib_blog.jpg",
         date: "2024-10-05",
         readTime: "8 min read",
@@ -206,8 +206,8 @@ Look, we could easily just take tourists to the same popular spots. It's easier 
 These hidden gems require a bit more effort - longer drives, some walking, flexibility. But the rewards are incomparable.
 
 **Want to explore Kashmir's hidden side?** We offer customized itineraries that include these secret spots.`,
-        author: "Ubaid",
-        authorRole: "Founder, Kashmir Cascade",
+        author: "Shakir",
+        authorRole: "Route Expert",
         authorImage: "/images/team/ubaid_blog.jpg",
         date: "2024-08-12",
         readTime: "6 min read",
@@ -275,8 +275,8 @@ Please respect local customs. Ask before photographing people. At religious site
 
 Kashmir is generous with its beauty. We only ask that photographers treat it with respect.`,
         author: "Umeed",
-        authorRole: "Photography Tour Specialist",
-        authorImage: "/images/team/umeed.jpg",
+        authorRole: "Local Explorer",
+        authorImage: "/images/team/umeed_blog.jpg",
         date: "2024-09-18",
         readTime: "7 min read",
         category: "Photography",
@@ -343,8 +343,8 @@ The houseboats often have excellent cooks who prepare traditional food with a re
 
 **Join our food tour!** We offer specialized gastronomy experiences where food is the focus, not just an afterthought.`,
         author: "Fayiq",
-        authorRole: "Food & Culture Specialist",
-        authorImage: "/images/team/fayiq.jpg",
+        authorRole: "Experience Curator",
+        authorImage: "/images/team/fayiq_blog.jpg",
         date: "2024-07-22",
         readTime: "8 min read",
         category: "Food & Culture",
@@ -413,7 +413,7 @@ Solo travel in Kashmir isn't just safe - it's transformative. When you navigate 
 
 **Ready to take the plunge?** We have special solo traveler packages with built-in support and flexibility.`,
         author: "Sakib",
-        authorRole: "Honeymoon Specialist",
+        authorRole: "Lead – Travel Operations",
         authorImage: "/images/team/sakib_blog.jpg",
         date: "2024-12-08",
         readTime: "7 min read",
@@ -490,8 +490,8 @@ If this is your first time in the region and you have only 7 days, go to Kashmir
 Come back next year for Ladakh. Trust me, you'll want to come back anyway.
 
 **Still confused?** Call us. We'll listen to your preferences and tell you honestly what's best for you - even if it means less revenue for us.`,
-        author: "Ubaid",
-        authorRole: "Senior Travel Consultant",
+        author: "Shakir",
+        authorRole: "Route Expert",
         authorImage: "/images/team/ubaid_blog.jpg",
         date: "2025-01-02",
         readTime: "9 min read",
@@ -536,8 +536,8 @@ If you're coming to see the snow, now is the time. We recommend:
 
 *Ready to walk in this winter wonderland? Claim our Limited Time Offer for 20% off on all winter packages.*`,
         author: "Umeed",
-        authorRole: "Founder, Kashmir Cascade",
-        authorImage: "/images/team/umeed.jpg",
+        authorRole: "Local Explorer",
+        authorImage: "/images/team/umeed_blog.jpg",
         date: "2025-01-02",
         readTime: "5 min read",
         category: "News & Updates",

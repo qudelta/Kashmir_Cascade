@@ -35,14 +35,13 @@ export default function Contact() {
     const teamMembers = [
         {
             name: "Sakib",
-            role: "Co-Founder",
-            phone: "+91 6006 853 203",
+            role: "Lead – Travel Operations",
             image: "/images/team/sakib.jpg?v=updated"
         },
         {
             name: "Ubaid",
-            role: "Co-Founder",
-            phone: "+91 7006 348 236",
+            role: "Lead – Client Relations & Sales",
+            phone: "+91 6006 853 203",
             image: "/images/team/ubaid.jpg?v=updated"
         }
     ];
@@ -300,13 +299,15 @@ _Sent via kashmircascade.com_`;
                                 </div>
                                 <h3 className="text-xl font-bold text-text-dark mb-1">{member.name}</h3>
                                 <p className="text-primary text-sm font-medium mb-3">{member.role}</p>
-                                <a
-                                    href={`tel:${member.phone.replace(/\s/g, '')}`}
-                                    className="inline-flex items-center gap-2 text-text-dark text-sm hover:text-primary transition-colors"
-                                >
-                                    <Phone className="w-4 h-4" />
-                                    {member.phone}
-                                </a>
+                                {member.phone && (
+                                    <a
+                                        href={`tel:${member.phone.replace(/\s/g, '')}`}
+                                        className="inline-flex items-center gap-2 text-text-dark text-sm hover:text-primary transition-colors"
+                                    >
+                                        <Phone className="w-4 h-4" />
+                                        {member.phone}
+                                    </a>
+                                )}
                             </motion.div>
                         ))}
                     </div>

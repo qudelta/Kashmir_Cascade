@@ -14,14 +14,13 @@ export default function About() {
     const team = [
         {
             name: "Sakib",
-            role: "Co-Founder",
-            phone: "+91 6006 853 203",
+            role: "Lead – Travel Operations",
             image: "/images/team/sakib.jpg?v=updated"
         },
         {
             name: "Ubaid",
-            role: "Co-Founder",
-            phone: "+91 7006 348 236",
+            role: "Lead – Client Relations & Sales",
+            phone: "+91 6006 853 203",
             image: "/images/team/ubaid.jpg?v=updated"
         }
     ];
