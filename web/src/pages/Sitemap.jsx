@@ -4,7 +4,7 @@ import { blogPosts } from "@/lib/blogs";
 import { MapPin, Package, BookOpen, Info, Phone, HelpCircle, Image, Star, Shield, Calendar, FileText } from "lucide-react";
 
 const mainPages = [
-    { name: "Home", href: "/", icon: MapPin, description: "Welcome to Kashmir Travels" },
+    { name: "Home", href: "/", icon: MapPin, description: "Welcome to Kashmir Cascade" },
     { name: "About Us", href: "/about", icon: Info, description: "Our story and team" },
     { name: "Contact", href: "/contact", icon: Phone, description: "Get in touch with us" },
     { name: "FAQ", href: "/faq", icon: HelpCircle, description: "Frequently asked questions" },

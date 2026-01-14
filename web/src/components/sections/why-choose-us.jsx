@@ -11,7 +11,7 @@ const testimonials = [
         rating: 5
     },
     {
-        text: "As a solo female traveler, I was initially worried. But Kashmir Travels ensured I felt safe throughout. The local guides were respectful and knowledgeable. Best trip of my life!",
+        text: "As a solo female traveler, I was initially worried. But Kashmir Cascade ensured I felt safe throughout. The local guides were respectful and knowledgeable. Best trip of my life!",
         name: "Anjali Desai",
         location: "Bangalore, India",
         image: "/images/indian 3.jpg",

@@ -12,7 +12,6 @@ export default function Contact() {
             title: "Phone & WhatsApp",
             lines: [
                 "+91 6006 853 203 (WhatsApp)",
-                "+91 8899 299 127",
                 "+91 7006 348 236 (Helpline)"
             ]
         },
@@ -24,7 +23,7 @@ export default function Contact() {
         {
             icon: MapPin,
             title: "Visit Our Office",
-            lines: ["Main Chowk, Sopore,", "Jammu & Kashmir - 193201"]
+            lines: ["Patigooro Complex, Main Chowk", "Sopore, Jammu & Kashmir - 193201"]
         },
         {
             icon: Clock,
@@ -38,13 +37,13 @@ export default function Contact() {
             name: "Sakib",
             role: "Co-Founder",
             phone: "+91 6006 853 203",
-            image: "/images/team/sakib.jpg"
+            image: "/images/team/sakib.jpg?v=updated"
         },
         {
             name: "Ubaid",
             role: "Co-Founder",
-            phone: "+91 8899 299 127",
-            image: "/images/team/ubaid.jpg"
+            phone: "+91 7006 348 236",
+            image: "/images/team/ubaid.jpg?v=updated"
         }
     ];
 
@@ -292,7 +291,7 @@ _Sent via kashmircascade.com_`;
                                             alt={member.name}
                                             className={`w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 
                                                 ${member.name === 'Sakib' ? 'rotate-3 scale-135' : ''}
-                                                ${member.name === 'Ubaid' ? 'scale-135 object-[center_20%]' : 'object-center'}
+                                                object-center
                                             `}
                                         />
                                     ) : (

@@ -14,10 +14,10 @@ const localBusinessSchema = {
     "telephone": "+916006853203",
     "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Sopore",
+        "streetAddress": "Patigooro Complex, Main Chowk",
         "addressLocality": "Sopore",
         "addressRegion": "Jammu & Kashmir",
-        "postalCode": "193101",
+        "postalCode": "193201",
         "addressCountry": "IN"
     },
     "geo": {
