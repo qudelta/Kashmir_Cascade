@@ -13,12 +13,12 @@ export default function About() {
 
     const team = [
         {
-            name: "Sakib",
+            name: "Sheikh Sakib",
             role: "Lead – Travel Operations",
-            image: "/images/team/sakib.jpg?v=updated"
+            image: "/images/team/sakib-v3.png"
         },
         {
-            name: "Ubaid",
+            name: "Sheikh Ubaid",
             role: "Lead – Client Relations & Sales",
             phone: "+91 6006 853 203",
             image: "/images/team/ubaid.jpg?v=updated"
@@ -118,9 +118,11 @@ export default function About() {
                                     <img
                                         src={member.image}
                                         alt={member.name}
-                                        className={`w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 
-                                            ${member.name === 'Sakib' ? 'rotate-3 scale-135' : ''}
-                                            object-center
+                                        className={`w-full h-full transition-transform duration-500 group-hover:scale-110 
+                                            ${member.name === 'Sakib'
+                                                ? 'object-contain object-bottom'
+                                                : 'object-cover object-center'
+                                            }
                                         `}
                                     />
                                 ) : (
