@@ -17,7 +17,7 @@ const localBusinessSchema = {
         "streetAddress": "Patigooro Complex, Main Chowk Sopore",
         "addressLocality": "Sopore",
         "addressRegion": "Jammu & Kashmir",
-        "postalCode": "193101",
+        "postalCode": "193201",
         "addressCountry": "IN"
     },
     "geo": {

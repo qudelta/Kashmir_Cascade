@@ -12,8 +12,17 @@ export default function About() {
     ];
 
     const team = [
-        { name: "Sakib", role: "Co-Founder", image: "/images/team/sakib.jpg" },
-        { name: "Ubaid", role: "Co-Founder", image: "/images/team/ubaid.jpg" }
+        {
+            name: "Sheikh Sakib",
+            role: "Lead – Travel Operations",
+            image: "/images/team/sakib-v3.png"
+        },
+        {
+            name: "Sheikh Ubaid",
+            role: "Lead – Client Relations & Sales",
+            phone: "+91 6006 853 203",
+            image: "/images/team/ubaid.jpg?v=updated"
+        }
     ];
 
     return (
@@ -47,7 +56,11 @@ export default function About() {
                         transition={{ delay: 0.1 }}
                         className="text-lg text-text-dark/90 leading-relaxed"
                     >
+<<<<<<< HEAD
                         Founded in 2015, <strong className="text-primary">Kashmir Cascade</strong> started with a simple mission: to show the world the true, authentic Kashmir beyond the headlines.
+=======
+                        Founded in 2025, <strong className="text-primary">Kashmir Cascade</strong> started with a simple mission: to show the world the true, authentic Kashmir beyond the headlines.
+>>>>>>> 9ae2d0c04e48480fb48e706c7eba8ce210016a2e
                         We are a team of locals who grew up exploring these mountains, fishing in these lakes, and walking these meadows.
                         We believe that travel isn't just about seeing places; it's about feeling them. Our goal is to make every guest feel not like a tourist, but like a part of our extended Kashmiri family.
                     </motion.p>
@@ -109,9 +122,11 @@ export default function About() {
                                     <img
                                         src={member.image}
                                         alt={member.name}
-                                        className={`w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 
-                                            ${member.name === 'Sakib' ? 'rotate-3 scale-135' : ''}
-                                            ${member.name === 'Ubaid' ? 'scale-135 object-[center_20%]' : 'object-center'}
+                                        className={`w-full h-full transition-transform duration-500 group-hover:scale-110 
+                                            ${member.name === 'Sakib'
+                                                ? 'object-contain object-bottom'
+                                                : 'object-cover object-center'
+                                            }
                                         `}
                                     />
                                 ) : (

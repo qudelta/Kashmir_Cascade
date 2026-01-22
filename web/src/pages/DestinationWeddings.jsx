@@ -57,25 +57,43 @@ export default function DestinationWeddings() {
                     </p>
                 </motion.div>
 
-                {/* Stats */}
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 0.3 }}
-                    className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16"
-                >
+                {/* Testimonials */}
+                <div className="grid md:grid-cols-2 gap-8 mt-16 max-w-4xl mx-auto">
                     {[
-                        { value: "500+", label: "Weddings Planned" },
-                        { value: "50+", label: "Premium Venues" },
-                        { value: "100%", label: "Happy Couples" },
-                        { value: "15+", label: "Years Experience" }
-                    ].map((stat, i) => (
-                        <div key={i} className="text-center p-6 bg-white rounded-2xl border border-text-dark/5 shadow-sm">
-                            <p className="text-3xl font-bold text-primary mb-1">{stat.value}</p>
-                            <p className="text-sm text-text-dark/70">{stat.label}</p>
-                        </div>
+                        {
+                            name: "Rahul & Priya",
+                            location: "Mumbai",
+                            text: "The houseboat wedding was a dream come true. Every detail was perfect.",
+                            image: "/images/testimonials/rahul_priya.jpg",
+                        },
+                        {
+                            name: "Amit & Sneha",
+                            location: "Delhi",
+                            text: "Our guests are still talking about the Wazwan feast. Truly royal hospitality.",
+                            image: "/images/testimonials/amit_sneha.jpg",
+                        }
+                    ].map((review, i) => (
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.2 + (i * 0.1) }}
+                            key={i}
+                            className="bg-white p-6 rounded-2xl border border-text-dark/10 shadow-sm flex items-center gap-4 text-left"
+                        >
+                            <div className="w-16 h-16 rounded-full overflow-hidden shrink-0 border-2 border-primary/20">
+                                <img src={review.image} alt={review.name} className="w-full h-full object-cover" />
+                            </div>
+                            <div>
+                                <p className="italic text-text-dark/80 mb-2 text-sm">"{review.text}"</p>
+                                <div>
+                                    <h4 className="font-bold text-text-dark text-sm">{review.name}</h4>
+                                    <p className="text-xs text-primary">{review.location}</p>
+                                </div>
+                            </div>
+                        </motion.div>
                     ))}
-                </motion.div>
+                </div>
             </section>
 
             {/* Why Kashmir Section */}

@@ -24,6 +24,8 @@ export function Navbar() {
     const [isPkgDropdownOpen, setIsPkgDropdownOpen] = useState(false);
     const location = useLocation();
     const pathname = location.pathname;
+    // Force solid navbar for blog details or other pages without hero header
+    const isSolidNavbar = isScrolled || isMobileMenuOpen || (pathname.startsWith("/blog/") && pathname !== "/blog");
 
     // Handle scroll effect
     useEffect(() => {
@@ -56,7 +58,7 @@ export function Navbar() {
             initial={{ y: -100 }}
             animate={{ y: 0 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${isScrolled || isMobileMenuOpen
+            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${isSolidNavbar
                 ? "bg-white md:bg-white/95 md:backdrop-blur-lg border-text-dark/10 shadow-lg"
                 : "bg-transparent border-transparent"
                 }`}
@@ -79,7 +81,7 @@ export function Navbar() {
                                 >
                                     <Link
                                         to={link.href}
-                                        className={`relative hover:text-primary transition-colors text-sm font-medium py-2 flex items-center gap-1 ${isScrolled ? 'text-text-dark/80' : 'text-white/90'}`}
+                                        className={`relative hover:text-primary transition-colors text-sm font-medium py-2 flex items-center gap-1 ${isSolidNavbar ? 'text-text-dark/80' : 'text-white/90'}`}
                                     >
                                         {link.label}
                                         <ChevronDown className={`w-3 h-3 transition-transform ${isDestDropdownOpen ? 'rotate-180' : ''}`} />
@@ -119,7 +121,7 @@ export function Navbar() {
                                 >
                                     <Link
                                         to={link.href}
-                                        className={`relative hover:text-primary transition-colors text-sm font-medium py-2 flex items-center gap-1 ${isScrolled ? 'text-text-dark/80' : 'text-white/90'}`}
+                                        className={`relative hover:text-primary transition-colors text-sm font-medium py-2 flex items-center gap-1 ${isSolidNavbar ? 'text-text-dark/80' : 'text-white/90'}`}
                                     >
                                         {link.label}
                                         <ChevronDown className={`w-3 h-3 transition-transform ${isPkgDropdownOpen ? 'rotate-180' : ''}`} />
@@ -154,7 +156,7 @@ export function Navbar() {
                             <Link
                                 key={link.href}
                                 to={link.href}
-                                className={`relative hover:text-primary transition-colors text-sm font-medium py-2 ${isScrolled ? 'text-text-dark/80' : 'text-white/90'}`}
+                                className={`relative hover:text-primary transition-colors text-sm font-medium py-2 ${isSolidNavbar ? 'text-text-dark/80' : 'text-white/90'}`}
                             >
                                 {link.label}
                                 {isActive && (
@@ -174,7 +176,7 @@ export function Navbar() {
                     {pathname === "/" ? (
                         <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="block cursor-pointer">
                             <img
-                                src={(isScrolled || isMobileMenuOpen) ? "/logo-black.png" : "/logo-white.png"}
+                                src={isSolidNavbar ? "/logo-black.png" : "/logo-white.png"}
                                 alt="Kashmir Cascade"
                                 className="h-10 md:h-16 w-auto object-contain transition-all duration-300"
                             />
@@ -182,7 +184,7 @@ export function Navbar() {
                     ) : (
                         <Link to="/" className="block cursor-pointer">
                             <img
-                                src={(isScrolled || isMobileMenuOpen) ? "/logo-black.png" : "/logo-white.png"}
+                                src={isSolidNavbar ? "/logo-black.png" : "/logo-white.png"}
                                 alt="Kashmir Cascade"
                                 className="h-10 md:h-16 w-auto object-contain transition-all duration-300"
                             />
@@ -198,7 +200,7 @@ export function Navbar() {
                             <Link
                                 key={link.href}
                                 to={link.href}
-                                className={`relative hover:text-primary transition-colors text-sm font-medium py-2 ${isScrolled ? 'text-text-dark/80' : 'text-white/90'}`}
+                                className={`relative hover:text-primary transition-colors text-sm font-medium py-2 ${isSolidNavbar ? 'text-text-dark/80' : 'text-white/90'}`}
                             >
                                 {link.label}
                                 {isActive && (
@@ -215,7 +217,7 @@ export function Navbar() {
                     <div className="flex items-center gap-3 pl-2 border-l border-white/20">
                         <button
                             onClick={() => setIsSearchOpen(true)}
-                            className={`p-2 rounded-full transition-colors ${isScrolled ? 'hover:bg-text-dark/10 text-text-dark/80 hover:text-text-dark' : 'hover:bg-white/10 text-white/80 hover:text-white'}`}
+                            className={`p-2 rounded-full transition-colors ${isSolidNavbar ? 'hover:bg-text-dark/10 text-text-dark/80 hover:text-text-dark' : 'hover:bg-white/10 text-white/80 hover:text-white'}`}
                             aria-label="Search"
                         >
                             <Search className="w-5 h-5" />
@@ -239,7 +241,7 @@ export function Navbar() {
                 {/* Mobile Toggle */}
                 <motion.button
                     whileTap={{ scale: 0.9 }}
-                    className={`md:hidden p-2 ${isScrolled || isMobileMenuOpen ? 'text-text-dark' : 'text-white'}`}
+                    className={`md:hidden p-2 ${isSolidNavbar ? 'text-text-dark' : 'text-white'}`}
                     onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 >
                     <AnimatePresence mode="wait">

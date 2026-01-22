@@ -12,7 +12,6 @@ export default function Contact() {
             title: "Phone & WhatsApp",
             lines: [
                 "+91 6006 853 203 (WhatsApp)",
-                "+91 8899 299 127",
                 "+91 7006 348 236 (Helpline)"
             ]
         },
@@ -24,7 +23,11 @@ export default function Contact() {
         {
             icon: MapPin,
             title: "Visit Our Office",
+<<<<<<< HEAD
             lines: ["Patigooro Complex, Main Chowk Sopore", "Jammu & Kashmir - 193201"]
+=======
+            lines: ["Patigooro Complex, Main Chowk", "Sopore, Jammu & Kashmir - 193201"]
+>>>>>>> 9ae2d0c04e48480fb48e706c7eba8ce210016a2e
         },
         {
             icon: Clock,
@@ -35,6 +38,7 @@ export default function Contact() {
 
     const teamMembers = [
         {
+<<<<<<< HEAD
             name: "Sakib",
             role: "Co-Founder",
             phone: "+91 8899 299 127",
@@ -45,6 +49,17 @@ export default function Contact() {
             role: "Co-Founder",
             phone: "+91 6006 853 203",
             image: "/images/team/ubaid.jpg"
+=======
+            name: "Sheikh Sakib",
+            role: "Lead – Travel Operations",
+            image: "/images/team/sakib-v3.png"
+        },
+        {
+            name: "Sheikh Ubaid",
+            role: "Lead – Client Relations & Sales",
+            phone: "+91 6006 853 203",
+            image: "/images/team/ubaid.jpg?v=updated"
+>>>>>>> 9ae2d0c04e48480fb48e706c7eba8ce210016a2e
         }
     ];
 
@@ -290,9 +305,11 @@ _Sent via kashmircascade.com_`;
                                         <img
                                             src={member.image}
                                             alt={member.name}
-                                            className={`w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 
-                                                ${member.name === 'Sakib' ? 'rotate-3 scale-135' : ''}
-                                                ${member.name === 'Ubaid' ? 'scale-135 object-[center_20%]' : 'object-center'}
+                                            className={`w-full h-full transition-transform duration-500 group-hover:scale-110 
+                                                ${member.name === 'Sakib'
+                                                    ? 'object-contain object-bottom'
+                                                    : 'object-cover object-center'
+                                                }
                                             `}
                                         />
                                     ) : (
@@ -301,13 +318,15 @@ _Sent via kashmircascade.com_`;
                                 </div>
                                 <h3 className="text-xl font-bold text-text-dark mb-1">{member.name}</h3>
                                 <p className="text-primary text-sm font-medium mb-3">{member.role}</p>
-                                <a
-                                    href={`tel:${member.phone.replace(/\s/g, '')}`}
-                                    className="inline-flex items-center gap-2 text-text-dark text-sm hover:text-primary transition-colors"
-                                >
-                                    <Phone className="w-4 h-4" />
-                                    {member.phone}
-                                </a>
+                                {member.phone && (
+                                    <a
+                                        href={`tel:${member.phone.replace(/\s/g, '')}`}
+                                        className="inline-flex items-center gap-2 text-text-dark text-sm hover:text-primary transition-colors"
+                                    >
+                                        <Phone className="w-4 h-4" />
+                                        {member.phone}
+                                    </a>
+                                )}
                             </motion.div>
                         ))}
                     </div>

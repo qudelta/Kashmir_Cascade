@@ -36,9 +36,15 @@ The Valley of Shepherds becomes a winter wonderland. The Lidder River flows thro
 We've had guests tell us they wish they had come in winter sooner. The magic is real, but so is the cold. Dress warmly, stay hydrated, and let the valley work its magic on you.
 
 **Ready to experience Winter Kashmir?** Our Winter Special packages are now open for bookings. We'll take care of everything - you just bring the wonder.`,
+<<<<<<< HEAD
         author: "Fayiq",
         authorRole: "Founder, Kashmir Cascade",
         authorImage: null,
+=======
+        author: "Umeed",
+        authorRole: "Local Explorer",
+        authorImage: "/images/team/umeed_blog.jpg",
+>>>>>>> 9ae2d0c04e48480fb48e706c7eba8ce210016a2e
         date: "2025-01-15",
         readTime: "6 min read",
         category: "Travel Guide",
@@ -86,9 +92,15 @@ For couples who love adventure, Gurez is remote, rugged, and incredibly beautifu
 Over the years, we've learned what makes a honeymoon special - it's not just the destinations, it's the little surprises. The flower decoration in the room, the surprise cake, the private moments arranged away from other tourists.
 
 That's why our honeymoon packages include these thoughtful touches. Because your first trip together as a married couple deserves to be perfect.`,
+<<<<<<< HEAD
         author: "Aqib",
         authorRole: "Honeymoon Specialist",
         authorImage: null,
+=======
+        author: "Fayiq",
+        authorRole: "Experience Curator",
+        authorImage: "/images/team/fayiq_blog.jpg",
+>>>>>>> 9ae2d0c04e48480fb48e706c7eba8ce210016a2e
         date: "2024-11-20",
         readTime: "7 min read",
         category: "Honeymoon",
@@ -99,7 +111,7 @@ That's why our honeymoon packages include these thoughtful touches. Because your
         id: "kashmir-family-vacation-tips",
         title: "Planning a Family Trip to Kashmir? Here's What Every Parent Should Know",
         excerpt: "From toddlers to grandparents, Kashmir has something for everyone. Real advice from a father of three who has been taking families here for 15 years.",
-        content: `I'm Tariq, and I've been organizing family trips to Kashmir since 2009. I'm also a father of three and my kids have grown up in this valley. So when I give advice about family travel, it comes from both professional experience and personal parenting wisdom.
+        content: `I'm Sakib, and I've been organizing family trips to Kashmir since 2009. I'm also a father of three and my kids have grown up in this valley. So when I give advice about family travel, it comes from both professional experience and personal parenting wisdom.
 
 ## Is Kashmir Safe for Families?
 
@@ -150,9 +162,15 @@ Unlike beach destinations where everyone does different things, Kashmir brings f
 I've seen families bond deeper in a week here than they expected. That's the magic of this valley.
 
 **Planning a family trip?** Our family packages are designed with everyone in mind - comfortable transportation, family-friendly hotels, and activities that create memories.`,
+<<<<<<< HEAD
         author: "Umeed",
         authorRole: "Senior Travel Consultant",
         authorImage: null,
+=======
+        author: "Sakib",
+        authorRole: "Lead – Travel Operations",
+        authorImage: "/images/team/sakib_blog.jpg",
+>>>>>>> 9ae2d0c04e48480fb48e706c7eba8ce210016a2e
         date: "2024-10-05",
         readTime: "8 min read",
         category: "Family Travel",
@@ -206,9 +224,15 @@ Look, we could easily just take tourists to the same popular spots. It's easier 
 These hidden gems require a bit more effort - longer drives, some walking, flexibility. But the rewards are incomparable.
 
 **Want to explore Kashmir's hidden side?** We offer customized itineraries that include these secret spots.`,
+<<<<<<< HEAD
         author: "Sakib",
         authorRole: "Founder, Kashmir Cascade",
         authorImage: "/images/team/sakib.jpg",
+=======
+        author: "Shakir",
+        authorRole: "Route Expert",
+        authorImage: "/images/team/ubaid_blog.jpg",
+>>>>>>> 9ae2d0c04e48480fb48e706c7eba8ce210016a2e
         date: "2024-08-12",
         readTime: "6 min read",
         category: "Hidden Gems",
@@ -274,9 +298,15 @@ If you're serious about photography, we can arrange a specialized trip:
 Please respect local customs. Ask before photographing people. At religious sites, follow the rules. The best photographs come from genuine connections, not voyeurism.
 
 Kashmir is generous with its beauty. We only ask that photographers treat it with respect.`,
+<<<<<<< HEAD
         author: "Ubaid",
         authorRole: "Photography Tour Specialist",
         authorImage: "/images/team/ubaid.jpg",
+=======
+        author: "Umeed",
+        authorRole: "Local Explorer",
+        authorImage: "/images/team/umeed_blog.jpg",
+>>>>>>> 9ae2d0c04e48480fb48e706c7eba8ce210016a2e
         date: "2024-09-18",
         readTime: "7 min read",
         category: "Photography",
@@ -289,7 +319,7 @@ Kashmir is generous with its beauty. We only ask that photographers treat it wit
         excerpt: "Discover the rich culinary heritage of Kashmir - from the legendary 36-course Wazwan feast to the humble but addictive street treats.",
         content: `If you're coming to Kashmir just for the views, you're missing half the experience. The food here tells the story of our history, our culture, and our love for gatherings.
 
-I'm Mehvish, and I've been a food enthusiast all my life. Let me take you on a culinary journey through my homeland.
+I'm Fayiq, and I've been a food enthusiast all my life. Let me take you on a culinary journey through my homeland.
 
 ## The Legendary Wazwan
 
@@ -343,8 +373,13 @@ The houseboats often have excellent cooks who prepare traditional food with a re
 
 **Join our food tour!** We offer specialized gastronomy experiences where food is the focus, not just an afterthought.`,
         author: "Fayiq",
+<<<<<<< HEAD
         authorRole: "Honeymoon Specialist",
         authorImage: null,
+=======
+        authorRole: "Experience Curator",
+        authorImage: "/images/team/fayiq_blog.jpg",
+>>>>>>> 9ae2d0c04e48480fb48e706c7eba8ce210016a2e
         date: "2024-07-22",
         readTime: "8 min read",
         category: "Food & Culture",
@@ -359,7 +394,7 @@ The houseboats often have excellent cooks who prepare traditional food with a re
 
 ## The Reality of Solo Female Travel in Kashmir
 
-I'm Mehvish, and I've lived in Kashmir all my life. I've also traveled solo across India and abroad. Here's what I can tell you: Kashmir is one of the safer destinations for solo women in India.
+I'm Sakib, and I've lived in Kashmir all my life. I've also traveled solo across India and abroad. Here's what I can tell you: Kashmir is one of the safer destinations for solo women in India.
 
 **Why?**
 - Strong tourist infrastructure with established protocols
@@ -412,9 +447,15 @@ We understand the concerns and have developed specific features:
 Solo travel in Kashmir isn't just safe - it's transformative. When you navigate a new place alone, try new foods, talk to strangers, and come back with stories that are entirely yours - that's empowerment.
 
 **Ready to take the plunge?** We have special solo traveler packages with built-in support and flexibility.`,
+<<<<<<< HEAD
         author: "Aqib",
         authorRole: "Honeymoon Specialist",
         authorImage: null,
+=======
+        author: "Sakib",
+        authorRole: "Lead – Travel Operations",
+        authorImage: "/images/team/sakib_blog.jpg",
+>>>>>>> 9ae2d0c04e48480fb48e706c7eba8ce210016a2e
         date: "2024-12-08",
         readTime: "7 min read",
         category: "Solo Travel",
@@ -490,9 +531,15 @@ If this is your first time in the region and you have only 7 days, go to Kashmir
 Come back next year for Ladakh. Trust me, you'll want to come back anyway.
 
 **Still confused?** Call us. We'll listen to your preferences and tell you honestly what's best for you - even if it means less revenue for us.`,
+<<<<<<< HEAD
         author: "Umeed",
         authorRole: "Senior Travel Consultant",
         authorImage: null,
+=======
+        author: "Shakir",
+        authorRole: "Route Expert",
+        authorImage: "/images/team/ubaid_blog.jpg",
+>>>>>>> 9ae2d0c04e48480fb48e706c7eba8ce210016a2e
         date: "2025-01-02",
         readTime: "9 min read",
         category: "Travel Guide",
@@ -535,9 +582,15 @@ If you're coming to see the snow, now is the time. We recommend:
 **A message from our team:** We are currently on the ground in Gulmarg, assisting our guests with skiing equipment and ensuring their stay is warm and comfortable. The magic is here, and we can't wait to share it with you.
 
 *Ready to walk in this winter wonderland? Claim our Limited Time Offer for 20% off on all winter packages.*`,
+<<<<<<< HEAD
         author: "Sakib",
         authorRole: "Founder, Kashmir Cascade",
         authorImage: "/images/team/sakib.jpg",
+=======
+        author: "Umeed",
+        authorRole: "Local Explorer",
+        authorImage: "/images/team/umeed_blog.jpg",
+>>>>>>> 9ae2d0c04e48480fb48e706c7eba8ce210016a2e
         date: "2025-01-02",
         readTime: "5 min read",
         category: "News & Updates",
