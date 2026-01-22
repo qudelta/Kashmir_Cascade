@@ -69,7 +69,7 @@ export default function Privacy() {
                     </p>
 
                     <p className="text-text-dark/90 mb-12">
-                        Kashmir Travels ("we," "our," or "us") is committed to protecting your privacy.
+                        Kashmir Cascade ("we," "our," or "us") is committed to protecting your privacy.
                         This Privacy Policy explains how we collect, use, disclose, and safeguard your
                         information when you visit our website or use our services.
                     </p>

@@ -11,7 +11,7 @@ const reviews = [
         rating: 5,
         image: "/images/indian couple reddy.jpg",
         title: "A Winter Fairytale",
-        text: "We booked our honeymoon with Kashmir Travels and it was absolutely magical. The houseboat stay in Dal Lake was the highlight. Faisal bhai arranged a private shikara ride that we'll never forget. Highly recommended for couples!"
+        text: "We booked our honeymoon with Kashmir Cascade and it was absolutely magical. The houseboat stay in Dal Lake was the highlight. Faisal bhai arranged a private shikara ride that we'll never forget. Highly recommended for couples!"
     },
     {
         id: 2,
@@ -41,7 +41,7 @@ const reviews = [
         rating: 5,
         image: "/images/team-faisal.png",
         title: "Gurez Valley is a Must!",
-        text: "If you go to Kashmir, don't miss Gurez. It's untouched paradise. Thanks to Kashmir Travels for suggesting this hidden gem. The log hut stay was cozy and the locals were so welcoming."
+        text: "If you go to Kashmir, don't miss Gurez. It's untouched paradise. Thanks to Kashmir Cascade for suggesting this hidden gem. The log hut stay was cozy and the locals were so welcoming."
     },
     {
         id: 5,
@@ -70,7 +70,7 @@ export default function Reviews() {
         <div className="min-h-screen bg-background-light">
             <PageHeader
                 title="Guest Stories"
-                subtitle="Memories created with Kashmir Travels"
+                subtitle="Memories created with Kashmir Cascade"
                 image="/images/Kashmir 2.jpg"
             />
 

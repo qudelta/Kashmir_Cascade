@@ -9,7 +9,7 @@ const sections = [
         content: `All bookings are subject to availability and confirmation. A booking is confirmed only after:
         
 • Receipt of the required advance payment
-• Written confirmation from Kashmir Travels
+• Written confirmation from Kashmir Cascade
 • Verification of travel documents (if applicable)
 
 We reserve the right to decline any booking without stating reasons. Prices are subject to change without prior notice until booking is confirmed.`
@@ -41,7 +41,7 @@ We reserve the right to decline any booking without stating reasons. Prices are 
     {
         icon: AlertTriangle,
         title: "4. Liability & Limitations",
-        content: `Kashmir Travels shall not be liable for:
+        content: `Kashmir Cascade shall not be liable for:
 
 • Delays or changes due to weather, natural disasters, or political unrest
 • Personal injury, loss, or damage to belongings
@@ -83,7 +83,7 @@ export default function Terms() {
                         Last updated: December 2024
                     </p>
                     <p className="text-text-dark/90 mb-12">
-                        By using our services and booking tours with Kashmir Travels, you agree to
+                        By using our services and booking tours with Kashmir Cascade, you agree to
                         comply with and be bound by the following terms and conditions. Please review
                         them carefully.
                     </p>

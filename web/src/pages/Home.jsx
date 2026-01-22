@@ -14,7 +14,7 @@ const localBusinessSchema = {
     "telephone": "+916006853203",
     "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Sopore",
+        "streetAddress": "Patigooro Complex, Main Chowk Sopore",
         "addressLocality": "Sopore",
         "addressRegion": "Jammu & Kashmir",
         "postalCode": "193101",
@@ -50,7 +50,7 @@ export default function Home() {
         <>
             <SEO
                 title="Premium Travel Agency in Kashmir"
-                description="Kashmir Cascade is your trusted partner for premium tours in Kashmir and Ladakh. Based in Sopore, we offer curated packages for Gulmarg, Pahalgam, and more."
+                description="Kashmir Cascade is your trusted partner for premium tours in Kashmir and Ladakh. Based in Patigooro Complex, Sopore, we offer curated packages for Gulmarg, Pahalgam, and more."
                 schemaData={localBusinessSchema}
             />
             <Hero />

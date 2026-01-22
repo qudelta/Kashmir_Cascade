@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link, useParams, Navigate } from "react-router-dom";
-import { Calendar, Clock, ArrowLeft, Tag, Share2 } from "lucide-react";
+import { Calendar, Clock, ArrowLeft, Tag, Share2, User } from "lucide-react";
 import { blogPosts } from "@/lib/blogs";
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
@@ -129,11 +129,17 @@ export default function BlogPost() {
                         transition={{ duration: 0.5, delay: 0.3 }}
                         className="flex items-center gap-4 pb-8 mb-8 border-b border-text-dark/10"
                     >
-                        <img
-                            src={post.authorImage}
-                            alt={post.author}
-                            className="w-14 h-14 rounded-full"
-                        />
+                        {post.authorImage ? (
+                            <img
+                                src={post.authorImage}
+                                alt={post.author}
+                                className="w-14 h-14 rounded-full object-cover"
+                            />
+                        ) : (
+                            <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                                <User className="w-8 h-8" />
+                            </div>
+                        )}
                         <div>
                             <p className="text-text-dark font-semibold">{post.author}</p>
                             <p className="text-text-dark/70 text-sm">{post.authorRole}</p>

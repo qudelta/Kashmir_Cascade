@@ -36,9 +36,9 @@ The Valley of Shepherds becomes a winter wonderland. The Lidder River flows thro
 We've had guests tell us they wish they had come in winter sooner. The magic is real, but so is the cold. Dress warmly, stay hydrated, and let the valley work its magic on you.
 
 **Ready to experience Winter Kashmir?** Our Winter Special packages are now open for bookings. We'll take care of everything - you just bring the wonder.`,
-        author: "Faisal Mir",
-        authorRole: "Founder, Kashmir Travels",
-        authorImage: "/images/team-faisal.png",
+        author: "Fayiq",
+        authorRole: "Founder, Kashmir Cascade",
+        authorImage: null,
         date: "2025-01-15",
         readTime: "6 min read",
         category: "Travel Guide",
@@ -86,9 +86,9 @@ For couples who love adventure, Gurez is remote, rugged, and incredibly beautifu
 Over the years, we've learned what makes a honeymoon special - it's not just the destinations, it's the little surprises. The flower decoration in the room, the surprise cake, the private moments arranged away from other tourists.
 
 That's why our honeymoon packages include these thoughtful touches. Because your first trip together as a married couple deserves to be perfect.`,
-        author: "Mehvish Khan",
+        author: "Aqib",
         authorRole: "Honeymoon Specialist",
-        authorImage: "/images/team-mehvish.png",
+        authorImage: null,
         date: "2024-11-20",
         readTime: "7 min read",
         category: "Honeymoon",
@@ -150,9 +150,9 @@ Unlike beach destinations where everyone does different things, Kashmir brings f
 I've seen families bond deeper in a week here than they expected. That's the magic of this valley.
 
 **Planning a family trip?** Our family packages are designed with everyone in mind - comfortable transportation, family-friendly hotels, and activities that create memories.`,
-        author: "Tariq Ahmad",
+        author: "Umeed",
         authorRole: "Senior Travel Consultant",
-        authorImage: "/images/team-tariq.png",
+        authorImage: null,
         date: "2024-10-05",
         readTime: "8 min read",
         category: "Family Travel",
@@ -206,9 +206,9 @@ Look, we could easily just take tourists to the same popular spots. It's easier 
 These hidden gems require a bit more effort - longer drives, some walking, flexibility. But the rewards are incomparable.
 
 **Want to explore Kashmir's hidden side?** We offer customized itineraries that include these secret spots.`,
-        author: "Faisal Mir",
-        authorRole: "Founder, Kashmir Travels",
-        authorImage: "/images/team-faisal.png",
+        author: "Sakib",
+        authorRole: "Founder, Kashmir Cascade",
+        authorImage: "/images/team/sakib.jpg",
         date: "2024-08-12",
         readTime: "6 min read",
         category: "Hidden Gems",
@@ -274,9 +274,9 @@ If you're serious about photography, we can arrange a specialized trip:
 Please respect local customs. Ask before photographing people. At religious sites, follow the rules. The best photographs come from genuine connections, not voyeurism.
 
 Kashmir is generous with its beauty. We only ask that photographers treat it with respect.`,
-        author: "Imran Shah",
+        author: "Ubaid",
         authorRole: "Photography Tour Specialist",
-        authorImage: "/images/indian 2.jpg",
+        authorImage: "/images/team/ubaid.jpg",
         date: "2024-09-18",
         readTime: "7 min read",
         category: "Photography",
@@ -342,9 +342,9 @@ The houseboats often have excellent cooks who prepare traditional food with a re
 4. **Carry antacids** - Our food is rich, and city stomachs might need backup!
 
 **Join our food tour!** We offer specialized gastronomy experiences where food is the focus, not just an afterthought.`,
-        author: "Mehvish Khan",
+        author: "Fayiq",
         authorRole: "Honeymoon Specialist",
-        authorImage: "/images/team-mehvish.png",
+        authorImage: null,
         date: "2024-07-22",
         readTime: "8 min read",
         category: "Food & Culture",
@@ -412,9 +412,9 @@ We understand the concerns and have developed specific features:
 Solo travel in Kashmir isn't just safe - it's transformative. When you navigate a new place alone, try new foods, talk to strangers, and come back with stories that are entirely yours - that's empowerment.
 
 **Ready to take the plunge?** We have special solo traveler packages with built-in support and flexibility.`,
-        author: "Mehvish Khan",
+        author: "Aqib",
         authorRole: "Honeymoon Specialist",
-        authorImage: "/images/team-mehvish.png",
+        authorImage: null,
         date: "2024-12-08",
         readTime: "7 min read",
         category: "Solo Travel",
@@ -490,9 +490,9 @@ If this is your first time in the region and you have only 7 days, go to Kashmir
 Come back next year for Ladakh. Trust me, you'll want to come back anyway.
 
 **Still confused?** Call us. We'll listen to your preferences and tell you honestly what's best for you - even if it means less revenue for us.`,
-        author: "Tariq Ahmad",
+        author: "Umeed",
         authorRole: "Senior Travel Consultant",
-        authorImage: "/images/team-tariq.png",
+        authorImage: null,
         date: "2025-01-02",
         readTime: "9 min read",
         category: "Travel Guide",
@@ -535,9 +535,9 @@ If you're coming to see the snow, now is the time. We recommend:
 **A message from our team:** We are currently on the ground in Gulmarg, assisting our guests with skiing equipment and ensuring their stay is warm and comfortable. The magic is here, and we can't wait to share it with you.
 
 *Ready to walk in this winter wonderland? Claim our Limited Time Offer for 20% off on all winter packages.*`,
-        author: "Faisal Mir",
-        authorRole: "Founder, Kashmir Travels",
-        authorImage: "/images/team-faisal.png",
+        author: "Sakib",
+        authorRole: "Founder, Kashmir Cascade",
+        authorImage: "/images/team/sakib.jpg",
         date: "2025-01-02",
         readTime: "5 min read",
         category: "News & Updates",

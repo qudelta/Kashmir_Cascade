@@ -24,7 +24,7 @@ export default function Contact() {
         {
             icon: MapPin,
             title: "Visit Our Office",
-            lines: ["Main Chowk, Sopore,", "Jammu & Kashmir - 193201"]
+            lines: ["Patigooro Complex, Main Chowk Sopore", "Jammu & Kashmir - 193201"]
         },
         {
             icon: Clock,
@@ -37,13 +37,13 @@ export default function Contact() {
         {
             name: "Sakib",
             role: "Co-Founder",
-            phone: "+91 6006 853 203",
+            phone: "+91 8899 299 127",
             image: "/images/team/sakib.jpg"
         },
         {
             name: "Ubaid",
             role: "Co-Founder",
-            phone: "+91 8899 299 127",
+            phone: "+91 6006 853 203",
             image: "/images/team/ubaid.jpg"
         }
     ];
