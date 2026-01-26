@@ -56,11 +56,7 @@ export default function About() {
                         transition={{ delay: 0.1 }}
                         className="text-lg text-text-dark/90 leading-relaxed"
                     >
-<<<<<<< HEAD
-                        Founded in 2015, <strong className="text-primary">Kashmir Cascade</strong> started with a simple mission: to show the world the true, authentic Kashmir beyond the headlines.
-=======
                         Founded in 2025, <strong className="text-primary">Kashmir Cascade</strong> started with a simple mission: to show the world the true, authentic Kashmir beyond the headlines.
->>>>>>> 9ae2d0c04e48480fb48e706c7eba8ce210016a2e
                         We are a team of locals who grew up exploring these mountains, fishing in these lakes, and walking these meadows.
                         We believe that travel isn't just about seeing places; it's about feeling them. Our goal is to make every guest feel not like a tourist, but like a part of our extended Kashmiri family.
                     </motion.p>

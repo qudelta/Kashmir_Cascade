@@ -19,6 +19,8 @@ const SEO = ({
             <title>{fullTitle}</title>
             <meta name="description" content={description} />
             <link rel="canonical" href={fullCanonical} />
+            <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+            <link rel="icon" type="image/png" href="/favicon.png?v=3" />
 
             {/* Open Graph / Facebook */}
             <meta property="og:type" content={ogType} />

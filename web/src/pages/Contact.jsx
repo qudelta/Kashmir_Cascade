@@ -23,11 +23,7 @@ export default function Contact() {
         {
             icon: MapPin,
             title: "Visit Our Office",
-<<<<<<< HEAD
-            lines: ["Patigooro Complex, Main Chowk Sopore", "Jammu & Kashmir - 193201"]
-=======
             lines: ["Patigooro Complex, Main Chowk", "Sopore, Jammu & Kashmir - 193201"]
->>>>>>> 9ae2d0c04e48480fb48e706c7eba8ce210016a2e
         },
         {
             icon: Clock,
@@ -38,18 +34,6 @@ export default function Contact() {
 
     const teamMembers = [
         {
-<<<<<<< HEAD
-            name: "Sakib",
-            role: "Co-Founder",
-            phone: "+91 8899 299 127",
-            image: "/images/team/sakib.jpg"
-        },
-        {
-            name: "Ubaid",
-            role: "Co-Founder",
-            phone: "+91 6006 853 203",
-            image: "/images/team/ubaid.jpg"
-=======
             name: "Sheikh Sakib",
             role: "Lead – Travel Operations",
             image: "/images/team/sakib-v3.png"
@@ -59,7 +43,6 @@ export default function Contact() {
             role: "Lead – Client Relations & Sales",
             phone: "+91 6006 853 203",
             image: "/images/team/ubaid.jpg?v=updated"
->>>>>>> 9ae2d0c04e48480fb48e706c7eba8ce210016a2e
         }
     ];
 
